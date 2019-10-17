@@ -9,10 +9,13 @@ Java_club_crabglory_www_etcb_MainActivity_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
+
+
 extern "C"
-JNIEXPORT void JNICALL
+JNIEXPORT jstring JNICALL
 Java_club_crabglory_www_etcb_MainActivity_kevin(JNIEnv *env, jobject instance) {
 
-    // TODO
+    char* returnValue = const_cast<char *>("sdfksl");
 
+    return env->NewStringUTF(returnValue);
 }

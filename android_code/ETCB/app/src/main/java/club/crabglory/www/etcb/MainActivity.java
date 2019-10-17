@@ -3,6 +3,7 @@ package club.crabglory.www.etcb;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+
+        Toast.makeText(this, "kevin text is : " + kevin() , Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -27,5 +30,5 @@ public class MainActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
 
-    public native void kevin();
+    public native String kevin();
 }

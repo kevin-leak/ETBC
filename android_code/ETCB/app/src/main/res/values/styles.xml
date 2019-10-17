@@ -1,11 +1,27 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Base" parent="Theme.AppCompat" >
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/windowBackgroundColor</item>
+        <item name="colorPrimaryDark">@color/windowBackgroundColor</item>
+        <item name="colorAccent">@color/windowBackgroundColor</item>
+
+        <!--设置没有toolbar-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Base">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.LaunchActivity" parent="Theme.Base">
+        <!--<item name="windowActionBar">false</item>-->
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+    </style>
 </resources>
