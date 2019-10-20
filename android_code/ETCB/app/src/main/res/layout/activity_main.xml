@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <FrameLayout
+        android:id="@+id/lay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="MissingConstraints" />
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_55"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="@dimen/len_4"
+        android:outlineProvider="bounds"
+        android:translationZ="@dimen/len_8"
+        app:itemIconTint="@color/hint"
+        app:itemTextColor="@color/text_nav"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/navigation_items"
+        tools:targetApi="lollipop"
+        tools:visibility="invisible">
+
+    </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>

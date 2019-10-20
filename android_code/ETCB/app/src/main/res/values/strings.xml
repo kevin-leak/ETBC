@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">ETCB</string>
+    <string name="etcb">易书阁</string>
+    <string name="nav_mine">me</string>
+    <string name="nav_book">loft</string>
+    <string name="nav_micro">micro</string>
+    <string name="teach">teaching</string>
+    <string name="economic">economic</string>
+    <string name="science">science</string>
+    <string name="society">society</string>
+    <string name="special_today">- Special -</string>
+    <string name="random_flow_book">RandomFlow</string>
+    <string name="userName">user name</string>
+    <string name="tel">tel: 18870742111</string>
+    <string name="fork">fork</string>
+    <string name="car">car</string>
+    <string name="pay">pay</string>
+    <string name="message">message</string>
+    <string name="micro">micro</string>
+    <string name="goods">goods</string>
+    <string name="upload_goods">upload goods</string>
 </resources>

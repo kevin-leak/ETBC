@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_book"
+        android:icon="@drawable/nav_book"
+        android:title="@string/nav_book"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_micro"
+        android:icon="@drawable/nav_micro"
+        android:title="@string/nav_micro"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_mine"
+        android:icon="@drawable/nav_mine"
+        android:title="@string/nav_mine"
+        app:showAsAction="ifRoom" />
+
+</menu>

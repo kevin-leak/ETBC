@@ -1,10 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.Base" parent="Theme.AppCompat" >
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/windowBackgroundColor</item>
         <item name="colorPrimaryDark">@color/windowBackgroundColor</item>
         <item name="colorAccent">@color/windowBackgroundColor</item>
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+
+        <item name="android:textColor">@color/black</item>
 
         <!--设置没有toolbar-->
         <item name="windowActionBar">false</item>
@@ -20,8 +23,101 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.LaunchActivity" parent="Theme.Base">
-        <!--<item name="windowActionBar">false</item>-->
-        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+    <style name="AppTheme.TransStatusBar.Base" parent="Theme.Base">
+        <!--去除顶部的状态栏-->
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
     </style>
+
+    <style name="AppTheme.LaunchActivity" parent="Theme.Base">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/white</item>
+        <!--<item name="windowActionBar">false</item>-->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="AppTheme.MainActivity" parent="AppTheme">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/secondWindowBackgroundColor</item>
+        <item name="actionMenuTextColor">@color/black</item>
+    </style>
+
+
+
+    <!--view的样式-->
+
+    <style name="topImage">
+        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:layout_width">@dimen/len_50</item>
+        <item name="android:layout_margin">@dimen/len_10</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="topText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/len_10</item>
+        <item name="android:textSize">@dimen/len_15</item>
+        <item name="android:textColor">#717070</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+
+    <!--mine 里面-->
+
+    <style name="mine_record">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">@dimen/len_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/mine_item_border</item>
+    </style>
+
+    <style name="mine_record_image">
+        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:layout_width">@dimen/len_50</item>
+        <item name="android:layout_marginTop">@dimen/len_5</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="mine_record_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    
+    <!--item do-->
+    <style name="mine_do_card">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="cardCornerRadius">@dimen/len_5</item>
+        <item name="cardElevation">@dimen/len_1</item>
+        <item name="cardBackgroundColor">@color/secondWindowBackgroundColor</item>
+    </style>
+    <style name="mine_do_rl">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/len_60</item>
+        <item name="android:paddingLeft">@dimen/len_20</item>
+    </style>
+    <style name="mine_do_image">
+        <item name="android:layout_height">@dimen/len_35</item>
+        <item name="android:layout_width">@dimen/len_35</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mine_do_text">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingRight">@dimen/len_20</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/len_50</item>
+        <item name="android:textSize">@dimen/fon_18</item>
+        <item name="android:drawableRight">@drawable/more_gray</item>
+    </style>
+
+
+
 </resources>

@@ -35,6 +35,19 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // view 库
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompilerVesion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportVersion"
+    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    implementation "com.makeramen:roundedimageview:$rootProject.ext.roundedimageviewVersion"
+
+    // 图片加载库
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+
+    //网络库
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     api project(':common')
     api project(':factory')
 }
