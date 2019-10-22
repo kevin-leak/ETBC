@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="@dimen/len_10"
+    android:paddingLeft="@dimen/len_10"
+    android:background="@color/secondWindowBackgroundColor"
+    android:orientation="vertical">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/daily_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@color/secondWindowBackgroundColor"
+        android:scaleType="centerCrop"
+        android:elevation="@dimen/len_3"
+        android:layout_gravity="center|center_vertical"
+        android:src="@mipmap/test_republic"
+        app:riv_border_color="@color/gray"
+        app:riv_border_width="@dimen/len_0_5"
+        app:riv_corner_radius="@dimen/len_0_5"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/daily_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_weight="3"
+        android:background="@color/secondWindowBackgroundColor"
+        android:gravity="center"
+        android:text="@string/one_book"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/fon_12" />
+
+</LinearLayout>
+

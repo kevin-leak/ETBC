@@ -47,11 +47,20 @@
 
     <!--view的样式-->
 
+    <style name="topRL">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/len_0</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="topImage">
         <item name="android:layout_height">@dimen/len_50</item>
         <item name="android:layout_width">@dimen/len_50</item>
-        <item name="android:layout_margin">@dimen/len_10</item>
-        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_marginTop">@dimen/len_5</item>
+        <item name="android:layout_marginLeft">@dimen/len_10</item>
+        <item name="android:layout_marginRight">@dimen/len_10</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
     <style name="topText">
@@ -59,7 +68,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:layout_marginTop">@dimen/len_10</item>
         <item name="android:textSize">@dimen/len_15</item>
         <item name="android:textColor">#717070</item>
         <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
@@ -78,8 +86,9 @@
     <style name="mine_record_image">
         <item name="android:layout_height">@dimen/len_50</item>
         <item name="android:layout_width">@dimen/len_50</item>
-        <item name="android:layout_marginTop">@dimen/len_5</item>
+        <item name="android:layout_marginTop">-4dp</item>
         <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
     <style name="mine_record_text">
@@ -87,37 +96,39 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/gray</item>
     </style>
     
     <!--item do-->
     <style name="mine_do_card">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="cardCornerRadius">@dimen/len_5</item>
-        <item name="cardElevation">@dimen/len_1</item>
+        <item name="cardCornerRadius">@dimen/len_0</item>
+        <item name="cardElevation">@dimen/len_2</item>
         <item name="cardBackgroundColor">@color/secondWindowBackgroundColor</item>
     </style>
     <style name="mine_do_rl">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/len_60</item>
-        <item name="android:paddingLeft">@dimen/len_20</item>
+        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:paddingLeft">@dimen/len_10</item>
     </style>
     <style name="mine_do_image">
-        <item name="android:layout_height">@dimen/len_35</item>
-        <item name="android:layout_width">@dimen/len_35</item>
+        <item name="android:layout_height">@dimen/len_30</item>
+        <item name="android:layout_width">@dimen/len_30</item>
         <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
     <style name="mine_do_text">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:paddingRight">@dimen/len_20</item>
+        <item name="android:paddingRight">@dimen/len_10</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_marginLeft">@dimen/len_50</item>
-        <item name="android:textSize">@dimen/fon_18</item>
+        <item name="android:layout_marginLeft">@dimen/len_40</item>
+        <item name="android:textSize">@dimen/fon_16</item>
         <item name="android:drawableRight">@drawable/more_gray</item>
     </style>
 
 
-
+    <dimen name="len_45">45dp</dimen>
 </resources>

@@ -41,7 +41,9 @@ ext{
     circleimageviewVersion = '2.1.0'
     roundedimageviewVersion = '2.2.1'
 
-    ucropVersion = "2.2.0-native"
+    ucropVersion = '2.2.0-native'
+
+    refeshlayoutVersion = '1.3.0'
 
 
 }

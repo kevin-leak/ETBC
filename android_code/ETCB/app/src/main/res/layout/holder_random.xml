@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/len_130"
+    android:padding="@dimen/len_10"
+    android:background="@color/secondWindowBackgroundColor"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_book"
+        android:layout_width="@dimen/len_85"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10"
+        android:src="@mipmap/test_jane_eyre"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_book_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_book"
+        android:layout_toEndOf="@+id/iv_book"
+        android:layout_alignTop="@id/iv_book"
+        android:text="@string/jane_eyre"
+        android:textSize="@dimen/font_18" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_book_name"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/iv_book"
+        android:layout_toRightOf="@+id/iv_book"
+        android:text="@string/description"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/font_15" />
+
+    <TextView
+        android:id="@+id/tv_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iv_book"
+        android:layout_toRightOf="@+id/iv_book"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/textSecond"
+        android:text="@string/kevin"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/priceColor"
+        android:text="@string/price" />
+
+
+</RelativeLayout>
+

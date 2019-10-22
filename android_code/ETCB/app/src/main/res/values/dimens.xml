@@ -26,7 +26,7 @@
     <dimen name="len_25">25dp</dimen>
 
 
-    <dimen name="searchBarSize">50dp</dimen>
+    <dimen name="searchBarSize">55dp</dimen>
     <dimen name="len_150dp">150dp</dimen>
     <dimen name="len_40">40dp</dimen>
     <dimen name="len_50">50dp</dimen>
@@ -49,4 +49,18 @@
     <dimen name="len_190">190dp</dimen>
     <dimen name="len_50dp">50dp</dimen>
     <dimen name="len_60dp">60dp</dimen>
+    <dimen name="len_90">90dp</dimen>
+    <dimen name="len_95">95dp</dimen>
+    <dimen name="len_180">180dp</dimen>
+    <dimen name="len_22">22dp</dimen>
+    <dimen name="len_24">24dp</dimen>
+    <dimen name="len_185">185dp</dimen>
+    <dimen name="len_130">130dp</dimen>
+    <dimen name="len_120">120dp</dimen>
+    <dimen name="fon_12">12sp</dimen>
+    <dimen name="len_140">140dp</dimen>
+    <dimen name="len_65">65dp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="len_85">85dp</dimen>
+    <dimen name="font_18">18sp</dimen>
 </resources>

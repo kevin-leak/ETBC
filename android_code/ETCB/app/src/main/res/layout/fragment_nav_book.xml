@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,16 +14,17 @@
         android:elevation="@dimen/len_2"
         android:outlineProvider="bounds"
         app:elevation="0dp"
-        tools:targetApi="lollipop">
+        tools:targetApi="lollipop"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/len_20"
+            android:paddingLeft="@dimen/len_15"
             android:paddingTop="@dimen/len_10"
             android:paddingBottom="@dimen/len_10"
-            android:paddingRight="@dimen/len_20">
+            android:paddingRight="@dimen/len_15">
 
             <android.support.v7.widget.SearchView
                 android:id="@+id/sv_Search"
@@ -35,28 +37,26 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
     <LinearLayout
         android:id="@+id/ll_select"
         android:layout_width="match_parent"
         android:paddingRight="@dimen/len_10"
         android:paddingLeft="@dimen/len_10"
-        android:paddingBottom="@dimen/len_5"
-        android:paddingTop="@dimen/len_7"
-        android:layout_marginTop="@dimen/len_0_5"
-        android:layout_height="@dimen/len_100"
+        android:paddingBottom="@dimen/len_10"
+        android:paddingTop="@dimen/len_5"
+        android:layout_height="@dimen/len_95"
         android:background="@color/secondWindowBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar"
         tools:ignore="MissingConstraints">
 
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+        <RelativeLayout style="@style/topRL">
 
             <ImageView
                 style="@style/topImage"
+                android:contentDescription="@string/teach"
                 android:padding="@dimen/len_3"
                 android:src="@drawable/top_teach" />
 
@@ -66,13 +66,11 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+        <RelativeLayout style="@style/topRL">
 
             <ImageView
                 style="@style/topImage"
+                android:contentDescription="@string/economic"
                 android:src="@drawable/top_economic" />
 
             <TextView
@@ -81,13 +79,11 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+        <RelativeLayout style="@style/topRL">
 
             <ImageView
                 style="@style/topImage"
+                android:contentDescription="@string/society"
                 android:src="@drawable/top_society" />
 
             <TextView
@@ -96,13 +92,11 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+        <RelativeLayout style="@style/topRL">
 
             <ImageView
                 style="@style/topImage"
+                android:contentDescription="@string/science"
                 android:padding="@dimen/len_3"
                 android:src="@drawable/top_science" />
 
@@ -112,98 +106,125 @@
 
         </RelativeLayout>
 
-
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ll_select">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/len_150" />
 
-        <android.support.constraint.ConstraintLayout
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/mrl_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/len_150"
+        app:overlay="false"
+        app:wave_show="true"
+        app:wave_color="#90B7D7EB"
+        app:progress_colors="@array/material_colors"
+        app:isLoadMore="true"
+        app:wave_height_type="higher"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/rl_special"
-                android:paddingRight="@dimen/len_20"
-                android:paddingLeft="@dimen/len_20"
-                android:layout_marginTop="@dimen/len_0_5"
-                android:paddingTop="@dimen/len_20"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/secondWindowBackgroundColor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/special_today"
-                    android:typeface="monospace"
-                    android:textSize="@dimen/len_20"
-                    android:textColor="#2e2e2e"
-                    tools:ignore="SpUsage" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_special"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_150dp"
-                    android:layout_marginTop="@dimen/len_40">
-
-                </android.support.v7.widget.RecyclerView>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="800dp"
-                android:paddingTop="@dimen/len_25"
-                android:paddingRight="@dimen/len_20"
-                android:paddingLeft="@dimen/len_20"
-                android:background="@color/secondWindowBackgroundColor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rl_special">
+                android:layout_height="wrap_content">
 
                 <RelativeLayout
+                    android:id="@+id/rl_special"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_10"
+                    android:layout_marginTop="@dimen/len_0_5"
+                    android:paddingTop="@dimen/len_8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondWindowBackgroundColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/random_flow_book"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/daily_today"
                         android:typeface="monospace"
                         android:textSize="@dimen/len_20"
                         android:textColor="#2e2e2e"
-                        tools:ignore="SpUsage"/>
+                        tools:ignore="SpUsage" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/more"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="@dimen/len_10" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_140"
+                        android:layout_marginTop="@dimen/len_40"
+                        android:background="@color/secondWindowBackgroundColor">
+
+
+                    </android.support.v7.widget.RecyclerView>
+
 
                 </RelativeLayout>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_random"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/len_40">
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/len_15"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_10"
+                    android:background="@color/secondWindowBackgroundColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rl_special">
 
-                </android.support.v7.widget.RecyclerView>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/random_flow_book"
+                            android:typeface="monospace"
+                            android:textSize="@dimen/len_20"
+                            android:textColor="#2e2e2e"
+                            tools:ignore="SpUsage"/>
 
-            </RelativeLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/more"
+                             android:src="@drawable/more"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="@dimen/len_10"
+                            android:layout_marginEnd="@dimen/len_10" />
 
-        </android.support.constraint.ConstraintLayout>
+                    </RelativeLayout>
 
-    </ScrollView>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_random"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/len_40">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+    </com.cjj.MaterialRefreshLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>

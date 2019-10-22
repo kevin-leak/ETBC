@@ -8,7 +8,7 @@
     <string name="economic">economic</string>
     <string name="science">science</string>
     <string name="society">society</string>
-    <string name="special_today">- Special -</string>
+    <string name="daily_today">- Daily -</string>
     <string name="random_flow_book">RandomFlow</string>
     <string name="userName">user name</string>
     <string name="tel">tel: 18870742111</string>
@@ -18,5 +18,15 @@
     <string name="message">message</string>
     <string name="micro">micro</string>
     <string name="goods">goods</string>
-    <string name="upload_goods">upload goods</string>
+    <string name="upload_book">book</string>
+    <string name="live">live</string>
+    <string name="collect">collect</string>
+    <string name="settings">settings</string>
+    <string name="more">more</string>
+    <string name="one_book">Republic</string>
+    <string name="jane_eyre">Jane Eyre</string>
+    <string name="description">Jane Eyre is the representative work of British woman writer Charlotte Bronte. The heroine Jane Eyre is a female intellectual image that pursues equality and autonomy. The novel wins with a touching sacred history of a "Cinderella-style" character.
+        "Jane Eyre" is also a representative work of female literature.</string>
+    <string name="kevin">kevin</string>
+    <string name="price">88 $</string>
 </resources>
