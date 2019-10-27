@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frags.PayActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/len_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolBarDefault"
+            android:background="@color/secondWindowBackgroundColor"
+            app:theme="@style/myToolBar"
+            app:title="@string/pay"
+            app:titleTextColor="@color/gray" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_pay"
+        style="@style/mine_do_card"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            style="@style/mine_do_rl">
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/font_16"
+                android:layout_gravity="center_vertical|end"
+                android:text="@string/bind_state"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/len_35"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:elevation="1dp"
+                tools:ignore="UnusedAttribute"/>
+
+
+            <ImageView
+                style="@style/mine_do_image"
+                android:layout_marginLeft="@dimen/len_10"
+                android:contentDescription="@string/pay"
+                android:src="@drawable/ic_alipay" />
+
+            <TextView
+                style="@style/mine_do_text"
+                android:paddingLeft="@dimen/len_10"
+                android:text="@string/alipay" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

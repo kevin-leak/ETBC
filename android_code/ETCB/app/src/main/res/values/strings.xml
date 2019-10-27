@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ETCB</string>
-    <string name="etcb">易书阁</string>
+    <string name="etcb">ETBC</string>
     <string name="nav_mine">me</string>
     <string name="nav_book">loft</string>
-    <string name="nav_micro">micro</string>
+    <string name="nav_attic">attic</string>
     <string name="teach">teaching</string>
     <string name="economic">economic</string>
     <string name="science">science</string>
@@ -14,14 +14,14 @@
     <string name="tel">tel: 18870742111</string>
     <string name="fork">fork</string>
     <string name="car">car</string>
-    <string name="pay">pay</string>
+    <string name="pay">Pay</string>
     <string name="message">message</string>
     <string name="micro">micro</string>
     <string name="goods">goods</string>
     <string name="upload_book">book</string>
     <string name="live">live</string>
     <string name="collect">collect</string>
-    <string name="settings">settings</string>
+    <string name="settings">Settings</string>
     <string name="more">more</string>
     <string name="one_book">Republic</string>
     <string name="jane_eyre">Jane Eyre</string>
@@ -29,4 +29,25 @@
         "Jane Eyre" is also a representative work of female literature.</string>
     <string name="kevin">kevin</string>
     <string name="price">88 $</string>
+    <string name="Books">Books</string>
+    <string name="books">books</string>
+    <string name="title">title</string>
+    <string name="subTitle">subTitle</string>
+    <string name="time">18:00</string>
+    <string name="quiet_mode">Quiet Mode</string>
+    <string name="black_surface">Black Surface</string>
+    <string name="language">Language</string>
+    <string name="about_me">About Me</string>
+    <string name="feedback">Feedback</string>
+    <string name="switch_account">Switch Account</string>
+    <string name="quit">Quit</string>
+    <string name="avatar">Avatar</string>
+    <string name="profile">Profile</string>
+    <string name="phone">18870741212</string>
+    <string name="address">Address</string>
+    <string name="sex" >Sex</string>
+    <string name="male">Male</string>
+    <string name="cancel">Cancel</string>
+    <string name="alipay">Alipay</string>
+    <string name="bind_state">Not Bind</string>
 </resources>

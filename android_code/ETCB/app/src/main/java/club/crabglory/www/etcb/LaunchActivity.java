@@ -38,7 +38,7 @@ public class LaunchActivity extends BaseActivity {
                 /* todo
                  * 初始化缓存资源
                  */
-                MainActivity.show(LaunchActivity.this, MainActivity.class);
+                MainActivity.show(LaunchActivity.this, MainActivity.class, null, true);
             }
         }, 2000);
     }

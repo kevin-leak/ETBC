@@ -29,8 +29,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="mine_pay" />
-                            <entry key="sourceFile" value="D:\google_downlaod\支付1 (1).svg" />
+                            <entry key="outputName" value="ic_back" />
+                            <entry key="sourceFile" value="D:\google_downlaod\back.svg" />
                           </map>
                         </option>
                       </PersistentState>

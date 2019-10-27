@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/len_55"
         android:layout_gravity="bottom"
-        android:background="@color/white"
+        android:background="@color/secondWindowBackgroundColor"
         android:elevation="@dimen/len_4"
         android:outlineProvider="bounds"
         android:translationZ="@dimen/len_8"

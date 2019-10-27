@@ -9,9 +9,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_micro"
-        android:icon="@drawable/nav_micro"
-        android:title="@string/nav_micro"
+        android:id="@+id/action_attic"
+        android:icon="@drawable/nav_attic"
+        android:title="@string/nav_attic"
         app:showAsAction="ifRoom" />
 
     <item

@@ -68,8 +68,6 @@ public abstract class BaseFragment extends Fragment {
             onFirstInit();
         }
 
-        // 当View创建完成后初始化数据
-        initData();
     }
 
     protected void initData() {

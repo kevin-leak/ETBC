@@ -6,9 +6,11 @@
         <item name="colorPrimaryDark">@color/windowBackgroundColor</item>
         <item name="colorAccent">@color/windowBackgroundColor</item>
         <item name="android:windowBackground">@color/windowBackgroundColor</item>
+        <item name="android:screenOrientation">portrait</item>
 
         <item name="android:textColor">@color/black</item>
-
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/secondWindowBackgroundColor</item>
+        <item name="actionMenuTextColor">@color/black</item>
         <!--设置没有toolbar-->
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -38,15 +40,15 @@
         <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="AppTheme.MainActivity" parent="AppTheme">
+    <style name="AppTheme.DefaultActivity" parent="AppTheme">
         <item name="android:statusBarColor" tools:ignore="NewApi">@color/secondWindowBackgroundColor</item>
         <item name="actionMenuTextColor">@color/black</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <!--NavigationIcon的宽度-->
+        <item name="toolbarStyle">@style/BaseToolbarStyle</item>
     </style>
 
-
-
     <!--view的样式-->
-
     <style name="topRL">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">@dimen/len_0</item>
@@ -97,11 +99,12 @@
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textColor">@color/gray</item>
+
     </style>
     
     <!--item do-->
     <style name="mine_do_card">
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">@dimen/len_50</item>
         <item name="android:layout_width">match_parent</item>
         <item name="cardCornerRadius">@dimen/len_0</item>
         <item name="cardElevation">@dimen/len_2</item>
@@ -109,7 +112,8 @@
     </style>
     <style name="mine_do_rl">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/secondWindowBackgroundColor</item>
         <item name="android:paddingLeft">@dimen/len_10</item>
     </style>
     <style name="mine_do_image">
@@ -129,6 +133,36 @@
         <item name="android:drawableRight">@drawable/more_gray</item>
     </style>
 
+    <!--    自定义的toolbar back -->
+    <style name="myToolBar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/gray</item>
+    </style>
 
-    <dimen name="len_45">45dp</dimen>
+    <style name="AppTheme.BarDefaultTheme" parent="AppTheme.TransStatusBar.Base">
+        <!--NavigationIcon的宽度-->
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <!--NavigationIcon的宽度-->
+        <item name="toolbarStyle">@style/BaseToolbarStyle</item>
+    </style>
+
+    <!--标题栏返回按钮样式-->
+    <style name="ToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">16dp</item>
+    </style>
+
+    <!--标题栏的样式-->
+    <style name="BaseToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <!--内容距离开始 边距-->
+        <item name="contentInsetStart">8dp</item>
+        <!--内容距离 导航按钮 边距-->
+        <item name="contentInsetStartWithNavigation">8dp</item>
+        <!--使自定义view可以贴左右的边，多数版本的系统不要下面两句也可以，但少量版本必须加下面的两句-->
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <!--右内边距-->
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:titleTextColor" tools:targetApi="m">@color/blackLess</item>
+        <item name="titleTextColor" >@color/blackLess</item>
+    </style>
+
 </resources>

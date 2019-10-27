@@ -11,11 +11,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.MainActivity">
-        </activity>
-
-        <activity android:name=".LaunchActivity"
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+        <activity android:name=".frags.UploadBookActivity"/>
+        <activity android:name=".frags.SearchActivity" />
+        <activity android:name=".frags.LiveActivity" />
+        <activity android:name=".frags.MessageActivity"
+            android:theme="@style/AppTheme.DefaultActivity"/>
+        <activity android:name=".frags.MicroActivity" />
+        <activity android:name=".frags.record.RecordCollectActivity" />
+        <activity android:name=".frags.record.RecordCarActivity" />
+        <activity android:name=".frags.record.RecordForkActivity"
+            android:theme="@style/AppTheme.DefaultActivity"/>
+        <activity android:name=".frags.SettingsActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme" />
+        <activity android:name=".frags.PayActivity"
+            android:theme="@style/AppTheme.DefaultActivity"/>
+        <activity android:name=".frags.mine.MineProfileActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme"/>
+        <activity android:name=".frags.mine.MineDisplayActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme"/>
+        <activity
+            android:name=".frags.BooksShopActivity"
+            android:theme="@style/AppTheme.DefaultActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.DefaultActivity" />
+        <activity
+            android:name=".LaunchActivity"
             android:theme="@style/AppTheme.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +47,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".frags.BooksActivity"
+            android:theme="@style/AppTheme.DefaultActivity" />
     </application>
 
 </manifest>

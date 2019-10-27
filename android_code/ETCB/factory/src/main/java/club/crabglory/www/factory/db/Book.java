@@ -1,7 +1,13 @@
 package club.crabglory.www.factory.db;
 
-public class Book {
+import android.os.Parcel;
+import android.os.Parcelable;
 
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
+    public static final String TYPE = "TYPE";
     private int image;
     private String name;
     private String description;
@@ -22,4 +28,5 @@ public class Book {
     public void setUpper(String upper) { this.upper = upper; }
     public void setPrice(double price) { this.price = price + " $"; }
     public String getPrice() { return price; }
+
 }

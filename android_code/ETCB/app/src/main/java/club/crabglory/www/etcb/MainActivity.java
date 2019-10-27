@@ -1,19 +1,19 @@
 package club.crabglory.www.etcb;
 
-import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import club.crabglory.www.common.basic.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
 import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;
-import club.crabglory.www.etcb.main.MicroFragment;
+import club.crabglory.www.etcb.main.AtticFragment;
 import club.crabglory.www.etcb.main.MineFragment;
 
 public class MainActivity extends BaseActivity implements
@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity implements
     @BindView(R.id.navigation)
     BottomNavigationView mNavigation;
     private NavHelper mHelper;
+    private Menu menu;
 
     /**
      * 1. 页面切换
@@ -43,15 +44,15 @@ public class MainActivity extends BaseActivity implements
     protected void initWidget() {
         super.initWidget();
         bindFragment();
-        Menu menu = mNavigation.getMenu();
-        menu.performIdentifierAction(R.id.action_micro, 1);
-        mNavigation.setSelectedItemId(R.id.action_micro);
+        menu = mNavigation.getMenu();
+        menu.performIdentifierAction(R.id.action_attic, 1);
+        mNavigation.setSelectedItemId(R.id.action_attic);
     }
 
     private void bindFragment() {
         mHelper = new NavHelper(this, R.id.lay_container, getSupportFragmentManager(), this);
         mHelper.add(R.id.action_book, new NavHelper.Tab(BookFragment.class, R.string.nav_book));
-        mHelper.add(R.id.action_micro, new NavHelper.Tab<>(MicroFragment.class, R.string.nav_micro));
+        mHelper.add(R.id.action_attic, new NavHelper.Tab<>(AtticFragment.class, R.string.nav_attic));
         mHelper.add(R.id.action_mine, new NavHelper.Tab<>(MineFragment.class, R.string.nav_mine));
         //初始化设置第一个fragment显示
         mNavigation.setOnNavigationItemSelectedListener(this);
@@ -63,8 +64,11 @@ public class MainActivity extends BaseActivity implements
         return mHelper.performClickMenu(menuItem.getItemId());
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @SuppressLint("ResourceAsColor")
     @Override
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
-
+        if (newTab.clx == AtticFragment.class){
+        }
     }
 }

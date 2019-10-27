@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,8 +70,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
-    public static void show(BaseActivity activity, Class<? extends BaseActivity> cls){
-        activity.startActivity(new Intent(activity, cls));
-        activity.finish();
+    public static void show(BaseActivity activity, Class<? extends AppCompatActivity> cls,
+                            Bundle bundle, boolean toFinish){
+        Intent intent = new Intent(activity, cls);
+        if (bundle != null)
+            intent.putExtras(bundle);
+        activity.startActivity(intent);
+        if (toFinish)
+            activity.finish();
+    }
+
+    /**
+     * 后面用的多所以加
+     */
+    public static void show(FragmentActivity activity, Class<? extends BaseActivity> cls){
+        Intent intent = new Intent(activity, cls);
+        activity.startActivity(intent);
     }
 }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/len_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize2"
+            android:background="@color/whiteGrayLess"
+            app:theme="@style/myToolBar"
+            android:paddingTop="@dimen/statusBarSize"
+            app:title="@string/profile"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/ic_back"
+            app:contentInsetStartWithNavigation="0dp">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_avatar"
+        android:layout_height="@dimen/len_60"
+        style="@style/mine_do_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="RtlSymmetry">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/len_35"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/avatar"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/len_10"
+                android:elevation="1dp"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:background="@drawable/mine_do_border"
+                android:layout_marginLeft="@dimen/len_20"
+                android:layout_marginStart="@dimen/len_20"
+                style="@style/mine_do_text"
+                android:text="@string/avatar"
+                tools:ignore="RtlSymmetry" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_name"
+        style="@style/mine_do_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_avatar"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_16"
+            android:elevation="@dimen/len_1"
+            android:gravity="center_vertical"
+            android:layout_marginRight="@dimen/len_35"
+            android:layout_gravity="center_vertical|end"
+            android:text="@string/kevin"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:background="@drawable/mine_do_border"
+            android:layout_marginLeft="@dimen/len_20"
+            style="@style/mine_do_text"
+            android:text="@string/userName"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginStart="@dimen/len_20" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_phone"
+        style="@style/mine_do_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_name"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_16"
+            android:gravity="center_vertical"
+            android:elevation="@dimen/len_1"
+            android:layout_marginRight="@dimen/len_35"
+            android:layout_gravity="center_vertical|end"
+            android:text="@string/phone"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:background="@drawable/mine_do_border"
+            android:layout_marginLeft="@dimen/len_20"
+            style="@style/mine_do_text"
+            android:text="@string/phone"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginStart="@dimen/len_20" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_sex"
+        style="@style/mine_do_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_phone"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_16"
+            android:elevation="@dimen/len_1"
+            android:gravity="center_vertical"
+            android:layout_marginRight="@dimen/len_35"
+            android:layout_gravity="center_vertical|end"
+            android:text="@string/male"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:background="@drawable/mine_do_border"
+            android:layout_marginLeft="@dimen/len_20"
+            style="@style/mine_do_text"
+            android:text="@string/sex"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginStart="@dimen/len_20" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_address"
+        style="@style/mine_do_card"
+        android:layout_marginTop="@dimen/len_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_sex"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:background="@drawable/mine_do_border"
+            android:layout_marginLeft="@dimen/len_20"
+            style="@style/mine_do_text"
+            android:text="@string/address"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginStart="@dimen/len_20" />
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
