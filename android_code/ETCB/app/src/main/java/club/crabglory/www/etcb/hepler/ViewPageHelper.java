@@ -117,7 +117,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
     /**
      * @param negativeColor 一个color资源，设置处于negative的时候nav item 的颜色
      */
-    public void setNavNegativeColor(@ColorInt int negativeColor){
+    public void setNavNegativeColor(@DrawableRes int negativeColor){
 
         this.negativeColor = negativeColor;
     }

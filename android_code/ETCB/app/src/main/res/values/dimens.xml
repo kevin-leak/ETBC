@@ -76,4 +76,12 @@
     <dimen name="len_16">16dp</dimen>
     <dimen name="len_52">52dp</dimen>
     <dimen name="actionBarSize2">70dp</dimen>
+    <dimen name="len_17">17dp</dimen>
+    <dimen name="font_14">14dp</dimen>
+    <dimen name="len_96">96dp</dimen>
+    <dimen name="len_170">170dp</dimen>
+    <dimen name="font_25">25dp</dimen>
+    <dimen name="len_160">160dp</dimen>
+    <dimen name="len_44">44dp</dimen>
+    <dimen name="len_68">68dp</dimen>
 </resources>

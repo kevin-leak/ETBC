@@ -12,17 +12,15 @@ import butterknife.OnClick;
 import club.crabglory.www.common.basic.BaseActivity;
 import club.crabglory.www.common.basic.BaseFragment;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.BooksActivity;
-import club.crabglory.www.etcb.frags.UploadBookActivity;
-import club.crabglory.www.etcb.frags.mine.MineDisplayActivity;
-import club.crabglory.www.etcb.frags.LiveActivity;
-import club.crabglory.www.etcb.frags.MessageActivity;
-import club.crabglory.www.etcb.frags.MicroActivity;
-import club.crabglory.www.etcb.frags.PayActivity;
-import club.crabglory.www.etcb.frags.mine.MineProfileActivity;
-import club.crabglory.www.etcb.frags.record.RecordCarActivity;
-import club.crabglory.www.etcb.frags.record.RecordCollectActivity;
-import club.crabglory.www.etcb.frags.record.RecordForkActivity;
+import club.crabglory.www.etcb.frags.book.BooksActivity;
+import club.crabglory.www.etcb.frags.book.UploadBookActivity;
+import club.crabglory.www.etcb.frags.display.MineDisplayActivity;
+import club.crabglory.www.etcb.frags.chat.MessageActivity;
+import club.crabglory.www.etcb.frags.MicroUpActivity;
+import club.crabglory.www.etcb.frags.consume.PayActivity;
+import club.crabglory.www.etcb.frags.display.MineProfileActivity;
+import club.crabglory.www.etcb.frags.chat.ForkActivity;
+import club.crabglory.www.etcb.frags.consume.CarActivity;
 import club.crabglory.www.etcb.frags.SettingsActivity;
 import club.crabglory.www.factory.db.Book;
 
@@ -67,18 +65,15 @@ public class MineFragment extends BaseFragment {
                 MineProfileActivity.show(activity, MineProfileActivity.class);
                 break;
             case R.id.rl_fork:
-                RecordForkActivity.show(activity, RecordForkActivity.class);
+                ForkActivity.show(activity, ForkActivity.class);
                 break;
             case R.id.rl_car:
-                RecordCarActivity.show(activity, RecordCarActivity.class);
+                CarActivity.show(activity, CarActivity.class);
                 break;
             case R.id.rl_book:
                 Bundle bundle = new Bundle();
                 bundle.putInt(Book.TYPE, BooksActivity.RECORD);
                 BooksActivity.show((BaseActivity) activity, BooksActivity.class,bundle, false );
-                break;
-            case R.id.rl_collect:
-                RecordCollectActivity.show(activity, RecordCollectActivity.class);
                 break;
             case R.id.iv_settings:
                 SettingsActivity.show(activity, SettingsActivity.class);
@@ -87,13 +82,13 @@ public class MineFragment extends BaseFragment {
                 PayActivity.show(activity, PayActivity.class);
                 break;
             case R.id.cv_micro:
-                MicroActivity.show( activity, MicroActivity.class);
+                MicroUpActivity.show( activity, MicroUpActivity.class);
                 break;
             case R.id.cv_message:
                 MessageActivity.show(activity, MessageActivity.class);
                 break;
             case R.id.cv_live:
-                LiveActivity.show(activity, LiveActivity.class);
+//                LiveActivity.show(activity, LiveActivity.class);
                 break;
             case R.id.cv_books:
                 UploadBookActivity.show(activity, UploadBookActivity.class);

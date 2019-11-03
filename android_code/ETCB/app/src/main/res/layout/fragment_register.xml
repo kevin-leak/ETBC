@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingLeft="@dimen/len_15"
+    android:paddingRight="@dimen/len_15"
+    android:paddingBottom="@dimen/len_20">
+
+
+    <RelativeLayout
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_name" />
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:hint="@string/userName" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_phone" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:hint="@string/phoneHint" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_sex" />
+
+        <EditText
+            android:id="@+id/et_sex"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:hint="@string/sex" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_psd" />
+
+        <EditText
+            android:id="@+id/et_psd"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:hint="@string/psdHint" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_psd" />
+
+        <EditText
+            android:id="@+id/et_re_psd"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:hint="@string/rePsdHint" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

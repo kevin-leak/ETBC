@@ -156,7 +156,7 @@
 
                 <TextView
                     style="@style/mine_record_text"
-                    android:text="@string/collect" />
+                    android:text="@string/collect_count" />
 
             </RelativeLayout>
 

@@ -1,11 +1,13 @@
 package club.crabglory.www.etcb;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
 import club.crabglory.www.common.basic.BaseActivity;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
 /**
@@ -24,6 +26,8 @@ public class LaunchActivity extends BaseActivity {
     @Override
     protected void initWidget() {
         super.initWidget();
+        EasyPermissions.requestPermissions(this, "录像权限申请", 0 ,
+                Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         /* todo animation
          * 1. 图标缓慢显示
          * 2. 抖动

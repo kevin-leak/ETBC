@@ -51,8 +51,17 @@ dependencies {
 
     implementation "com.cjj.materialrefeshlayout:library:$rootProject.ext.refeshlayoutVersion"
 
+
+    // 权限
+
+    // For developers using the Android Support Library
+    implementation 'pub.devrel:easypermissions:2.0.1'
+
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
     //网络库
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+
     api project(':common')
     api project(':factory')
 }

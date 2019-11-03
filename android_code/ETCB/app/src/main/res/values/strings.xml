@@ -50,4 +50,22 @@
     <string name="cancel">Cancel</string>
     <string name="alipay">Alipay</string>
     <string name="bind_state">Not Bind</string>
+    <string name="collect_count">1.5 w</string>
+    <string name="bookName">物品名称</string>
+    <string name="bookCount">物品数量</string>
+    <string name="bookPrice">物品单价</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+    <string name="signUp">SignUp</string>
+    <string name="phoneHint">intput phone</string>
+    <string name="psdHint">password</string>
+    <string name="forget_password">forget password?</string>
+    <string name="rePsdHint">reInput</string>
+    <string name="count">COUNT:</string>
+    <string name="book_title">Book Title</string>
+    <string name="up_video">up video</string>
+    <string name="bookDescription">Description</string>
+    <string name="author">author</string>
+    <string name="details">Details</string>
+    <string name="label_chat_edit_hint">input text</string>
 </resources>

@@ -28,11 +28,13 @@ import club.crabglory.www.common.view.video.FullWindowVideoView;
 import club.crabglory.www.common.view.video.MyLayoutManager;
 import club.crabglory.www.common.view.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
+import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.factory.db.MicroVideo;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.support.constraint.Constraints.TAG;
+
 /**
- *
  * 微读阁
  * 关注，收藏，特效
  * 直播
@@ -54,6 +56,7 @@ public class AtticFragment extends BaseFragment {
     private int position;
     private View itemView;
     private ArrayList<MicroVideo> microVideos;
+
 
 
     @Override
@@ -83,6 +86,7 @@ public class AtticFragment extends BaseFragment {
             @Override
             public void onInitComplete() {
             }
+
             @Override
             public void onPageRelease(boolean isNext, int position) {
                 Log.e(TAG, "释放位置:" + position + " 下一页:" + isNext);
@@ -106,7 +110,7 @@ public class AtticFragment extends BaseFragment {
                 AtticFragment.this.position = position;
                 Log.e(TAG, "选择位置:" + position + " 下一页:" + bottom);
                 View itemView = rvMicro.getChildAt(position);
-                if (itemView != null){
+                if (itemView != null) {
                     final FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
                     videoView.start();
                 }
@@ -116,7 +120,7 @@ public class AtticFragment extends BaseFragment {
     }
 
 
-     class VideoHolder extends RecyclerAdapter.ViewHolder<MicroVideo> {
+    class VideoHolder extends RecyclerAdapter.ViewHolder<MicroVideo> {
 
         @BindView(R.id.video_view)
         FullWindowVideoView videoView;
@@ -126,6 +130,8 @@ public class AtticFragment extends BaseFragment {
         ImageView imgPlay;
         @BindView(R.id.root_view)
         RelativeLayout rootView;
+        @BindView(R.id.civ_avatar)
+        CircleImageView civ_avatar;
 
         public VideoHolder(View root) {
             super(root);
@@ -134,8 +140,9 @@ public class AtticFragment extends BaseFragment {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
         @Override
         protected void onBind(MicroVideo microVideo) {
-            Log.e(TAG, "onBind: " + " image and view to load" );
+            Log.e(TAG, "onBind: " + " image and view to load");
             imgThumb.setImageResource(microVideo.getImg());
+            civ_avatar.setImageResource(microVideo.getImg());
             videoView.setVideoURI(Uri.parse("android.resource://" +
                     AtticFragment.this.getActivity().getPackageName() + "/" + microVideo.getVideo()));
             videoView.setOnInfoListener(new MediaPlayer.OnInfoListener() {
@@ -144,6 +151,23 @@ public class AtticFragment extends BaseFragment {
                     mp.setLooping(true);
                     imgThumb.animate().alpha(0).setDuration(200).start();
                     return false;
+                }
+            });
+
+            rootView.setOnClickListener(new View.OnClickListener() {
+                boolean isPlaying = true;
+
+                @Override
+                public void onClick(View v) {
+                    if (videoView.isPlaying()) {
+                        imgPlay.animate().alpha(0.7f).start();
+                        videoView.pause();
+                        isPlaying = false;
+                    } else {
+                        imgPlay.animate().alpha(0f).start();
+                        videoView.start();
+                        isPlaying = true;
+                    }
                 }
             });
 
@@ -165,13 +189,17 @@ public class AtticFragment extends BaseFragment {
             });
             videoView.start();
         }
+        @OnClick(R.id.civ_avatar)
+        public void onClick() {
+            AccountActivity.show(AtticFragment.this.getActivity(), AccountActivity.class);
+        }
 
     }
 
     @Override
     protected void initData() {
         super.initData();
-        Log.e(TAG, "initData: " );
+        Log.e(TAG, "initData: ");
         testData();
     }
 
@@ -180,12 +208,12 @@ public class AtticFragment extends BaseFragment {
         int[] videos = {R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_8};
 
         microVideos = new ArrayList<>();
-        for (int i = 0; i < imgs.length; i++){
+        for (int i = 0; i < imgs.length; i++) {
             MicroVideo microVideo = new MicroVideo();
             microVideo.setImg(imgs[i]);
             microVideo.setVideo(videos[i]);
             microVideos.add(microVideo);
-            Log.e(TAG, "initData: " );
+            Log.e(TAG, "initData: ");
         }
         videoAdapter.add(microVideos);
     }
@@ -195,13 +223,13 @@ public class AtticFragment extends BaseFragment {
     public void onPause() {
         itemView = rvMicro.getChildAt(position);
         Log.e(TAG, "onPause: " + position);
-        if (itemView != null){
+        if (itemView != null) {
             Log.e(TAG, "onPause: " + position);
             final VideoView videoView = itemView.findViewById(R.id.video_view);
             final ImageView imgThumb = itemView.findViewById(R.id.img_thumb);
 
             videoView.stopPlayback();
-            imgThumb.setImageResource( microVideos.get(position).getImg());
+            imgThumb.setImageResource(microVideos.get(position).getImg());
             imgThumb.animate().alpha(1).start();
         }
         super.onPause();
@@ -210,11 +238,13 @@ public class AtticFragment extends BaseFragment {
     @Override
     public void onResume() {
         View itemView = rvMicro.getChildAt(position);
-        if (itemView != null){
-            Log.e(TAG, "onResume: " );
-             FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
+        if (itemView != null) {
+            Log.e(TAG, "onResume: ");
+            FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
             videoView.start();
         }
         super.onResume();
     }
+
+
 }

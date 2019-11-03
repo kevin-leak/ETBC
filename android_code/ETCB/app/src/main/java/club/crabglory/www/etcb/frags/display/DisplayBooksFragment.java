@@ -16,8 +16,8 @@ import club.crabglory.www.common.basic.BaseActivity;
 import club.crabglory.www.common.basic.BaseFragment;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.BooksActivity;
-import club.crabglory.www.etcb.frags.BooksShopActivity;
+import club.crabglory.www.etcb.frags.book.BooksActivity;
+import club.crabglory.www.etcb.frags.book.BooksShopActivity;
 import club.crabglory.www.etcb.holders.RandomHolder;
 import club.crabglory.www.factory.db.Book;
 

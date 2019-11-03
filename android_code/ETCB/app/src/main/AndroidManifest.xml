@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="club.crabglory.www.etcb">
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,29 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <meta-data
-            android:name="android.max_aspect"
-            android:value="2.1" />
-        <activity android:name=".frags.UploadBookActivity"/>
+        <activity android:name=".frags.chat.ChatActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme"/>
+        <activity android:name=".frags.account.AccountActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme" />
+        <activity android:name=".frags.display.VideoShowActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme" />
+        <activity android:name=".frags.book.UploadBookActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme"/>
         <activity android:name=".frags.SearchActivity" />
         <activity android:name=".frags.LiveActivity" />
-        <activity android:name=".frags.MessageActivity"
+        <activity android:name=".frags.chat.MessageActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
-        <activity android:name=".frags.MicroActivity" />
-        <activity android:name=".frags.record.RecordCollectActivity" />
-        <activity android:name=".frags.record.RecordCarActivity" />
-        <activity android:name=".frags.record.RecordForkActivity"
+        <activity android:name=".frags.MicroUpActivity" />
+        <activity android:name=".frags.consume.CarActivity"
+            android:theme="@style/AppTheme.BarDefaultTheme"/>
+        <activity android:name=".frags.chat.ForkActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
         <activity android:name=".frags.SettingsActivity"
             android:theme="@style/AppTheme.BarDefaultTheme" />
-        <activity android:name=".frags.PayActivity"
+        <activity android:name=".frags.consume.PayActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
-        <activity android:name=".frags.mine.MineProfileActivity"
+        <activity android:name=".frags.display.MineProfileActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
-        <activity android:name=".frags.mine.MineDisplayActivity"
+        <activity android:name=".frags.display.MineDisplayActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
         <activity
-            android:name=".frags.BooksShopActivity"
+            android:name=".frags.book.BooksShopActivity"
             android:theme="@style/AppTheme.DefaultActivity" />
         <activity
             android:name=".MainActivity"
@@ -48,7 +55,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".frags.BooksActivity"
+            android:name=".frags.book.BooksActivity"
             android:theme="@style/AppTheme.DefaultActivity" />
     </application>
 

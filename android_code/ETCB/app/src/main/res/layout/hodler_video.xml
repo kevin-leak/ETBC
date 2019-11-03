@@ -34,6 +34,7 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_avatar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
@@ -84,7 +85,7 @@
         android:id="@+id/img_play"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@mipmap/ic_live_profile_paly"
+        android:src="@mipmap/ic_live_profile_play"
         android:clickable="true"
         android:focusable="true"
         android:tint="#f2f2f2"

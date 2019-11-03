@@ -1,5 +1,6 @@
 package club.crabglory.www.etcb;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -15,6 +16,7 @@ import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;
 import club.crabglory.www.etcb.main.AtticFragment;
 import club.crabglory.www.etcb.main.MineFragment;
+import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends BaseActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener, NavHelper.OnNavChangeListener {
@@ -38,6 +40,8 @@ public class MainActivity extends BaseActivity implements
     protected void initWindows() {
         super.initWindows();
         StatusBarUtils.setDarkColor(getWindow());
+        EasyPermissions.requestPermissions(this, "录像权限申请", 0 ,
+                Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
     @Override

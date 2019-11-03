@@ -19,7 +19,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/toolBarDefault"
-            android:paddingTop="@dimen/len_20"
             android:background="@color/secondWindowBackgroundColor"
             app:theme="@style/myToolBar"
             app:title="@string/message"
