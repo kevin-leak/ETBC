@@ -84,4 +84,10 @@
     <dimen name="len_160">160dp</dimen>
     <dimen name="len_44">44dp</dimen>
     <dimen name="len_68">68dp</dimen>
+    <dimen name="len_46">46dp</dimen>
+    <dimen name="len_56">46dp</dimen>
+    <dimen name="len_76">76dp</dimen>
+    <dimen name="len_86">86dp</dimen>
+    <dimen name="len_220">220dp</dimen>
+    <dimen name="len_440">440dp</dimen>
 </resources>

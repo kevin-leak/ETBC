@@ -37,10 +37,28 @@ public abstract class ToolbarActivity extends BaseActivity {
             mToolbar.setNavigationIcon(R.drawable.ic_back);
             setSupportActionBar(toolbar);
         }
-        initTitleNeedBack();
+        if(needBack()){
+            initTitleBack();
+        }else {
+            deleteBack();
+        }
+
     }
 
-    protected void initTitleNeedBack() {
+    protected  boolean needBack(){
+        return true;
+    }
+
+    private void deleteBack() {
+        // 设置左上角的返回按钮为实际的返回效果
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setHomeButtonEnabled(false);
+        }
+    }
+
+    private void initTitleBack() {
         // 设置左上角的返回按钮为实际的返回效果
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

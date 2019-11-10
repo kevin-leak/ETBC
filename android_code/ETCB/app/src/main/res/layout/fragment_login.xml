@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="30dp"
+    android:paddingTop="10dp"
     android:paddingLeft="@dimen/len_15"
     android:paddingRight="@dimen/len_15"
     android:paddingBottom="@dimen/len_20">
@@ -51,6 +51,8 @@
         android:text="@string/forget_password"
         android:layout_gravity="center"
         android:gravity="center_vertical|end"
-        android:textColor="@color/etcb"/>
+        android:textSize="@dimen/font_14"
+        android:layout_marginTop="@dimen/len_10"
+        android:textColor="@color/gray"/>
 
 </LinearLayout>

@@ -3,6 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/secondWindowBackgroundColor"
+    android:layout_marginTop="@dimen/len_0_5"
     android:paddingTop="@dimen/len_10"
     android:paddingBottom="@dimen/len_10"
     android:paddingLeft="@dimen/len_5"
@@ -15,7 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bar"
         android:orientation="horizontal"
-        android:background="@color/colorWhite"
         android:layout_marginTop="1dp">
 
         <CheckBox

@@ -133,6 +133,17 @@
         <item name="android:drawableRight">@drawable/more_gray</item>
     </style>
 
+    <style name="mine_do_add_text">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/len_1</item>
+        <item name="android:layout_gravity"> center_vertical|end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/len_35</item>
+        <item name="android:textSize">@dimen/fon_16</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
     <!--    自定义的toolbar back -->
     <style name="myToolBar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="colorControlNormal">@color/gray</item>
@@ -215,5 +226,15 @@
         <item name="android:layout_marginLeft">@dimen/len_40</item>
         <item name="android:layout_marginBottom">@dimen/len_15</item>
         <item name="android:textSize">@dimen/fon_16</item>
+    </style>
+
+
+    <!--  attic holder text -->
+    <style name="attic_holder_text">
+        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:layout_width">@dimen/len_50</item>
+        <item name="android:layout_marginTop">@dimen/len_16</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>

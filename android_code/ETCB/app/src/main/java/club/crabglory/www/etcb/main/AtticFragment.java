@@ -57,8 +57,6 @@ public class AtticFragment extends BaseFragment {
     private View itemView;
     private ArrayList<MicroVideo> microVideos;
 
-
-
     @Override
     protected int getContentLayoutId() {
         return R.layout.fragment_nav_micro;
@@ -218,33 +216,33 @@ public class AtticFragment extends BaseFragment {
         videoAdapter.add(microVideos);
     }
 
-
-    @Override
-    public void onPause() {
-        itemView = rvMicro.getChildAt(position);
-        Log.e(TAG, "onPause: " + position);
-        if (itemView != null) {
-            Log.e(TAG, "onPause: " + position);
-            final VideoView videoView = itemView.findViewById(R.id.video_view);
-            final ImageView imgThumb = itemView.findViewById(R.id.img_thumb);
-
-            videoView.stopPlayback();
-            imgThumb.setImageResource(microVideos.get(position).getImg());
-            imgThumb.animate().alpha(1).start();
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        View itemView = rvMicro.getChildAt(position);
-        if (itemView != null) {
-            Log.e(TAG, "onResume: ");
-            FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
-            videoView.start();
-        }
-        super.onResume();
-    }
+//
+//    @Override
+//    public void onPause() {
+//        itemView = rvMicro.getChildAt(position);
+//        Log.e(TAG, "onPause: " + position);
+//        if (itemView != null) {
+//            Log.e(TAG, "onPause: " + position);
+//            final VideoView videoView = itemView.findViewById(R.id.video_view);
+//            final ImageView imgThumb = itemView.findViewById(R.id.img_thumb);
+//
+//            videoView.stopPlayback();
+//            imgThumb.setImageResource(microVideos.get(position).getImg());
+//            imgThumb.animate().alpha(1).start();
+//        }
+//        super.onPause();
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        View itemView = rvMicro.getChildAt(position);
+//        if (itemView != null) {
+//            Log.e(TAG, "onResume: ");
+//            FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
+//            videoView.start();
+//        }
+//        super.onResume();
+//    }
 
 
 }

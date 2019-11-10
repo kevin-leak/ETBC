@@ -52,7 +52,7 @@ public class MineFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.civ_avatar, R.id.rl_user_info,
+    @OnClick({R.id.civ_avatar, R.id.rl_profile,
             R.id.rl_fork, R.id.rl_car, R.id.rl_book, R.id.rl_collect, R.id.iv_settings,
             R.id.cv_pay, R.id.cv_micro, R.id.cv_message, R.id.cv_live, R.id.cv_books})
     public void onClick(View view) {
@@ -61,7 +61,7 @@ public class MineFragment extends BaseFragment {
             case R.id.civ_avatar:
                 MineDisplayActivity.show(activity, MineDisplayActivity.class);
                 break;
-            case R.id.rl_user_info:
+            case R.id.rl_profile:
                 MineProfileActivity.show(activity, MineProfileActivity.class);
                 break;
             case R.id.rl_fork:

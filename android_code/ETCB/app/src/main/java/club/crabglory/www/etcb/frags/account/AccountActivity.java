@@ -4,10 +4,15 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -69,18 +74,26 @@ public class AccountActivity extends ToolbarActivity
         helper.setNavNegativeColor(R.color.alpha);
         helper.addItem(navigationList.get(0), new LoginFragment())
                 .addItem(navigationList.get(1), new RegisterFragment());
+
+
     }
 
     @Override
     public void onChangedFragment(Fragment currentFragment) {
+
+        ConstraintLayout.LayoutParams param = (ConstraintLayout.LayoutParams) linearLayout.getLayoutParams();
         if (currentFragment.getClass() == LoginFragment.class) {
             btnSubmit.setText(R.string.login);
             tvLogin.setTextColor(getResources().getColor(R.color.white));
             tvSignUp.setTextColor(getResources().getColor(R.color.whiteGray));
+            param.matchConstraintPercentHeight = 0.4F;
+            linearLayout.setLayoutParams(param);
         }else {
             btnSubmit.setText(R.string.signUp);
             tvSignUp.setTextColor(getResources().getColor(R.color.white));
             tvLogin.setTextColor(getResources().getColor(R.color.whiteGray));
+            param.matchConstraintPercentHeight = 0.6F;
+            linearLayout.setLayoutParams(param);
         }
     }
 

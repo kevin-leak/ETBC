@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/len_0_5"
         tools:targetApi="lollipop">
 
         <android.support.v7.widget.Toolbar
@@ -29,7 +30,7 @@
 
     <com.cjj.MaterialRefreshLayout
         android:id="@+id/mrl_refresh"
-        android:layout_marginTop="@dimen/actionBarSize"
+        android:layout_below="@id/cardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:isLoadMore="true"

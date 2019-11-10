@@ -63,8 +63,7 @@
                 android:layout_marginLeft="@dimen/len_20"
                 android:layout_marginStart="@dimen/len_20"
                 style="@style/mine_do_text"
-                android:text="@string/avatar"
-                tools:ignore="RtlSymmetry" />
+                android:text="@string/avatar" />
 
         </RelativeLayout>
 
@@ -80,23 +79,14 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/font_16"
-            android:elevation="@dimen/len_1"
-            android:gravity="center_vertical"
-            android:layout_marginRight="@dimen/len_35"
-            android:layout_gravity="center_vertical|end"
-            android:text="@string/kevin"
-            tools:ignore="RtlSymmetry" />
+            style="@style/mine_do_add_text"
+            android:text="@string/kevin" />
 
         <TextView
             android:background="@drawable/mine_do_border"
             android:layout_marginLeft="@dimen/len_20"
             style="@style/mine_do_text"
             android:text="@string/userName"
-            tools:ignore="RtlSymmetry"
             android:layout_marginStart="@dimen/len_20" />
 
     </android.support.v7.widget.CardView>
@@ -109,23 +99,14 @@
         tools:ignore="MissingConstraints">
         <TextView
             android:id="@+id/tv_phone"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/font_16"
-            android:gravity="center_vertical"
-            android:elevation="@dimen/len_1"
-            android:layout_marginRight="@dimen/len_35"
-            android:layout_gravity="center_vertical|end"
-            android:text="@string/phone"
-            tools:ignore="RtlSymmetry" />
+            style="@style/mine_do_add_text"
+            android:text="@string/phone" />
 
         <TextView
             android:background="@drawable/mine_do_border"
             android:layout_marginLeft="@dimen/len_20"
             style="@style/mine_do_text"
             android:text="@string/phone"
-            tools:ignore="RtlSymmetry"
             android:layout_marginStart="@dimen/len_20" />
 
     </android.support.v7.widget.CardView>
@@ -138,24 +119,15 @@
         tools:ignore="MissingConstraints">
 
         <TextView
+            style="@style/mine_do_add_text"
             android:id="@+id/tv_sex"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/font_16"
-            android:elevation="@dimen/len_1"
-            android:gravity="center_vertical"
-            android:layout_marginRight="@dimen/len_35"
-            android:layout_gravity="center_vertical|end"
-            android:text="@string/male"
-            tools:ignore="RtlSymmetry" />
+            android:text="@string/male" />
 
         <TextView
             android:background="@drawable/mine_do_border"
             android:layout_marginLeft="@dimen/len_20"
             style="@style/mine_do_text"
             android:text="@string/sex"
-            tools:ignore="RtlSymmetry"
             android:layout_marginStart="@dimen/len_20" />
 
     </android.support.v7.widget.CardView>
