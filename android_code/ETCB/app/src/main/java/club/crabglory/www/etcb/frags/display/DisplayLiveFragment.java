@@ -17,9 +17,8 @@ import butterknife.BindView;
 import club.crabglory.www.common.basic.BaseFragment;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.holders.RandomHolder;
-import club.crabglory.www.factory.db.Book;
-import club.crabglory.www.factory.db.Live;
+import club.crabglory.www.data.db.Book;
+import club.crabglory.www.data.db.Live;
 
 public class DisplayLiveFragment extends BaseFragment {
 

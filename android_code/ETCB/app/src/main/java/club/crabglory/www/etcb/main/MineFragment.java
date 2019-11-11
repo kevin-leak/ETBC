@@ -22,7 +22,7 @@ import club.crabglory.www.etcb.frags.display.MineProfileActivity;
 import club.crabglory.www.etcb.frags.chat.ForkActivity;
 import club.crabglory.www.etcb.frags.consume.CarActivity;
 import club.crabglory.www.etcb.frags.SettingsActivity;
-import club.crabglory.www.factory.db.Book;
+import club.crabglory.www.data.db.Book;
 
 public class MineFragment extends BaseFragment {
 

@@ -19,7 +19,7 @@ import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 import club.crabglory.www.etcb.frags.book.BooksShopActivity;
 import club.crabglory.www.etcb.holders.RandomHolder;
-import club.crabglory.www.factory.db.Book;
+import club.crabglory.www.data.db.Book;
 
 public class DisplayBooksFragment extends BaseFragment {
 

@@ -16,7 +16,7 @@ import butterknife.OnClick;
 import club.crabglory.www.common.basic.BaseFragment;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.factory.db.MicroVideo;
+import club.crabglory.www.data.db.MicroVideo;
 
 public class DisplayMicroFragment extends BaseFragment {
     @BindView(R.id.rv_sum)

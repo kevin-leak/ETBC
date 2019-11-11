@@ -2,22 +2,17 @@ package club.crabglory.www.etcb.frags;
 
 import android.Manifest;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.view.View;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 //import com.wkp.runtimepermissions.callback.PermissionCallBack;
 //import com.wkp.runtimepermissions.util.RuntimePermissionUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import club.crabglory.www.common.basic.ToolbarActivity;
-import club.crabglory.www.common.recordView.widget.DouyinView;
-import club.crabglory.www.common.recordView.widget.RecordButton;
+import club.crabglory.www.common.view.recordView.widget.DouyinView;
+import club.crabglory.www.common.view.recordView.widget.RecordButton;
 import club.crabglory.www.etcb.R;
 import pub.devrel.easypermissions.EasyPermissions;
 

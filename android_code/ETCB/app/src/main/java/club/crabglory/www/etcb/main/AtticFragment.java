@@ -3,15 +3,11 @@ package club.crabglory.www.etcb.main;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
@@ -19,9 +15,7 @@ import android.widget.VideoView;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 import club.crabglory.www.common.basic.BaseFragment;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.common.view.video.FullWindowVideoView;
@@ -29,10 +23,8 @@ import club.crabglory.www.common.view.video.MyLayoutManager;
 import club.crabglory.www.common.view.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
-import club.crabglory.www.factory.db.MicroVideo;
+import club.crabglory.www.data.db.MicroVideo;
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static android.support.constraint.Constraints.TAG;
 
 /**
  * 微读阁

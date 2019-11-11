@@ -17,7 +17,7 @@ import butterknife.OnClick;
 import club.crabglory.www.common.basic.ToolbarActivity;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.factory.db.Follower;
+import club.crabglory.www.data.db.Follower;
 
 public class ForkActivity extends ToolbarActivity {
 

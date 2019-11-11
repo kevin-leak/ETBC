@@ -1,6 +1,5 @@
 package club.crabglory.www.etcb.frags.chat;
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,16 +7,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.ToolbarActivity;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.book.BooksActivity;
-import club.crabglory.www.etcb.frags.book.BooksShopActivity;
-import club.crabglory.www.etcb.frags.consume.CarActivity;
-import club.crabglory.www.factory.db.Chat;
-import club.crabglory.www.factory.db.Goods;
+import club.crabglory.www.data.db.Chat;
+import club.crabglory.www.data.db.Goods;
 
 public class ChatActivity extends ToolbarActivity {
 

@@ -22,12 +22,14 @@
 
 
 
-View
-----
+架构与实现
+----------
 
-### 页面制作
+### View
 
-#### 需要考虑的问题
+#### 页面制作
+
+##### 需要考虑的问题
 
 前端页面的制作，主要是四方面：
 
@@ -38,7 +40,7 @@ View
 
 
 
-#### 第三方库
+##### 第三方库
 
 ```java
 // view 库
@@ -55,13 +57,11 @@ implementation "com.cjj.materialrefeshlayout:library:$rootProject.ext.refeshlayo
 
 
 
-### 主界面展示
+#### 主界面展示
 
-<img src="./meterial/page/splash.jpg" style="z-index: 1; box-shadow: 2px 2px 6px 2px #aaaaaa; border-width:0px; border-radius:5px" width="140" />  <img src="./meterial/page/book.jpg" style="z-index: 1; box-shadow: 2px 2px 6px 2px #aaaaaa; border-width:0px; border-radius:5px" width="140" />   <img src="./meterial/page/attic.jpg" style="z-index: 1; box-shadow: 2px 2px 6px 2px #aaaaaa; border-width:0px; border-radius:5px" width="140" />  <img src="./meterial/page/mine.jpg" style="z-index: 1; box-shadow: 2px 2px 6px 2px #aaaaaa; border-width:0px; border-radius:5px" width="140" />
+<img src="./meterial/page/main_page.png"  />
 
-
-
-### 知识储备
+#### 知识储备
 
 // TODO 
 
@@ -75,17 +75,21 @@ implementation "com.cjj.materialrefeshlayout:library:$rootProject.ext.refeshlayo
 
 
 
-Presenter
----------
+### Presenter
 
 
 
 
 
-Model
------
+
+
+### Model
 
 
 
-Net
----
+
+
+### Net
+
+
+

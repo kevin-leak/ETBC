@@ -7,7 +7,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.factory.db.Book;
+import club.crabglory.www.data.db.Book;
 
 public class RandomHolder extends RecyclerAdapter.ViewHolder<Book> {
 

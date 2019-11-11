@@ -1,12 +1,10 @@
 package club.crabglory.www.etcb.frags.chat;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.cjj.MaterialRefreshLayout;
@@ -16,14 +14,11 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.ToolbarActivity;
 import club.crabglory.www.common.view.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.account.AccountActivity;
-import club.crabglory.www.etcb.main.AtticFragment;
-import club.crabglory.www.factory.db.Message;
+import club.crabglory.www.data.db.Message;
 
 public class MessageActivity extends ToolbarActivity {
 

@@ -65,4 +65,5 @@ dependencies {
 
     api project(':common')
     api project(':factory')
+    api project(':data')
 }
