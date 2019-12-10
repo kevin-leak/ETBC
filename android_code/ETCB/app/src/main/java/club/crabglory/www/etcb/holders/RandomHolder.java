@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
-import club.crabglory.www.common.view.recycler.RecyclerAdapter;
+import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.data.db.Book;
 

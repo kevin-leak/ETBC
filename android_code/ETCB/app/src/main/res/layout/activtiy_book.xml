@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -11,20 +11,33 @@
         android:layout_marginBottom="@dimen/len_2"
         android:elevation="@dimen/len_2"
         tools:targetApi="lollipop">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            app:titleTextColor="@color/blackLess"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="@color/secondWindowBackgroundColor"
             app:theme="@style/myToolBar"
             app:title="@string/Books"
-            android:layout_height="@dimen/actionBarSize"
-            android:background="@color/secondWindowBackgroundColor" />
+            app:titleTextColor="@color/blackLess" />
     </android.support.v7.widget.CardView>
 
-    <FrameLayout
-        android:id="@+id/lay_container"
-        android:layout_marginTop="@dimen/actionBarSize"
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/mrl_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/actionBarSize"
+        app:overlay="false"
+        app:progress_colors="@array/material_colors"
+        app:wave_color="#90B7D7EB"
+        app:wave_height_type="higher"
+        app:wave_show="true">
+
+        <FrameLayout
+            android:id="@+id/lay_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.cjj.MaterialRefreshLayout>
 
 </FrameLayout>

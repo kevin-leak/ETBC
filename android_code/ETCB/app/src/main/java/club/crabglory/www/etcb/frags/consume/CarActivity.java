@@ -12,13 +12,12 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import club.crabglory.www.common.basic.ToolbarActivity;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
-import club.crabglory.www.common.view.recycler.RecyclerAdapter;
+import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 import club.crabglory.www.etcb.frags.book.BooksShopActivity;
-import club.crabglory.www.data.db.Book;
 import club.crabglory.www.data.db.Goods;
 
 public class CarActivity extends ToolbarActivity {

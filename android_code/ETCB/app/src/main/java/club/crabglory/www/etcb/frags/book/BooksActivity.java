@@ -1,14 +1,17 @@
 package club.crabglory.www.etcb.frags.book;
 
 import android.annotation.SuppressLint;
+import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
+
 import butterknife.BindView;
-import club.crabglory.www.common.basic.ToolbarActivity;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.display.DisplayBooksFragment;
 
 public class BooksActivity extends ToolbarActivity {
     public static final int RANDOM = 1;
@@ -18,7 +21,9 @@ public class BooksActivity extends ToolbarActivity {
     FrameLayout flContainer;
     private FragmentManager manager;
     private FragmentTransaction transaction;
-    private DisplayBooksFragment booksFragment;
+    private BookShowFragment booksFragment;
+    @BindView(R.id.mrl_refresh)
+    MaterialRefreshLayout mrlRefresh;
 
 
     @Override
@@ -34,9 +39,34 @@ public class BooksActivity extends ToolbarActivity {
         //开启事务
         transaction = manager.beginTransaction();
         //碎片
-        booksFragment = new DisplayBooksFragment();
+        booksFragment = new BookShowFragment();
         //提交事务
         transaction.add(R.id.lay_container, booksFragment ).commit();
+
+        mrlRefresh.setMaterialRefreshListener(new MaterialRefreshListener() {
+            @Override
+            public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
+                //下拉刷新...
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        //todo
+                        mrlRefresh.finishRefresh();
+                    }
+                }, 1500);
+            }
+
+            @Override
+            public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        //todo
+                        mrlRefresh.finishRefreshLoadMore();
+                    }
+                }, 1500);
+                //上拉加载更多...
+
+            }
+        });
     }
 
     @Override

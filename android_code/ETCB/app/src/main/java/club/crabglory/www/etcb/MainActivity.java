@@ -6,11 +6,12 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import butterknife.BindView;
-import club.crabglory.www.common.basic.BaseActivity;
+import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
 import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;

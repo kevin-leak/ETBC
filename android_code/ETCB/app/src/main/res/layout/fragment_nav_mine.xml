@@ -21,7 +21,7 @@
             android:paddingRight="@dimen/len_10"
             tools:ignore="RtlSymmetry">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <club.crabglory.www.etcb.view.AvatarView
                 android:id="@+id/civ_avatar"
                 android:layout_width="@dimen/len_55"
                 android:layout_height="@dimen/len_55"

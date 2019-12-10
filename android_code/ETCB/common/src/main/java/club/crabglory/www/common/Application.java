@@ -28,7 +28,7 @@ public class Application extends android.app.Application {
         //noinspection ResultOfMethodCallIgnored
         dir.mkdirs();
 
-        // 删除旧的一些缓存为文件
+        // 删除旧的一些缓存文件
         File[] files = dir.listFiles();
         if (files != null && files.length > 0) {
             for (File file : files) {

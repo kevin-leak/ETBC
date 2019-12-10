@@ -1,22 +1,19 @@
 package club.crabglory.www.etcb.hepler;
 
 import android.os.Build;
-import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import club.crabglory.www.common.basic.BaseFragment;
-import club.crabglory.www.common.view.pager.ViewPageAdapter;
+import club.crabglory.www.common.widget.pager.ViewPageAdapter;
 import club.crabglory.www.etcb.R;
 
 /**

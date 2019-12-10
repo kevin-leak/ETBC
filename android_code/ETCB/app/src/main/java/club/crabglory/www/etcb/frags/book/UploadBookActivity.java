@@ -1,6 +1,5 @@
 package club.crabglory.www.etcb.frags.book;
 
-import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -9,8 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import club.crabglory.www.common.basic.ToolbarActivity;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.etcb.R;
 
 public class UploadBookActivity extends ToolbarActivity {

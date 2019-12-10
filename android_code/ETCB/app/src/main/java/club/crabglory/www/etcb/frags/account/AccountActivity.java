@@ -1,42 +1,43 @@
 package club.crabglory.www.etcb.frags.account;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.CardView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.yalantis.ucrop.UCrop;
+
+import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import club.crabglory.www.common.basic.BaseActivity;
-import club.crabglory.www.common.basic.ToolbarActivity;
+import club.crabglory.www.common.Application;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountActivity extends ToolbarActivity
-        implements ViewPageHelper.ViewPagerCallback {
+        implements  ViewPageHelper.ViewPagerCallback {
 
 
     @BindViews({R.id.tv_login, R.id.tv_sign_up})
     List<TextView> navigationList;
-    @BindView(R.id.im_portrait)
-    CircleImageView imPortrait;
     @BindView(R.id.vp_container)
     ViewPager vpContainer;
     @BindView(R.id.linearLayout)
@@ -47,7 +48,13 @@ public class AccountActivity extends ToolbarActivity
     TextView tvLogin;
     @BindView(R.id.tv_sign_up)
     TextView tvSignUp;
+    @BindView(R.id.im_portrait)
+    CircleImageView imPortrait;
+    @BindView(R.id.iv_change_avatar)
+    ImageView ivChangeAvatar;
     private ViewPageHelper<View, Fragment> helper;
+    private Fragment currentFragment;
+    private String mAvatarPath;
 
     @Override
     protected int getContentLayoutId() {
@@ -60,10 +67,6 @@ public class AccountActivity extends ToolbarActivity
         StatusBarUtils.setLightColor(getWindow());
     }
 
-    @OnClick(R.id.btn_submit)
-    public void onClick() {
-        // todo  设置提交相关的信息
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -75,26 +78,94 @@ public class AccountActivity extends ToolbarActivity
         helper.addItem(navigationList.get(0), new LoginFragment())
                 .addItem(navigationList.get(1), new RegisterFragment());
 
-
     }
 
     @Override
     public void onChangedFragment(Fragment currentFragment) {
-
+        this.currentFragment = currentFragment;
         ConstraintLayout.LayoutParams param = (ConstraintLayout.LayoutParams) linearLayout.getLayoutParams();
         if (currentFragment.getClass() == LoginFragment.class) {
             btnSubmit.setText(R.string.login);
             tvLogin.setTextColor(getResources().getColor(R.color.white));
             tvSignUp.setTextColor(getResources().getColor(R.color.whiteGray));
+            ivChangeAvatar.setVisibility(View.GONE);
             param.matchConstraintPercentHeight = 0.4F;
             linearLayout.setLayoutParams(param);
-        }else {
+        } else {
             btnSubmit.setText(R.string.signUp);
             tvSignUp.setTextColor(getResources().getColor(R.color.white));
             tvLogin.setTextColor(getResources().getColor(R.color.whiteGray));
+            ivChangeAvatar.setVisibility(View.VISIBLE);
             param.matchConstraintPercentHeight = 0.6F;
             linearLayout.setLayoutParams(param);
         }
+    }
+
+
+    @OnClick({R.id.btn_submit, R.id.iv_change_avatar})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_change_avatar:
+                if (currentFragment.getClass() == LoginFragment.class) break;
+                selectAvatar();
+                break;
+            case R.id.btn_submit:
+                if (currentFragment.getClass() == LoginFragment.class) {
+                    ((LoginFragment) currentFragment).preLogin();
+                } else {
+                    ((RegisterFragment) currentFragment).preRegister(mAvatarPath);
+                }
+                break;
+        }
+    }
+
+    private void selectAvatar() {
+        new GalleryFragment()
+                .setListener(new GalleryFragment.OnSelectedListener() {
+                    @Override
+                    public void onSelectedImage(String path) {
+                        UCrop.Options options = new UCrop.Options();
+                        // 设置图片处理的格式JPEG
+                        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+                        // 设置压缩后的图片精度
+                        options.setCompressionQuality(96);
+
+                        // 得到头像的缓存地址
+                        File dPath = Application.getAvatarTmpFile();
+
+                        // 发起剪切
+                        UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
+                                .withAspectRatio(1, 1) // 1比1比例
+                                .withMaxResultSize(520, 520) // 返回最大的尺寸
+                                .withOptions(options) // 相关参数
+                                .start(AccountActivity.this);
+                    }
+                }).show(getSupportFragmentManager(), GalleryFragment.class.getName());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        /// 收到从Activity传递过来的回调，然后取出其中的值进行图片加载
+        // 如果是我能够处理的类型
+        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
+            // 通过UCrop得到对应的Uri
+            final Uri resultUri = UCrop.getOutput(data);
+            if (resultUri != null) {
+                loadPortrait(resultUri);
+            }
+        } else if (resultCode == UCrop.RESULT_ERROR) {
+            Application.showToast(this, R.string.data_rsp_error_unknown);
+        }
+    }
+
+    private void loadPortrait(Uri uri) {
+        // 得到头像地址
+        mAvatarPath = uri.getPath();
+        Glide.with(AccountActivity.this)
+                .load(uri)
+                .asBitmap()
+                .centerCrop()
+                .into(imPortrait);
     }
 
 }

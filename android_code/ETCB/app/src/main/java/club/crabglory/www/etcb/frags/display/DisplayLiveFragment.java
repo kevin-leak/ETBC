@@ -14,10 +14,9 @@ import com.cjj.MaterialRefreshListener;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import club.crabglory.www.common.basic.BaseFragment;
-import club.crabglory.www.common.view.recycler.RecyclerAdapter;
+import club.crabglory.www.common.basic.view.BaseFragment;
+import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.db.Book;
 import club.crabglory.www.data.db.Live;
 
 public class DisplayLiveFragment extends BaseFragment {
@@ -25,8 +24,6 @@ public class DisplayLiveFragment extends BaseFragment {
     private final String TAG = "DisplayLiveFragment";
     @BindView(R.id.rv_sum)
     RecyclerView rvSum;
-    @BindView(R.id.mrl_refresh)
-    MaterialRefreshLayout mrlRefresh;
     private RecyclerAdapter<Live> sumLive;
 
     @Override
@@ -37,31 +34,6 @@ public class DisplayLiveFragment extends BaseFragment {
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
-
-        mrlRefresh.setMaterialRefreshListener(new MaterialRefreshListener() {
-            @Override
-            public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
-                //下拉刷新...
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        //todo
-                        mrlRefresh.finishRefresh();
-                    }
-                }, 1500);
-            }
-
-            @Override
-            public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        //todo
-                        mrlRefresh.finishRefreshLoadMore();
-                    }
-                }, 1500);
-                //上拉加载更多...
-
-            }
-        });
 
         rvSum.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         sumLive = new RecyclerAdapter<Live>() {

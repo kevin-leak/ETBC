@@ -10,9 +10,9 @@ import android.widget.RadioGroup;
 //import com.wkp.runtimepermissions.util.RuntimePermissionUtil;
 
 import butterknife.BindView;
-import club.crabglory.www.common.basic.ToolbarActivity;
-import club.crabglory.www.common.view.recordView.widget.DouyinView;
-import club.crabglory.www.common.view.recordView.widget.RecordButton;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
+import club.crabglory.www.common.widget.recordView.widget.DouyinView;
+import club.crabglory.www.common.widget.recordView.widget.RecordButton;
 import club.crabglory.www.etcb.R;
 import pub.devrel.easypermissions.EasyPermissions;
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <club.crabglory.www.common.view.video.FullWindowVideoView
+    <club.crabglory.www.common.widget.video.FullWindowVideoView
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,7 +82,7 @@
         android:src="@mipmap/ic_live_profile_play"
         android:tint="#f2f2f2" />
 
-    <club.crabglory.www.common.view.video.Love
+    <club.crabglory.www.common.widget.video.Love
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

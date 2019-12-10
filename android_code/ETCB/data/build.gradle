@@ -34,3 +34,6 @@ dependencies {
     api project(':common')
 
 }
+repositories {
+    mavenCentral()
+}

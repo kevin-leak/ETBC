@@ -9,8 +9,8 @@ import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import club.crabglory.www.common.basic.BaseActivity;
-import club.crabglory.www.common.basic.BaseFragment;
+import club.crabglory.www.common.basic.view.BaseActivity;
+import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 import club.crabglory.www.etcb.frags.book.UploadBookActivity;
@@ -23,12 +23,13 @@ import club.crabglory.www.etcb.frags.chat.ForkActivity;
 import club.crabglory.www.etcb.frags.consume.CarActivity;
 import club.crabglory.www.etcb.frags.SettingsActivity;
 import club.crabglory.www.data.db.Book;
+import club.crabglory.www.etcb.view.AvatarView;
 
 public class MineFragment extends BaseFragment {
 
 
     @BindView(R.id.civ_avatar)
-    RoundedImageView civAvatar;
+    AvatarView civAvatar;
     @BindView(R.id.tv_name)
     TextView tvName;
     @BindView(R.id.tv_phone)

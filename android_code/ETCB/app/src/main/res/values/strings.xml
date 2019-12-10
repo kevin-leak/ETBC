@@ -71,4 +71,5 @@
     <string name="del">Del</string>
     <string name="sum">Sum：</string>
     <string name="all">ALL</string>
+    <string name="data_rsp_error_unknown" > response error unknown </string>
 </resources>

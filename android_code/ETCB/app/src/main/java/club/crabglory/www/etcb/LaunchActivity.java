@@ -1,12 +1,9 @@
 package club.crabglory.www.etcb;
 
 import android.Manifest;
-import android.content.Intent;
 import android.os.Handler;
-import android.view.View;
-import android.widget.ImageView;
 
-import club.crabglory.www.common.basic.BaseActivity;
+import club.crabglory.www.common.basic.view.BaseActivity;
 import pub.devrel.easypermissions.EasyPermissions;
 
 

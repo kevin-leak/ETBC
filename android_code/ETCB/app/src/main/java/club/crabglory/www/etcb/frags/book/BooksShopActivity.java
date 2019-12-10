@@ -2,7 +2,7 @@ package club.crabglory.www.etcb.frags.book;
 
 import android.os.Bundle;
 
-import club.crabglory.www.common.basic.ToolbarActivity;
+import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.etcb.R;
 
 public class BooksShopActivity extends ToolbarActivity {

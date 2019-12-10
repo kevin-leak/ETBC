@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import club.crabglory.www.common.basic.BaseFragment;
-import club.crabglory.www.common.view.recycler.RecyclerAdapter;
-import club.crabglory.www.common.view.video.FullWindowVideoView;
-import club.crabglory.www.common.view.video.MyLayoutManager;
-import club.crabglory.www.common.view.video.OnViewPagerListener;
+import club.crabglory.www.common.basic.view.BaseFragment;
+import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.common.widget.video.FullWindowVideoView;
+import club.crabglory.www.common.widget.video.MyLayoutManager;
+import club.crabglory.www.common.widget.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.data.db.MicroVideo;

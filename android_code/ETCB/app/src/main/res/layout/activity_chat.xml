@@ -1,4 +1,4 @@
-<club.crabglory.www.common.view.ChatLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<club.crabglory.www.common.widget.ChatLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lay_content"
@@ -102,4 +102,4 @@
     </LinearLayout>
 
 
-</club.crabglory.www.common.view.ChatLayout>
+</club.crabglory.www.common.widget.ChatLayout>

@@ -2,7 +2,9 @@ package club.crabglory.www.data.db;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+import club.crabglory.www.common.basic.model.BaseDdModel;
+
+public class Book extends BaseDdModel<Book> implements Serializable {
 
     public static final String TYPE = "TYPE";
     private int image;
@@ -26,4 +28,13 @@ public class Book implements Serializable {
     public void setPrice(double price) { this.price = price + " $"; }
     public String getPrice() { return price; }
 
+    @Override
+    public boolean isSame(Book old) {
+        return false;
+    }
+
+    @Override
+    public boolean isUiContentSame(Book old) {
+        return false;
+    }
 }

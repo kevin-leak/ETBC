@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="white_alpha_48">#30ffffff</color>
+    <color name="nodeLine">#d6d6d6</color>
+    <color name="taskInfoColor">#9f9f9f</color>
+    <color name="receiveSecondColor">#56AF1A</color>
+    <color name="commitSecondColor">#296d0b</color>
+    <color name="activeSecondColor">#d81e06</color>
+    <color name="black_alpha_16">#10000000</color>
+    <color name="black_alpha_32">#20000000</color>
+    <color name="black_alpha_0">#00000000</color>
+    <color name="black_alpha_112">#70000000</color>
+    <color name="white_alpha_192">#c0ffffff</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="black_alpha_228" >#e4010c13</color>
+    <color name="black_alpha_195">#c3010c13</color>
+    <color name="textPrimary">#4e5864</color>
 </resources>
