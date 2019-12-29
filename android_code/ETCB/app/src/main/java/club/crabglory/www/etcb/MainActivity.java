@@ -2,17 +2,20 @@ package club.crabglory.www.etcb;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;
 import club.crabglory.www.etcb.main.AtticFragment;
@@ -26,6 +29,8 @@ public class MainActivity extends BaseActivity implements
     BottomNavigationView mNavigation;
     private NavHelper mHelper;
     private Menu menu;
+    public static final int successCode = 0x002;
+    public static final int failCode = 0x003;
 
     /**
      * 1. 页面切换
@@ -41,7 +46,7 @@ public class MainActivity extends BaseActivity implements
     protected void initWindows() {
         super.initWindows();
         StatusBarUtils.setDarkColor(getWindow());
-        EasyPermissions.requestPermissions(this, "录像权限申请", 0 ,
+        EasyPermissions.requestPermissions(this, "录像权限申请", 0,
                 Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
@@ -59,7 +64,6 @@ public class MainActivity extends BaseActivity implements
         mHelper.add(R.id.action_book, new NavHelper.Tab(BookFragment.class, R.string.nav_book));
         mHelper.add(R.id.action_attic, new NavHelper.Tab<>(AtticFragment.class, R.string.nav_attic));
         mHelper.add(R.id.action_mine, new NavHelper.Tab<>(MineFragment.class, R.string.nav_mine));
-        //初始化设置第一个fragment显示
         mNavigation.setOnNavigationItemSelectedListener(this);
     }
 
@@ -73,7 +77,26 @@ public class MainActivity extends BaseActivity implements
     @SuppressLint("ResourceAsColor")
     @Override
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
-        if (newTab.clx == AtticFragment.class){
+        // fixme to open limit off login
+//        if (newTab.clx == MineFragment.class && !Account.isLogin()) {
+//            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+//            startActivityForResult(intent, AccountActivity.requestCode);
+//        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == AccountActivity.requestCode) {
+            if (MainActivity.successCode == resultCode) {
+                mNavigation.setSelectedItemId(R.id.action_mine);
+                menu.performIdentifierAction(R.id.action_mine, 2);
+                mNavigation.setSelectedItemId(R.id.action_mine);
+            } else {
+                menu = mNavigation.getMenu();
+                menu.performIdentifierAction(R.id.action_book, 0);
+                mNavigation.setSelectedItemId(R.id.action_book);
+            }
         }
     }
+
 }

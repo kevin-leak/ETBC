@@ -9,6 +9,9 @@ import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.main.AtticFragment;
 
 public class VideoShowActivity extends BaseActivity {
+
+    public static final String KEY_Books = "VideoShowActivity";
+
     private FragmentManager manager;
     private FragmentTransaction transaction;
     private AtticFragment atticFragment;

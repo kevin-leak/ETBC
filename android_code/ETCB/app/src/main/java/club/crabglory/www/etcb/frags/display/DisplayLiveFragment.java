@@ -1,6 +1,5 @@
 package club.crabglory.www.etcb.frags.display;
 
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -8,16 +7,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cjj.MaterialRefreshLayout;
-import com.cjj.MaterialRefreshListener;
-
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.db.Live;
+import club.crabglory.www.data.model.db.Live;
 
 public class DisplayLiveFragment extends BaseFragment {
 
@@ -52,7 +48,7 @@ public class DisplayLiveFragment extends BaseFragment {
     }
 
     class LiveHolder extends RecyclerAdapter.ViewHolder<Live> {
-        @BindView(R.id.tv_time)
+        @BindView(R.id.tv_type)
         TextView tv_time;
         @BindView(R.id.iv_play)
         ImageView iv_play;

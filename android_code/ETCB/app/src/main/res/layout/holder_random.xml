@@ -5,18 +5,21 @@
     android:id="@+id/rl_book_item"
     android:layout_width="match_parent"
     android:layout_height="@dimen/len_130"
+    android:layout_marginTop="@dimen/len_0_5"
     android:padding="@dimen/len_10"
     android:background="@color/secondWindowBackgroundColor"
     android:orientation="vertical">
 
-    <ImageView
+    <club.crabglory.www.etcb.view.AvatarView
         android:id="@+id/iv_book"
+        android:elevation="@dimen/len_2"
         android:layout_width="@dimen/len_85"
         android:layout_height="match_parent"
         android:layout_marginRight="@dimen/len_10"
         android:layout_marginEnd="@dimen/len_10"
         android:src="@mipmap/test_jane_eyre"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        tools:ignore="UnusedAttribute" />
 
     <TextView
         android:id="@+id/tv_book_name"

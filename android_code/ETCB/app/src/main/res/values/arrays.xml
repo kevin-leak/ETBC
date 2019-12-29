@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_book">
+        <item>@string/book_type_education</item>
+        <item>@string/book_type_economic</item>
+        <item>@string/book_type_society</item>
+        <item>@string/book_type_science</item>
+    </string-array>
+    <string-array name="type_sex" >
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+</resources>

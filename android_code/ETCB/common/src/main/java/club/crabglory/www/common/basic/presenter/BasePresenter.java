@@ -12,7 +12,7 @@ import club.crabglory.www.common.basic.contract.BaseContract;
 public class BasePresenter<T extends BaseContract.View> implements BaseContract.Presenter {
 
 
-    private T mView;
+    public T mView;
 
     public BasePresenter(T view) {
         setView(view);
@@ -33,6 +33,7 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
 
     @Override
     public void start() {
+        // 为了不再显示loading
         T view = mView;
         if (view != null) {
             view.showDialog();
@@ -43,4 +44,6 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
     public void destroy() {
 
     }
+
+
 }

@@ -45,7 +45,8 @@
             android:layout_height="match_parent"
             tools:ignore="RtlSymmetry">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <club.crabglory.www.etcb.view.AvatarView
+                android:id="@+id/riv_avatar"
                 android:layout_width="@dimen/len_50"
                 android:layout_height="@dimen/len_50"
                 android:layout_centerVertical="true"
@@ -91,31 +92,12 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_phone"
-        style="@style/mine_do_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_name"
-        tools:ignore="MissingConstraints">
-        <TextView
-            android:id="@+id/tv_phone"
-            style="@style/mine_do_add_text"
-            android:text="@string/phone" />
-
-        <TextView
-            android:background="@drawable/mine_do_border"
-            android:layout_marginLeft="@dimen/len_20"
-            style="@style/mine_do_text"
-            android:text="@string/phone"
-            android:layout_marginStart="@dimen/len_20" />
-
-    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_sex"
         style="@style/mine_do_card"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_phone"
+        app:layout_constraintTop_toBottomOf="@+id/cv_name"
         tools:ignore="MissingConstraints">
 
         <TextView

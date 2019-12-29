@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhiteGray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--头部-->
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/len_30"
+        android:layout_height="@dimen/len_70"
+        android:orientation="horizontal"
+        android:background="@color/colorGreen">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/car"
+            android:textSize="@dimen/font_20"
+            android:textColor="@color/white"
+            android:background="@color/colorGreen"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_18"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorGreen"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/del"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/sf_goods_list"
+        android:layout_below="@id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        app:overlay="false"
+        app:progress_colors="@array/material_colors"
+        app:wave_color="#90B7D7EB"
+        app:wave_height_type="higher"
+        app:wave_show="true">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_goods_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.cjj.MaterialRefreshLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/len_2"
+        android:layout_alignParentBottom="true"
+        tools:targetApi="lollipop">
+
+        <!--结算-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorWhite">
+
+            <CheckBox
+                android:id="@+id/cb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/len_5"
+                android:layout_centerVertical="true"
+                android:theme="@style/carCheckBox"
+                android:text="@string/all"
+                android:textSize="@dimen/font_14"
+                android:textColor="@color/blackLess"
+                android:layout_marginStart="@dimen/len_5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/len_55"
+                android:layout_marginStart="@dimen/len_55"
+                android:layout_toEndOf="@+id/cb_all"
+                android:layout_toRightOf="@+id/cb_all"
+                android:gravity="center"
+                android:text="@string/sum"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_sum_money"
+                android:layout_width="@dimen/len_75"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/len_90"
+                android:layout_marginStart="@dimen/len_90"
+                android:layout_toEndOf="@+id/cb_all"
+                android:layout_toRightOf="@+id/cb_all"
+                android:gravity="center"
+                android:textColor="@color/priceColor"
+                android:text="@string/price_0"
+                android:textSize="@dimen/font_20" />
+
+            <TextView
+                android:id="@+id/tv_pay"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:text="@string/pay"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:textSize="@dimen/font_15"
+                android:background="@color/colorGreen"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

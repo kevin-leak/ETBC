@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <club.crabglory.www.etcb.view.AvatarView
         android:id="@+id/daily_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,7 +20,7 @@
         android:elevation="@dimen/len_3"
         android:layout_gravity="center|center_vertical"
         android:src="@mipmap/test_republic"
-        app:riv_border_color="@color/gray"
+        app:riv_border_color="@color/image_placeholder"
         app:riv_border_width="@dimen/len_0_5"
         app:riv_corner_radius="@dimen/len_0_5"
         tools:ignore="UnusedAttribute" />

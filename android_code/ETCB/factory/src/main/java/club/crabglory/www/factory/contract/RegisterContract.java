@@ -18,6 +18,5 @@ public interface RegisterContract {
         boolean checkPsd(String psd, String re_psd);
         // 按格式输入名字
         boolean checkUserName(String username);
-        void postRegister();
     }
 }

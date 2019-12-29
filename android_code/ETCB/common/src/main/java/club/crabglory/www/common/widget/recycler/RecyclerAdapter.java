@@ -2,6 +2,7 @@ package club.crabglory.www.common.widget.recycler;
 
 import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +83,6 @@ public abstract class RecyclerAdapter<Data>
         View root = inflater.inflate(viewType, parent, false);
         // 通过子类必须实现的方法，得到一个ViewHolder
         ViewHolder<Data> holder = onCreateViewHolder(root, viewType);
-
 
         // 设置View的Tag为ViewHolder，进行双向绑定
         root.setTag(R.id.tag_recycler_holder, holder);
@@ -192,6 +192,7 @@ public abstract class RecyclerAdapter<Data>
         if (dataList == null || dataList.size() == 0)
             return;
         mDataList.addAll(dataList);
+        Log.e("RecyclerAdapter", "dataList: " + dataList.size());
         notifyDataSetChanged();
     }
 

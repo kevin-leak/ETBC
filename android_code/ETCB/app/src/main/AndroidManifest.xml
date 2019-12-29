@@ -39,7 +39,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:name=".App"
+        android:name=".APP"
         android:allowBackup="true"
         android:icon="@drawable/etcb_icon"
         android:label="@string/app_name"
@@ -53,28 +53,31 @@
             android:theme="@style/AppTheme.BarDefaultTheme" />
         <activity android:name=".frags.display.VideoShowActivity"
             android:theme="@style/AppTheme.BarDefaultTheme" />
-        <activity android:name=".frags.book.UploadBookActivity"
+        <activity android:name=".frags.book.BookUpActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
         <activity android:name=".frags.SearchActivity" />
         <activity android:name=".frags.LiveActivity" />
         <activity android:name=".frags.chat.MessageActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
         <activity android:name=".frags.MicroUpActivity" />
-        <activity android:name=".frags.consume.CarActivity"
+        <activity android:name=".frags.goods.GoodsCarActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
         <activity android:name=".frags.chat.ForkActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
         <activity android:name=".frags.SettingsActivity"
             android:theme="@style/AppTheme.BarDefaultTheme" />
-        <activity android:name=".frags.consume.PayActivity"
+        <activity android:name=".frags.goods.GoodsPayActivity"
             android:theme="@style/AppTheme.DefaultActivity"/>
         <activity android:name=".frags.display.MineProfileActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
-        <activity android:name=".frags.display.MineDisplayActivity"
+        <activity android:name=".frags.display.ModifyProfileActivity"
+            android:theme="@style/AppTheme.DefaultActivity"/>
+        <activity android:name=".frags.display.DisplayActivity"
             android:theme="@style/AppTheme.BarDefaultTheme"/>
         <activity
             android:name=".frags.book.BooksShopActivity"
-            android:theme="@style/AppTheme.DefaultActivity" />
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.BarDefaultTheme" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.DefaultActivity" />
@@ -90,7 +93,9 @@
         <activity
             android:name=".frags.book.BooksActivity"
             android:theme="@style/AppTheme.DefaultActivity" />
-
+        <activity
+            android:name=".frags.goods.GoodsActivity"
+            android:theme="@style/AppTheme.DefaultActivity" />
         <!--声明图片剪切的activity-->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"

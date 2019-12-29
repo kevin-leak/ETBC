@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingLeft="@dimen/len_15"
@@ -20,6 +20,7 @@
         <EditText
             android:id="@+id/et_phone"
             style="@style/account_text"
+            android:inputType="phone"
             android:background="@drawable/mine_do_border"
             android:hint="@string/phoneHint" />
 
@@ -30,15 +31,37 @@
         style="@style/account_rl">
 
         <ImageView
+            android:id="@+id/login_way"
             style="@style/account_image"
             android:contentDescription="@string/micro"
             android:src="@drawable/account_psd" />
 
         <EditText
-            android:id="@+id/et_psd"
+            android:id="@+id/et_way"
             style="@style/account_text"
+            android:inputType="textPassword"
             android:background="@drawable/mine_do_border"
             android:hint="@string/psdHint" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/len_5"
+            app:cardElevation="@dimen/len_0"
+            android:layout_margin="@dimen/len_11"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            app:cardBackgroundColor="#34B3EB">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/send"
+                android:gravity="center"
+                android:textSize="@dimen/font_18"
+                android:textColor="@color/white" />
+        </android.support.v7.widget.CardView>
 
     </RelativeLayout>
 

@@ -23,7 +23,7 @@ import club.crabglory.www.common.widget.video.MyLayoutManager;
 import club.crabglory.www.common.widget.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
-import club.crabglory.www.data.db.MicroVideo;
+import club.crabglory.www.data.model.db.MicroVideo;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -45,8 +45,6 @@ public class AtticFragment extends BaseFragment {
         System.loadLibrary("native-lib");
     }
 
-    private int position;
-    private View itemView;
     private ArrayList<MicroVideo> microVideos;
 
     @Override
@@ -97,7 +95,6 @@ public class AtticFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position, boolean bottom) {
-                AtticFragment.this.position = position;
                 Log.e(TAG, "选择位置:" + position + " 下一页:" + bottom);
                 View itemView = rvMicro.getChildAt(position);
                 if (itemView != null) {
@@ -189,7 +186,7 @@ public class AtticFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
-        Log.e(TAG, "initData: ");
+        Log.e(TAG, "refreshData: ");
         testData();
     }
 
@@ -203,38 +200,11 @@ public class AtticFragment extends BaseFragment {
             microVideo.setImg(imgs[i]);
             microVideo.setVideo(videos[i]);
             microVideos.add(microVideo);
-            Log.e(TAG, "initData: ");
+            Log.e(TAG, "refreshData: ");
         }
         videoAdapter.add(microVideos);
     }
 
-//
-//    @Override
-//    public void onPause() {
-//        itemView = rvMicro.getChildAt(position);
-//        Log.e(TAG, "onPause: " + position);
-//        if (itemView != null) {
-//            Log.e(TAG, "onPause: " + position);
-//            final VideoView videoView = itemView.findViewById(R.id.video_view);
-//            final ImageView imgThumb = itemView.findViewById(R.id.img_thumb);
-//
-//            videoView.stopPlayback();
-//            imgThumb.setImageResource(microVideos.get(position).getImg());
-//            imgThumb.animate().alpha(1).start();
-//        }
-//        super.onPause();
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        View itemView = rvMicro.getChildAt(position);
-//        if (itemView != null) {
-//            Log.e(TAG, "onResume: ");
-//            FullWindowVideoView videoView = itemView.findViewById(R.id.video_view);
-//            videoView.start();
-//        }
-//        super.onResume();
-//    }
 
 
 }

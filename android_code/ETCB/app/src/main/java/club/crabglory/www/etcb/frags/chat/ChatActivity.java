@@ -10,10 +10,12 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.data.model.db.Chat;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.db.Chat;
 
 public class ChatActivity extends ToolbarActivity {
+
+    public static final String KEY_CHATER = "KEY_CHATER";
 
     @BindView(R.id.rv_container)
     RecyclerView rvContainer;

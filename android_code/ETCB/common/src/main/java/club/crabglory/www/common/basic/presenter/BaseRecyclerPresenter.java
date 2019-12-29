@@ -1,7 +1,9 @@
 package club.crabglory.www.common.basic.presenter;
 
 
+import android.provider.ContactsContract;
 import android.support.v7.util.DiffUtil;
+import android.util.Log;
 
 import java.util.List;
 
@@ -26,17 +28,18 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
      * @param dataList 新数据
      */
     protected void refreshData(final List<ViewMode> dataList) {
+        if (getView().getActivity() == null) return;
         getView().getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 View view = getView();
-                if (view == null)
-                    return;
-
+                if (view == null) return;
                 // 基本的更新数据并刷新界面
                 RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
-                if (adapter != null){
-                    adapter.replace(dataList);
+                if (adapter != null) {
+                    // fixme 零时修改 dataList.size() > 0，为了防止本地没有数据，建议后期再安装的时候添加一些默认的数据
+                    if (dataList.size() > 0)
+                        adapter.replace(dataList);
                     view.onAdapterDataChanged();
                 }
 

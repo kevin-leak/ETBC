@@ -130,7 +130,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_book"
+                android:id="@+id/rl_goods"
                 style="@style/mine_record">
 
                 <ImageView
@@ -151,10 +151,11 @@
 
                 <ImageView
                     style="@style/mine_record_image"
-                    android:contentDescription="@string/collect"
+                    android:contentDescription="@string/favorite"
                     android:src="@drawable/mine_collect" />
 
                 <TextView
+                    android:id="@+id/tv_favorite"
                     style="@style/mine_record_text"
                     android:text="@string/collect_count" />
 

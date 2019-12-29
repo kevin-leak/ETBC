@@ -1,9 +1,11 @@
 package club.crabglory.www.common.basic.view;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 
 import club.crabglory.www.common.Application;
-import club.crabglory.www.common.basic.view.BaseActivity;
+import club.crabglory.www.common.R;
 import club.crabglory.www.common.basic.contract.BaseContract;
 
 public abstract class BasePresenterActivity<Presenter extends BaseContract.Presenter>
@@ -11,6 +13,8 @@ public abstract class BasePresenterActivity<Presenter extends BaseContract.Prese
 
 
     protected Presenter presenter;
+    protected ProgressDialog dialog;
+    private ProgressDialog mLoadingDialog;
 
 
     /**
@@ -20,8 +24,8 @@ public abstract class BasePresenterActivity<Presenter extends BaseContract.Prese
      */
     @Override
     public void showError(int error) {
-        // TODO 可以在此处写一个统一的放回错误到界面的逻辑
-        Application.showToast(getActivity(), error);
+        hideLoading();
+        Application.Companion.showToast(getActivity(), error);
     }
 
     @Override
@@ -48,8 +52,40 @@ public abstract class BasePresenterActivity<Presenter extends BaseContract.Prese
      */
     @Override
     public void showDialog() {
-
+        ProgressDialog dialog = mLoadingDialog;
+        if (dialog == null) {
+            // todo 制定加载框的演示
+            dialog = new ProgressDialog(this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+            // 不可触摸取消
+            dialog.setCanceledOnTouchOutside(false);
+            // 强制取消关闭界面
+            dialog.setCancelable(true);
+            dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    finish();
+                }
+            });
+            mLoadingDialog = dialog;
+            dialog.setMessage(getText(R.string.prompt_loading));
+            dialog.show();
+        }
     }
+
+
+    private void hideDialog() {
+        ProgressDialog dialog = mLoadingDialog;
+        if (dialog != null) {
+            mLoadingDialog = null;
+            dialog.dismiss();
+        }
+    }
+
+    protected void hideLoading() {
+        // 不管你怎么样，我先隐藏我
+        hideDialog();
+    }
+
 
     /**
      * 由于子类在都是fragment的情况下这个会被自动的复写

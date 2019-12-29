@@ -182,7 +182,8 @@
     </style>
 
 
-    <!--    up book-->
+
+    <!--    up bookModelView-->
 
     <style name="UpBookText">
         <item name="android:textColor">@color/grayer</item>
@@ -226,6 +227,8 @@
         <item name="android:layout_marginLeft">@dimen/len_40</item>
         <item name="android:layout_marginBottom">@dimen/len_15</item>
         <item name="android:textSize">@dimen/fon_16</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
     </style>
 
 
@@ -236,5 +239,44 @@
         <item name="android:layout_marginTop">@dimen/len_16</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <!-- modify EditTextView underline -->
+    <style name="modify_edit_view" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/material_blue</item>
+        <item name="colorControlActivated">@color/colorBlue</item>
+    </style>
+
+
+    <!--    shopActivity -->
+
+    <style name="shop_card">
+        <item name="android:layout_height">@dimen/len_50</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="cardCornerRadius">@dimen/len_0</item>
+        <item name="cardElevation">@dimen/len_2</item>
+        <item name="cardBackgroundColor">@color/thirdWindowBackgroundColor</item>
+    </style>
+
+    <style name="shop_rl">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/len_10</item>
+    </style>
+    <style name="shop_image">
+        <item name="android:layout_height">@dimen/len_30</item>
+        <item name="android:layout_width">@dimen/len_30</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="shop_text">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingRight">@dimen/len_10</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/len_40</item>
+        <item name="android:textSize">@dimen/fon_16</item>
+        <item name="android:drawableRight">@drawable/more_gray</item>
     </style>
 </resources>

@@ -35,6 +35,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AccountActivity extends ToolbarActivity
         implements  ViewPageHelper.ViewPagerCallback {
 
+    public static final int requestCode = 0x0001;
 
     @BindViews({R.id.tv_login, R.id.tv_sign_up})
     List<TextView> navigationList;
@@ -67,7 +68,6 @@ public class AccountActivity extends ToolbarActivity
         StatusBarUtils.setLightColor(getWindow());
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void initWidget() {
@@ -77,7 +77,7 @@ public class AccountActivity extends ToolbarActivity
         helper.setNavNegativeColor(R.color.alpha);
         helper.addItem(navigationList.get(0), new LoginFragment())
                 .addItem(navigationList.get(1), new RegisterFragment());
-
+        currentFragment = helper.getCurrent();
     }
 
     @Override
@@ -96,7 +96,7 @@ public class AccountActivity extends ToolbarActivity
             tvSignUp.setTextColor(getResources().getColor(R.color.white));
             tvLogin.setTextColor(getResources().getColor(R.color.whiteGray));
             ivChangeAvatar.setVisibility(View.VISIBLE);
-            param.matchConstraintPercentHeight = 0.6F;
+            param.matchConstraintPercentHeight = 0.5F;
             linearLayout.setLayoutParams(param);
         }
     }
@@ -131,7 +131,7 @@ public class AccountActivity extends ToolbarActivity
                         options.setCompressionQuality(96);
 
                         // 得到头像的缓存地址
-                        File dPath = Application.getAvatarTmpFile();
+                        File dPath = Application.Companion.getAvatarTmpFile();
 
                         // 发起剪切
                         UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
@@ -154,7 +154,7 @@ public class AccountActivity extends ToolbarActivity
                 loadPortrait(resultUri);
             }
         } else if (resultCode == UCrop.RESULT_ERROR) {
-            Application.showToast(this, R.string.data_rsp_error_unknown);
+            Application.Companion.showToast(this, R.string.data_rsp_error_unknown);
         }
     }
 

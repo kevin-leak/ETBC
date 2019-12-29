@@ -1,4 +1,4 @@
-<club.crabglory.www.common.widget.ChatLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<club.crabglory.www.common.widget.FixLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lay_content"
@@ -99,7 +99,9 @@
             android:padding="@dimen/len_8"
             android:src="@drawable/chat_submit"
             android:tint="@color/textPrimary" />
+
+
     </LinearLayout>
 
 
-</club.crabglory.www.common.widget.ChatLayout>
+</club.crabglory.www.common.widget.FixLinearLayout>

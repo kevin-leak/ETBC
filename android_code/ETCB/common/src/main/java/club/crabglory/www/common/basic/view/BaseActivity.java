@@ -1,6 +1,7 @@
 package club.crabglory.www.common.basic.view;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -70,7 +71,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
-    public static void show(BaseActivity activity, Class<? extends AppCompatActivity> cls,
+    public static void show(Activity activity, Class<? extends AppCompatActivity> cls,
                             Bundle bundle, boolean toFinish){
         Intent intent = new Intent(activity, cls);
         if (bundle != null)

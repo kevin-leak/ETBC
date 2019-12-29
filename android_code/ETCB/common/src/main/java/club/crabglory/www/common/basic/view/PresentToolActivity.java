@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 
 import club.crabglory.www.common.Application;
+import club.crabglory.www.common.R;
 import club.crabglory.www.common.basic.contract.BaseContract;
 
 
@@ -28,6 +29,7 @@ public abstract class PresentToolActivity<Presenter extends BaseContract.Present
         // 界面关闭时进行销毁的操作
         if (mPresenter != null) {
             mPresenter.destroy();
+            hideLoading();
         }
     }
 
@@ -42,7 +44,7 @@ public abstract class PresentToolActivity<Presenter extends BaseContract.Present
     public void showError(int str) {
         // 不管你怎么样，我先隐藏我
         hideLoading();
-        Application.showToast(getActivity(),str);
+        Application.Companion.showToast(getActivity(),str);
     }
 
     @Override
@@ -50,7 +52,7 @@ public abstract class PresentToolActivity<Presenter extends BaseContract.Present
         ProgressDialog dialog = mLoadingDialog;
         if (dialog == null) {
             // todo 制定加载框的演示
-//            dialog = new ProgressDialog(this, R.style.AppTheme_Dialog_Alert_Light);
+            dialog = new ProgressDialog(this, R.style.Theme_AppCompat_Light_Dialog_Alert);
             // 不可触摸取消
             dialog.setCanceledOnTouchOutside(false);
             // 强制取消关闭界面
@@ -62,13 +64,13 @@ public abstract class PresentToolActivity<Presenter extends BaseContract.Present
                 }
             });
             mLoadingDialog = dialog;
-
-//            dialog.setMessage(getText(R.string.prompt_loading));
+            dialog.setMessage(getText(R.string.prompt_loading));
             dialog.show();
+
         }
     }
 
-    protected void hideDialog() {
+    private void hideDialog() {
         ProgressDialog dialog = mLoadingDialog;
         if (dialog != null) {
             mLoadingDialog = null;

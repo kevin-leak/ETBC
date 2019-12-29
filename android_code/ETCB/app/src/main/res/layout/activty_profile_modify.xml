@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/len_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolBarDefault"
+            android:background="@color/secondWindowBackgroundColor"
+            app:theme="@style/myToolBar"
+            app:title="@string/modify"
+            app:titleTextColor="@color/gray" >
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="@dimen/len_60"
+                android:layout_height="match_parent"
+                android:text="@string/save"
+                android:textSize="@dimen/font_20"
+                android:textColor="@color/colorBlue"
+                android:layout_gravity="end"
+                android:gravity="center"/>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.v7.widget.CardView>
+
+    <EditText
+        android:id="@+id/et_info"
+        android:paddingLeft="@dimen/len_10"
+        android:theme="@style/modify_edit_view"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/len_5"
+        android:layout_height="@dimen/len_50"
+        android:lines="1"
+        android:singleLine="true"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+
+</LinearLayout>

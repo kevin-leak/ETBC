@@ -1,13 +1,9 @@
 package club.crabglory.www.etcb.frags.display;
 
-import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-
-import com.cjj.MaterialRefreshLayout;
-import com.cjj.MaterialRefreshListener;
 
 import java.util.ArrayList;
 
@@ -16,7 +12,7 @@ import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.db.MicroVideo;
+import club.crabglory.www.data.model.db.MicroVideo;
 
 public class DisplayMicroFragment extends BaseFragment {
     @BindView(R.id.rv_sum)
@@ -37,8 +33,6 @@ public class DisplayMicroFragment extends BaseFragment {
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
-
-
 
         rvSum.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
 

@@ -29,8 +29,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="account_name" />
-                            <entry key="sourceFile" value="D:\google_downlaod\nickname.svg" />
+                            <entry key="outputName" value="book_author" />
+                            <entry key="sourceFile" value="D:\google_downlaod\author-V.svg" />
                           </map>
                         </option>
                       </PersistentState>

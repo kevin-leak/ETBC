@@ -1,6 +1,33 @@
 <resources>
     <string name="app_name">common</string>
-    <string name="form_phone_error">phone number is error</string>
+
+
+    <!--    book type -->
+    <string name="book_type_education">education</string>
+    <string name="book_type_economic">economic</string>
+    <string name="book_type_science">science</string>
+    <string name="book_type_society">society</string>
+
     <string name="label_gallery_select_max_size">max you can select %d </string>
     <string name="title_select_gallery">select picture</string>
+
+    <string name="error_form_phone">Error: phone number validate</string>
+    <string name="error_data_unknown">Error: rsp unknown</string>
+    <string name="error_data_psd_not_same">Error: psd not same</string>
+    <string name="error_data_network_error">Error: network is validate</string>
+    <string name="error_form_avatar">Error: form avatar ruin</string>
+    <string name="error_form_sex">Error: form sex, input male/female</string>
+    <string name="error_form_username">Error: user name validate</string>
+    <string name="error_form_data">Error: data is not right, please re-input</string>
+    <string name="error_form_data_more">Error: data is More than the original  </string>
+    <string name="error_password">Error: code error</string>
+    <string name="error_repeat_login">Error: repeat login</string>
+    <string name="error_not_login">please to  login</string>
+    <string name="error_format_file">Error: file ruin</string>
+    <string name="error_same_phone">Error: phone number is exit</string>
+    <string name="error_same_username">Error: user name is exit</string>
+    <string name="error_null_user">Error: user not exit</string>
+    <string name="error_null_data">Error: query data is not exit</string>
+    <string name="error_friend_exit">Error: friend is exit</string>
+    <string name="prompt_loading">loading</string>
 </resources>

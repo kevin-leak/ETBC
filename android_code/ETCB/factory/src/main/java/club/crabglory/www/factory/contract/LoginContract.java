@@ -9,9 +9,10 @@ public interface LoginContract {
     }
 
     interface Presenter extends BaseContract.Presenter {
-        void login(String phone, String password);
+        void login(String phone, String password, boolean flag);
+        // 发送验证码请求
+        void sendCodeRsp(String phone);
+        // 检查手机号是否正确, 实现给presenter用
         boolean checkMobile(String phone);
-        boolean checkPsd(String psd);
-        void postLogin();
     }
 }

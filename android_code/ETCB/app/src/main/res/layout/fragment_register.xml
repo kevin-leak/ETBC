@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -38,6 +37,7 @@
         <EditText
             android:id="@+id/et_phone"
             style="@style/account_text"
+            android:inputType="phone"
             android:background="@drawable/mine_do_border"
             android:hint="@string/phoneHint" />
 
@@ -51,11 +51,13 @@
             android:contentDescription="@string/micro"
             android:src="@drawable/account_sex" />
 
-        <EditText
-            android:id="@+id/et_sex"
+        <Spinner
+            android:id="@+id/sp_sex"
             style="@style/account_text"
             android:background="@drawable/mine_do_border"
-            android:hint="@string/sex" />
+            android:dropDownVerticalOffset="40dp"
+            android:entries="@array/type_sex"
+            android:theme="@style/SpnStyle" />
 
     </RelativeLayout>
 
@@ -70,6 +72,7 @@
         <EditText
             android:id="@+id/et_psd"
             style="@style/account_text"
+            android:inputType="textPassword"
             android:background="@drawable/mine_do_border"
             android:hint="@string/psdHint" />
 
@@ -87,6 +90,7 @@
         <EditText
             android:id="@+id/et_re_psd"
             style="@style/account_text"
+            android:inputType="textPassword"
             android:background="@drawable/mine_do_border"
             android:hint="@string/rePsdHint" />
 

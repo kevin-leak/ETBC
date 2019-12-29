@@ -8,7 +8,7 @@ public class ValidateUtils {
      * 正则表达式：验证用户名
      *5到20位
      */
-    public static final String REGEX_USERNAME = "^[a-zA-Z\u4e00-\u9fa5]\\w{5,15}$";
+    public static final String REGEX_USERNAME = "^[a-zA-Z\u4e00-\u9fa5]\\w{1,15}$";
 
     /**
      * 正则表达式：验证密码
