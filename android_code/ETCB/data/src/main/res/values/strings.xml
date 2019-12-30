@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">data</string>
+    <string name="error_pay_fail">Error: pay fail</string>
+
 </resources>

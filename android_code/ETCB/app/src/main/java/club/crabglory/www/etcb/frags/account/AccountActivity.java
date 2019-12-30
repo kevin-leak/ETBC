@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,12 +31,14 @@ import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
 import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
 
 public class AccountActivity extends ToolbarActivity
         implements ViewPageHelper.ViewPagerCallback {
 
+    // 从其他界面，跳转请求码，用来处理没有登入注册而返回的情况
     public static final int requestCode = 0x0001;
 
     @BindViews({R.id.tv_login, R.id.tv_sign_up})
@@ -68,6 +72,11 @@ public class AccountActivity extends ToolbarActivity
         StatusBarUtils.setLightColor(getWindow());
     }
 
+    @Override
+    protected boolean initArgs(Bundle bundle) {
+        return !Account.isLogin();
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void initWidget() {
@@ -96,7 +105,7 @@ public class AccountActivity extends ToolbarActivity
             tvSignUp.setTextColor(getResources().getColor(R.color.white));
             tvLogin.setTextColor(getResources().getColor(R.color.whiteGray));
             ivChangeAvatar.setVisibility(View.VISIBLE);
-            param.matchConstraintPercentHeight = 0.5F;
+            param.matchConstraintPercentHeight = 0.6F;
             linearLayout.setLayoutParams(param);
         }
     }
@@ -152,6 +161,7 @@ public class AccountActivity extends ToolbarActivity
             final Uri resultUri = UCrop.getOutput(data);
             if (resultUri != null) {
                 loadPortrait(resultUri);
+                Log.e("AccountActivity", resultUri.toString());
             }
         } else if (resultCode == UCrop.RESULT_ERROR) {
             Application.Companion.showToast(this, R.string.data_rsp_error_unknown);

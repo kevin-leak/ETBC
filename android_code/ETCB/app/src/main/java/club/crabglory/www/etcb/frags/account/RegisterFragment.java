@@ -46,7 +46,6 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         spSex.setPopupBackgroundDrawable(getResources().getDrawable(R.drawable.shape_frame));
     }
 
-
     public void preRegister(String mAvatarPath) {
         String userName = etName.getText().toString();
         String phoneString = etPhone.getText().toString();
@@ -75,9 +74,9 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @Override
     public void registerSuccess() {
         getActivity().setResult(MainActivity.successCode);
+        getActivity().finish();
     }
-
-
+    
     @Override
     public void showError(int error) {
         super.showError(error);

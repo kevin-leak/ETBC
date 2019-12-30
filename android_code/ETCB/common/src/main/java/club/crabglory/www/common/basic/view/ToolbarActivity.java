@@ -1,5 +1,6 @@
 package club.crabglory.www.common.basic.view;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
@@ -25,6 +26,7 @@ public abstract class ToolbarActivity extends BaseActivity {
         super.initWidget();
         initToolbar((Toolbar) findViewById(R.id.toolbar));
     }
+
 
     /**
      * 初始化toolbar

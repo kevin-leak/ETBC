@@ -8,6 +8,7 @@ import java.util.List;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.data.helper.GoodsDataHelper;
 import club.crabglory.www.factory.contract.GoodsDataSource;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
@@ -50,10 +51,8 @@ public class GoodsCarPresenter extends
 
     @Override
     public void prePay(double parseInt, List<Goods> checkGoods) {
-        // todo for pay
-        // 回调删除就行
-        DbHelper.updateGoods(Goods.class, checkGoods.toArray(new Goods[0]));
-        mView.dealSuccess();
+        if (GoodsDataHelper.pay(this, checkGoods.toArray(new Goods[0])))
+            mView.dealSuccess();
     }
 
     @Override

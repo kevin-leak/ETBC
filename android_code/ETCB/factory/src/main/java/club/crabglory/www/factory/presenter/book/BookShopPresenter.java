@@ -7,6 +7,7 @@ import java.util.List;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
 import club.crabglory.www.data.helper.BookDataHelper;
+import club.crabglory.www.data.helper.GoodsDataHelper;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
@@ -17,6 +18,8 @@ import club.crabglory.www.factory.contract.BooksShopContract;
 
 public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
         implements BooksShopContract.Presenter, DataSource.Callback<List<Book>> {
+    private String goodsId;
+
     public BookShopPresenter(BooksShopContract.View view) {
         super(view);
     }
@@ -27,7 +30,6 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
         getView().getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Log.e("BookShopPresenter", books.get(0).toString());
                 mView.refreshData(books.get(0));
             }
         });
@@ -36,16 +38,18 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
     @Override
     public void onDataNotAvailable(int strRes) {
         mView.showError(strRes);
+        // 进入页面，网络加载失败后，从本地加载
+        BookDataHelper.getLocal(goodsId, BookShopPresenter.this);
     }
 
     @Override
     public void getGoods(final String goodsId) {
+        this.goodsId = goodsId;
         Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 BookRspModel model = new BookRspModel();
                 model.setId(goodsId);
-                BookDataHelper.getLocal(goodsId, BookShopPresenter.this);
                 BookDataHelper.refreshBooks(model, BookShopPresenter.this);
             }
         });
@@ -58,6 +62,7 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
             mView.showError(R.string.error_form_data_more);
             return;
         }
+        // 本地加入，不进行网络请求
         DbHelper.save(Goods.class, goods);
         mView.addCarSuccess();
     }
@@ -69,8 +74,8 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
             mView.showError(R.string.error_form_data_more);
             return;
         }
-        DbHelper.updateGoods(Goods.class, goods);
-        // todo 后面支付后回调
-        mView.addCarSuccess();
+        if (GoodsDataHelper.pay(this, goods)){
+            mView.payDone();
+        }
     }
 }

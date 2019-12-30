@@ -33,15 +33,12 @@ public class DisplayMicroFragment extends BaseFragment {
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
-
         rvSum.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
-
         sumVideoAdapter = new RecyclerAdapter<MicroVideo>() {
             @Override
             protected int getItemViewType(int position, MicroVideo video) {
                 return R.layout.holder_display_micro;
             }
-
             @Override
             protected ViewHolder<MicroVideo> onCreateViewHolder(View root, int viewType) {
                 return new  VideoHolder(root);
@@ -62,7 +59,6 @@ public class DisplayMicroFragment extends BaseFragment {
         protected void onBind(MicroVideo microVideo) {
             // todo  修改Bean
             ivBackground.setImageResource(microVideo.getImg());
-
         }
 
         @OnClick(R.id.cl_video)

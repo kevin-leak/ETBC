@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;
@@ -76,11 +77,10 @@ public class MainActivity extends BaseActivity implements
     @SuppressLint("ResourceAsColor")
     @Override
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
-        // fixme to open limit off login
-//        if (newTab.clx == MineFragment.class && !Account.isLogin()) {
-//            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
-//            startActivityForResult(intent, AccountActivity.requestCode);
-//        }
+        if (newTab.clx == MineFragment.class && !Account.isLogin()) {
+            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivityForResult(intent, AccountActivity.requestCode);
+        }
     }
 
     @Override

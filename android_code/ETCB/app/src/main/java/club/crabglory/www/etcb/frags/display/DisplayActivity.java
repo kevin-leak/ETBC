@@ -6,6 +6,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -66,7 +67,7 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
         rivAvatar.setup((Glide.with(DisplayActivity.this)), user);
         tvName.setText(user.getName());
         tvForks.setText(String.format("%s", user.getFollows()));
-        tvFavorite.setText(String.format("%s", user.getFavorite()));
+        tvFavorite.setText(String.format("%s w", user.getFavorite()));
     }
 
     @Override
@@ -82,9 +83,6 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
         helper.addItem(navigationList.get(0), new DisplayMicroFragment())
                 .addItem(navigationList.get(1), new BookShowFragment().setType(Book.TYPE_MY_UP))
                 .addItem(navigationList.get(2), new DisplayLiveFragment());
-        // fixme to open limit fork
-//        if (Account.getUserId().equals(userId))
-//            cvFork.setVisibility(View.GONE);
     }
 
     @Override

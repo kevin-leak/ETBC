@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">factory</string>
+    <string name="up_success">book up success</string>
 </resources>

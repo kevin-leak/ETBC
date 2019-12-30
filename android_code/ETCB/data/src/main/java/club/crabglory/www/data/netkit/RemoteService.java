@@ -11,6 +11,7 @@ import club.crabglory.www.data.model.net.FileRspModel;
 import club.crabglory.www.data.model.net.GoodsRspModel;
 import club.crabglory.www.data.model.net.LoginRspModel;
 import club.crabglory.www.data.model.net.ModifyRspModel;
+import club.crabglory.www.data.model.net.PayRspModel;
 import club.crabglory.www.data.model.net.RegisterRspModel;
 import club.crabglory.www.data.model.net.RspModel;
 import okhttp3.ResponseBody;
@@ -27,6 +28,7 @@ import retrofit2.http.POST;
  * piece 请求碎片，是用来封装请求信息。
  */
 public interface RemoteService {
+
 
     // fixme 这里在后台进行调试的时候需要修改
     interface Constance {
@@ -67,5 +69,9 @@ public interface RemoteService {
     @POST("getOwnerGoods/")
     Call<RspModel<List<Goods>>> getOwnerGoods(@Body GoodsRspModel goodsRspModel);
 
-    Call<RspModel<Book>> upBook(Book book);
+    @POST("upGoods/")
+    Call<RspModel<Book>> upBook(@Body Book book);
+
+    @POST("payGoods/")
+    Call<RspModel<List<Goods>>> payGoods(@Body List<PayRspModel> rspModels );
 }

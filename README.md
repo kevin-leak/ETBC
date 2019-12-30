@@ -78,46 +78,13 @@
 
 
 
-### 页面实现
+### 基类架构
 
-#### 页面制作
-
-需要考虑的问题
-
-前端页面的制作，主要是四方面：
-
-- 页面素材：页面样式，页面色彩，页面图标
-- Theme与Style：抽象，沉浸式，输入法模式
-- 基类View以及页面碎片化组合：（Fragment，ViewStub，include，merge)，BaseFragment，BaseActivity
-- 自定义View
-
-// todo 说清楚，碎片化了哪些界面
-
-#### 主界面展示
-
-<img src="./meterial/page/main_page.png"  />
-
-#### 知识储备
-
-// TODO 
-
-- [Butterknife原理]() 
-- [圆角与圆形的原理以及库]() 
-- [Fragment切换封装]() 
-- [Android工具类集合：Bar,Sceren]() 
-- [RecycleView原理与封装]() 
-- [下拉水文库的原理]()
-- [drawable：画边框, 阴影, 圆角]()
-
-
-
-### 基类铺垫
-
-#### 基类架构图
+#### 图描述
 
 <img src="./meterial/images/base_struct.png" />
 
-#### MPV模式的搭建
+#### MVP的搭建
 
 - Contract 定义了标准基础的View，Presenter，RecycleView的协议
 
@@ -181,6 +148,39 @@ BaseDbRepository，与DbHelper是想应的为订阅者，所有的子类都会�
 - 建立发布订阅者模式：订阅的类型，数据加载之前在DBHelper中进行注册
 - 建立数据的缓存：LinkList，同时提供数据的在缓存中的更新
 - 在presenter调用的时候
+
+
+
+### 页面实现
+
+#### 页面制作
+
+需要考虑的问题
+
+前端页面的制作，主要是四方面：
+
+- 页面素材：页面样式，页面色彩，页面图标
+- Theme与Style：抽象，沉浸式，输入法模式
+- 基类View以及页面碎片化组合：（Fragment，ViewStub，include，merge)，BaseFragment，BaseActivity
+- 自定义View
+
+// todo 说清楚，碎片化了哪些界面
+
+#### 主界面展示
+
+<img src="./meterial/page/main_page.png"  />
+
+#### 知识储备
+
+// TODO 
+
+- [Butterknife原理]() 
+- [圆角与圆形的原理以及库]() 
+- [Fragment切换封装]() 
+- [Android工具类集合：Bar,Sceren]() 
+- [RecycleView原理与封装]() 
+- [下拉水文库的原理]()
+- [drawable：画边框, 阴影, 圆角]()
 
 
 
@@ -258,6 +258,8 @@ Register网络请求参数接口：
 
 Login
 
+电话号码登入：
+
 ```json
 {
 	"code": "lkkzbl123888",
@@ -265,6 +267,18 @@ Login
 	"phone": "18870742138"
 }
 ```
+
+验证码登入：
+
+验证码请求发送：
+
+```
+{
+
+}
+```
+
+
 
 ```json
 {

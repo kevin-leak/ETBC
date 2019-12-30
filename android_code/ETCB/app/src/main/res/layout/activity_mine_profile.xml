@@ -123,6 +123,19 @@
         app:layout_constraintTop_toBottomOf="@+id/cv_sex"
         tools:ignore="MissingConstraints">
 
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:background="@drawable/mine_do_border"
+            style="@style/mine_do_add_text"
+            android:layout_width="@dimen/len_150"
+            android:textAlignment="textEnd"
+            android:lines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="@string/address"
+            android:gravity="end|center_vertical" />
+
         <TextView
             android:background="@drawable/mine_do_border"
             android:layout_marginLeft="@dimen/len_20"

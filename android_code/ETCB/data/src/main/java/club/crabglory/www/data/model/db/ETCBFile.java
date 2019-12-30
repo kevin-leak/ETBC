@@ -4,6 +4,8 @@ import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 
+import java.util.Date;
+
 @Table(database = AppDatabase.class)
 public class ETCBFile {
     // 主键
@@ -11,6 +13,16 @@ public class ETCBFile {
     private String id;
     @Column
     private String path;
+    @Column
+    private Date createAt;
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
 
     public String getId() {
         return id;

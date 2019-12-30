@@ -30,4 +30,7 @@
     <string name="error_null_data">Error: query data is not exit</string>
     <string name="error_friend_exit">Error: friend is exit</string>
     <string name="prompt_loading">loading</string>
+
+    <string name="local_test_register">Test: local test to register</string>
+    <string name="local_test">Test: local test</string>
 </resources>

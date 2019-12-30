@@ -8,6 +8,7 @@ import java.io.Serializable;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
 import club.crabglory.www.data.helper.AccountDataHelper;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.contract.ModifyProfileContract;
 import club.crabglory.www.data.model.db.User;
@@ -70,9 +71,17 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
                 if (TextUtils.isEmpty(avatarUrl)) {
                     // 如果上传图片没有上传成功，则报错
                     ModifyProfilePresenter.this.onDataNotAvailable(R.string.error_data_unknown);
+                    // fixme local_test_register
+                        ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl,
+                                ModifyRspModel.VALUE_AVATAR);
+                        ModifyProfilePresenter.this.onDataNotAvailable(R.string.local_test);
+                        User user = model.toUser();
+                        DbHelper.save(User.class, user);
+                        ModifyProfilePresenter.this.onDataLoaded(user);
+                    // fixme local_test_register
                     return;
                 }
-                ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl, ModifyRspModel.VALUE_ADDRESS);
+                ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl, ModifyRspModel.VALUE_AVATAR);
                 AccountDataHelper.modify(model, ModifyProfilePresenter.this);
             }
         });

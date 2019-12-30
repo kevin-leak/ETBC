@@ -192,7 +192,6 @@ public abstract class RecyclerAdapter<Data>
         if (dataList == null || dataList.size() == 0)
             return;
         mDataList.addAll(dataList);
-        Log.e("RecyclerAdapter", "dataList: " + dataList.size());
         notifyDataSetChanged();
     }
 

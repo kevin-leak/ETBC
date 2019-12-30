@@ -26,13 +26,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
-                String avatarUrl = FileDataHelper.fetchBackgroundFile(avatarPath);
-                if (TextUtils.isEmpty(avatarUrl)) {
-                    // 如果上传图片没有上传成功，则报错
-                    RegisterPresenter.this.onDataNotAvailable(R.string.error_data_unknown);
-                    return;
-                }
-                RegisterRspModel model = new RegisterRspModel(avatarUrl, name, phone, password, sex);
+                RegisterRspModel model = new RegisterRspModel(avatarPath, name, phone, password, sex);
                 AccountDataHelper.register(model, RegisterPresenter.this);
             }
         });

@@ -58,7 +58,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
     protected boolean initArgs(Bundle bundle) {
         if (bundle != null) {
             goodsId = bundle.getString(BooksShopActivity.KEY);
-            return !TextUtils.isEmpty(goodsId);
+            return !TextUtils.isEmpty(goodsId) ;
         }
         return false;
     }
@@ -141,6 +141,11 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
 
     @Override
     public void addCarSuccess() {
+        finish();
+    }
+
+    @Override
+    public void payDone() {
         finish();
     }
 }

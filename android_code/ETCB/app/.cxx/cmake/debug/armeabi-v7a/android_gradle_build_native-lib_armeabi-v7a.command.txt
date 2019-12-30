@@ -1,0 +1,8 @@
+Executable : C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+--build
+E:\Users\KevinLeak\Documents\GitHub\ETBC\android_code\ETCB\app\.cxx\cmake\debug\armeabi-v7a
+--target
+native-lib
+jvmArgs : 
+

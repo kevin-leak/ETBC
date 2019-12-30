@@ -12,7 +12,6 @@ import club.crabglory.www.factory.presenter.SettingsPresenter;
 
 public class SettingsActivity extends PresentToolActivity<SettingsContract.Presenter>
         implements SettingsContract.View {
-
     @BindView(R.id.cv_quit)
     CardView cvQuit;
 

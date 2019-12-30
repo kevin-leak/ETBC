@@ -1,7 +1,12 @@
 package club.crabglory.www.etcb.frags.display;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -17,14 +22,16 @@ import club.crabglory.www.factory.presenter.account.ModifyProfilePresenter;
 public class ModifyProfileActivity extends ToolbarActivity {
 
     public static final String KEY = "ModifyProfileActivity-KEY_Books";
-    public static final String KEY_PRESENTER = "ModifyProfileActivity-KEY_Books-PRESENTER";
-    //    public static final int VALUE_AVATAR = 0;
     private static int VALUE;
     private static ModifyProfilePresenter mPresenter = MineProfileActivity.presenter;
     @BindView(R.id.et_info)
     EditText etInfo;
     @BindView(R.id.tv_save)
     TextView tvSave;
+    @BindView(R.id.rl_sex)
+    RelativeLayout rlSex;
+    @BindView(R.id.sp_sex)
+    Spinner spSex;
 
 
     @Override
@@ -33,6 +40,8 @@ public class ModifyProfileActivity extends ToolbarActivity {
         return super.initArgs(bundle);
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void initData() {
         super.initData();
@@ -41,7 +50,9 @@ public class ModifyProfileActivity extends ToolbarActivity {
                 etInfo.setText(Account.getUser().getName());
                 break;
             case ModifyRspModel.VALUE_SEX:
-                etInfo.setText(Account.getUser().getSex() == 0 ? "male" : "female");
+                rlSex.setVisibility(View.VISIBLE);
+                spSex.setPopupBackgroundDrawable(getResources().getDrawable(R.drawable.shape_frame));
+                etInfo.setVisibility(View.GONE);
                 break;
             case ModifyRspModel.VALUE_ADDRESS:
                 etInfo.setText(Account.getUser().getAddress());
@@ -62,11 +73,7 @@ public class ModifyProfileActivity extends ToolbarActivity {
                 mPresenter.modifyName(info);
                 break;
             case ModifyRspModel.VALUE_SEX:
-                if (info.equals("male") || info.equals("female"))
-                    mPresenter.modifySex(info.equals("male") ? 0 : 1);
-                else
-                    Application.Companion.showToast(this, R.string.error_form_sex);
-                break;
+                mPresenter.modifySex(spSex.getSelectedItemPosition());
             case ModifyRspModel.VALUE_ADDRESS:
                 mPresenter.modifyAddress(info);
                 break;

@@ -8,6 +8,8 @@ public interface BooksShopContract {
         void refreshData(Book book);
 
         void addCarSuccess();
+
+        void payDone();
     }
 
 

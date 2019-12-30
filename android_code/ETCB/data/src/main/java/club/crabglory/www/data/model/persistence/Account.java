@@ -32,11 +32,15 @@ public class Account {
     public static boolean isLogin(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
         Account.userId = sp.getString(KEY_USER_ID, "");
-        return !TextUtils.isEmpty(userId) && !TextUtils.isEmpty(token);
+        // fixme just for test
+//        return !TextUtils.isEmpty(userId) && !TextUtils.isEmpty(token);
+        return !TextUtils.isEmpty(userId);
     }
 
     public static boolean isLogin() {
-        return !TextUtils.isEmpty(userId) && !TextUtils.isEmpty(token);
+        // fixme just for test
+//        return !TextUtils.isEmpty(userId) && !TextUtils.isEmpty(token);
+        return !TextUtils.isEmpty(userId);
     }
 
     public static void load(Context context) {
@@ -63,19 +67,13 @@ public class Account {
     }
 
     public static User getUser() {
-        // fixme 做测试建立一个User
-        if (TextUtils.isEmpty(userId)) {
-            User user = StaticData.getUser();
-            Account.userId = user.getId();
-            save(DataKit.Companion.app());
-            return user;
-        }
         return SQLite.select().from(User.class)
                 .where(User_Table.id.eq(userId)).
                         querySingle();
     }
 
     public static String getUserId() {
+        if (getUser() == null) return "";
         return getUser().getId();
     }
 
@@ -86,6 +84,7 @@ public class Account {
 
     public static boolean removeLogin(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
+        getUser().setId("");
         sp.edit().clear().apply();
         return true;
     }

@@ -3,6 +3,8 @@ package club.crabglory.www.data.model.net;
 import android.support.annotation.NonNull;
 
 import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.model.db.User;
+import club.crabglory.www.data.model.persistence.Account;
 
 public class ModifyRspModel {
     public static final int VALUE_AVATAR = 0;
@@ -47,5 +49,25 @@ public class ModifyRspModel {
     @Override
     public String toString() {
         return DataKit.Companion.getGson().toJson(this);
+    }
+
+    // fixme just for test
+    public User toUser() {
+        User user = Account.getUser();
+        switch (type) {
+            case VALUE_AVATAR:
+                user.setAvatar(this.code);
+                break;
+            case VALUE_NAME:
+                user.setName(this.code);
+                break;
+            case VALUE_SEX:
+                user.setSex(Integer.parseInt(this.code));
+                break;
+            case VALUE_ADDRESS:
+                user.setAddress(this.code);
+                break;
+        }
+        return user;
     }
 }

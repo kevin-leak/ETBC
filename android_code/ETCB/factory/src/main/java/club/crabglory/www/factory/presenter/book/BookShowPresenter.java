@@ -37,8 +37,6 @@ public class BookShowPresenter extends
         super.onDataLoaded(books);
         // 数据到来了是追加还是替代，头部追加还是尾部追加
         refreshData(books);
-        // 用来停止loading
-        Log.e("BookShowPresenter", books.toString());
     }
 
     @Override
@@ -58,11 +56,6 @@ public class BookShowPresenter extends
 
     @Override
     public void onDataNotAvailable(final int strRes) {
-        getView().getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mView.showError(strRes);
-            }
-        });
+        mView.showError(strRes);
     }
 }

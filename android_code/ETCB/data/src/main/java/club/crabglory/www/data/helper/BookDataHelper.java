@@ -38,33 +38,41 @@ public class BookDataHelper {
     }
 
 
-
-    public static void upBook(Book book, final DataSource.FailedCallback callback) {
-        String s = FileDataHelper.fetchBackgroundFile(book.getImage());
-        if (TextUtils.isEmpty(s)) {
-            callback.onDataNotAvailable(R.string.error_form_avatar);
-            return;
-        }
-        Log.e("BookHelp", "upBook");
-        book.setImage(s);
-        // 调用Retrofit对我们的网络请求接口做代理
-        RemoteService remote = NetKit.remote();
-        // 得到一个Call
-        Call<RspModel<Book>> call = remote.upBook(book);
-        // 异步的请求
-        call.enqueue(new Callback<RspModel<Book>>() {
-            @Override
-            public void onResponse(Call<RspModel<Book>> call, Response<RspModel<Book>> response) {
-                // todo save to local db
-            }
-
-            @Override
-            public void onFailure(Call<RspModel<Book>> call, Throwable t) {
-                Log.e("BookDataHelper", "book refreshBooks");
-                call.cancel();
-                callback.onDataNotAvailable(R.string.error_data_network_error);
-            }
-        });
+    public static void upBook(Book book, final DataSource.Callback<String> callback) {
+        // fixme just fot local test
+        DbHelper.save(Book.class, book);
+        callback.onDataLoaded("ok");
+        // fixme just fot local test
+//        String s = FileDataHelper.fetchBackgroundFile(book.getImage());
+//        if (TextUtils.isEmpty(s)) {
+//            callback.onDataNotAvailable(R.string.error_form_avatar);
+//            return;
+//        }
+//        book.setImage(s);
+//        final RemoteService remote = NetKit.remote();
+//        Call<RspModel<Book>> call = remote.upBook(book);
+//        call.enqueue(new Callback<RspModel<Book>>() {
+//            @Override
+//            public void onResponse(Call<RspModel<Book>> call, Response<RspModel<Book>> response) {
+//                RspModel<Book> body = response.body();
+//                if (body != null) {
+//                    Book book = body.getResult();
+//                    if (book != null) {
+//                        DbHelper.save(Book.class, book);
+//                        callback.onDataLoaded("ok");
+//                        return;
+//                    }
+//                }
+//                NetKit.decodeRep(body, callback);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<RspModel<Book>> call, Throwable t) {
+//                Log.e("BookDataHelper", "book refreshBooks");
+//                call.cancel();
+//                callback.onDataNotAvailable(R.string.error_data_network_error);
+//            }
+//        });
     }
 
 

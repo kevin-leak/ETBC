@@ -50,5 +50,25 @@
         android:singleLine="true"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
+    <RelativeLayout
+        android:id="@+id/rl_sex"
+        android:visibility="gone"
+        style="@style/account_rl">
+
+        <ImageView
+            style="@style/account_image"
+            android:contentDescription="@string/micro"
+            android:src="@drawable/account_sex" />
+
+        <Spinner
+            android:id="@+id/sp_sex"
+            style="@style/account_text"
+            android:background="@drawable/mine_do_border"
+            android:dropDownVerticalOffset="40dp"
+            android:entries="@array/type_sex"
+            android:theme="@style/SpnStyle" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

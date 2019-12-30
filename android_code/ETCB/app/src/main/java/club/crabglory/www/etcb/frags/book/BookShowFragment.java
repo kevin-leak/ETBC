@@ -1,5 +1,6 @@
 package club.crabglory.www.etcb.frags.book;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +18,10 @@ import butterknife.Unbinder;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.model.db.Book;
+import club.crabglory.www.data.model.persistence.Account;
+import club.crabglory.www.etcb.MainActivity;
 import club.crabglory.www.etcb.R;
+import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.holders.BookDailyHolder;
 import club.crabglory.www.etcb.holders.BookRandomHolder;
 import club.crabglory.www.factory.contract.BookShowContract;
@@ -79,6 +83,11 @@ public class BookShowFragment extends BasePresenterFragment<BookShowContract.Pre
         bookAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<Book>() {
             @Override
             public void onItemClick(RecyclerAdapter.ViewHolder holder, Book book) {
+                if (!Account.isLogin()) {
+                    Intent intent = new Intent(BookShowFragment.this.getActivity(), AccountActivity.class);
+                    startActivityForResult(intent, AccountActivity.requestCode);
+                    return;
+                }
                 Bundle bundle = new Bundle();
                 bundle.putString(BooksShopActivity.KEY, book.getId());
                 BooksActivity.show(BookShowFragment.this.getActivity(),

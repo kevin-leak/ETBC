@@ -2,6 +2,7 @@ package club.crabglory.www.data.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,9 +10,11 @@ import java.util.List;
 import java.util.UUID;
 
 import club.crabglory.www.common.Application;
+import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
+import club.crabglory.www.data.model.db.MicroVideo;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.persistence.Account;
 
@@ -23,8 +26,9 @@ public class StaticData {
     public static void getBook(Application app) {
         SharedPreferences sp = app.getSharedPreferences(StaticData.class.getName(), Context.MODE_PRIVATE);
         boolean isLoad = sp.getBoolean(KEY_INIT_STATIC_DATA, false);
-        if (!isLoad){
+        if (!isLoad) {
             initBook();
+            initVideo();
             sp.edit().putBoolean(KEY_INIT_STATIC_DATA, true).apply();
         }
 
@@ -162,22 +166,22 @@ public class StaticData {
                 "\"Harry Potter and the Prisoner of Azkaban\", \"Harry Potter and Flame Cup");
         bookList.add(book5);
 
-        Book book6 = new Book();
-        book6.setId(UUID.randomUUID().toString());
-        book6.setImage("https://img9.doubanio.com/view/subject/l/public/s8912644.jpg");
-        book6.setName("Bible");
-        book6.setAuthor("Christian");
-        book6.setPrice(15);
-        book6.setSales(2);
-        book6.setCount(10);
-        book6.setType(3);
-        book6.setUpper(Account.getUser());
-        book6.setUpTime(new Date());
-        book6.setModifyAt(new Date());
-        book6.setDescription("Didn't we say to you in Egypt, 'Leave us alone; let us " +
-                "serve the Egyptians'? It would have been better for us to serve the " +
-                "Egyptians than to die in the desert!" );
-        bookList.add(book6);
+//        Book book6 = new Book();
+//        book6.setId(UUID.randomUUID().toString());
+//        book6.setImage("https://img9.doubanio.com/view/subject/l/public/s8912644.jpg");
+//        book6.setName("Bible");
+//        book6.setAuthor("Christian");
+//        book6.setPrice(15);
+//        book6.setSales(2);
+//        book6.setCount(10);
+//        book6.setType(3);
+//        book6.setUpper(Account.getUser());
+//        book6.setUpTime(new Date());
+//        book6.setModifyAt(new Date());
+//        book6.setDescription("Didn't we say to you in Egypt, 'Leave us alone; let us " +
+//                "serve the Egyptians'? It would have been better for us to serve the " +
+//                "Egyptians than to die in the desert!" );
+//        bookList.add(book6);
 
         Book book7 = new Book();
         book7.setId(UUID.randomUUID().toString());
@@ -196,7 +200,7 @@ public class StaticData {
                 "It isn’t a quick fix, but it provides a path for other people who want to take" +
                 " control of the learning process. The full-version" +
                 " includes a 228 page e-book and six bonus printouts designed to help you master " +
-                "these techniques" );
+                "these techniques");
 
         Goods goods = book7.toCarGoods(1);
         goods.setState(true);
@@ -206,6 +210,7 @@ public class StaticData {
         DbHelper.save(Book.class, bookList.toArray(new Book[0]));
     }
 
+    // just for test
     public static User getUser() {
         User user = new User();
         user.setAvatar("https://raw.githubusercontent.com/kevin-leak/CattleIM/master/IMSoftData/UIDesign/app/ic_launcher.png");
@@ -217,5 +222,20 @@ public class StaticData {
         user.setFavorite(1.5f);
         user.save();
         return user;
+    }
+
+
+    public static void initVideo() {
+        int[] imgs = {R.mipmap.img_video_1, R.mipmap.img_video_2, R.mipmap.img_video_3, R.mipmap.img_video_4, R.mipmap.img_video_5, R.mipmap.img_video_6, R.mipmap.img_video_7, R.mipmap.img_video_8};
+        int[] videos = {R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_8};
+        String uriString = Uri.parse("res:///" + R.mipmap.img_video_1).toString();
+        ArrayList<MicroVideo> microVideos = new ArrayList<>();
+        for (int i = 0; i < imgs.length; i++) {
+            MicroVideo microVideo = new MicroVideo();
+            microVideo.setImg(imgs[i]);
+            microVideo.setVideo(videos[i]);
+            microVideos.add(microVideo);
+        }
+
     }
 }

@@ -46,6 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
+        app:isLoadMore="true"
         app:overlay="false"
         app:progress_colors="@array/material_colors"
         app:wave_color="#90B7D7EB"

@@ -78,6 +78,7 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     @Override
     public void loginSuccess() {
         getActivity().setResult(MainActivity.successCode);
+        getActivity().finish();
     }
 
     @Override

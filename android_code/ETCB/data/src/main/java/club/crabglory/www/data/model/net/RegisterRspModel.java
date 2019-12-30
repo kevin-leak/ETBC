@@ -2,7 +2,11 @@ package club.crabglory.www.data.model.net;
 
 import android.support.annotation.NonNull;
 
+import java.util.Date;
+import java.util.UUID;
+
 import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.netkit.NetKit;
 
 public class RegisterRspModel {
@@ -66,5 +70,22 @@ public class RegisterRspModel {
     @Override
     public String toString() {
         return DataKit.Companion.getGson().toJson(this);
+    }
+
+    // fixme account for test
+    public User toUser(){
+        User user = new User();
+        user.setAvatar(this.avatarUrl);
+        user.setId(UUID.randomUUID().toString());
+        user.setName(this.name);
+        user.setSex(this.sex);
+        user.setPhone(this.phone);
+        user.setFavorite(0);
+        user.setFollow(false);
+        user.setFollowing(0);
+        user.setAddress("");
+        user.setModifyAt(new Date());
+        user.setAlias(this.name);
+        return user;
     }
 }

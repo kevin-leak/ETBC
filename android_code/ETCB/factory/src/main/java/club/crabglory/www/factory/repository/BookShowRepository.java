@@ -45,7 +45,7 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
                     .execute();
         } else if (Book.TYPE_DAILY == type || Book.TYPE_RANDOM == type) {
             int offset = count * times;
-//            if (Book.TYPE_RANDOM == type) offset += 4;
+            if (Book.TYPE_RANDOM == type) offset += 4;
             SQLite.select().from(Book.class)
                     .where(Book_Table.count.greaterThan(0))
                     .offset(offset).limit(count)
@@ -68,6 +68,6 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
     public boolean isRequired(Book book) {
         // 来源三种：推送的数据、网络加载的数据、本地数据库查询的数据
         // 都要进行更新。
-        return book.getCount() > 0;
+        return book.getCount() > 0 && !book.getUpper().getId().equals(Account.getUserId());
     }
 }

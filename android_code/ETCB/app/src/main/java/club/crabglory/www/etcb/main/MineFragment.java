@@ -1,6 +1,7 @@
 package club.crabglory.www.etcb.main;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -14,7 +15,9 @@ import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.persistence.Account;
+import club.crabglory.www.etcb.MainActivity;
 import club.crabglory.www.etcb.R;
+import club.crabglory.www.etcb.frags.LiveActivity;
 import club.crabglory.www.etcb.frags.MicroUpActivity;
 import club.crabglory.www.etcb.frags.SettingsActivity;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
@@ -57,14 +60,10 @@ public class MineFragment extends BasePresenterFragment<MineContract.Presenter>
         Bundle bundle = new Bundle();
         switch (view.getId()) {
             case R.id.civ_avatar:
-                // fixme to not let it to open
-//                if (!Account.isLogin()) AccountActivity.show(activity, AccountActivity.class);
                 bundle.putString(DisplayActivity.KEY, Account.getUserId());
                 DisplayActivity.show(activity, DisplayActivity.class, bundle, false);
                 break;
             case R.id.rl_profile:
-                // fixme to open limit of modify account
-                if (!Account.isLogin()) AccountActivity.show(activity, AccountActivity.class);
                 MineProfileActivity.show(activity, MineProfileActivity.class);
                 break;
             case R.id.rl_fork:
@@ -78,6 +77,7 @@ public class MineFragment extends BasePresenterFragment<MineContract.Presenter>
                 BooksActivity.show(activity, GoodsActivity.class, bundle, false);
                 break;
             case R.id.iv_settings:
+                // 如果发生退出，则主界面还会弹出登入界面
                 SettingsActivity.show(activity, SettingsActivity.class);
                 break;
             case R.id.cv_pay:
@@ -90,7 +90,7 @@ public class MineFragment extends BasePresenterFragment<MineContract.Presenter>
                 MessageActivity.show(activity, MessageActivity.class);
                 break;
             case R.id.cv_live:
-//                LiveActivity.show(activity, LiveActivity.class);
+                LiveActivity.show(activity, LiveActivity.class);
                 break;
             case R.id.cv_books:
                 BookUpActivity.show(activity, BookUpActivity.class);
@@ -102,8 +102,7 @@ public class MineFragment extends BasePresenterFragment<MineContract.Presenter>
     @Override
     protected void initData() {
         super.initData();
-        // 这里表示加载登入信息，并且提醒登入
-        presenter.start();
+        presenter.start(); // 这里表示加载登入信息，并且提醒登入
     }
 
     @Override

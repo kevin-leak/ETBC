@@ -56,7 +56,9 @@
             android:background="@drawable/mine_do_border"
             android:layout_marginLeft="@dimen/len_20"
             style="@style/mine_do_text"
-            android:text="@string/black_surface"
+            android:drawableRight="@drawable/settings_sun"
+            android:drawableEnd="@drawable/settings_sun"
+            android:text="@string/surface"
             tools:ignore="RtlSymmetry"
             android:layout_marginStart="@dimen/len_20" />
 

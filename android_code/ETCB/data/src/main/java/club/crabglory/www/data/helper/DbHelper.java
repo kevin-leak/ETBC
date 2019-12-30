@@ -118,7 +118,7 @@ public class DbHelper {
          * 2. 更新book的销量与数量，通知并保存
          * 2. 修改goods的状态
          * */
-        // 通知购车进行清空操作
+        // 通知进行清空操作
         instance.notifyDelete(Goods.class, goodsList);
         List<Book> books = new ArrayList<>();
         for (Goods goods : goodsList) {

@@ -2,9 +2,11 @@ package club.crabglory.www.etcb.frags.book;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -50,6 +52,7 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     @BindView(R.id.et_goods_author)
     EditText etGoodsAuthor;
     private String mAvatarPath = "";
+    // todo to add video
     private String mVideoUrl = "";
 
     @Override
@@ -82,11 +85,11 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
                 MicroUpActivity.show(BookUpActivity.this, MicroUpActivity.class);
                 break;
             case R.id.btn_commit:
-
                 // 后期录制视频的时候这里需要一个URL传进来
                 mPresenter.upBook(mVideoUrl, mAvatarPath, etGoodsName.getText().toString(),
-                        etGoodsAuthor.getText().toString(),etQuantity.getText().toString(),
-                        etUnitPrice.getText().toString(),etGoodsInfo.getText().toString());
+                        etGoodsAuthor.getText().toString(), etQuantity.getText().toString(),
+                        etUnitPrice.getText().toString(), etGoodsInfo.getText().toString(),
+                        spCategory.getSelectedItemPosition());
                 break;
         }
     }
@@ -144,5 +147,23 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     @Override
     protected BookUpContract.Presenter initPresenter() {
         return new BookUpPresenter(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void upSuccess() {
+        spCategory.setSelection(0);
+        ivGoodsImage.setBackgroundColor(getResources().getColor(R.color.secondWindowBackgroundColor));
+        ivGoodsImage.setBackground(getResources().getDrawable(0));
+        ibInfoImageAdd.setVisibility(View.VISIBLE);
+        etGoodsName.setText("");
+        etUnitPrice.setText("");
+        etQuantity.setText("");
+        etGoodsInfo.setText("");
+        etGoodsAuthor.setText("");
+        mAvatarPath = "";
+        mVideoUrl = "";
+        hideLoading();
+        Application.Companion.showToast(this, club.crabglory.www.factory.R.string.up_success);
     }
 }

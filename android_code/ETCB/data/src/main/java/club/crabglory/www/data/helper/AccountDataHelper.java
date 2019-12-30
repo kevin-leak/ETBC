@@ -1,5 +1,6 @@
 package club.crabglory.www.data.helper;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.IOException;
@@ -22,13 +23,22 @@ import retrofit2.Response;
 public class AccountDataHelper {
 
     public static void register(RegisterRspModel model, DataSource.Callback<User> callback) {
-        // todo here to open register
-        Log.e("AccountDataHelper", model.toString());
-        // 调用Retrofit对我们的网络请求接口做代理
+        String avatarUrl = FileDataHelper.fetchBackgroundFile(model.getAvatarUrl());
+        if (TextUtils.isEmpty(avatarUrl)) {
+            // 如果上传图片没有上传成功，则报错
+            callback.onDataNotAvailable(R.string.error_data_unknown);
+            // fixme local_test_register
+                callback.onDataNotAvailable(R.string.local_test_register);
+                AccountRspModel rspModel = new AccountRspModel();
+                rspModel.setUser(model.toUser());
+                Account.loginToLocal(rspModel);
+                DbHelper.save(User.class, rspModel.getUser());
+                callback.onDataLoaded(rspModel.getUser());
+            // fixme local_test_register
+            return;
+        }
         RemoteService remote = NetKit.remote();
-        // 得到一个Call
         Call<RspModel<AccountRspModel>> call = remote.accountRegister(model);
-        // 异步的请求
         call.enqueue(new AccountRspCallback(callback));
 
     }
@@ -55,39 +65,44 @@ public class AccountDataHelper {
     }
 
     public static void modify(ModifyRspModel model, DataSource.Callback<User> callback) {
-        // todo here to open modify
-        Log.e("AccountDataHelper", model.toString());
-        // 调用Retrofit对我们的网络请求接口做代理
-        RemoteService remote = NetKit.remote();
-        // 得到一个Call
-        Call<RspModel<AccountRspModel>> call = remote.accountModify(model);
-        // 异步的请求
-        call.enqueue(new AccountRspCallback(callback));
+        // fixme local_test_register
+            callback.onDataNotAvailable(R.string.local_test);
+            User user = model.toUser();
+            DbHelper.save(User.class, user);
+            callback.onDataLoaded(user);
+            return;
+        // fixme local_test_register
+//        RemoteService remote = NetKit.remote();
+//        Call<RspModel<AccountRspModel>> call = remote.accountModify(model);
+//        call.enqueue(new AccountRspCallback(callback));
     }
 
 
     public static void loginOut(String id, final DataSource.Callback<String> callback) {
-
-        RemoteService remote = NetKit.remote();
-        final Call<RspModel<String>> logout = remote.logout(id);
-        logout.enqueue(new Callback<RspModel<String>>() {
-            @Override
-            public void onResponse(Call<RspModel<String>> call, Response<RspModel<String>> response) {
-                RspModel<String> body = response.body();
-                if (body != null && body.isSuccess()) {
-                    callback.onDataLoaded(body.getResult());
-                } else {
-                    if (body != null) {
-                        NetKit.decodeRep(body, callback);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<RspModel<String>> call, Throwable t) {
-//                Log.e(TAG, "onFailure: " + "out----------");
-            }
-        });
+        // fixme just for test
+        callback.onDataLoaded("ok");
+        return;
+        // fixme just for test
+//        RemoteService remote = NetKit.remote();
+//        final Call<RspModel<String>> logout = remote.logout(id);
+//        logout.enqueue(new Callback<RspModel<String>>() {
+//            @Override
+//            public void onResponse(Call<RspModel<String>> call, Response<RspModel<String>> response) {
+//                RspModel<String> body = response.body();
+//                if (body != null && body.isSuccess()) {
+//                    callback.onDataLoaded(body.getResult());
+//                } else {
+//                    if (body != null) {
+//                        NetKit.decodeRep(body, callback);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<RspModel<String>> call, Throwable t) {
+////                Log.e(TAG, "onFailure: " + "out----------");
+//            }
+//        });
 
     }
 

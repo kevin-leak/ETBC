@@ -12,6 +12,7 @@ import java.util.Date;
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.model.BaseDdModel;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
+import club.crabglory.www.data.model.net.PayRspModel;
 
 // 指的是当前用户购买，或者放入购物车的book
 @Table(database = AppDatabase.class)
@@ -103,5 +104,14 @@ public class Goods extends BaseDdModel<Goods>
     @Override
     public String toString() {
         return DataKit.Companion.getGson().toJson(this);
+    }
+
+    public PayRspModel toPayRspModel() {
+        PayRspModel rspModel = new PayRspModel();
+        rspModel.setBookId(this.getBook().getId());
+        rspModel.setConsumer(this.getCustomer().getId());
+        rspModel.setCount(this.getCount());
+        rspModel.setType(PayRspModel.TYPE_GOODS);
+        return rspModel;
     }
 }

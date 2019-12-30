@@ -18,13 +18,13 @@ import butterknife.OnClick;
 import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.PresentToolActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
-import club.crabglory.www.factory.contract.ModifyProfileContract;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.ModifyRspModel;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.common.widget.AvatarView;
+import club.crabglory.www.factory.contract.ModifyProfileContract;
 import club.crabglory.www.factory.presenter.account.ModifyProfilePresenter;
 
 public class MineProfileActivity extends PresentToolActivity<ModifyProfileContract.Presenter>
@@ -37,6 +37,8 @@ public class MineProfileActivity extends PresentToolActivity<ModifyProfileContra
     TextView tvName;
     @BindView(R.id.tv_sex)
     TextView tvSex;
+    @BindView(R.id.tv_address)
+    TextView tvAddress;
     private String mAvatarPath;
     public static ModifyProfilePresenter presenter;
 
@@ -53,6 +55,7 @@ public class MineProfileActivity extends PresentToolActivity<ModifyProfileContra
         rivAvatar.setup((Glide.with(MineProfileActivity.this)), user);
         tvName.setText(user.getName());
         tvSex.setText(user.getSex() == 0 ? "Male" : "Female");
+        tvAddress.setText(user.getAddress());
     }
 
     @Override

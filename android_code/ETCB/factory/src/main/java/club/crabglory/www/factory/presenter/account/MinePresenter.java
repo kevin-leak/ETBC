@@ -2,7 +2,9 @@ package club.crabglory.www.factory.presenter.account;
 
 import java.util.List;
 
+import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.presenter.SourcePresenter;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.contract.AccountDataSource;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.view.UserModelView;
@@ -21,13 +23,16 @@ public class MinePresenter extends SourcePresenter<User, UserModelView, AccountD
 
 
     @Override
-    public void onDataLoaded(List<User> users) {
+    public void onDataLoaded(final List<User> users) {
         if (users.size() == 0){
             mView.showError(R.string.error_not_login);
-            // 会制造默认的User
-            mView.loadUserInfo(Account.getUser());
         }else {
-            mView.loadUserInfo(users.get(0));
+            mView.getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mView.loadUserInfo(users.get(0));
+                }
+            });
         }
     }
 }
