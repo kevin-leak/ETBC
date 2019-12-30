@@ -1,7 +1,6 @@
 package club.crabglory.www.data.model.db;
 
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.ForeignKey;
@@ -17,7 +16,7 @@ import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.data.model.BaseDdModel;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 
 @Table(database = AppDatabase.class)
 public class Book extends BaseDdModel<Book>

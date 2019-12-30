@@ -5,14 +5,12 @@ import android.text.TextUtils;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
 import club.crabglory.www.common.utils.ValidateUtils;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.helper.AccountDataHelper;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.LoginRspModel;
-import club.crabglory.www.data.model.net.RegisterRspModel;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.R;
 import club.crabglory.www.factory.contract.LoginContract;
-import club.crabglory.www.factory.contract.RegisterContract;
-import club.crabglory.www.factory.presenter.FileHelper;
 
 public class LoginPresenter extends BasePresenter<LoginContract.View>
         implements LoginContract.Presenter, DataSource.Callback<User> {
@@ -53,21 +51,21 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
             onDataNotAvailable(R.string.error_null_data);
             return;
         }
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 LoginRspModel model = new LoginRspModel(phone, code, flag);
-                AccountHelper.login(model, LoginPresenter.this);
+                AccountDataHelper.login(model, LoginPresenter.this);
             }
         });
     }
 
     @Override
     public void sendCodeRsp(final String phone) {
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
-                AccountHelper.rspCode(phone, LoginPresenter.this);
+                AccountDataHelper.rspCode(phone, LoginPresenter.this);
             }
         });
     }

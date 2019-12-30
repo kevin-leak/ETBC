@@ -7,13 +7,14 @@ import java.io.Serializable;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.helper.AccountDataHelper;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.contract.ModifyProfileContract;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.ModifyRspModel;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.factory.R;
-import club.crabglory.www.factory.presenter.FileHelper;
+import club.crabglory.www.data.helper.FileDataHelper;
 
 public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.View>
         implements ModifyProfileContract.Presenter, DataSource.Callback<User>, Serializable {
@@ -25,11 +26,11 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
     @Override
     public void modifyName(final String name) {
         mView.showDialog();
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 ModifyRspModel model = new ModifyRspModel(Account.getUserId(), name, ModifyRspModel.VALUE_NAME);
-                AccountHelper.modify(model, ModifyProfilePresenter.this);
+                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
             }
         });
     }
@@ -37,11 +38,11 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
     @Override
     public void modifySex(final int sex) {
         mView.showDialog();
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 ModifyRspModel model = new ModifyRspModel(Account.getUserId(), sex + "", ModifyRspModel.VALUE_SEX);
-                AccountHelper.modify(model, ModifyProfilePresenter.this);
+                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
             }
         });
     }
@@ -49,11 +50,11 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
     @Override
     public void modifyAddress(final String address) {
         mView.showDialog();
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 ModifyRspModel model = new ModifyRspModel(Account.getUserId(), address, ModifyRspModel.VALUE_ADDRESS);
-                AccountHelper.modify(model, ModifyProfilePresenter.this);
+                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
             }
         });
 
@@ -62,17 +63,17 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
     @Override
     public void modifyAvatar(final String mAvatarPath) {
         mView.showDialog();
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
-                String avatarUrl = FileHelper.fetchBackgroundFile(mAvatarPath);
+                String avatarUrl = FileDataHelper.fetchBackgroundFile(mAvatarPath);
                 if (TextUtils.isEmpty(avatarUrl)) {
                     // 如果上传图片没有上传成功，则报错
                     ModifyProfilePresenter.this.onDataNotAvailable(R.string.error_data_unknown);
                     return;
                 }
                 ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl, ModifyRspModel.VALUE_ADDRESS);
-                AccountHelper.modify(model, ModifyProfilePresenter.this);
+                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
             }
         });
     }

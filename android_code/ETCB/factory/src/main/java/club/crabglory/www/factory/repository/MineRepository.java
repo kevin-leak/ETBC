@@ -1,15 +1,15 @@
-package club.crabglory.www.data.source;
+package club.crabglory.www.factory.repository;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
-import club.crabglory.www.data.contract.UserDataSource;
+import club.crabglory.www.factory.contract.AccountDataSource;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.db.User_Table;
-import club.crabglory.www.data.persistence.Account;
 
-public class MineRepository extends BaseDbRepository<User> implements UserDataSource {
+public class MineRepository extends BaseDbRepository<User> implements AccountDataSource {
 
     @Override
     public void load(SucceedCallback<List<User>> callback) {

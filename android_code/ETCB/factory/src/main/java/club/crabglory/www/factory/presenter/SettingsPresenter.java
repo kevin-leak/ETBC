@@ -2,11 +2,11 @@ package club.crabglory.www.factory.presenter;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.contract.SettingsContract;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.factory.R;
-import club.crabglory.www.factory.presenter.account.AccountHelper;
+import club.crabglory.www.data.helper.AccountDataHelper;
 
 public class SettingsPresenter extends BasePresenter<SettingsContract.View>
         implements SettingsContract.Presenter,  DataSource.Callback<String> {
@@ -19,10 +19,10 @@ public class SettingsPresenter extends BasePresenter<SettingsContract.View>
     public void loginOut() {
         mView.showDialog();
         if (Account.isLogin())
-            DataKit.Companion.runOnAsysc(new Runnable() {
+            Factory.Companion.runOnAsync(new Runnable() {
                 @Override
                 public void run() {
-                    AccountHelper.loginOut(Account.getUserId(), SettingsPresenter.this);
+                    AccountDataHelper.loginOut(Account.getUserId(), SettingsPresenter.this);
                 }
             });
         else

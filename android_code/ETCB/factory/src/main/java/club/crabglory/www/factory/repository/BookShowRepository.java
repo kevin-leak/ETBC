@@ -1,4 +1,4 @@
-package club.crabglory.www.data.source;
+package club.crabglory.www.factory.repository;
 
 
 import android.util.Log;
@@ -7,10 +7,10 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
-import club.crabglory.www.data.contract.BookDataSource;
+import club.crabglory.www.factory.contract.BookDataSource;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Book_Table;
-import club.crabglory.www.data.persistence.Account;
 
 
 public class BookShowRepository extends BaseDbRepository<Book> implements BookDataSource {

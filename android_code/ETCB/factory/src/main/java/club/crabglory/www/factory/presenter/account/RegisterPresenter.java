@@ -5,12 +5,13 @@ import android.text.TextUtils;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
 import club.crabglory.www.common.utils.ValidateUtils;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.helper.AccountDataHelper;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.RegisterRspModel;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.R;
 import club.crabglory.www.factory.contract.RegisterContract;
-import club.crabglory.www.factory.presenter.FileHelper;
+import club.crabglory.www.data.helper.FileDataHelper;
 
 public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         implements RegisterContract.Presenter, DataSource.Callback<User> {
@@ -22,17 +23,17 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     @Override
     public void register(final String avatarPath, final String name, final String phone, final String password, final int sex) {
         mView.showDialog();
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
-                String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
+                String avatarUrl = FileDataHelper.fetchBackgroundFile(avatarPath);
                 if (TextUtils.isEmpty(avatarUrl)) {
                     // 如果上传图片没有上传成功，则报错
                     RegisterPresenter.this.onDataNotAvailable(R.string.error_data_unknown);
                     return;
                 }
                 RegisterRspModel model = new RegisterRspModel(avatarUrl, name, phone, password, sex);
-                AccountHelper.register(model, RegisterPresenter.this);
+                AccountDataHelper.register(model, RegisterPresenter.this);
             }
         });
     }

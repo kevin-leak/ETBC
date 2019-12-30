@@ -1,4 +1,4 @@
-package club.crabglory.www.factory.presenter;
+package club.crabglory.www.data.helper;
 
 import android.text.TextUtils;
 
@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FileHelper {
+public class FileDataHelper {
 
     public static void saveBackgroundFile(String path, DataSource.Callback<ETCBFile> callback) {
 

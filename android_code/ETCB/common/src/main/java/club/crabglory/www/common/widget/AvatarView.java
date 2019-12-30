@@ -1,15 +1,13 @@
-package club.crabglory.www.etcb.view;
+package club.crabglory.www.common.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.Toast;
 
 import com.bumptech.glide.RequestManager;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import club.crabglory.www.common.Common;
+import club.crabglory.www.common.R;
 import club.crabglory.www.common.basic.model.Author;
-import club.crabglory.www.etcb.R;
 
 public class AvatarView extends RoundedImageView {
     public AvatarView(Context context) {
@@ -36,7 +34,7 @@ public class AvatarView extends RoundedImageView {
         if (url != null && url.contains("media")) {
             url = url.replace("media/", "");
         }
-        url = Common.Constance.BASE_PHONE_UTL + url;
+//        url = Common.Constance.BASE_PHONE_UTL + url;
         setup(manager, R.mipmap.avatar, url);
     }
 

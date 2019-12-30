@@ -3,15 +3,14 @@ package club.crabglory.www.factory.presenter.book;
 import android.text.TextUtils;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
+import club.crabglory.www.data.helper.BookDataHelper;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.model.db.DbHelper;
-import club.crabglory.www.data.model.db.Goods;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.helper.DbHelper;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.factory.R;
 import club.crabglory.www.factory.contract.BookUpContract;
 
@@ -52,7 +51,7 @@ public class BookUpPresenter extends BasePresenter<BookUpContract.View>
         book.setVideo(mVideoUrl);
         // fixme 先保存在本地, 后期修改
         DbHelper.save(Book.class, book);
-        BookHelper.upBook(book, this);
+        BookDataHelper.upBook(book, this);
     }
 
 

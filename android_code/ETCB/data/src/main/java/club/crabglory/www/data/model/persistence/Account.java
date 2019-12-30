@@ -1,14 +1,10 @@
-package club.crabglory.www.data.persistence;
+package club.crabglory.www.data.model.persistence;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
-
-import java.util.UUID;
 
 import club.crabglory.www.data.DataKit;
 
@@ -16,7 +12,6 @@ import club.crabglory.www.data.model.StaticData;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.db.User_Table;
 import club.crabglory.www.data.model.net.AccountRspModel;
-import club.crabglory.www.data.model.net.UserRspModel;
 
 public class Account {
 

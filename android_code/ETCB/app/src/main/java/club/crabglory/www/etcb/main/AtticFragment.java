@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BaseFragment;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.common.widget.video.FullWindowVideoView;
 import club.crabglory.www.common.widget.video.MyLayoutManager;
@@ -24,7 +25,6 @@ import club.crabglory.www.common.widget.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.data.model.db.MicroVideo;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * 微读阁
@@ -118,7 +118,7 @@ public class AtticFragment extends BaseFragment {
         @BindView(R.id.root_view)
         RelativeLayout rootView;
         @BindView(R.id.civ_avatar)
-        CircleImageView civ_avatar;
+        AvatarView civ_avatar;
 
         public VideoHolder(View root) {
             super(root);

@@ -71,7 +71,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="@dimen/len_60" />
 
-    <club.crabglory.www.etcb.view.AvatarView
+    <club.crabglory.www.common.widget.AvatarView
         android:id="@+id/riv_avatar"
         android:layout_width="@dimen/len_65"
         android:layout_height="@dimen/len_65"

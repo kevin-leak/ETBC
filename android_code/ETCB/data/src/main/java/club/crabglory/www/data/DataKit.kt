@@ -3,7 +3,7 @@ package club.crabglory.www.data
 import club.crabglory.www.common.Application
 import club.crabglory.www.data.model.StaticData
 import club.crabglory.www.data.model.db.utils.DBFlowExclusionStrategy
-import club.crabglory.www.data.persistence.Account
+import club.crabglory.www.data.model.persistence.Account
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.raizlabs.android.dbflow.config.FlowConfig
@@ -13,7 +13,6 @@ import java.util.concurrent.Executors
 
 class DataKit {
     companion object {
-        private var executor = Executors.newFixedThreadPool(4)!!
         private val gson: Gson
 
         var instance: DataKit? = null
@@ -23,7 +22,6 @@ class DataKit {
             }
 
         init {
-            executor = Executors.newFixedThreadPool(4)
             gson = GsonBuilder() // 设置时间格式
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss") // 设置一个过滤器，数据库级别的Model不进行Json转换
                     .setExclusionStrategies(DBFlowExclusionStrategy())
@@ -32,10 +30,6 @@ class DataKit {
 
         fun app(): Application {
             return Application.instance
-        }
-
-        fun runOnAsysc(runnable: Runnable) {
-            executor.submit(runnable)
         }
 
         fun initDb() {

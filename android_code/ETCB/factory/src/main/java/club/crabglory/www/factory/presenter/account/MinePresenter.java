@@ -3,15 +3,15 @@ package club.crabglory.www.factory.presenter.account;
 import java.util.List;
 
 import club.crabglory.www.common.basic.presenter.SourcePresenter;
-import club.crabglory.www.data.contract.UserDataSource;
+import club.crabglory.www.factory.contract.AccountDataSource;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.view.UserModelView;
-import club.crabglory.www.data.persistence.Account;
-import club.crabglory.www.data.source.MineRepository;
+import club.crabglory.www.data.model.persistence.Account;
+import club.crabglory.www.factory.repository.MineRepository;
 import club.crabglory.www.factory.R;
 import club.crabglory.www.factory.contract.MineContract;
 
-public class MinePresenter extends SourcePresenter<User, UserModelView, UserDataSource, MineContract.View>
+public class MinePresenter extends SourcePresenter<User, UserModelView, AccountDataSource, MineContract.View>
             implements MineContract.Presenter{
 
 

@@ -1,7 +1,6 @@
 package club.crabglory.www.etcb.holders;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -9,9 +8,8 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.model.view.BookModelView;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 
 public class BookDailyHolder extends RecyclerAdapter.ViewHolder<Book> {
 

@@ -6,11 +6,12 @@ import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.helper.BookDataHelper;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.model.db.DbHelper;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.net.BookRspModel;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.R;
 import club.crabglory.www.factory.contract.BooksShopContract;
 
@@ -39,13 +40,13 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
 
     @Override
     public void getGoods(final String goodsId) {
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 BookRspModel model = new BookRspModel();
                 model.setId(goodsId);
-                BookHelper.getLocal(goodsId, BookShopPresenter.this);
-                BookHelper.refreshBooks(model, BookShopPresenter.this);
+                BookDataHelper.getLocal(goodsId, BookShopPresenter.this);
+                BookDataHelper.refreshBooks(model, BookShopPresenter.this);
             }
         });
     }

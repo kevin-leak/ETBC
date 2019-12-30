@@ -14,12 +14,12 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.PresentToolActivity;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.chat.ChatActivity;
 import club.crabglory.www.etcb.frags.display.DisplayActivity;
 import club.crabglory.www.etcb.frags.display.VideoShowActivity;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.contract.BooksShopContract;
 import club.crabglory.www.factory.presenter.book.BookShopPresenter;
 

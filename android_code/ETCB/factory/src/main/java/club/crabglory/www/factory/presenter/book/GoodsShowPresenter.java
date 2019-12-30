@@ -8,13 +8,14 @@ import java.util.List;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
-import club.crabglory.www.data.DataKit;
-import club.crabglory.www.data.contract.GoodsDataSource;
-import club.crabglory.www.data.model.db.DbHelper;
+import club.crabglory.www.factory.Factory;
+import club.crabglory.www.factory.contract.GoodsDataSource;
+import club.crabglory.www.data.helper.GoodsDataHelper;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.data.model.net.GoodsRspModel;
-import club.crabglory.www.data.source.GoodsRepository;
+import club.crabglory.www.factory.repository.GoodsRepository;
 import club.crabglory.www.factory.contract.GoodsShowContract;
 
 public class GoodsShowPresenter extends
@@ -47,13 +48,13 @@ public class GoodsShowPresenter extends
     @Override
     public void toRefresh(final boolean isMore) {
         // 包含非book类型：daily,random,my_up,my_buy
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 GoodsRspModel goodsRspModel = new GoodsRspModel();
                 goodsRspModel.setType(type);
                 goodsRspModel.setMore(isMore);
-                GoodsHelper.refreshGoods(goodsRspModel, GoodsShowPresenter.this);
+                GoodsDataHelper.refreshGoods(goodsRspModel, GoodsShowPresenter.this);
             }
         });
     }

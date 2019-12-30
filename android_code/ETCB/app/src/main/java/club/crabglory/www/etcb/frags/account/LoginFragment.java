@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.MainActivity;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.factory.contract.LoginContract;

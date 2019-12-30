@@ -10,10 +10,10 @@ import java.util.UUID;
 
 import club.crabglory.www.common.Application;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.model.db.DbHelper;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.User;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 
 public class StaticData {
     private static final String KEY_INIT_STATIC_DATA = "KEY_INIT_STATIC_DATA";

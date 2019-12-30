@@ -10,7 +10,7 @@
     android:background="@color/secondWindowBackgroundColor"
     android:orientation="vertical">
 
-    <club.crabglory.www.etcb.view.AvatarView
+    <club.crabglory.www.common.widget.AvatarView
         android:id="@+id/iv_book"
         android:elevation="@dimen/len_2"
         android:layout_width="@dimen/len_85"

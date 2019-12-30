@@ -42,23 +42,9 @@ dependencies {
 
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompilerVesion"
-    // view 库
     implementation "com.yalantis:ucrop:$rootProject.ext.ucropVersion"
-    //noinspection GradleDependency
-    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
-    implementation "com.makeramen:roundedimageview:$rootProject.ext.roundedimageviewVersion"
-    // 下拉库
     implementation "com.cjj.materialrefeshlayout:library:$rootProject.ext.refeshlayoutVersion"
-
-    // 权限
-    // For developers using the Android Support Library
     implementation 'pub.devrel:easypermissions:2.0.1'
-
-    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
-
-    //网络库
-    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
-
     api project(':common')
     api project(':factory')
     api project(':data')

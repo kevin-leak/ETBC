@@ -71,7 +71,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <club.crabglory.www.etcb.view.AvatarView
+                    <club.crabglory.www.common.widget.AvatarView
                         android:id="@+id/riv_goods"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -213,7 +213,7 @@
 
                     <RelativeLayout style="@style/shop_rl">
 
-                        <club.crabglory.www.etcb.view.AvatarView
+                        <club.crabglory.www.common.widget.AvatarView
                             android:id="@+id/avi_upper"
                             style="@style/shop_image"
                             android:background="@drawable/mine_do_border"

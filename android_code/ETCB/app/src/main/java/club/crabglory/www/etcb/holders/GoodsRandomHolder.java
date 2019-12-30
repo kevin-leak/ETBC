@@ -14,7 +14,7 @@ import club.crabglory.www.common.utils.DateTimeUtil;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.contract.GoodsShowContract;
 
 public class GoodsRandomHolder extends RecyclerAdapter.ViewHolder<Goods> {

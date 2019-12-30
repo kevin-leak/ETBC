@@ -13,7 +13,7 @@ import butterknife.OnClick;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.contract.GoodsCarContract;
 
 public class GoodsCarHolder extends RecyclerAdapter.ViewHolder<Goods> {

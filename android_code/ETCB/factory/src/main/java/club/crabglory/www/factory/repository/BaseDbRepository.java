@@ -1,4 +1,4 @@
-package club.crabglory.www.data.source;
+package club.crabglory.www.factory.repository;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -12,7 +12,7 @@ import java.util.List;
 
 import club.crabglory.www.common.basic.model.DbDataSource;
 import club.crabglory.www.common.utils.CollectionUtil;
-import club.crabglory.www.data.model.db.DbHelper;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.BaseDdModel;
 
 /**

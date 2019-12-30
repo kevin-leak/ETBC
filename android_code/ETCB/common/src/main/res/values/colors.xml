@@ -16,4 +16,5 @@
     <color name="black_alpha_228" >#e4010c13</color>
     <color name="black_alpha_195">#c3010c13</color>
     <color name="textPrimary">#4e5864</color>
+    <color name="image_placeholder">#EBE9E9</color>
 </resources>

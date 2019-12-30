@@ -20,7 +20,7 @@
         android:theme="@style/carCheckBox"
         android:visibility="gone" />
 
-    <club.crabglory.www.etcb.view.AvatarView
+    <club.crabglory.www.common.widget.AvatarView
         android:id="@+id/iv_goodsImage"
         android:layout_width="@dimen/len_75"
         android:layout_height="match_parent"

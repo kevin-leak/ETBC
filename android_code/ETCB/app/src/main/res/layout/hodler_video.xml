@@ -34,14 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <club.crabglory.www.common.widget.AvatarView
                 android:id="@+id/civ_avatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
                 android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
                 android:src="@mipmap/header_icon_2"
-                app:civ_border_color="@android:color/white"
-                app:civ_border_width="2dp" />
+                app:riv_border_color="@color/colorWhite"
+                app:riv_border_width="@dimen/len_2"
+                app:riv_oval="true" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -84,6 +86,6 @@
 
     <club.crabglory.www.common.widget.video.Love
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

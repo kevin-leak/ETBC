@@ -4,7 +4,7 @@ import club.crabglory.www.common.basic.contract.BaseContract;
 
 public interface AccountContract {
 
-    interface View extends BaseContract.View<AccountContract.Presenter>{
+    interface View extends BaseContract.View<AccountContract.Presenter> {
 
     }
 

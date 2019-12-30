@@ -1,34 +1,29 @@
-package club.crabglory.www.factory.presenter.account;
+package club.crabglory.www.data.helper;
 
 import android.util.Log;
 
-import java.io.File;
 import java.io.IOException;
 
 import club.crabglory.www.common.basic.model.DataSource;
-import club.crabglory.www.common.utils.StringsUtils;
-import club.crabglory.www.data.model.db.DbHelper;
-import club.crabglory.www.data.model.db.ETCBFile;
+import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.AccountRspModel;
-import club.crabglory.www.data.model.net.FileRspModel;
 import club.crabglory.www.data.model.net.LoginRspModel;
 import club.crabglory.www.data.model.net.ModifyRspModel;
 import club.crabglory.www.data.model.net.RegisterRspModel;
 import club.crabglory.www.data.model.net.RspModel;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.netkit.NetKit;
 import club.crabglory.www.data.netkit.RemoteService;
-import club.crabglory.www.data.persistence.Account;
-import club.crabglory.www.factory.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AccountHelper {
+public class AccountDataHelper {
 
-    static void register(RegisterRspModel model, DataSource.Callback<User> callback) {
+    public static void register(RegisterRspModel model, DataSource.Callback<User> callback) {
         // todo here to open register
-        Log.e("AccountHelper", model.toString());
+        Log.e("AccountDataHelper", model.toString());
         // 调用Retrofit对我们的网络请求接口做代理
         RemoteService remote = NetKit.remote();
         // 得到一个Call
@@ -38,9 +33,9 @@ public class AccountHelper {
 
     }
 
-    static void login(LoginRspModel model, DataSource.Callback<User> callback) {
+    public static void login(LoginRspModel model, DataSource.Callback<User> callback) {
         // todo here to open login
-        Log.e("AccountHelper", model.toString());
+        Log.e("AccountDataHelper", model.toString());
         // 调用Retrofit对我们的网络请求接口做代理
         RemoteService remote = NetKit.remote();
         // 得到一个Call
@@ -50,7 +45,7 @@ public class AccountHelper {
 
     }
 
-    static void rspCode(String phone, DataSource.Callback<User> callback) {
+    public static void rspCode(String phone, DataSource.Callback<User> callback) {
         Call<RspModel> task = NetKit.remote().rspCode(phone);
         try {
             task.execute();
@@ -61,7 +56,7 @@ public class AccountHelper {
 
     public static void modify(ModifyRspModel model, DataSource.Callback<User> callback) {
         // todo here to open modify
-        Log.e("AccountHelper", model.toString());
+        Log.e("AccountDataHelper", model.toString());
         // 调用Retrofit对我们的网络请求接口做代理
         RemoteService remote = NetKit.remote();
         // 得到一个Call
@@ -106,7 +101,7 @@ public class AccountHelper {
         @Override
         public void onResponse(Call<RspModel<AccountRspModel>> call,
                                Response<RspModel<AccountRspModel>> response) {
-            Log.e("AccountHelper", "Account info come");
+            Log.e("AccountDataHelper", "Account info come");
             RspModel<AccountRspModel> rspPiece = response.body();
             if (rspPiece != null && rspPiece.isSuccess()) {
                 AccountRspModel accountPiece = rspPiece.getResult();
@@ -137,7 +132,7 @@ public class AccountHelper {
         @Override
         public void onFailure(Call<RspModel<AccountRspModel>> call, Throwable t) {
             // todo net
-            Log.e("AccountHelper", "Account info ruin");
+            Log.e("AccountDataHelper", "Account info ruin");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

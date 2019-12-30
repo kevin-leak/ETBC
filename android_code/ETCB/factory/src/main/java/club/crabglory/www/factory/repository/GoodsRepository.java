@@ -1,14 +1,14 @@
-package club.crabglory.www.data.source;
+package club.crabglory.www.factory.repository;
 
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
-import club.crabglory.www.data.contract.GoodsDataSource;
+import club.crabglory.www.factory.contract.GoodsDataSource;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.Goods_Table;
-import club.crabglory.www.data.persistence.Account;
 
 
 public class GoodsRepository extends BaseDbRepository<Goods> implements GoodsDataSource {

@@ -1,10 +1,9 @@
-package club.crabglory.www.data.model.db;
+package club.crabglory.www.data.helper;
 
 import android.util.Log;
 
 import com.raizlabs.android.dbflow.config.DatabaseDefinition;
 import com.raizlabs.android.dbflow.config.FlowManager;
-import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.raizlabs.android.dbflow.structure.ModelAdapter;
 import com.raizlabs.android.dbflow.structure.database.DatabaseWrapper;
@@ -18,6 +17,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import club.crabglory.www.data.model.db.AppDatabase;
+import club.crabglory.www.data.model.db.Book;
+import club.crabglory.www.data.model.db.Goods;
 
 /**
  * 建立对增删查改处理与监听，并反馈回给Dbdatabase，可有结构图分析

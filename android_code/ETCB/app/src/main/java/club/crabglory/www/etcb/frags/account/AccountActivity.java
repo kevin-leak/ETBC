@@ -27,13 +27,13 @@ import butterknife.OnClick;
 import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountActivity extends ToolbarActivity
-        implements  ViewPageHelper.ViewPagerCallback {
+        implements ViewPageHelper.ViewPagerCallback {
 
     public static final int requestCode = 0x0001;
 
@@ -50,7 +50,7 @@ public class AccountActivity extends ToolbarActivity
     @BindView(R.id.tv_sign_up)
     TextView tvSignUp;
     @BindView(R.id.im_portrait)
-    CircleImageView imPortrait;
+    AvatarView imPortrait;
     @BindView(R.id.iv_change_avatar)
     ImageView ivChangeAvatar;
     private ViewPageHelper<View, Fragment> helper;

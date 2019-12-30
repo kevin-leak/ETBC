@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
-import club.crabglory.www.data.persistence.Account;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.hepler.NavHelper;
 import club.crabglory.www.etcb.main.BookFragment;

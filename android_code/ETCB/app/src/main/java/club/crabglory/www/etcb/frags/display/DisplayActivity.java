@@ -19,11 +19,11 @@ import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.book.BookShowFragment;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 
 public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.ViewPagerCallback {
     public static String KEY = "DisplayActivity";

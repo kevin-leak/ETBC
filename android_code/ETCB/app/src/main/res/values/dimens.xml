@@ -98,4 +98,5 @@
     <dimen name="len_0_1">0.1dp</dimen>
     <dimen name="len_115">115dp</dimen>
     <dimen name="len_125">125dp</dimen>
+    <dimen name="len_43">43dp</dimen>
 </resources>

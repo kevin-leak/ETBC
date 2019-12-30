@@ -6,11 +6,12 @@ import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
-import club.crabglory.www.data.DataKit;
+import club.crabglory.www.data.helper.BookDataHelper;
 import club.crabglory.www.data.model.db.Book;
-import club.crabglory.www.data.contract.BookDataSource;
+import club.crabglory.www.factory.Factory;
+import club.crabglory.www.factory.contract.BookDataSource;
 import club.crabglory.www.data.model.net.BookRspModel;
-import club.crabglory.www.data.source.BookShowRepository;
+import club.crabglory.www.factory.repository.BookShowRepository;
 import club.crabglory.www.factory.contract.BookShowContract;
 
 public class BookShowPresenter extends
@@ -43,13 +44,13 @@ public class BookShowPresenter extends
     @Override
     public void toRefresh(final boolean isMore) {
         // 包含非book类型：daily,random,my_up,my_buy
-        DataKit.Companion.runOnAsysc(new Runnable() {
+        Factory.Companion.runOnAsync(new Runnable() {
             @Override
             public void run() {
                 BookRspModel bookRspModel = new BookRspModel();
                 bookRspModel.setType(type);
                 bookRspModel.setMore(isMore);
-                BookHelper.refreshBooks(bookRspModel, BookShowPresenter.this);
+                BookDataHelper.refreshBooks(bookRspModel, BookShowPresenter.this);
             }
         });
     }

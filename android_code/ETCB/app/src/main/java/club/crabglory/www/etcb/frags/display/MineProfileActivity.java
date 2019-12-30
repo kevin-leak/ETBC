@@ -22,9 +22,9 @@ import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
 import club.crabglory.www.factory.contract.ModifyProfileContract;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.ModifyRspModel;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.view.AvatarView;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.presenter.account.ModifyProfilePresenter;
 
 public class MineProfileActivity extends PresentToolActivity<ModifyProfileContract.Presenter>

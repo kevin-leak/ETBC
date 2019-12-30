@@ -9,7 +9,7 @@ import butterknife.OnClick;
 import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.data.model.net.ModifyRspModel;
-import club.crabglory.www.data.persistence.Account;
+import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.factory.presenter.account.ModifyProfilePresenter;
 

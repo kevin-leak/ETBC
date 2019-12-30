@@ -4,7 +4,6 @@ import android.support.annotation.StringRes;
 
 import java.util.concurrent.TimeUnit;
 
-import club.crabglory.www.common.Common;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.R;
@@ -65,7 +64,7 @@ public class NetKit {
                 //设置数据解析器
                 .addConverterFactory(GsonConverterFactory.create(DataKit.Companion.getGson()))
                 //设置网络请求的Url地址
-                .baseUrl(Common.Constance.BASE_URL)
+                .baseUrl(RemoteService.Constance.BASE_URL)
                 .client(NetKit.getClient())
                 .build();
 

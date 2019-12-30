@@ -8,11 +8,11 @@ import java.util.List;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
-import club.crabglory.www.data.contract.GoodsDataSource;
-import club.crabglory.www.data.model.db.DbHelper;
+import club.crabglory.www.factory.contract.GoodsDataSource;
+import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
-import club.crabglory.www.data.source.GoodsRepository;
+import club.crabglory.www.factory.repository.GoodsRepository;
 import club.crabglory.www.factory.contract.GoodsCarContract;
 
 public class GoodsCarPresenter extends

@@ -44,14 +44,37 @@
 架构与实现
 ----------
 
-分为四个包
+### 整体说明
 
-app，factory，data，common
+这个APP是以MVP的方式组建，MVP是解决耦合度问题，是的条理清晰。
 
-- app充当View的作用
-- factory充当presenter的作用，连接data以及model的作用
-- data充当model的作用，数据本地化以及数据的网络请求
-- common，建立一些可以复用的类
+整个APP分为四个包：app，factory，data，common，负责MVP的不同角色
+
+> app -> View , factory -> Presenter，data -> Model
+
+- app：需求定制与美化、页面碎片化与样式抽象化、页面路由与通信、操作锚点与反馈展示
+
+  > 页面碎片化以及样式抽象化：主要是为了View的复用，以及样式的复用
+
+- factory：MVP协议制定，前端数据检测，前端数据打包，前端数据引流，操作反馈
+
+  > 数据引流：是为了复用model操作的API，将很多相似操作集合，达到复用
+  >
+  > 操作反馈：正误信息的反馈，正确信息包括两个操作：**后台数据缓存，页面数据更新**
+
+- data：数据汇聚，数据持久化，数据本地化，数据网络化，数据分发
+
+  > 数据汇聚：前端页面收集数据，由presenter检测，汇聚到DataHpler中
+  >
+  > 数据分发：涉及观察者模式，当DbHelper接收到变化的数据的时候，根据数据的类型进行分发，通知对应的presenter缓存更新以及页面数据更新
+
+- common：工具类，基类搭建，基础协议，自定义View，文件操作
+
+  > 工具类：网络状况，屏幕适配以及修改，集合转换，前端数据检测，格式化时间，数据加密，消息通知
+  >
+  > 文件操作：主要是用于缓存头像文件，以及裁剪的图片的文件
+
+
 
 
 
@@ -94,11 +117,27 @@ app，factory，data，common
 
 <img src="./meterial/images/base_struct.png" />
 
-BaseActivity、BaseFragment、ToolbarActivity都是抽象类
+#### MPV模式的搭建
 
-定义了统一的方法名，用来规定每个view会经过的操作
+- Contract 定义了标准基础的View，Presenter，RecycleView的协议
 
-Contract定义了标准基础的View，Presenter，RecycleView的协议
+- BaseActivity、BaseFragment、ToolbarActivity都是抽象类
+
+  定义了统一的方法名，用来规定每个view会经过的操作，同时注册ButterKnife
+
+- BasePresenterActivity、BasePresenterFragment、PresentToolActivity都是抽象类，规定与Presenter相接的事与，以及一些都必须实现的是，比如：showDialog
+
+- 
+
+
+
+#### 数据基类架构
+
+其他基类主要是围绕着：网络数据加载，数据本地化，数据通知与更新
+
+就是一个观察者模式，或者叫发布订阅者模式。
+
+
 
 DataSource：定义了数据 加载的阶段 统一接口
 
@@ -122,127 +161,30 @@ public interface DbDataSource<Data> extends DataSource {
 }
 ```
 
-Dphelper
+Dbhelper：单例模式，充当发布订阅者中的，平台角色也是发布者，主要是处理三件事：
 
-```java
-interface DataChangeListener<Data extends BaseModel> {
-    void onDataSave(Data... list);
-    void onDataDelete(Data... list);
-}
-```
+1. 提供数据的订阅的方法，以及相应的移除
 
-- 单例模式
-- 
+2. 本地数据操作的集合，并通知订阅者相关的数据到来与改变
 
-BaseDbRepository
+3. 建立数据的变化的回调。
 
-- 在DbHelp中注册，当前的仓库对象
-- 建立数据添加，与插入，清除的具体动作，同时
-- 
+   ```java
+   interface DataChangeListener<Data extends BaseModel> {
+       void onDataSave(Data... list);
+       void onDataDelete(Data... list);
+   }
+   ```
 
+BaseDbRepository，与DbHelper是想应的为订阅者，所有的子类都会默认三件事：
 
-
-#### Contract
-
-定义View和Presenter最基础需要做什么，形成协议的层级化，方便后面扩展
-
-一般对于用户来说，就是：操作，结果，失败
-
-```java
-public interface BaseContract {
-    interface View<T extends Presenter> {
-        void showError(@StringRes int error);
-        void setPresenter(T present);
-        void showDialog();
-    }
-    interface Presenter {
-        void start();
-        void destroy();
-    }
-    // 常见的View，也需要定义在基础的协议中
-    interface RecyclerView<T extends Presenter, ViewMode> extends View<T> {
-        RecyclerAdapter<ViewMode> getRecyclerAdapter();
-        void onAdapterDataChanged();
-    }
-}
-```
-
-view需要做的就是，展示进度，展示错误，展示成功(继承自定义)
-
-```java
-interface View<T extends Presenter> {
-    void showError(@StringRes int error);
-    void setPresenter(T present);
-    void showDialog();
-}
-```
-
-presenter需要做的就是，初始化，执行操作(自定义，可以没有)，操作收尾
-
-```java
-interface Presenter {
-    void start();
-    void destroy();
-}
-```
-
-View和Presenter双向绑定，View是java VM创建，
-
-则定义setPresenter方法，Presenter 需要在创建实例的时候传入
+- 建立发布订阅者模式：订阅的类型，数据加载之前在DBHelper中进行注册
+- 建立数据的缓存：LinkList，同时提供数据的在缓存中的更新
+- 在presenter调用的时候
 
 
 
-#### BasePresenter
 
-利用泛型约束BasePresenter操控的View，同时实现基本的Presenter
-
-```java
-public class BasePresenter<T extends BaseContract.View> implements BaseContract.Presenter {
-    private T mView;
-    public BasePresenter(T view) {
-        setView(view);
-    }
-    public void setView(T view){
-        this.mView = view;
-        this.mView.setPresenter(this);
-    }
-    public T getView(){
-        return this.mView;
-    }
-    @Override
-    public void start() {
-        T view = mView;
-        if (view != null) {
-            view.showDialog();
-        }
-    }
-    @Override
-    public void destroy() {}
-}
-```
-
-#### BaseView
-
-- BaseActivity、BaseFragment、ToolbarActivity：基类View
-
-- BasePresenterActivity、BasePresenterFragment、PresentToolActivity：基类Presenter 结合 的View
-
-  主要是做了一个简单抽象方法，要求子类中绑定Presenter的方式
-
-  ```java
-  @Override
-  protected void initBefore() {
-      super.initBefore();
-      presenter = initPresent();
-  }
-  protected abstract Presenter initPresent();
-  @Override
-  public void setPresenter(Presenter presenter) {
-      this.presenter = presenter;
-  }
-  ```
-
-  
 
 ### 逻辑实现
 

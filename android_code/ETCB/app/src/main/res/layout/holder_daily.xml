@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
 
-    <club.crabglory.www.etcb.view.AvatarView
+    <club.crabglory.www.common.widget.AvatarView
         android:id="@+id/daily_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"

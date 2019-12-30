@@ -1,32 +1,27 @@
-package club.crabglory.www.factory.presenter.book;
+package club.crabglory.www.data.helper;
 
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
+import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Book_Table;
-import club.crabglory.www.data.model.db.DbHelper;
-import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.net.BookRspModel;
-import club.crabglory.www.data.model.net.GoodsRspModel;
 import club.crabglory.www.data.model.net.RspModel;
 import club.crabglory.www.data.netkit.NetKit;
 import club.crabglory.www.data.netkit.RemoteService;
-import club.crabglory.www.factory.R;
-import club.crabglory.www.factory.presenter.FileHelper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-class BookHelper {
-    static void refreshBooks(BookRspModel model, DataSource.Callback<List<Book>> callback) {
-        Log.e("BookHelper", model.toString());
+public class BookDataHelper {
+    public static void refreshBooks(BookRspModel model, DataSource.Callback<List<Book>> callback) {
+        Log.e("BookDataHelper", model.toString());
         // 调用Retrofit对我们的网络请求接口做代理
         RemoteService remote = NetKit.remote();
         // 得到一个Call
@@ -45,7 +40,7 @@ class BookHelper {
 
 
     public static void upBook(Book book, final DataSource.FailedCallback callback) {
-        String s = FileHelper.fetchBackgroundFile(book.getImage());
+        String s = FileDataHelper.fetchBackgroundFile(book.getImage());
         if (TextUtils.isEmpty(s)) {
             callback.onDataNotAvailable(R.string.error_form_avatar);
             return;
@@ -65,7 +60,7 @@ class BookHelper {
 
             @Override
             public void onFailure(Call<RspModel<Book>> call, Throwable t) {
-                Log.e("BookHelper", "book refreshBooks");
+                Log.e("BookDataHelper", "book refreshBooks");
                 call.cancel();
                 callback.onDataNotAvailable(R.string.error_data_network_error);
             }
@@ -87,7 +82,7 @@ class BookHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Book>>> call, Throwable t) {
-            Log.e("BookHelper", "book refreshBooks");
+            Log.e("BookDataHelper", "book refreshBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

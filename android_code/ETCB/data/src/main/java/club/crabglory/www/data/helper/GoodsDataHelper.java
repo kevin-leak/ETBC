@@ -1,21 +1,21 @@
-package club.crabglory.www.factory.presenter.book;
+package club.crabglory.www.data.helper;
 
 import android.util.Log;
 
 import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
+import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.net.GoodsRspModel;
 import club.crabglory.www.data.model.net.RspModel;
 import club.crabglory.www.data.netkit.NetKit;
 import club.crabglory.www.data.netkit.RemoteService;
-import club.crabglory.www.factory.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class GoodsHelper {
+public class GoodsDataHelper {
 
     public static void refreshGoods(GoodsRspModel goodsRspModel, DataSource.Callback<List<Goods>> callback) {
 
@@ -43,7 +43,7 @@ public class GoodsHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Goods>>> call, Throwable t) {
-            Log.e("BookHelper", "goods refreshBooks");
+            Log.e("BookDataHelper", "goods refreshBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }
