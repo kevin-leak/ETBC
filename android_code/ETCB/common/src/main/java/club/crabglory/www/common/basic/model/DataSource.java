@@ -22,7 +22,7 @@ public interface DataSource  {
      * @param <T> 任意类型
      */
     interface SucceedCallback<T> {
-        // 数据加载成功, 网络请求成功， 如果死操作UI记得在主线程运行，要不然报错
+        // 数据加载成功, 网络请求成功， 这里可以做ViewModel和View之间的转换
         void onDataLoaded(T t);
 
     }

@@ -3,11 +3,15 @@ package club.crabglory.www.data.helper;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.raizlabs.android.dbflow.sql.language.SQLite;
+import com.raizlabs.android.dbflow.structure.database.transaction.QueryTransaction;
+
 import java.io.IOException;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.User;
+import club.crabglory.www.data.model.db.User_Table;
 import club.crabglory.www.data.model.net.AccountRspModel;
 import club.crabglory.www.data.model.net.LoginRspModel;
 import club.crabglory.www.data.model.net.ModifyRspModel;
@@ -104,6 +108,16 @@ public class AccountDataHelper {
 //            }
 //        });
 
+    }
+
+    public static void getFromLocal(String userId,
+                                    QueryTransaction.QueryResultListCallback<User> callback) {
+
+        SQLite.select().from(User.class)
+                .where(User_Table.id.eq(Account.getUserId()))
+                .async()
+                .queryListResultCallback(callback)
+                .execute();
     }
 
     static class AccountRspCallback implements Callback<RspModel<AccountRspModel>> {

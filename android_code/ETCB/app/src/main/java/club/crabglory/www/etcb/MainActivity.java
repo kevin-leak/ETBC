@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
+import club.crabglory.www.data.model.StaticData;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.hepler.NavHelper;
@@ -90,6 +91,9 @@ public class MainActivity extends BaseActivity implements
                 mNavigation.setSelectedItemId(R.id.action_mine);
                 menu.performIdentifierAction(R.id.action_mine, 2);
                 mNavigation.setSelectedItemId(R.id.action_mine);
+                // fixme just for local test
+                StaticData.initLive();
+                StaticData.initVideo();
             } else {
                 menu = mNavigation.getMenu();
                 menu.performIdentifierAction(R.id.action_book, 0);

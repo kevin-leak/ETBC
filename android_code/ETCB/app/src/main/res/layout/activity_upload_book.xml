@@ -42,7 +42,7 @@
                 android:elevation="@dimen/len_2"
                 tools:targetApi="lollipop">
 
-                <ImageView
+                <club.crabglory.www.common.widget.AvatarView
                     android:id="@+id/ivGoodsImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

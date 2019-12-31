@@ -4,6 +4,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
+import club.crabglory.www.data.helper.AccountDataHelper;
 import club.crabglory.www.factory.contract.AccountDataSource;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.User;
@@ -14,11 +15,7 @@ public class MineRepository extends BaseDbRepository<User> implements AccountDat
     @Override
     public void load(SucceedCallback<List<User>> callback) {
         super.load(callback);
-        SQLite.select().from(User.class)
-                .where(User_Table.id.eq(Account.getUserId()))
-                .async()
-                .queryListResultCallback(this)
-                .execute();
+        AccountDataHelper.getFromLocal(Account.getUserId(), this);
     }
 
     @Override

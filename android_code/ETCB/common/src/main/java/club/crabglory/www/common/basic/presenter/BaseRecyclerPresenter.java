@@ -7,6 +7,8 @@ import android.util.Log;
 
 import java.util.List;
 
+import javax.security.auth.login.LoginException;
+
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.common.basic.contract.BaseContract;
 
@@ -40,6 +42,7 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
                     // fixme 零时修改 dataList.size() > 0，为了防止本地没有数据，建议后期再安装的时候添加一些默认的数据
                     if (dataList.size() > 0)
                         adapter.replace(dataList);
+                    Log.e("BaseRecyclerPresenter", "size : " + dataList.size());
                     view.onAdapterDataChanged();
                 }
 

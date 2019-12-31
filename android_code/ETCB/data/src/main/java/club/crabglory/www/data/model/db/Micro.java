@@ -7,8 +7,13 @@ import com.raizlabs.android.dbflow.annotation.Table;
 
 import java.util.Date;
 
+import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
+import club.crabglory.www.data.model.view.MicroViewModel;
+
 @Table(database = AppDatabase.class)
-public class MicroVideo {
+public class Micro extends BaseDdModel<Micro>
+        implements DiffUiDataCallback.UiDataDiffer<Micro>{
     @PrimaryKey
     private String id;
     private int img;
@@ -108,4 +113,20 @@ public class MicroVideo {
         this.video = video;
     }
 
+    @Override
+    public boolean isSame(Micro old) {
+        return false;
+    }
+
+    @Override
+    public boolean isUiContentSame(Micro old) {
+        return false;
+    }
+
+    public MicroViewModel toViewModel() {
+        MicroViewModel microViewModel = new MicroViewModel();
+        microViewModel.setAvatarUrl(this.imgAdvance);
+        microViewModel.setId(this.id);
+        return microViewModel;
+    }
 }

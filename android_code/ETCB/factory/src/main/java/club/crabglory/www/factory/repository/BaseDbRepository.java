@@ -10,6 +10,8 @@ import java.lang.reflect.Type;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.security.auth.login.LoginException;
+
 import club.crabglory.www.common.basic.model.DbDataSource;
 import club.crabglory.www.common.utils.CollectionUtil;
 import club.crabglory.www.data.helper.DbHelper;
@@ -69,6 +71,7 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
                 isChanged = true;
             }
         }
+        if (list.length == 0) isChanged = true; // 为了避免第一次加载本地没有数据的情况
         // 有数据变更，则进行界面刷新
         if (isChanged)
             notifyDataChange();
@@ -143,16 +146,13 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
      */
     @Override
     public void onListQueryResult(QueryTransaction transaction, @NonNull List<Data> tResult) {
-        Log.e("BaseDbRepository", "show something of data from db: " + tResult.size());
-        // 数据库加载数据成功
         if (tResult.size() == 0) {
+            Log.e("BaseDbRepository", "tResult size : " + tResult.size());
             dataList.clear();
             notifyDataChange();
             return;
         }
-        // 转变为数组
         Data[] data = CollectionUtil.toArray(tResult, tClass);
-        // 回到数据集更新的操作中
         onDataSave(data);
     }
 }

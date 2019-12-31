@@ -27,37 +27,24 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
     @Override
     public void modifyName(final String name) {
         mView.showDialog();
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                ModifyRspModel model = new ModifyRspModel(Account.getUserId(), name, ModifyRspModel.VALUE_NAME);
-                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
-            }
-        });
+        ModifyRspModel model = new ModifyRspModel(Account.getUserId(), name, ModifyRspModel.VALUE_NAME);
+        AccountDataHelper.modify(model, ModifyProfilePresenter.this);
     }
 
     @Override
     public void modifySex(final int sex) {
         mView.showDialog();
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                ModifyRspModel model = new ModifyRspModel(Account.getUserId(), sex + "", ModifyRspModel.VALUE_SEX);
-                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
-            }
-        });
+        ModifyRspModel model = new ModifyRspModel(Account.getUserId(), sex + "", ModifyRspModel.VALUE_SEX);
+        AccountDataHelper.modify(model, ModifyProfilePresenter.this);
     }
 
     @Override
     public void modifyAddress(final String address) {
         mView.showDialog();
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                ModifyRspModel model = new ModifyRspModel(Account.getUserId(), address, ModifyRspModel.VALUE_ADDRESS);
-                AccountDataHelper.modify(model, ModifyProfilePresenter.this);
-            }
-        });
+
+        ModifyRspModel model = new ModifyRspModel(Account.getUserId(), address, ModifyRspModel.VALUE_ADDRESS);
+        AccountDataHelper.modify(model, ModifyProfilePresenter.this);
+
 
     }
 
@@ -72,12 +59,12 @@ public class ModifyProfilePresenter extends BasePresenter<ModifyProfileContract.
                     // 如果上传图片没有上传成功，则报错
                     ModifyProfilePresenter.this.onDataNotAvailable(R.string.error_data_unknown);
                     // fixme local_test_register
-                        ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl,
-                                ModifyRspModel.VALUE_AVATAR);
-                        ModifyProfilePresenter.this.onDataNotAvailable(R.string.local_test);
-                        User user = model.toUser();
-                        DbHelper.save(User.class, user);
-                        ModifyProfilePresenter.this.onDataLoaded(user);
+                    ModifyRspModel model = new ModifyRspModel(Account.getUserId(), avatarUrl,
+                            ModifyRspModel.VALUE_AVATAR);
+                    ModifyProfilePresenter.this.onDataNotAvailable(R.string.local_test);
+                    User user = model.toUser();
+                    DbHelper.save(User.class, user);
+                    ModifyProfilePresenter.this.onDataLoaded(user);
                     // fixme local_test_register
                     return;
                 }

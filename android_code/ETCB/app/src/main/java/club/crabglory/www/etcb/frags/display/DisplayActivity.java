@@ -6,6 +6,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -50,7 +51,7 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
     protected boolean initArgs(Bundle bundle) {
         if (bundle == null) return false;
         userId = bundle.getString(DisplayActivity.KEY);
-        return super.initArgs(bundle);
+        return !TextUtils.isEmpty(userId);
     }
 
     @Override
@@ -88,5 +89,9 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
     @Override
     public void onChangedFragment(Fragment currentFragment) {
 
+    }
+
+    public String getUserId() {
+        return userId;
     }
 }

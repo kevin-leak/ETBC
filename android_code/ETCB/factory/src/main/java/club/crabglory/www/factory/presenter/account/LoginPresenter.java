@@ -36,28 +36,18 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public void onDataNotAvailable(final int strRes) {
-        mView.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mView.showError(strRes);
-            }
-        });
+        mView.showError(strRes);
     }
 
     @Override
     public void login(final String phone, final String code, final boolean flag) {
         mView.showDialog();
-        if (TextUtils.isEmpty(code)){
+        if (TextUtils.isEmpty(code)) {
             onDataNotAvailable(R.string.error_null_data);
             return;
         }
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                LoginRspModel model = new LoginRspModel(phone, code, flag);
-                AccountDataHelper.login(model, LoginPresenter.this);
-            }
-        });
+        LoginRspModel model = new LoginRspModel(phone, code, flag);
+        AccountDataHelper.login(model, LoginPresenter.this);
     }
 
     @Override

@@ -165,7 +165,7 @@ public class Book extends BaseDdModel<Book>
         return name;
     }
 
-    public void setName(String name)  {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -196,12 +196,17 @@ public class Book extends BaseDdModel<Book>
 
     @Override
     public boolean isSame(Book old) {
-        return false;
+        return old.id.equals(this.id);
     }
 
     @Override
     public boolean isUiContentSame(Book old) {
-        return false;
+        return old.id.equals(this.id)
+                && old.getUpper() == this.getUpper()
+                && old.getPrice() == this.getPrice()
+                && old.getCount() == this.getCount()
+                && old.getType() == this.getType()
+                && old.getAuthor().equals(this.getAuthor());
     }
 
 

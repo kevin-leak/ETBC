@@ -7,6 +7,7 @@ import android.net.Uri;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import club.crabglory.www.common.Application;
@@ -14,7 +15,8 @@ import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
-import club.crabglory.www.data.model.db.MicroVideo;
+import club.crabglory.www.data.model.db.Live;
+import club.crabglory.www.data.model.db.Micro;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.persistence.Account;
 
@@ -28,7 +30,6 @@ public class StaticData {
         boolean isLoad = sp.getBoolean(KEY_INIT_STATIC_DATA, false);
         if (!isLoad) {
             initBook();
-            initVideo();
             sp.edit().putBoolean(KEY_INIT_STATIC_DATA, true).apply();
         }
 
@@ -175,7 +176,7 @@ public class StaticData {
 //        book6.setSales(2);
 //        book6.setCount(10);
 //        book6.setType(3);
-//        book6.setUpper(Account.getUser());
+//        book6.setUpper(getUser());
 //        book6.setUpTime(new Date());
 //        book6.setModifyAt(new Date());
 //        book6.setDescription("Didn't we say to you in Egypt, 'Leave us alone; let us " +
@@ -216,7 +217,7 @@ public class StaticData {
         user.setAvatar("https://raw.githubusercontent.com/kevin-leak/CattleIM/master/IMSoftData/UIDesign/app/ic_launcher.png");
         user.setId(UUID.randomUUID().toString());
         user.setName("d_kevin");
-        user.setPhone("18870742138");
+        user.setPhone("18870" + new Random().nextInt() + "42138");
         user.setSex(0);
         user.setAddress("江西理工大学 红旗大道");
         user.setFavorite(1.5f);
@@ -228,14 +229,61 @@ public class StaticData {
     public static void initVideo() {
         int[] imgs = {R.mipmap.img_video_1, R.mipmap.img_video_2, R.mipmap.img_video_3, R.mipmap.img_video_4, R.mipmap.img_video_5, R.mipmap.img_video_6, R.mipmap.img_video_7, R.mipmap.img_video_8};
         int[] videos = {R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_8};
-        String uriString = Uri.parse("res:///" + R.mipmap.img_video_1).toString();
-        ArrayList<MicroVideo> microVideos = new ArrayList<>();
+        ArrayList<Micro> microVideos = new ArrayList<>();
+        Context context = Application.Companion.getInstance().getApplicationContext();
+        String baseURI = "android.resource://" + context.getPackageName() + "/";
         for (int i = 0; i < imgs.length; i++) {
-            MicroVideo microVideo = new MicroVideo();
-            microVideo.setImg(imgs[i]);
-            microVideo.setVideo(videos[i]);
+            Micro microVideo = new Micro();
+            String imgeUri = Uri.parse(baseURI + imgs[i]).toString();
+            String videosUri = Uri.parse(baseURI + videos[i]).toString();
+            microVideo.setId(UUID.randomUUID().toString());
+            microVideo.setImgAdvance(imgeUri);
+            microVideo.setMicro(videosUri);
+            microVideo.setUpper(Account.getUser());
             microVideos.add(microVideo);
         }
+        DbHelper.save(Micro.class, microVideos.toArray(new Micro[0]));
+    }
+
+    public static void initLive() {
+        User user = Account.getUser();
+        ArrayList<Live> lives = new ArrayList<>();
+        Live live = new Live();
+        live.setId(UUID.randomUUID().toString());
+        live.setTitle("show some");
+        live.setSubTitle("Plato (427-347 BC) was a great philosopher of ancient Greece");
+        live.setTime("18:00");
+        live.setState(true);
+        live.setUpper(user);
+        lives.add(live);
+
+        Live live1 = new Live();
+        live1.setId(UUID.randomUUID().toString());
+        live1.setTitle("have you");
+        live1.setUpper(user);
+        live1.setSubTitle("come to here to see me , i will let you happy");
+        live1.setTime("7:00");
+        live1.setState(false);
+        lives.add(live1);
+
+
+        Book book6 = new Book();
+        book6.setId(UUID.randomUUID().toString());
+        book6.setImage("https://img9.doubanio.com/view/subject/l/public/s8912644.jpg");
+        book6.setName("Bible");
+        book6.setAuthor("Christian");
+        book6.setPrice(15);
+        book6.setSales(2);
+        book6.setCount(10);
+        book6.setType(3);
+        book6.setUpper(user);
+        book6.setUpTime(new Date());
+        book6.setModifyAt(new Date());
+        book6.setDescription("Didn't we say to you in Egypt, 'Leave us alone; let us " +
+                "serve the Egyptians'? It would have been better for us to serve the " +
+                "Egyptians than to die in the desert!");
+        DbHelper.save(Book.class, book6);
+        DbHelper.save(Live.class, lives.toArray(new Live[0]));
 
     }
 }

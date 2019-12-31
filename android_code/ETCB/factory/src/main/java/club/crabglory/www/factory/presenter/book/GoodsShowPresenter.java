@@ -48,15 +48,10 @@ public class GoodsShowPresenter extends
     @Override
     public void toRefresh(final boolean isMore) {
         // 包含非book类型：daily,random,my_up,my_buy
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                GoodsRspModel goodsRspModel = new GoodsRspModel();
-                goodsRspModel.setType(type);
-                goodsRspModel.setMore(isMore);
-                GoodsDataHelper.refreshGoods(goodsRspModel, GoodsShowPresenter.this);
-            }
-        });
+        GoodsRspModel goodsRspModel = new GoodsRspModel();
+        goodsRspModel.setType(type);
+        goodsRspModel.setMore(isMore);
+        GoodsDataHelper.refreshGoods(goodsRspModel, GoodsShowPresenter.this);
     }
 
     @Override
@@ -69,11 +64,8 @@ public class GoodsShowPresenter extends
 
     @Override
     public void onDataNotAvailable(final int strRes) {
-        getView().getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mView.showError(strRes);
-            }
-        });
+        mView.showError(strRes);
+        // 如果网络加载失败，这里本地再一次进行刷新
+        start();
     }
 }

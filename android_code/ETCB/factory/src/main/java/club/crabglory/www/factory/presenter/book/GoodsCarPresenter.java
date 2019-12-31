@@ -9,6 +9,7 @@ import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.helper.GoodsDataHelper;
+import club.crabglory.www.factory.Factory;
 import club.crabglory.www.factory.contract.GoodsDataSource;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
@@ -32,8 +33,6 @@ public class GoodsCarPresenter extends
 
     @Override
     public void onDataLoaded(final List<Goods> goodsList) {
-        // todo 数据到来了是追加还是替代，头部追加还是尾部追加
-        Log.e("GoodsCarPresenter", "" + goodsList.size());
         RecyclerAdapter<Goods> adapter = mView.getRecyclerAdapter();
         List<Goods> old = adapter.getItems();
         // 进行数据对比
@@ -45,14 +44,26 @@ public class GoodsCarPresenter extends
     @Override
     public void emptyCart(List<Goods> list) {
         DbHelper.delete(Goods.class, list.toArray(new Goods[0]));
+        // 无论是否删除都执行
         mView.dealSuccess();
     }
 
 
     @Override
-    public void prePay(double parseInt, List<Goods> checkGoods) {
-        if (GoodsDataHelper.pay(this, checkGoods.toArray(new Goods[0])))
-            mView.dealSuccess();
+    public void prePay(double parseInt, final List<Goods> checkGoods){
+        Factory.Companion.runOnAsync(new Runnable() {
+            @Override
+            public void run() {
+                if (GoodsDataHelper.pay(GoodsCarPresenter.this, checkGoods.toArray(new Goods[0]))) {
+                    mView.getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mView.dealSuccess();
+                        }
+                    });
+                }
+            }
+        });
     }
 
     @Override
@@ -62,6 +73,7 @@ public class GoodsCarPresenter extends
 
     @Override
     public void preRefresh(boolean isMore) {
+        // 因为只存储在本地，所以只需要进行本地的加载
         start();
     }
 }

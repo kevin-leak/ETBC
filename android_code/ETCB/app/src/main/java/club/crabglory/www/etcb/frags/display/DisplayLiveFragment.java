@@ -10,17 +10,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import club.crabglory.www.common.basic.view.BaseFragment;
+import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.data.model.db.Live;
+import club.crabglory.www.factory.contract.DisplayLiveContract;
+import club.crabglory.www.factory.presenter.live.DisplayLivePresenter;
 
-public class DisplayLiveFragment extends BaseFragment {
-
-    private final String TAG = "DisplayLiveFragment";
+public class DisplayLiveFragment extends BasePresenterFragment<DisplayLiveContract.Presenter>
+        implements DisplayLiveContract.View {
     @BindView(R.id.rv_sum)
-    RecyclerView rvSum;
-    private RecyclerAdapter<Live> sumLive;
+    RecyclerView rvLive;
+    private RecyclerAdapter<Live> liveAdapter;
 
     @Override
     protected int getContentLayoutId() {
@@ -31,8 +32,8 @@ public class DisplayLiveFragment extends BaseFragment {
     protected void initWidgets(View root) {
         super.initWidgets(root);
 
-        rvSum.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        sumLive = new RecyclerAdapter<Live>() {
+        rvLive.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        liveAdapter = new RecyclerAdapter<Live>() {
 
             @Override
             protected int getItemViewType(int position, Live live) {
@@ -44,7 +45,22 @@ public class DisplayLiveFragment extends BaseFragment {
                 return new LiveHolder(root);
             }
         };
-        rvSum.setAdapter(sumLive);
+        rvLive.setAdapter(liveAdapter);
+    }
+
+    @Override
+    public RecyclerAdapter<Live> getRecyclerAdapter() {
+        return liveAdapter;
+    }
+
+    @Override
+    public void onAdapterDataChanged() {
+        hideDialog();
+    }
+
+    @Override
+    protected DisplayLiveContract.Presenter initPresent() {
+        return new DisplayLivePresenter(this, ((DisplayActivity)this.getActivity()).getUserId());
     }
 
     class LiveHolder extends RecyclerAdapter.ViewHolder<Live> {
@@ -73,32 +89,8 @@ public class DisplayLiveFragment extends BaseFragment {
     }
 
     @Override
-    protected void initData() {
-        super.initData();
-        testData();
-    }
-
-    private void testData() {
-
-        Log.e(TAG, "testData: ");
-
-        ArrayList<Live> lives = new ArrayList<>();
-
-        Live live = new Live();
-        live.setTitle("show some");
-        live.setSubTitle("Plato (427-347 BC) was a great philosopher of ancient Greece");
-        live.setTime("18:00");
-        live.setState(true);
-        lives.add(live);
-
-        Live live1 = new Live();
-        live1.setTitle("have you");
-        live1.setSubTitle("come to here to see me , i will let you happy");
-        live1.setTime("7:00");
-        live1.setState(false);
-        lives.add(live1);
-
-        sumLive.add(lives);
-
+    protected void onFirstInit() {
+        super.onFirstInit();
+        presenter.start();
     }
 }

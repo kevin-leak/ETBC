@@ -1,14 +1,11 @@
 package club.crabglory.www.factory.repository;
 
 
-import com.raizlabs.android.dbflow.sql.language.SQLite;
-
 import java.util.List;
 
+import club.crabglory.www.data.helper.GoodsDataHelper;
 import club.crabglory.www.factory.contract.GoodsDataSource;
-import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.Goods;
-import club.crabglory.www.data.model.db.Goods_Table;
 
 
 public class GoodsRepository extends BaseDbRepository<Goods> implements GoodsDataSource {
@@ -24,19 +21,12 @@ public class GoodsRepository extends BaseDbRepository<Goods> implements GoodsDat
     @Override
     public void load(SucceedCallback<List<Goods>> callback) {
         super.load(callback);
-        SQLite.select().from(Goods.class)
-                .where(Goods_Table.customer_id.eq(Account.getUserId()))
-                .and(Goods_Table.state.eq(state))
-                .orderBy(Goods_Table.createAt, false)
-                .async()
-                .queryListResultCallback(this)
-                .execute();
+        GoodsDataHelper.getFormLocal(state,  this);
     }
 
     @Override
     public void onDataDelete(Goods[] list) {
         super.onDataDelete(list);
-
     }
 
     @Override

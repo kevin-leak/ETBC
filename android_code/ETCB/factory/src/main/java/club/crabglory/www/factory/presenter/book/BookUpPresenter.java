@@ -59,7 +59,7 @@ public class BookUpPresenter extends BasePresenter<BookUpContract.View>
 
     @Override
     public void onDataNotAvailable(int strRes) {
-
+        mView.showError(strRes);
     }
 
     @Override

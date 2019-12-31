@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">data</string>
     <string name="error_pay_fail">Error: pay fail</string>
+    <string name="data_from_loacl">data from loal</string>
 
 </resources>

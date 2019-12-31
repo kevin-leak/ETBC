@@ -4,6 +4,8 @@ import java.util.List;
 
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Goods;
+import club.crabglory.www.data.model.db.Live;
+import club.crabglory.www.data.model.db.Micro;
 import club.crabglory.www.data.model.net.AccountRspModel;
 import club.crabglory.www.data.model.db.ETCBFile;
 import club.crabglory.www.data.model.net.BookRspModel;
@@ -19,6 +21,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * @author KevinLeak
@@ -28,7 +31,6 @@ import retrofit2.http.POST;
  * piece 请求碎片，是用来封装请求信息。
  */
 public interface RemoteService {
-
 
     // fixme 这里在后台进行调试的时候需要修改
     interface Constance {
@@ -74,4 +76,13 @@ public interface RemoteService {
 
     @POST("payGoods/")
     Call<RspModel<List<Goods>>> payGoods(@Body List<PayRspModel> rspModels );
+
+    @GET("push_id/{livePullId}/")
+    Call<RspModel<List<Live>>> pullLive(@Path("livePullId") String liveGetId);
+
+    @GET("push_id/{microPullId}/")
+    Call<RspModel<List<Micro>>> pullMicro(@Path("microPullId") String microPullId);
+
+    @GET("push_id/{bookPullId}/")
+    Call<RspModel<Book>> pullBook(@Path("bookPullId") String bookPullId);
 }

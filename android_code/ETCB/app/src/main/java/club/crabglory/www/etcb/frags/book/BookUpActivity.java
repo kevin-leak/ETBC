@@ -24,6 +24,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.PresentToolActivity;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.MicroUpActivity;
@@ -36,7 +37,7 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     @BindView(R.id.sp_category)
     Spinner spCategory;
     @BindView(R.id.ivGoodsImage)
-    ImageView ivGoodsImage;
+    AvatarView ivGoodsImage;
     @BindView(R.id.ibInfoImageAdd)
     ImageButton ibInfoImageAdd;
     @BindView(R.id.et_goods_name)
@@ -136,11 +137,7 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     private void loadPortrait(Uri uri) {
         // 得到头像地址
         mAvatarPath = uri.getPath();
-        Glide.with(BookUpActivity.this)
-                .load(uri)
-                .asBitmap()
-                .centerCrop()
-                .into(ivGoodsImage);
+        ivGoodsImage.setup(Glide.with(this), mAvatarPath);
         ibInfoImageAdd.setVisibility(View.GONE);
     }
 
@@ -153,8 +150,7 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     @Override
     public void upSuccess() {
         spCategory.setSelection(0);
-        ivGoodsImage.setBackgroundColor(getResources().getColor(R.color.secondWindowBackgroundColor));
-        ivGoodsImage.setBackground(getResources().getDrawable(0));
+        ivGoodsImage.setup(Glide.with(this), R.color.white,null);
         ibInfoImageAdd.setVisibility(View.VISIBLE);
         etGoodsName.setText("");
         etUnitPrice.setText("");

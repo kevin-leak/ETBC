@@ -65,7 +65,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
 
     @Override
     protected void initData() {
-        mPresenter.getGoods(goodsId);
+        mPresenter.getBook(goodsId);
     }
 
     @Override
@@ -110,7 +110,8 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
             case R.id.cv_video_show:
                 if (goods == null || TextUtils.isEmpty(goods.getVideo())) break;
                 bundle = new Bundle();
-                bundle.putString(VideoShowActivity.KEY_Books, goodsId);
+                bundle.putInt(VideoShowActivity.KEY_TYPE, VideoShowActivity.TYPE_BOOK);
+                bundle.putString(VideoShowActivity.KEY_TYPE, goodsId);
                 VideoShowActivity.show(BooksShopActivity.this,
                         VideoShowActivity.class, bundle, false);
                 break;

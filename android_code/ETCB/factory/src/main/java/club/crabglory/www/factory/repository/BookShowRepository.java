@@ -68,6 +68,8 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
     public boolean isRequired(Book book) {
         // 来源三种：推送的数据、网络加载的数据、本地数据库查询的数据
         // 都要进行更新。
-        return book.getCount() > 0 && !book.getUpper().getId().equals(Account.getUserId());
+        return book.getCount() > 0
+                && (book.getUpper() == null
+                    || !book.getUpper().getId().equals(Account.getUserId()) || type == Book.TYPE_MY_UP);
     }
 }

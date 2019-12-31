@@ -23,13 +23,8 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     @Override
     public void register(final String avatarPath, final String name, final String phone, final String password, final int sex) {
         mView.showDialog();
-        Factory.Companion.runOnAsync(new Runnable() {
-            @Override
-            public void run() {
-                RegisterRspModel model = new RegisterRspModel(avatarPath, name, phone, password, sex);
-                AccountDataHelper.register(model, RegisterPresenter.this);
-            }
-        });
+        RegisterRspModel model = new RegisterRspModel(avatarPath, name, phone, password, sex);
+        AccountDataHelper.register(model, RegisterPresenter.this);
     }
 
     @Override

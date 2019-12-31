@@ -10,7 +10,17 @@ import club.crabglory.www.etcb.main.AtticFragment;
 
 public class VideoShowActivity extends BaseActivity {
 
-    public static final String KEY_Books = "VideoShowActivity";
+    public static final String KEY_TYPE = "VideoShowActivity";
+    /*
+     * 1. 书籍视频展示
+     * 2. micro乱流展示
+     * 3. 个人音视频展示
+     * 4. up book 音视频选择
+     */
+    public static final int TYPE_ATTIC = 0x000;
+    public static final int TYPE_BOOK = 0x001;
+    public static final int TYPE_PERSON = 0x002;
+    public static final int TYPE_UP_BOOK = 0x003;
 
     private FragmentManager manager;
     private FragmentTransaction transaction;

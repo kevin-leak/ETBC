@@ -1,13 +1,18 @@
 package club.crabglory.www.data.model.db;
 
 import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.ForeignKey;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 
 import java.util.Date;
 
+import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
+
 @Table(database = AppDatabase.class)
-public class Live {
+public class Live  extends BaseDdModel<Live>
+        implements DiffUiDataCallback.UiDataDiffer<Live>{
     @PrimaryKey
     private String id;
     @Column
@@ -20,6 +25,36 @@ public class Live {
     private boolean state;
     @Column
     private Date createAt;
+    @ForeignKey(tableClass = User.class, stubbedRelationship = true)
+    private User upper;
+    @Column
+    private int consumer;
+    @Column
+    private boolean isCustoms;
+
+    public User getUpper() {
+        return upper;
+    }
+
+    public void setUpper(User upper) {
+        this.upper = upper;
+    }
+
+    public int getConsumer() {
+        return consumer;
+    }
+
+    public void setConsumer(int consumer) {
+        this.consumer = consumer;
+    }
+
+    public boolean isCustoms() {
+        return isCustoms;
+    }
+
+    public void setCustoms(boolean customs) {
+        isCustoms = customs;
+    }
 
     public String getId() {
         return id;
@@ -68,5 +103,15 @@ public class Live {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public boolean isSame(Live old) {
+        return false;
+    }
+
+    @Override
+    public boolean isUiContentSame(Live old) {
+        return false;
     }
 }

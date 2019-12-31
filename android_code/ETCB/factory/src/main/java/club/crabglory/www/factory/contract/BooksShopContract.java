@@ -15,7 +15,7 @@ public interface BooksShopContract {
 
     interface Presenter extends BaseContract.Presenter {
 
-        void getGoods(String goodsId);
+        void getBook(String goodsId);
 
         void saveCarGoods(Book book, int sales);
 

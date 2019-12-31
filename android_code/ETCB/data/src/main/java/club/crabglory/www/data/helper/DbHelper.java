@@ -179,7 +179,7 @@ public class DbHelper {
     public static <Model extends BaseModel> void delete(final Class<Model> tClass,
                                                         final Model... models) {
         if (models == null || models.length == 0)
-            return;
+            return ;
 
         // 当前数据库的一个管理者
         DatabaseDefinition definition = FlowManager.getDatabase(AppDatabase.class);

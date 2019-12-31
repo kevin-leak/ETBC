@@ -1,87 +1,104 @@
 package club.crabglory.www.etcb.frags.display;
 
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
+import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BaseFragment;
+import club.crabglory.www.common.basic.view.BasePresenterFragment;
+import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.data.model.db.Micro;
+import club.crabglory.www.data.model.view.MicroViewModel;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.model.db.MicroVideo;
+import club.crabglory.www.factory.contract.DisplayMicroContract;
+import club.crabglory.www.factory.presenter.micro.DisplayMicroPresenter;
 
-public class DisplayMicroFragment extends BaseFragment {
+public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroContract.Presenter>
+        implements DisplayMicroContract.View {
     @BindView(R.id.rv_sum)
     RecyclerView rvSum;
-    private RecyclerAdapter<MicroVideo> sumVideoAdapter;
+    private RecyclerAdapter<MicroViewModel> sumVideoAdapter;
 
     @Override
     protected int getContentLayoutId() {
         return R.layout.fragment_display_micro;
     }
 
-    @Override
-    protected void initData() {
-        super.initData();
-        testData();
-    }
 
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
         rvSum.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
-        sumVideoAdapter = new RecyclerAdapter<MicroVideo>() {
+        sumVideoAdapter = new RecyclerAdapter<MicroViewModel>() {
             @Override
-            protected int getItemViewType(int position, MicroVideo video) {
+            protected int getItemViewType(int position, MicroViewModel video) {
                 return R.layout.holder_display_micro;
             }
+
             @Override
-            protected ViewHolder<MicroVideo> onCreateViewHolder(View root, int viewType) {
-                return new  VideoHolder(root);
+            protected ViewHolder<MicroViewModel> onCreateViewHolder(View root, int viewType) {
+                return new VideoHolder(root);
             }
         };
+        sumVideoAdapter.setListener(new RecyclerAdapter.AdapterListener<MicroViewModel>() {
+            @Override
+            public void onItemClick(RecyclerAdapter.ViewHolder holder, MicroViewModel microViewModel) {
+                Bundle bundle = new Bundle();
+                bundle.putInt(VideoShowActivity.KEY_TYPE, VideoShowActivity.TYPE_PERSON);
+                bundle.putString(VideoShowActivity.KEY_TYPE, microViewModel.getId());
+                VideoShowActivity.show(DisplayMicroFragment.this.getActivity(),
+                        VideoShowActivity.class, bundle, false);
+            }
+
+            @Override
+            public void onItemLongClick(RecyclerAdapter.ViewHolder holder, MicroViewModel microViewModel) {
+
+            }
+        });
+
         rvSum.setAdapter(sumVideoAdapter);
     }
 
-    class VideoHolder  extends RecyclerAdapter.ViewHolder<MicroVideo>{
-        @BindView(R.id.iv_background)
-        ImageView ivBackground;
+    @Override
+    public RecyclerAdapter<MicroViewModel> getRecyclerAdapter() {
+        return sumVideoAdapter;
+    }
+
+    @Override
+    public void onAdapterDataChanged() {
+        hideDialog();
+    }
+
+    @Override
+    protected DisplayMicroContract.Presenter initPresent() {
+        return new DisplayMicroPresenter(this, ((DisplayActivity)this.getActivity()).getUserId());
+    }
+
+    class VideoHolder extends RecyclerAdapter.ViewHolder<MicroViewModel> {
+        @BindView(R.id.avi_micro)
+        AvatarView ivBackground;
 
         public VideoHolder(View itemView) {
             super(itemView);
         }
 
         @Override
-        protected void onBind(MicroVideo microVideo) {
-            // todo  修改Bean
-            ivBackground.setImageResource(microVideo.getImg());
+        protected void onBind(MicroViewModel microVideo) {
+            ivBackground.setup(Glide.with(DisplayMicroFragment.this), 0,
+                    microVideo.getAvatarUrl());
         }
-
-        @OnClick(R.id.cl_video)
-        public void onClick(View view) {
-            // todo 修改传入的信息
-            VideoShowActivity.show(DisplayMicroFragment.this.getActivity(), VideoShowActivity.class);
-        }
-
     }
 
-    private void testData() {
-        int[] imgs = {R.mipmap.img_video_1, R.mipmap.img_video_2, R.mipmap.img_video_3, R.mipmap.img_video_4, R.mipmap.img_video_5, R.mipmap.img_video_6, R.mipmap.img_video_7, R.mipmap.img_video_8};
-        int[] videos = {R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_8};
-
-        ArrayList<MicroVideo> microVideos = new ArrayList<>();
-        for (int i = 0; i < imgs.length; i++) {
-            MicroVideo microVideo = new MicroVideo();
-            microVideo.setImg(imgs[i]);
-            microVideo.setVideo(videos[i]);
-            microVideos.add(microVideo);
-        }
-        sumVideoAdapter.add(microVideos);
+    @Override
+    protected void onFirstInit() {
+        super.onFirstInit();
+        presenter.start();
     }
-
-
 }

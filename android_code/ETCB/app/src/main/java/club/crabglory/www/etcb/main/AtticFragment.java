@@ -24,7 +24,7 @@ import club.crabglory.www.common.widget.video.MyLayoutManager;
 import club.crabglory.www.common.widget.video.OnViewPagerListener;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.account.AccountActivity;
-import club.crabglory.www.data.model.db.MicroVideo;
+import club.crabglory.www.data.model.db.Micro;
 
 /**
  * 微读阁
@@ -34,18 +34,19 @@ import club.crabglory.www.data.model.db.MicroVideo;
  */
 public class AtticFragment extends BaseFragment {
 
+
     final String TAG = "AtticFragment";
 
     @BindView(R.id.rv_micro)
     RecyclerView rvMicro;
-    private RecyclerAdapter<MicroVideo> videoAdapter;
+    private RecyclerAdapter<Micro> videoAdapter;
 
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
 
-    private ArrayList<MicroVideo> microVideos;
+    private ArrayList<Micro> microVideos;
 
     @Override
     protected int getContentLayoutId() {
@@ -58,14 +59,14 @@ public class AtticFragment extends BaseFragment {
         MyLayoutManager myLayoutManager = new MyLayoutManager(this.getActivity(),
                 OrientationHelper.VERTICAL, false);
         rvMicro.setLayoutManager(myLayoutManager);
-        videoAdapter = new RecyclerAdapter<MicroVideo>() {
+        videoAdapter = new RecyclerAdapter<Micro>() {
             @Override
-            protected int getItemViewType(int position, MicroVideo video) {
+            protected int getItemViewType(int position, Micro video) {
                 return R.layout.hodler_video;
             }
 
             @Override
-            protected ViewHolder<MicroVideo> onCreateViewHolder(View root, int viewType) {
+            protected ViewHolder<Micro> onCreateViewHolder(View root, int viewType) {
                 return new VideoHolder(root);
             }
         };
@@ -107,7 +108,7 @@ public class AtticFragment extends BaseFragment {
     }
 
 
-    class VideoHolder extends RecyclerAdapter.ViewHolder<MicroVideo> {
+    class VideoHolder extends RecyclerAdapter.ViewHolder<Micro> {
 
         @BindView(R.id.video_view)
         FullWindowVideoView videoView;
@@ -126,7 +127,7 @@ public class AtticFragment extends BaseFragment {
 
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
         @Override
-        protected void onBind(MicroVideo microVideo) {
+        protected void onBind(Micro microVideo) {
             Log.e(TAG, "onBind: " + " image and view to load");
             imgThumb.setImageResource(microVideo.getImg());
             civ_avatar.setImageResource(microVideo.getImg());
@@ -196,7 +197,7 @@ public class AtticFragment extends BaseFragment {
 
         microVideos = new ArrayList<>();
         for (int i = 0; i < imgs.length; i++) {
-            MicroVideo microVideo = new MicroVideo();
+            Micro microVideo = new Micro();
             microVideo.setImg(imgs[i]);
             microVideo.setVideo(videos[i]);
             microVideos.add(microVideo);

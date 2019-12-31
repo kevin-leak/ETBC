@@ -37,8 +37,11 @@ class DataKit {
                     .openDatabasesOnInit(true) // 数据库初始化的时候就开始打开
                     .build())
             FlowLog.setMinimumLoggingLevel(FlowLog.Level.V)
-            if (Account.isLogin(app())) Account.load(app())
+            if (Account.isLogin(app()))
+                Account.load(app())
+            // fixme just for local test
             StaticData.getBook(app())
+
         }
 
 
