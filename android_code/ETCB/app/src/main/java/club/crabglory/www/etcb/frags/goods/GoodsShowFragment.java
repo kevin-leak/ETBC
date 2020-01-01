@@ -17,8 +17,8 @@ import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Goods;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.book.BookShowFragment;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 import club.crabglory.www.etcb.frags.book.BooksShopActivity;
 import club.crabglory.www.etcb.holders.GoodsRandomHolder;
@@ -61,7 +61,7 @@ public class GoodsShowFragment extends BasePresenterFragment<GoodsShowContract.P
     protected void intiArgs(Bundle arguments) {
         super.intiArgs(arguments);
         if (arguments != null)
-            type = arguments.getInt(Book.TYPE_KEY);
+            type = arguments.getInt(MaterialRspModel.TYPE_KEY);
     }
 
     @Override

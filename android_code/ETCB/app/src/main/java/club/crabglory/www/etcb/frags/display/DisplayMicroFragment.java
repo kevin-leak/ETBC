@@ -4,26 +4,23 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
-import butterknife.OnClick;
-import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
-import club.crabglory.www.data.model.db.Micro;
 import club.crabglory.www.data.model.view.MicroViewModel;
 import club.crabglory.www.etcb.R;
+import club.crabglory.www.etcb.frags.micro.MicroShowActivity;
 import club.crabglory.www.factory.contract.DisplayMicroContract;
 import club.crabglory.www.factory.presenter.micro.DisplayMicroPresenter;
 
 public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroContract.Presenter>
         implements DisplayMicroContract.View {
-    @BindView(R.id.rv_sum)
-    RecyclerView rvSum;
+    @BindView(R.id.rv_micro)
+    RecyclerView rvMicro;
     private RecyclerAdapter<MicroViewModel> sumVideoAdapter;
 
     @Override
@@ -35,7 +32,7 @@ public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroCont
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
-        rvSum.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
+        rvMicro.setLayoutManager(new GridLayoutManager(this.getActivity(), 4));
         sumVideoAdapter = new RecyclerAdapter<MicroViewModel>() {
             @Override
             protected int getItemViewType(int position, MicroViewModel video) {
@@ -51,10 +48,10 @@ public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroCont
             @Override
             public void onItemClick(RecyclerAdapter.ViewHolder holder, MicroViewModel microViewModel) {
                 Bundle bundle = new Bundle();
-                bundle.putInt(VideoShowActivity.KEY_TYPE, VideoShowActivity.TYPE_PERSON);
-                bundle.putString(VideoShowActivity.KEY_TYPE, microViewModel.getId());
-                VideoShowActivity.show(DisplayMicroFragment.this.getActivity(),
-                        VideoShowActivity.class, bundle, false);
+                bundle.putInt(MicroShowActivity.KEY_TYPE, MicroShowActivity.TYPE_PERSON);
+                bundle.putString(MicroShowActivity.KEY_TYPE, microViewModel.getId());
+                MicroShowActivity.show(DisplayMicroFragment.this.getActivity(),
+                        MicroShowActivity.class, bundle, false);
             }
 
             @Override
@@ -63,7 +60,7 @@ public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroCont
             }
         });
 
-        rvSum.setAdapter(sumVideoAdapter);
+        rvMicro.setAdapter(sumVideoAdapter);
     }
 
     @Override

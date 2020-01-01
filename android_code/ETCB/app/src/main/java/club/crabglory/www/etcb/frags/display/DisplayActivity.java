@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +20,7 @@ import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.book.BookShowFragment;
@@ -82,7 +82,7 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
         super.initWidget();
         helper = new ViewPageHelper<>(vpContainer, this, this);
         helper.addItem(navigationList.get(0), new DisplayMicroFragment())
-                .addItem(navigationList.get(1), new BookShowFragment().setType(Book.TYPE_MY_UP))
+                .addItem(navigationList.get(1), new BookShowFragment().obtainType(MaterialRspModel.TYPE_MY_UP))
                 .addItem(navigationList.get(2), new DisplayLiveFragment());
     }
 

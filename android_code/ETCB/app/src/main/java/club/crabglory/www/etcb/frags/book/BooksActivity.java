@@ -2,10 +2,8 @@ package club.crabglory.www.etcb.frags.book;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.FrameLayout;
 
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
@@ -13,6 +11,7 @@ import com.cjj.MaterialRefreshListener;
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.data.model.db.Book;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.etcb.R;
 
 public class BooksActivity extends ToolbarActivity {
@@ -23,7 +22,7 @@ public class BooksActivity extends ToolbarActivity {
 
     @Override
     protected boolean initArgs(Bundle bundle) {
-        type = bundle.getInt(Book.TYPE_KEY);
+        type = bundle.getInt(MaterialRspModel.TYPE_KEY);
         return super.initArgs(bundle);
     }
 
@@ -41,19 +40,19 @@ public class BooksActivity extends ToolbarActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         //碎片
         booksFragment = new BookShowFragment();
-        booksFragment.setType(type);
+        booksFragment.obtainType(type);
         //提交事务
         transaction.add(R.id.lay_container, booksFragment).commit();
 
         mrlRefresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(final MaterialRefreshLayout mRefresh) {
-                booksFragment.preRefresh(mRefresh, false);
+                booksFragment.notifyRefresh(mRefresh, false);
             }
 
             @Override
             public void onRefreshLoadMore(MaterialRefreshLayout mRefresh) {
-                booksFragment.preRefresh(mRefresh, false);
+                booksFragment.notifyRefresh(mRefresh, false);
             }
         });
     }

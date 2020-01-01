@@ -38,5 +38,4 @@ open class Application : android.app.Application() {
         instance = this
     }
 
-
 }

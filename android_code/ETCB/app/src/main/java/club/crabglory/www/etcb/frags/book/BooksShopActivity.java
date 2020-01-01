@@ -18,7 +18,7 @@ import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.chat.ChatActivity;
 import club.crabglory.www.etcb.frags.display.DisplayActivity;
-import club.crabglory.www.etcb.frags.display.VideoShowActivity;
+import club.crabglory.www.etcb.frags.micro.MicroShowActivity;
 import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.contract.BooksShopContract;
 import club.crabglory.www.factory.presenter.book.BookShopPresenter;
@@ -91,7 +91,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
         Log.e("BooksShopActivity", book.toString());
         rivGoods.setup(Glide.with(this), 0, book.getImage());
         tvTitle.setText(book.getName());
-        tvType.setText(book.getTypeString());
+        tvType.setText(Book.getTypeString(book.getType()));
         tvCount.setText(String.format("%s", book.getCount()));
         tvDescription.setText(book.getDescription());
         tvUpperName.setText(book.getUpper().getName());
@@ -110,10 +110,10 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
             case R.id.cv_video_show:
                 if (goods == null || TextUtils.isEmpty(goods.getVideo())) break;
                 bundle = new Bundle();
-                bundle.putInt(VideoShowActivity.KEY_TYPE, VideoShowActivity.TYPE_BOOK);
-                bundle.putString(VideoShowActivity.KEY_TYPE, goodsId);
-                VideoShowActivity.show(BooksShopActivity.this,
-                        VideoShowActivity.class, bundle, false);
+                bundle.putInt(MicroShowActivity.KEY_TYPE, MicroShowActivity.TYPE_BOOK);
+                bundle.putString(MicroShowActivity.KEY_TYPE, goodsId);
+                MicroShowActivity.show(BooksShopActivity.this,
+                        MicroShowActivity.class, bundle, false);
                 break;
             case R.id.cv_author:
                 bundle = new Bundle();

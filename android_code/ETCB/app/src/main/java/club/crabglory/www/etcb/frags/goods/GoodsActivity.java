@@ -26,7 +26,7 @@ public class GoodsActivity extends ToolbarActivity {
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activtiy_book;
+        return R.layout.activtiy_goods;
     }
 
     @SuppressLint("CommitTransaction")

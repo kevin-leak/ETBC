@@ -1,7 +1,5 @@
 package club.crabglory.www.factory.presenter.book;
 
-import java.util.List;
-
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.BasePresenter;
 import club.crabglory.www.data.helper.BookDataHelper;
@@ -39,7 +37,7 @@ public class BookShopPresenter extends BasePresenter<BooksShopContract.View>
     @Override
     public void getBook(final String goodsId) {
         this.goodsId = goodsId;
-        BookDataHelper.getBookData(goodsId, BookShopPresenter.this);
+        BookDataHelper.getBookByID(goodsId, BookShopPresenter.this);
     }
 
     @Override

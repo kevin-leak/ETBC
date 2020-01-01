@@ -13,20 +13,16 @@ import java.util.concurrent.Executors
 
 class DataKit {
     companion object {
-        private val gson: Gson
+        private val gson: Gson = GsonBuilder() // 设置时间格式
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss") // 设置一个过滤器，数据库级别的Model不进行Json转换
+                .setExclusionStrategies(DBFlowExclusionStrategy())
+                .create()
 
         var instance: DataKit? = null
             get() {
                 if (field == null) field = DataKit()
                 return field
             }
-
-        init {
-            gson = GsonBuilder() // 设置时间格式
-                    .setDateFormat("yyyy-MM-dd'T'HH:mm:ss") // 设置一个过滤器，数据库级别的Model不进行Json转换
-                    .setExclusionStrategies(DBFlowExclusionStrategy())
-                    .create()
-        }
 
         fun app(): Application {
             return Application.instance
@@ -44,11 +40,8 @@ class DataKit {
 
         }
 
-
         fun getGson(): Gson {
             return gson
         }
     }
-
-
 }

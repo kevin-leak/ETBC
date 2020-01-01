@@ -56,6 +56,52 @@ public class BookUpPresenter extends BasePresenter<BookUpContract.View>
         BookDataHelper.upBook(book, this);
     }
 
+    @Override
+    public void deleteBook(String bookId) {
+        BookDataHelper.deleteBook(bookId);
+    }
+
+    @Override
+    public void updateBook(String bookId,
+                           String mVideoUrl, String mAvatarPath,
+                           String bookAuthor, String bookName,
+                           String count, String price, String info, int type) {
+
+        if (TextUtils.isEmpty(mAvatarPath) || TextUtils.isEmpty(bookName)
+                || TextUtils.isEmpty(bookAuthor) || TextUtils.isEmpty(count)
+                || TextUtils.isEmpty(price) || info.length() <= 0 || info.length() > 300) {
+            mView.showError(R.string.error_form_data);
+            return;
+        }
+        int c = Integer.parseInt(count);
+        float p = Float.parseFloat(price);
+        if (c <= 0 || p <= 0) {
+            mView.showError(R.string.error_form_data);
+            return;
+        }
+        mView.showDialog();
+
+        Book old = BookDataHelper.getFromLocalByID(bookId);
+        Book book = new Book();
+        book.setId(bookId);
+        book.setName(bookName);
+        book.setAuthor(bookAuthor);
+        book.setCount(c);
+        book.setPrice(p);
+        book.setDescription(info);
+        book.setUpper(Account.getUser());
+        book.setUpTime(new Date());
+        book.setModifyAt(new Date());
+        book.setImage(mAvatarPath);
+        book.setVideo(mVideoUrl);
+        book.setType(type);
+        boolean isSame = book.isSame(old);
+        if (isSame)
+            mView.showError(R.string.error_not_change);
+        else
+            BookDataHelper.upBook(book, this);
+    }
+
 
     @Override
     public void onDataNotAvailable(int strRes) {

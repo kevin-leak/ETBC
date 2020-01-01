@@ -5,33 +5,36 @@ import android.util.Log;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Book_Table;
-import club.crabglory.www.data.model.net.BookRspModel;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.net.RspModel;
 import club.crabglory.www.data.netkit.NetKit;
-import club.crabglory.www.data.netkit.RemoteService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BookDataHelper {
-    public static void refreshBooks(BookRspModel model, DataSource.Callback<List<Book>> callback) {
-        Log.e("BookDataHelper", model.toString());
-        Call<RspModel<List<Book>>> call = NetKit.remote().refreshBook(model);
+
+    private static final String TAG = "BookDataHelper";
+
+    // 使用在book在recycle view中，根据type类型来pull
+    public static void getBooks(MaterialRspModel model, DataSource.Callback<List<Book>> callback) {
+        Log.e(TAG, model.toString());
+        Call<RspModel<List<Book>>> call = NetKit.remote().pullBook(model);
         call.enqueue(new BookRspCallback(callback));
     }
 
-    public static void getFromLocal(String goodsId, DataSource.Callback<Book> callback) {
-        Book books = SQLite.select().from(Book.class)
+    public static Book getFromLocalByID(String goodsId) {
+        Book book = SQLite.select().from(Book.class)
                 .where(Book_Table.id.eq(goodsId))
                 .querySingle();
-        callback.onDataLoaded(books);
-        callback.onDataNotAvailable(R.string.data_from_loacl);
+        return book;
     }
 
 
@@ -65,30 +68,67 @@ public class BookDataHelper {
 //
 //            @Override
 //            public void onFailure(Call<RspModel<Book>> call, Throwable t) {
-//                Log.e("BookDataHelper", "book refreshBooks");
+//                Log.e("BookDataHelper", "book getBooks");
 //                call.cancel();
 //                callback.onDataNotAvailable(R.string.error_data_network_error);
 //            }
 //        });
     }
 
-    public static void getBookData(String bookId, DataSource.Callback<Book> callback) {
+    // 使用在BookShop中，因为没有缓存所以必须写一个单独的
+    public static void getBookByID(String bookId, DataSource.Callback<Book> callback) {
         // 优先从网上拉取
-        Call<RspModel<Book>> call = NetKit.remote().pullBook(bookId);
+        Call<RspModel<Book>> call = NetKit.remote().pullBookByID(bookId);
         try {
             RspModel<Book> body = call.execute().body();
+            Book result;
             if (body != null && body.isSuccess()) {
-                Book result = body.getResult();
-                callback.onDataLoaded(result);
-            }else {
+                result = body.getResult();
+            } else {
                 callback.onDataNotAvailable(R.string.error_data_network_error);
-                getFromLocal(bookId, callback);
+                result = getFromLocalByID(bookId);
             }
+            callback.onDataLoaded(result);
         } catch (IOException e) {
             e.printStackTrace();
             callback.onDataNotAvailable(R.string.error_data_network_error);
-            getFromLocal(bookId, callback);
+            callback.onDataLoaded(getFromLocalByID(bookId));
         }
+    }
+
+    public static void search(MaterialRspModel rspModel, DataSource.Callback<List<Book>> callback) {
+        // 优先从网上拉取
+        Call<RspModel<List<Book>>> call = NetKit.remote().pullBook(rspModel);
+        try {
+            RspModel<List<Book>> body = call.execute().body();
+            List<Book> result;
+            if (body != null && body.isSuccess()) {
+                result = body.getResult();
+            } else {
+                callback.onDataNotAvailable(R.string.error_data_network_error);
+                result = getFromLocal(rspModel);
+            }
+            callback.onDataLoaded(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+            callback.onDataNotAvailable(R.string.error_data_network_error);
+            callback.onDataLoaded(getFromLocal(rspModel));
+        }
+    }
+
+    // 先名字的模糊查询
+    private static List<Book> getFromLocal(MaterialRspModel rspModel) {
+        List<Book> list;
+        list = SQLite.select().from(Book.class)
+                .where(Book_Table.name.like("%" + rspModel.getText() + "%"))
+                .queryList();
+        Log.e(TAG, "get from local" + list.size());
+        return list;
+    }
+
+    public static void deleteBook(String bookId) {
+
+        // todo
     }
 
     private static class BookRspCallback implements Callback<RspModel<List<Book>>> {
@@ -117,7 +157,7 @@ public class BookDataHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Book>>> call, Throwable t) {
-            Log.e("BookDataHelper", "book refreshBooks");
+            Log.e("BookDataHelper", "book getBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

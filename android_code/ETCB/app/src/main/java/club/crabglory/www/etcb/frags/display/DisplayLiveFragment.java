@@ -2,12 +2,9 @@ package club.crabglory.www.etcb.frags.display;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
@@ -19,7 +16,7 @@ import club.crabglory.www.factory.presenter.live.DisplayLivePresenter;
 
 public class DisplayLiveFragment extends BasePresenterFragment<DisplayLiveContract.Presenter>
         implements DisplayLiveContract.View {
-    @BindView(R.id.rv_sum)
+    @BindView(R.id.rv_live)
     RecyclerView rvLive;
     private RecyclerAdapter<Live> liveAdapter;
 

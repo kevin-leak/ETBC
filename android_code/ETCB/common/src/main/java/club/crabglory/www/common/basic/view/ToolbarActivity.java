@@ -13,7 +13,7 @@ import club.crabglory.www.common.utils.StatusBarUtils;
  * @version 1.0.0
  */
 public abstract class ToolbarActivity extends BaseActivity {
-    protected Toolbar mToolbar;
+    public Toolbar mToolbar;
 
     @Override
     protected void initWindows() {

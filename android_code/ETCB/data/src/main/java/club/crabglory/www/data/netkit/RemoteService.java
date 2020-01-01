@@ -8,9 +8,8 @@ import club.crabglory.www.data.model.db.Live;
 import club.crabglory.www.data.model.db.Micro;
 import club.crabglory.www.data.model.net.AccountRspModel;
 import club.crabglory.www.data.model.db.ETCBFile;
-import club.crabglory.www.data.model.net.BookRspModel;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.net.FileRspModel;
-import club.crabglory.www.data.model.net.GoodsRspModel;
 import club.crabglory.www.data.model.net.LoginRspModel;
 import club.crabglory.www.data.model.net.ModifyRspModel;
 import club.crabglory.www.data.model.net.PayRspModel;
@@ -44,45 +43,43 @@ public interface RemoteService {
         String WEB_SOCKET = WEB_SOCKET_HEAD + BASE_IP_PORT + "android/websocket/";
     }
 
-    @GET("get_test/")
-    Call<ResponseBody> getCall();
 
-    @POST("accountLogin/")
+    @POST("account/login/")
     Call<RspModel<AccountRspModel>> accountLogin(@Body LoginRspModel model);
 
-    @POST("save_file/")
+    @POST("file/")
     Call<RspModel<ETCBFile>> saveFile(@Body FileRspModel model);
 
-    @POST("accountRegister/")
+    @POST("account/register/")
     Call<RspModel<AccountRspModel>> accountRegister(@Body RegisterRspModel model); // 此处，后端需要request里面的body接受数据
 
-    @GET("out/")
+    @GET("account/out/")
     Call<RspModel<String>> logout(@Body String id); // 此处，后端需要request里面的body接受数据
 
-    @GET("accountCodeRsp/")
+    @GET("account/codeRsp/")
     Call<RspModel> rspCode(@Body String phone);
 
-    @POST("accountModify/")
+    @POST("account/modify/")
     Call<RspModel<AccountRspModel>> accountModify(@Body ModifyRspModel model);
 
-    @POST("refreshBook/")
-    Call<RspModel<List<Book>>> refreshBook(@Body BookRspModel model);
-
-    @POST("getOwnerGoods/")
-    Call<RspModel<List<Goods>>> getOwnerGoods(@Body GoodsRspModel goodsRspModel);
-
-    @POST("upGoods/")
-    Call<RspModel<Book>> upBook(@Body Book book);
-
-    @POST("payGoods/")
-    Call<RspModel<List<Goods>>> payGoods(@Body List<PayRspModel> rspModels );
-
-    @GET("push_id/{livePullId}/")
+    @GET("live/{livePullId}/")
     Call<RspModel<List<Live>>> pullLive(@Path("livePullId") String liveGetId);
 
-    @GET("push_id/{microPullId}/")
+    @GET("micro/{microPullId}/")
     Call<RspModel<List<Micro>>> pullMicro(@Path("microPullId") String microPullId);
 
-    @GET("push_id/{bookPullId}/")
-    Call<RspModel<Book>> pullBook(@Path("bookPullId") String bookPullId);
+    @POST("goods/pullGoods/")
+    Call<RspModel<List<Goods>>> pullGoods(@Body MaterialRspModel model);
+
+    @POST("goods/pay/")
+    Call<RspModel<List<Goods>>> payGoods(@Body List<PayRspModel> rspModels );
+
+    @POST("book/upBook/")
+    Call<RspModel<Book>> upBook(@Body Book book);
+
+    @POST("book/pullBook/")
+    Call<RspModel<List<Book>>> pullBook(@Body MaterialRspModel model);
+
+    @GET("book/pullByID/{bookPullId}/")
+    Call<RspModel<Book>> pullBookByID(@Path("bookPullId") String bookPullId);
 }

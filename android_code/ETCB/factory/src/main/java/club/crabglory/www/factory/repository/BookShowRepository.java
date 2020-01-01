@@ -7,6 +7,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.factory.contract.BookDataSource;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.model.db.Book;
@@ -31,21 +32,21 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
          * 2. 类型限制：daily 和 Random 没有累别就按时间显示就行
          *    特别：MY_UP 要另外建立查询，
          * */
-
+        if (type == MaterialRspModel.TYPE_SEARCH) return; // 搜索不进初始化
         Log.e("BookShowRepository", "type is :" + type + "Account.getUserId : " + Account.getUserId());
         int count = 30;
-        if (type == Book.TYPE_DAILY) count = 4;
+        if (type == MaterialRspModel.TYPE_DAILY) count = 4;
         // fixme 区分buy 与 up
-        if (Book.TYPE_MY_UP == type) {
+        if (MaterialRspModel.TYPE_MY_UP == type) {
             SQLite.select().from(Book.class)
                     .where(Book_Table.upper_id.eq(Account.getUserId()))
                     .and(Book_Table.count.greaterThan(0))
                     .async()
                     .queryListResultCallback(this)
                     .execute();
-        } else if (Book.TYPE_DAILY == type || Book.TYPE_RANDOM == type) {
+        } else if (MaterialRspModel.TYPE_DAILY == type || MaterialRspModel.TYPE_RANDOM == type) {
             int offset = count * times;
-            if (Book.TYPE_RANDOM == type) offset += 4;
+            if (MaterialRspModel.TYPE_RANDOM == type) offset += 4;
             SQLite.select().from(Book.class)
                     .where(Book_Table.count.greaterThan(0))
                     .offset(offset).limit(count)
@@ -70,6 +71,7 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
         // 都要进行更新。
         return book.getCount() > 0
                 && (book.getUpper() == null
-                    || !book.getUpper().getId().equals(Account.getUserId()) || type == Book.TYPE_MY_UP);
+                    || !book.getUpper().getId().equals(Account.getUserId())
+                || type == MaterialRspModel.TYPE_MY_UP);
     }
 }

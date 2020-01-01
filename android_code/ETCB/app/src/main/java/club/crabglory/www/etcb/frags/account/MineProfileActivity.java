@@ -1,4 +1,4 @@
-package club.crabglory.www.etcb.frags.display;
+package club.crabglory.www.etcb.frags.account;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

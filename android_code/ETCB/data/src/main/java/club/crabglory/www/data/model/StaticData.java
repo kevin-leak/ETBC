@@ -168,7 +168,7 @@ public class StaticData {
         bookList.add(book5);
 
 //        Book book6 = new Book();
-//        book6.setId(UUID.randomUUID().toString());
+//        book6.setText(UUID.randomUUID().toString());
 //        book6.setImage("https://img9.doubanio.com/view/subject/l/public/s8912644.jpg");
 //        book6.setName("Bible");
 //        book6.setAuthor("Christian");

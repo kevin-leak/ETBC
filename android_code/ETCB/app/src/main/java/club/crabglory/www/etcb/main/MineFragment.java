@@ -1,7 +1,6 @@
 package club.crabglory.www.etcb.main;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -14,13 +13,12 @@ import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;
-import club.crabglory.www.etcb.MainActivity;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.LiveActivity;
-import club.crabglory.www.etcb.frags.MicroUpActivity;
+import club.crabglory.www.etcb.frags.micro.MicroUpActivity;
 import club.crabglory.www.etcb.frags.SettingsActivity;
-import club.crabglory.www.etcb.frags.account.AccountActivity;
 import club.crabglory.www.etcb.frags.book.BookUpActivity;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 import club.crabglory.www.etcb.frags.chat.ForkActivity;
@@ -29,7 +27,7 @@ import club.crabglory.www.etcb.frags.goods.GoodsCarActivity;
 import club.crabglory.www.etcb.frags.goods.GoodsActivity;
 import club.crabglory.www.etcb.frags.goods.GoodsPayActivity;
 import club.crabglory.www.etcb.frags.display.DisplayActivity;
-import club.crabglory.www.etcb.frags.display.MineProfileActivity;
+import club.crabglory.www.etcb.frags.account.MineProfileActivity;
 import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.factory.contract.MineContract;
 import club.crabglory.www.factory.presenter.account.MinePresenter;
@@ -73,7 +71,7 @@ public class MineFragment extends BasePresenterFragment<MineContract.Presenter>
                 GoodsCarActivity.show(activity, GoodsCarActivity.class);
                 break;
             case R.id.rl_goods:
-                bundle.putInt(Book.TYPE_KEY, Book.TYPE_MY_BUY);
+                bundle.putInt(MaterialRspModel.TYPE_KEY, MaterialRspModel.TYPE_MY_BUY);
                 BooksActivity.show(activity, GoodsActivity.class, bundle, false);
                 break;
             case R.id.iv_settings:

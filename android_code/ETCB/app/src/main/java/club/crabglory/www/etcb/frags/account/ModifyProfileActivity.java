@@ -1,4 +1,4 @@
-package club.crabglory.www.etcb.frags.display;
+package club.crabglory.www.etcb.frags.account;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.data.model.net.ModifyRspModel;
 import club.crabglory.www.data.model.persistence.Account;

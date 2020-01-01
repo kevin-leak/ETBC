@@ -11,6 +11,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.common.widget.AvatarView;
@@ -51,7 +52,7 @@ public class GoodsCarHolder extends RecyclerAdapter.ViewHolder<Goods> {
         this.goods = goods;
         ivGoodsImage.setup(Glide.with(root.getContext()), 0, goods.getBook().getImage());
         tvGoodsName.setText(goods.getBook().getName());
-        tvSort.setText(goods.getBook().getTypeString());
+        tvSort.setText(Book.getTypeString(goods.getBook().getType()));
         tvGoodsPrice.setText(String.format("%s$", goods.getBook().getPrice()));
         tvInfo.setText(goods.getBook().getDescription());
         tvSelectAccount.setText(String.format("%s", goods.getCount()));

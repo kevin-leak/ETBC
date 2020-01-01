@@ -63,7 +63,7 @@ public class MicroDataHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Micro>>> call, Throwable t) {
-            Log.e("MicroDataHelper", "micro refreshBooks");
+            Log.e("MicroDataHelper", "micro getBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

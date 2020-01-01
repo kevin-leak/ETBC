@@ -45,7 +45,7 @@ public class LiveDataHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Live>>> call, Throwable t) {
-            Log.e("LiveDataHelper", "live refreshBooks");
+            Log.e("LiveDataHelper", "live getBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

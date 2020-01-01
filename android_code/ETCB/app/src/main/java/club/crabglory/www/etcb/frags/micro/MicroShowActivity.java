@@ -1,6 +1,7 @@
-package club.crabglory.www.etcb.frags.display;
+package club.crabglory.www.etcb.frags.micro;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
@@ -8,9 +9,9 @@ import club.crabglory.www.common.basic.view.BaseActivity;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.main.AtticFragment;
 
-public class VideoShowActivity extends BaseActivity {
+public class MicroShowActivity extends BaseActivity {
 
-    public static final String KEY_TYPE = "VideoShowActivity";
+    public static final String KEY_TYPE = "MicroShowActivity";
     /*
      * 1. 书籍视频展示
      * 2. micro乱流展示
@@ -29,6 +30,12 @@ public class VideoShowActivity extends BaseActivity {
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_video_show;
+    }
+
+
+    @Override
+    protected boolean initArgs(Bundle bundle) {
+        return super.initArgs(bundle);
     }
 
     @SuppressLint("CommitTransaction")

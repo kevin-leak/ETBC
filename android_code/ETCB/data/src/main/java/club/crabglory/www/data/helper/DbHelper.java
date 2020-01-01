@@ -112,13 +112,14 @@ public class DbHelper {
     }
 
     // 指的是支付之后的产品保存过程
-    public static <Model extends BaseModel> void updateGoods(final Class<Goods> goodsClass, final Goods... goodsList) {
+    public static <Model extends BaseModel> void updateGoods(final Class<Goods> goodsClass,
+                                                             final Goods... goodsList) {
         /*
          * 1. 设置goods的产生时间
          * 2. 更新book的销量与数量，通知并保存
          * 2. 修改goods的状态
          * */
-        // 通知进行清空操作
+        // 通知进行选中的goods
         instance.notifyDelete(Goods.class, goodsList);
         List<Book> books = new ArrayList<>();
         for (Goods goods : goodsList) {

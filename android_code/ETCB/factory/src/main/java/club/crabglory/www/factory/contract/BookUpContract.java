@@ -13,5 +13,10 @@ public interface BookUpContract {
                     String count, String price, String info, int type);
 
 
+        void deleteBook(String bookId);
+
+        void updateBook(String bookId,
+                        String mVideoUrl, String mAvatarPath, String bookAuthor, String bookName,
+                        String count, String price, String info, int type);
     }
 }

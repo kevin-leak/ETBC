@@ -44,6 +44,4 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
     public void destroy() {
 
     }
-
-
 }

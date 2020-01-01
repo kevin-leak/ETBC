@@ -34,10 +34,10 @@
                 android:background="@drawable/shape_search_second" />
 
             <TextView
-                android:id="@+id/btn_back"
+                android:id="@+id/btn_ack"
                 android:layout_width="@dimen/len_80"
                 android:layout_height="match_parent"
-                android:text="@string/cancel"
+                android:text="@string/ack"
                 android:gravity="center"
                 android:textColor="@color/colorPrimaryDark" />
 

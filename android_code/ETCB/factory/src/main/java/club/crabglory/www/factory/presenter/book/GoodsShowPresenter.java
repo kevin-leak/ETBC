@@ -8,13 +8,12 @@ import java.util.List;
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
-import club.crabglory.www.factory.Factory;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.factory.contract.GoodsDataSource;
 import club.crabglory.www.data.helper.GoodsDataHelper;
 import club.crabglory.www.data.helper.DbHelper;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
-import club.crabglory.www.data.model.net.GoodsRspModel;
 import club.crabglory.www.factory.repository.GoodsRepository;
 import club.crabglory.www.factory.contract.GoodsShowContract;
 
@@ -47,17 +46,18 @@ public class GoodsShowPresenter extends
 
     @Override
     public void toRefresh(final boolean isMore) {
-        // 包含非book类型：daily,random,my_up,my_buy
-        GoodsRspModel goodsRspModel = new GoodsRspModel();
-        goodsRspModel.setType(type);
-        goodsRspModel.setMore(isMore);
-        GoodsDataHelper.refreshGoods(goodsRspModel, GoodsShowPresenter.this);
+        MaterialRspModel rspModel = new MaterialRspModel();
+        rspModel.setType(type);
+        rspModel.setMore(isMore);
+        GoodsDataHelper.refreshGoods(rspModel, GoodsShowPresenter.this);
     }
 
     @Override
     public void toDeleteGoods(List<Goods> listGoods) {
-        if (listGoods.size() > 0)
+        if (listGoods.size() > 0) {
+            // todo delete
             DbHelper.delete(Goods.class, listGoods.toArray(new Goods[0]));
+        }
         mView.dealSuccess();
     }
 

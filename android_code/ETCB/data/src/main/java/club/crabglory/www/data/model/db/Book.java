@@ -16,29 +16,12 @@ import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;
 
 @Table(database = AppDatabase.class)
 public class Book extends BaseDdModel<Book>
         implements DiffUiDataCallback.UiDataDiffer<Book>, Serializable {
-
-    /**
-     * 这个表用于存储别人上传的book以及个人上传的book
-     */
-
-    public static String TYPE_KEY = "BOOK-TYPE";
-    // 实际书本分类
-    public static final int TYPE_EDUCATION = 0;
-    public static final int TYPE_ECONOMIC = 1;
-    public static final int TYPE_SOCIETY = 2;
-    public static final int TYPE_SCIENCE = 3;
-
-    // 前端页面展示分类
-    public static final int TYPE_RANDOM = 4;
-    public static final int TYPE_DAILY = 5;
-    public static final int TYPE_MY_BUY = 6;    // 自己购买的产品，购物车的产品不是存在云端，放在mine goods
-    public static final int TYPE_MY_UP = 7;     // 我自己上传的放在 display中
-
 
     // 主键
     @PrimaryKey
@@ -68,6 +51,25 @@ public class Book extends BaseDdModel<Book>
     private Date upTime;    // 这里指的是
     @Column
     private Date modifyAt;
+
+    public static int getTypeString(int type) {
+        int strRst = -1;
+        switch (type) {
+            case MaterialRspModel.TYPE_EDUCATION:
+                strRst = R.string.book_type_education;
+                break;
+            case MaterialRspModel.TYPE_ECONOMIC:
+                strRst = R.string.book_type_economic;
+                break;
+            case MaterialRspModel.TYPE_SOCIETY:
+                strRst = R.string.book_type_society;
+                break;
+            case MaterialRspModel.TYPE_SCIENCE:
+                strRst = R.string.book_type_science;
+                break;
+        }
+        return strRst;
+    }
 
 
     public String getAuthor() {
@@ -120,25 +122,6 @@ public class Book extends BaseDdModel<Book>
 
     public int getType() {
         return type;
-    }
-
-    public int getTypeString() {
-        int strRst = -1;
-        switch (type) {
-            case TYPE_EDUCATION:
-                strRst = R.string.book_type_education;
-                break;
-            case TYPE_ECONOMIC:
-                strRst = R.string.book_type_economic;
-                break;
-            case TYPE_SOCIETY:
-                strRst = R.string.book_type_society;
-                break;
-            case TYPE_SCIENCE:
-                strRst = R.string.book_type_science;
-                break;
-        }
-        return strRst;
     }
 
     public void setType(int type) {

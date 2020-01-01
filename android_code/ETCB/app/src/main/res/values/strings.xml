@@ -83,4 +83,8 @@
     <string name="price_0">0 $</string>
     <string name="manager">manager</string>
     <string name="hint_book_info">info details( can\'t over 300 words)</string>
+    <string name="ack">ACK</string>
+    <string name="clear">Clear</string>
+    <string name="change">Change</string>
+    <string name="delete">Delete</string>
 </resources>

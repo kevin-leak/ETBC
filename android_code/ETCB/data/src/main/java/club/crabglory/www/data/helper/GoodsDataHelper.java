@@ -5,29 +5,24 @@ import android.util.Log;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.structure.database.transaction.QueryTransaction;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.data.R;
-import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.Goods_Table;
-import club.crabglory.www.data.model.net.GoodsRspModel;
-import club.crabglory.www.data.model.net.PayRspModel;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.net.RspModel;
 import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.data.netkit.NetKit;
-import club.crabglory.www.data.netkit.RemoteService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class GoodsDataHelper {
 
-    public static void refreshGoods(GoodsRspModel goodsRspModel, DataSource.Callback<List<Goods>> callback) {
-        Call<RspModel<List<Goods>>> call = NetKit.remote().getOwnerGoods(goodsRspModel);
+    public static void refreshGoods(MaterialRspModel rspModel, DataSource.Callback<List<Goods>> callback) {
+        Call<RspModel<List<Goods>>> call = NetKit.remote().pullGoods(rspModel);
         // 异步的请求
         call.enqueue(new GoodsRspCallback(callback));
     }
@@ -67,7 +62,8 @@ public class GoodsDataHelper {
 //        return false;
     }
 
-    public static void getFormLocal(boolean state, QueryTransaction.QueryResultListCallback<Goods> callback) {
+    public static void getFormLocal(boolean state, QueryTransaction
+                                            .QueryResultListCallback<Goods> callback) {
         SQLite.select().from(Goods.class)
                 .where(Goods_Table.customer_id.eq(Account.getUserId()))
                 .and(Goods_Table.state.eq(state))
@@ -76,7 +72,6 @@ public class GoodsDataHelper {
                 .queryListResultCallback(callback)
                 .execute();
     }
-
 
     private static class GoodsRspCallback implements Callback<RspModel<List<Goods>>> {
         private DataSource.Callback<List<Goods>> callback;
@@ -102,7 +97,7 @@ public class GoodsDataHelper {
 
         @Override
         public void onFailure(Call<RspModel<List<Goods>>> call, Throwable t) {
-            Log.e("GoodsDataHelper", "goods refreshBooks");
+            Log.e("GoodsDataHelper", "goods getBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);
         }

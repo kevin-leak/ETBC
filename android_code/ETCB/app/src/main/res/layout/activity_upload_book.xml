@@ -7,12 +7,12 @@
     android:background="#EDE9E9">
 
 
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:alpha="0.8"-->
-<!--        android:background="@mipmap/up_book_back"-->
-<!--        android:scaleType="centerCrop" />-->
+    <!--    <ImageView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:alpha="0.8"-->
+    <!--        android:background="@mipmap/up_book_back"-->
+    <!--        android:scaleType="centerCrop" />-->
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -62,12 +62,11 @@
             </RelativeLayout>
 
 
-
             <RelativeLayout
                 android:id="@+id/rl_up_video"
-                android:layout_below="@id/rl_booK_image"
                 android:layout_width="@dimen/len_100"
                 android:layout_height="@dimen/len_100"
+                android:layout_below="@id/rl_booK_image"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="10dp"
@@ -80,9 +79,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
-                    android:src="@mipmap/test_jane_eyre"
                     android:elevation="@dimen/len_2"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/test_jane_eyre" />
 
                 <ImageButton
                     android:id="@+id/iv_play"
@@ -109,9 +108,9 @@
             <EditText
                 android:id="@+id/et_goods_author"
                 style="@style/UpBookText"
-                android:layout_marginTop="@dimen/len_10"
                 android:layout_below="@+id/et_goods_name"
                 android:layout_marginLeft="@dimen/len_10"
+                android:layout_marginTop="@dimen/len_10"
                 android:layout_toRightOf="@+id/rl_booK_image"
                 android:drawableStart="@drawable/book_author"
                 android:drawableLeft="@drawable/book_author"
@@ -137,19 +136,19 @@
         <EditText
             android:id="@+id/et_unit_price"
             style="@style/UpBookText"
-            android:inputType="numberDecimal"
             android:drawableStart="@drawable/up_book_unit_price"
             android:drawableLeft="@drawable/up_book_unit_price"
-            android:hint="@string/bookPrice" />
+            android:hint="@string/bookPrice"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/et_quantity"
             style="@style/UpBookText"
-            android:inputType="number"
             android:layout_marginBottom="10dp"
             android:drawableStart="@drawable/up_book_quantity"
             android:drawableLeft="@drawable/up_book_quantity"
-            android:hint="@string/bookCount" />
+            android:hint="@string/bookCount"
+            android:inputType="number" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -166,13 +165,13 @@
                 android:id="@+id/etGoodsInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/textSecond"
                 android:background="@null"
                 android:elevation="10dp"
                 android:hint="@string/hint_book_info"
                 android:maxLength="300"
                 android:padding="20dp"
                 android:textAlignment="center"
+                android:textColor="@color/textSecond"
                 android:textColorHint="@color/gray" />
 
 
@@ -185,16 +184,30 @@
         android:id="@+id/btn_commit"
         style="@style/UpBookText"
         android:layout_width="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:text="@string/submit"
         android:textColor="@color/colorBlue"
         android:textSize="@dimen/font_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@id/btn_clear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        style="@style/UpBookText"
+        android:layout_width="0dp"
+        android:text="@string/clear"
+        android:textColor="@color/etcb"
+        android:textSize="@dimen/font_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/btn_commit"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.3 " />
 
 </android.support.constraint.ConstraintLayout>

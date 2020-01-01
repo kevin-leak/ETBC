@@ -207,5 +207,4 @@ public class AtticFragment extends BaseFragment {
     }
 
 
-
 }

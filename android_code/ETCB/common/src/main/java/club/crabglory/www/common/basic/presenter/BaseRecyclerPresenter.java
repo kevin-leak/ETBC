@@ -3,11 +3,8 @@ package club.crabglory.www.common.basic.presenter;
 
 import android.provider.ContactsContract;
 import android.support.v7.util.DiffUtil;
-import android.util.Log;
 
 import java.util.List;
-
-import javax.security.auth.login.LoginException;
 
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.common.basic.contract.BaseContract;
@@ -18,9 +15,7 @@ import club.crabglory.www.common.basic.contract.BaseContract;
 class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
         extends BasePresenter<View> {
 
-    final static String TAG = "BaseRecyclerPresenter";
-
-    public BaseRecyclerPresenter(View view) {
+    BaseRecyclerPresenter(View view) {
         super(view);
     }
 
@@ -39,23 +34,13 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
                 // 基本的更新数据并刷新界面
                 RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
                 if (adapter != null) {
-                    // fixme 零时修改 dataList.size() > 0，为了防止本地没有数据，建议后期再安装的时候添加一些默认的数据
-                    if (dataList.size() > 0)
-                        adapter.replace(dataList);
-                    Log.e("BaseRecyclerPresenter", "size : " + dataList.size());
+                    adapter.replace(dataList);
                     view.onAdapterDataChanged();
                 }
-
             }
         });
     }
 
-    /**
-     * 刷新界面操作，该操作可以保证执行方法在主线程进行
-     *
-     * @param diffResult 一个差异的结果集
-     * @param dataList   具体的新数据
-     */
     protected void refreshData(final DiffUtil.DiffResult diffResult, final List<ViewMode> dataList) {
         if (getView().getActivity() != null)
             getView().getActivity().runOnUiThread(new Runnable() {
@@ -74,16 +59,12 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
             return;
         // 基本的更新数据并刷新界面
         RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
-
-
         // 改变数据集合并不通知界面刷新
         adapter.getItems().clear();
         adapter.getItems().addAll(dataList);
-
         adapter.notifyDataSetChanged();
 //         通知界面刷新占位布局
         view.onAdapterDataChanged();
-
 //         进行增量更新
         diffResult.dispatchUpdatesTo(adapter);
 

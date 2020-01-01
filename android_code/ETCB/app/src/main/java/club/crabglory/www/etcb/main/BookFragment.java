@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -15,8 +14,9 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.data.model.db.Book;
+import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.etcb.frags.SearchActivity;
+import club.crabglory.www.etcb.frags.search.SearchActivity;
 import club.crabglory.www.etcb.frags.book.BookShowFragment;
 import club.crabglory.www.etcb.frags.book.BooksActivity;
 
@@ -50,11 +50,11 @@ public class BookFragment extends BaseFragment {
         mrlRefresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
-                randomFragment.preRefresh(mrlRefresh, false);
+                randomFragment.notifyRefresh(mrlRefresh, false);
             }
             @Override
             public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
-                randomFragment.preRefresh(mrlRefresh, true);
+                randomFragment.notifyRefresh(mrlRefresh, true);
             }
         });
     }
@@ -65,9 +65,9 @@ public class BookFragment extends BaseFragment {
             FragmentTransaction dailyTransact = manager.beginTransaction();
             FragmentTransaction randomTransact = manager.beginTransaction();
             dailyFragment = new BookShowFragment();
-            dailyFragment.setType(Book.TYPE_DAILY);
+            dailyFragment.obtainType(MaterialRspModel.TYPE_DAILY);
             randomFragment = new BookShowFragment();
-            randomFragment.setType(Book.TYPE_RANDOM);
+            randomFragment.obtainType(MaterialRspModel.TYPE_RANDOM);
             dailyTransact.add(R.id.lay_container_daily, dailyFragment).commit();
             randomTransact.replace(R.id.lay_container_random, randomFragment).commit();
         }
@@ -76,7 +76,7 @@ public class BookFragment extends BaseFragment {
     private void filterTypeBook() {
         for (int i = 0; i < 4; i++) {
             final Bundle bundle = new Bundle();
-            bundle.putInt(Book.TYPE_KEY, i);
+            bundle.putInt(MaterialRspModel.TYPE_KEY, i);
             llSelect.getChildAt(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -95,7 +95,7 @@ public class BookFragment extends BaseFragment {
                 break;
             case R.id.rl_random:
                 final Bundle bundle = new Bundle();
-                bundle.putInt(Book.TYPE_KEY, Book.TYPE_RANDOM);
+                bundle.putInt(MaterialRspModel.TYPE_KEY, MaterialRspModel.TYPE_RANDOM);
                 BooksActivity.show(BookFragment.this.getActivity(),
                         BooksActivity.class, bundle, false);
                 break;
