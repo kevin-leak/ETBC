@@ -21,7 +21,7 @@ public class NavHelper<T> {
 
     private int containerId;
     private FragmentManager mFragmentManager;
-    private OnNavChangeListener listener;
+    private OnNavChangeListener<T> listener;
     // 所有的Tab集合，SparseArray 内存优化
     private final SparseArray<Tab<T>> tabs = new SparseArray<>();
     /**
@@ -35,7 +35,8 @@ public class NavHelper<T> {
      * @param containerId 存放fragment的资源文件的id
      * @param mFragmentManager 获取当前activity 的一个fragment manager
      */
-    public NavHelper(Context context, int containerId, FragmentManager mFragmentManager, OnNavChangeListener listener) {
+    public NavHelper(Context context, int containerId, FragmentManager mFragmentManager,
+                     OnNavChangeListener listener) {
         this.containerId = containerId;
         this.mFragmentManager = mFragmentManager;
         this.listener = listener;

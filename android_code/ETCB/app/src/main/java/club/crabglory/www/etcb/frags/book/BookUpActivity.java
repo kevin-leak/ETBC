@@ -97,7 +97,7 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
         super.initData();
     }
 
-    @OnClick({R.id.ivGoodsImage, R.id.ibInfoImageAdd, R.id.rl_up_video, R.id.btn_commit, R.id.btn_delete})
+    @OnClick({R.id.ivGoodsImage, R.id.ibInfoImageAdd, R.id.rl_up_video, R.id.btn_commit, R.id.btn_clear})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivGoodsImage:

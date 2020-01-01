@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity implements
 
     @BindView(R.id.navigation)
     BottomNavigationView mNavigation;
-    private NavHelper mHelper;
+    private NavHelper<Integer> mHelper;
     private Menu menu;
     public static final int successCode = 0x002;
     public static final int failCode = 0x003;
@@ -61,8 +61,8 @@ public class MainActivity extends BaseActivity implements
     }
 
     private void bindFragment() {
-        mHelper = new NavHelper(this, R.id.lay_container, getSupportFragmentManager(), this);
-        mHelper.add(R.id.action_book, new NavHelper.Tab(BookFragment.class, R.string.nav_book));
+        mHelper = new NavHelper(this.getApplicationContext(), R.id.lay_container, getSupportFragmentManager(), this);
+        mHelper.add(R.id.action_book, new NavHelper.Tab<>(BookFragment.class, R.string.nav_book));
         mHelper.add(R.id.action_attic, new NavHelper.Tab<>(AtticFragment.class, R.string.nav_attic));
         mHelper.add(R.id.action_mine, new NavHelper.Tab<>(MineFragment.class, R.string.nav_mine));
         mNavigation.setOnNavigationItemSelectedListener(this);

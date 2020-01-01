@@ -24,7 +24,7 @@ import club.crabglory.www.etcb.R;
 public class ViewPageHelper<V extends View, F extends Fragment> {
 
 
-    private ViewPageAdapter pageAdapter;
+    private ViewPageAdapter<F> pageAdapter;
     private ViewPager viewPager;
     private ViewPagerCallback<F> callback;
     private AppCompatActivity context;
@@ -50,11 +50,11 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
     /**
      * @param callback 必须与view 相关联
      */
-    public ViewPageHelper(ViewPager viewPager, AppCompatActivity context, ViewPagerCallback callback) {
+    public ViewPageHelper(ViewPager viewPager, AppCompatActivity context, ViewPagerCallback<F> callback) {
         this.viewPager = viewPager;
         this.callback = callback;
         this.context = context;
-        pageAdapter = new ViewPageAdapter(context.getSupportFragmentManager());
+        pageAdapter = new ViewPageAdapter<>(context.getSupportFragmentManager());
         viewPager.setAdapter(pageAdapter);
         switchPage();
     }
@@ -72,9 +72,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
             fragments.add(f);
             pageAdapter.addFragment(f);
             clickToSwitch();
-            if (navList.size() == 1){
-                setFirstActive(0);
-            }
+            if (navList.size() == 1) setFirstActive(0);
         }
         return this;
     }
@@ -94,7 +92,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
      * 设置监控，点击导航栏发生fragment的切换
      */
     private void clickToSwitch(){
-        for (final View view : navList) {
+        for (final V view : navList) {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -122,7 +120,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
     /**
      * @param pageAdapter 提供一个方法供外部调用实现自己的adapter
      */
-    public void setPageAdapter(ViewPageAdapter pageAdapter) {
+    public void setPageAdapter(ViewPageAdapter<F> pageAdapter) {
         this.pageAdapter = pageAdapter;
     }
 
