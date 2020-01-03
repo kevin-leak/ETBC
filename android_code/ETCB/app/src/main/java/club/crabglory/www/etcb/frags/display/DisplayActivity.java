@@ -3,7 +3,6 @@ package club.crabglory.www.etcb.frags.display;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
@@ -18,7 +17,6 @@ import butterknife.BindViews;
 import club.crabglory.www.common.basic.view.BaseFragment;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.utils.StatusBarUtils;
-import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;
@@ -27,7 +25,8 @@ import club.crabglory.www.etcb.frags.book.BookShowFragment;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
 import club.crabglory.www.common.widget.AvatarView;
 
-public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.ViewPagerCallback {
+public class DisplayActivity extends ToolbarActivity implements
+        ViewPageHelper.ViewPagerCallback<BaseFragment> {
     public static String KEY = "DisplayActivity";
 
     @BindViews({R.id.tv_micro, R.id.tv_books, R.id.tv_live})
@@ -44,7 +43,6 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
     TextView tvForks;
     @BindView(R.id.tv_favorite)
     TextView tvFavorite;
-    private ViewPageHelper<TextView, BaseFragment> helper;
     private String userId;
 
     @Override
@@ -80,18 +78,18 @@ public class DisplayActivity extends ToolbarActivity implements ViewPageHelper.V
     @Override
     protected void initWidget() {
         super.initWidget();
-        helper = new ViewPageHelper<>(vpContainer, this, this);
+        ViewPageHelper<TextView, BaseFragment> helper = new ViewPageHelper<>(vpContainer, this, this);
         helper.addItem(navigationList.get(0), new DisplayMicroFragment())
                 .addItem(navigationList.get(1), new BookShowFragment().obtainType(MaterialRspModel.TYPE_MY_UP))
                 .addItem(navigationList.get(2), new DisplayLiveFragment());
     }
 
-    @Override
-    public void onChangedFragment(Fragment currentFragment) {
-
-    }
-
     public String getUserId() {
         return userId;
+    }
+
+    @Override
+    public void onChangedFragment(BaseFragment currentFragment) {
+
     }
 }

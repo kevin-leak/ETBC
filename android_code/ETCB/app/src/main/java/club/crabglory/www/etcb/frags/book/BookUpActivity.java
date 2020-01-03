@@ -29,6 +29,8 @@ import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.view.PresentToolActivity;
 import club.crabglory.www.common.widget.AvatarView;
 import club.crabglory.www.common.widget.ImageSelector.GalleryFragment;
+import club.crabglory.www.data.helper.BookDataHelper;
+import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.frags.micro.MicroShowActivity;
 import club.crabglory.www.etcb.frags.micro.MicroUpActivity;
@@ -95,6 +97,19 @@ public class BookUpActivity extends PresentToolActivity<BookUpContract.Presenter
     @Override
     protected void initData() {
         super.initData();
+        if (!TextUtils.isEmpty(bookId)){
+            Book book = BookDataHelper.getFromLocalByID(bookId);
+            spCategory.setSelection(book.getType());
+            ivGoodsImage.setup(Glide.with(BookUpActivity.this), book.getImage());
+            ibInfoImageAdd.setVisibility(View.GONE);
+            etGoodsName.setText(book.getName());
+            etUnitPrice.setText(String.format("%s", book.getPrice()));
+            etQuantity.setText(String.format("%s", book.getCount()));
+            etGoodsAuthor.setText(book.getAuthor());
+            etGoodsInfo.setText(book.getDescription());
+            mAvatarPath = book.getImage();
+            mVideoUrl = book.getVideo();
+        }
     }
 
     @OnClick({R.id.ivGoodsImage, R.id.ibInfoImageAdd, R.id.rl_up_video, R.id.btn_commit, R.id.btn_clear})

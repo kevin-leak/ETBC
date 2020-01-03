@@ -97,7 +97,7 @@ public class ForkActivity extends ToolbarActivity {
         @BindView(R.id.txt_time)
         TextView txtTime;
 
-        public FollowerHolder(View itemView) {
+        FollowerHolder(View itemView) {
             super(itemView);
         }
 

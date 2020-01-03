@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".frags.book.BookUpActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDE9E9">
@@ -80,15 +81,14 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:elevation="@dimen/len_2"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/test_jane_eyre" />
+                    android:scaleType="centerCrop" />
 
                 <ImageButton
                     android:id="@+id/iv_play"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/len_60"
+                    android:layout_height="@dimen/len_60"
                     android:layout_centerInParent="true"
-                    android:background="@mipmap/ic_live_profile_play"
+                    android:background="@drawable/up_book_video"
                     android:elevation="@dimen/len_2"
                     android:scaleType="centerCrop" />
 

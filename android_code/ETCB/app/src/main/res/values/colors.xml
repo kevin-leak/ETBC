@@ -33,5 +33,7 @@
     <color name="orange">#E94F1E</color>
     <color name="etcbLight">#422B55</color>
 
-
+    <color name="switch_red">#D84B4B</color>
+    <color name="colorBluer">#77A89F</color>
+    <color name="yellow">#40857E</color>
 </resources>

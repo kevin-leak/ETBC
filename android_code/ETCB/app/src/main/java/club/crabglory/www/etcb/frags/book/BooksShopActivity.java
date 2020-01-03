@@ -101,7 +101,6 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
 
     @OnClick({R.id.cv_video_show, R.id.cv_author, R.id.cv_message, R.id.ib_add_car, R.id.btn_pay})
     public void onClick(View view) {
-        // fixme to open login limit
         if (!Account.isLogin()) {
             DisplayActivity.show(BooksShopActivity.this, DisplayActivity.class);
         }

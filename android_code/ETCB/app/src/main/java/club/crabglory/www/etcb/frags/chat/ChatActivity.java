@@ -27,7 +27,6 @@ public class ChatActivity extends ToolbarActivity {
     EditText editContent;
     @BindView(R.id.btn_submit)
     ImageView btnSubmit;
-    private RecyclerAdapter<Chat> chatAdapter;
 
     @Override
     protected int getContentLayoutId() {
@@ -42,7 +41,7 @@ public class ChatActivity extends ToolbarActivity {
 
     private void chatRecycle() {
         rvContainer.setLayoutManager(new LinearLayoutManager(this));
-        chatAdapter = new RecyclerAdapter<Chat>() {
+        RecyclerAdapter<Chat> chatAdapter = new RecyclerAdapter<Chat>() {
             @Override
             protected int getItemViewType(int position, Chat chat) {
                 return R.layout.holder_car_book;
@@ -79,7 +78,7 @@ public class ChatActivity extends ToolbarActivity {
     }
 
     class ChatHolder extends RecyclerAdapter.ViewHolder<Chat> {
-        public ChatHolder(View root) {
+        ChatHolder(View root) {
             super(root);
         }
 

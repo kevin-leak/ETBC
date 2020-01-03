@@ -82,7 +82,7 @@ public class DisplayMicroFragment extends BasePresenterFragment<DisplayMicroCont
         @BindView(R.id.avi_micro)
         AvatarView ivBackground;
 
-        public VideoHolder(View itemView) {
+        VideoHolder(View itemView) {
             super(itemView);
         }
 

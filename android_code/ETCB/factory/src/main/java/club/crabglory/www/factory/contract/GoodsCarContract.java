@@ -27,5 +27,6 @@ public interface GoodsCarContract {
 
     interface CheckGoodsListener {
         void checkBuy(Goods goods, float addSum, boolean isAddNew);
+
     }
 }

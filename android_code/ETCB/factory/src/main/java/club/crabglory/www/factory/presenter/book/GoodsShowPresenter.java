@@ -56,7 +56,7 @@ public class GoodsShowPresenter extends
     public void toDeleteGoods(List<Goods> listGoods) {
         if (listGoods.size() > 0) {
             // todo delete
-            DbHelper.delete(Goods.class, listGoods.toArray(new Goods[0]));
+            GoodsDataHelper.deleteGoods(listGoods, this);
         }
         mView.dealSuccess();
     }

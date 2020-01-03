@@ -1,7 +1,9 @@
 package club.crabglory.www.factory.presenter.book;
 
+import android.support.v7.util.DiffUtil;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import club.crabglory.www.common.basic.model.DataSource;
@@ -9,6 +11,7 @@ import club.crabglory.www.common.basic.presenter.RecyclerSourcePresenter;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.data.helper.BookDataHelper;
 import club.crabglory.www.data.model.db.Book;
+import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.factory.contract.BookDataSource;
 import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.factory.repository.BookShowRepository;
@@ -35,23 +38,15 @@ public class BookShowPresenter extends
 
     @Override
     public void onDataLoaded(List<Book> books) {
-        super.onDataLoaded(books);
-        Log.e("BookShowPresenter", books.toString());
-        // 数据到来了是追加还是替代，头部追加还是尾部追加
-//        RecyclerAdapter<Book> adapter = getView().getRecyclerAdapter();
-//        if (adapter != null) {
-//            List<Book> old = adapter.getItems();
-//            // 进行数据对比
-//            if (old.size() <= 0) {
-//                refreshData(books);
-//            } else {
-//                DiffUtil.Callback callback = new DiffUiDataCallback<>(old, books);
-//                DiffUtil.DiffResult result = DiffUtil.calculateDiff(callback);
-//                refreshData(result, old);
-//            }
-//        } else {
-            refreshData(books);
-//        }
+        if (type == MaterialRspModel.TYPE_DAILY) {   // 限制Daily的更新大小
+            for (int i = 0; i < books.size(); i++)
+                if (i >= 4) books.remove(i);
+        }
+        RecyclerAdapter<Book> adapter = mView.getRecyclerAdapter();
+        List<Book> old = adapter.getItems();
+        DiffUtil.Callback callback = new DiffUiDataCallback<>(old, books);
+        DiffUtil.DiffResult result = DiffUtil.calculateDiff(callback);
+        refreshData(result, books);
     }
 
     @Override

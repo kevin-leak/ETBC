@@ -45,10 +45,10 @@ public class DiffUiDataCallback<T extends DiffUiDataCallback.UiDataDiffer<T>> ex
     // 进行比较的数据类型
     // 范型的目的，就是你是和一个你这个类型的数据进行比较
     public interface UiDataDiffer<T> {
-        // 传递一个旧的数据给你，问你是否和你标示的是同一个数据
+        // 这个标志指的是数据是不是通一个
         boolean isSame(T old);
 
-        // 你和旧的数据对比，内容是否相同
+        // 指的是在UI界面上是不是同一个，比如书籍降价，或者数量减少，他都不是同一个
         boolean isUiContentSame(T old);
     }
 }

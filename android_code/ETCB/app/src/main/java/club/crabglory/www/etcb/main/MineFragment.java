@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.BasePresenterFragment;
-import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;

@@ -1,6 +1,9 @@
 package club.crabglory.www.data.model.db;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.ForeignKey;
@@ -10,6 +13,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 import club.crabglory.www.data.DataKit;
@@ -175,6 +179,24 @@ public class Book extends BaseDdModel<Book>
 
     public void setId(String id) {
         this.id = id;
+    }
+
+
+    // 必须复写，要不然删除不了
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return book.id.equals(this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + type;
+        return result;
     }
 
     @Override

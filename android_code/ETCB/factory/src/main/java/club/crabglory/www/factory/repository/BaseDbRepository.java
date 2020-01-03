@@ -62,7 +62,7 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
     }
 
     @Override
-    public void onDataSave(Data[] list) {
+    public void onDataSave(Data... list) {
         boolean isChanged = false;
         // 当数据库数据变更的操作
         for (Data data : list) {
@@ -78,22 +78,20 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
     }
 
     // 通知界面刷新的方法
-    private void notifyDataChange() {
+    void notifyDataChange() {
         SucceedCallback<List<Data>> callback = this.callback;
         if (callback != null)
             callback.onDataLoaded(dataList);
     }
 
     /**
-     * 对于不同的数据进行过滤
-     * @param data 需要使用的数据
-     * @return 是否被需要
+     * 对于不同的数据进行过滤，是否是需要更新的数据
      */
     public abstract boolean isRequired(Data data);
 
 
     // 插入或者更新
-    private void insertOrUpdate(Data data) {
+    void insertOrUpdate(Data data) {
         int index = indexOf(data);
         if (index >= 0) {
             replace(index, data);
@@ -127,16 +125,13 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
     }
 
     @Override
-    public void onDataDelete(Data[] list) {
-        // 在删除情况下不用进行过滤判断
-        // 但数据库数据删除的操作
+    public void onDataDelete(Data... list) {
         boolean isChanged = false;
         for (Data data : list) {
             if (dataList.remove(data))
                 isChanged = true;
+            Log.e(TAG, "data to delete first : " + isChanged + "\ndetails :" + data.toString());
         }
-
-        // 有数据变更，则进行界面刷新
         if (isChanged)
             notifyDataChange();
     }
@@ -146,8 +141,8 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
      */
     @Override
     public void onListQueryResult(QueryTransaction transaction, @NonNull List<Data> tResult) {
+        Log.e("BaseDbRepository", "tResult size : " + tResult.size());
         if (tResult.size() == 0) {
-            Log.e("BaseDbRepository", "tResult size : " + tResult.size());
             dataList.clear();
             notifyDataChange();
             return;

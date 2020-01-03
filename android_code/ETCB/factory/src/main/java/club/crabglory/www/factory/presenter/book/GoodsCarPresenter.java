@@ -33,6 +33,7 @@ public class GoodsCarPresenter extends
 
     @Override
     public void onDataLoaded(final List<Goods> goodsList) {
+        Log.e("GoodsCarPresenter", "" + goodsList.size());
         RecyclerAdapter<Goods> adapter = mView.getRecyclerAdapter();
         List<Goods> old = adapter.getItems();
         // 进行数据对比

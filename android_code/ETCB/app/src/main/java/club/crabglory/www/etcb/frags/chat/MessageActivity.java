@@ -100,7 +100,7 @@ public class MessageActivity extends ToolbarActivity {
         @BindView(R.id.btn_chat_count)
         Button btnChatCount;
 
-        public MessageHolder(View itemView) {
+        MessageHolder(View itemView) {
             super(itemView);
         }
 
@@ -110,7 +110,7 @@ public class MessageActivity extends ToolbarActivity {
             txtName.setText(message.getName());
             txtContent.setText(message.getContent());
             txtTime.setText(message.getTime());
-            btnChatCount.setText(message.getMsgCount()+"");
+            btnChatCount.setText(String.format("%s", message.getMsgCount()));
         }
 
         @OnClick(R.id.fl_chat_enter)

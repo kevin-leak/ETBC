@@ -1,5 +1,6 @@
 package club.crabglory.www.data.model.net;
 
+// 只用于数据的拉取
 public class MaterialRspModel {
 
     public static String TYPE_KEY = "Material-TYPE";
@@ -15,7 +16,6 @@ public class MaterialRspModel {
     public static final int TYPE_MY_BUY = 6;    // 自己购买的产品，购物车的产品不是存在云端，放在mine goods
     public static final int TYPE_MY_UP = 7;     // 我自己上传的放在 display中
     public static final int TYPE_SEARCH = 8;
-
     /*
     * 以上8中类型都会作为type的类型传入后台，进行数据加载
     * TYPE_MY_BUY：text为用户的ID

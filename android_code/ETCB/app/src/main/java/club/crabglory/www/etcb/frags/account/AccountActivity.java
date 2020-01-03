@@ -36,7 +36,7 @@ import club.crabglory.www.etcb.R;
 import club.crabglory.www.etcb.hepler.ViewPageHelper;
 
 public class AccountActivity extends ToolbarActivity
-        implements ViewPageHelper.ViewPagerCallback {
+        implements ViewPageHelper.ViewPagerCallback<Fragment> {
 
     // 从其他界面，跳转请求码，用来处理没有登入注册而返回的情况
     public static final int requestCode = 0x0001;
@@ -57,7 +57,6 @@ public class AccountActivity extends ToolbarActivity
     AvatarView imPortrait;
     @BindView(R.id.iv_change_avatar)
     ImageView ivChangeAvatar;
-    private ViewPageHelper<View, Fragment> helper;
     private Fragment currentFragment;
     private String mAvatarPath;
 
@@ -81,7 +80,7 @@ public class AccountActivity extends ToolbarActivity
     @Override
     protected void initWidget() {
         super.initWidget();
-        helper = new ViewPageHelper<>(vpContainer, this, this);
+        ViewPageHelper<View, Fragment> helper = new ViewPageHelper<>(vpContainer, this, this);
         helper.setNavBackground(R.color.alpha);
         helper.setNavNegativeColor(R.color.alpha);
         helper.addItem(navigationList.get(0), new LoginFragment())
@@ -158,6 +157,7 @@ public class AccountActivity extends ToolbarActivity
         // 如果是我能够处理的类型
         if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
             // 通过UCrop得到对应的Uri
+            assert data != null;
             final Uri resultUri = UCrop.getOutput(data);
             if (resultUri != null) {
                 loadPortrait(resultUri);

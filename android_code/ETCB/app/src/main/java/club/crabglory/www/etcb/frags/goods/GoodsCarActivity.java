@@ -75,14 +75,12 @@ public class GoodsCarActivity extends PresentToolActivity<GoodsCarContract.Prese
         goodsAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<Goods>() {
             @Override
             public void onItemClick(RecyclerAdapter.ViewHolder holder, Goods goods) {
-                // todo book 信息处理
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(BooksShopActivity.KEY, goods.getBook().getId());
                 BooksActivity.show(GoodsCarActivity.this,
                         BooksShopActivity.class, bundle, false);
             }
         });
-
 
 
         sfGoodsList.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -138,11 +136,11 @@ public class GoodsCarActivity extends PresentToolActivity<GoodsCarContract.Prese
         tvSumMoney.setText(String.format("%s $", payMoney));
     }
 
+
     @OnClick({R.id.tv_delete, R.id.tv_pay, R.id.cb_all})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_delete:
-                // todo 如果删除成功要清除选择
                 mPresenter.emptyCart(checkGoods);
                 break;
             case R.id.tv_pay:

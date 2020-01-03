@@ -23,10 +23,6 @@ public class MicroShowActivity extends BaseActivity {
     public static final int TYPE_PERSON = 0x002;
     public static final int TYPE_UP_BOOK = 0x003;
 
-    private FragmentManager manager;
-    private FragmentTransaction transaction;
-    private AtticFragment atticFragment;
-
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_video_show;
@@ -42,13 +38,13 @@ public class MicroShowActivity extends BaseActivity {
     @Override
     protected void initWidget() {
         super.initWidget();
-        manager = getSupportFragmentManager();
+        FragmentManager manager = getSupportFragmentManager();
         //开启事务
-        transaction = manager.beginTransaction();
+        FragmentTransaction transaction = manager.beginTransaction();
         //碎片
-        atticFragment = new AtticFragment();
+        AtticFragment atticFragment = new AtticFragment();
         //提交事务
-        transaction.add(R.id.lay_container, atticFragment ).commit();
+        transaction.add(R.id.lay_container, atticFragment).commit();
 
 
     }

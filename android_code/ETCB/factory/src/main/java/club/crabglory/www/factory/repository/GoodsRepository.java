@@ -18,15 +18,11 @@ public class GoodsRepository extends BaseDbRepository<Goods> implements GoodsDat
         this.state = state;
     }
 
+
     @Override
     public void load(SucceedCallback<List<Goods>> callback) {
         super.load(callback);
         GoodsDataHelper.getFormLocal(state,  this);
-    }
-
-    @Override
-    public void onDataDelete(Goods[] list) {
-        super.onDataDelete(list);
     }
 
     @Override

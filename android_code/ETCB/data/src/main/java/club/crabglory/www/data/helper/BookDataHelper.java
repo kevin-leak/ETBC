@@ -1,14 +1,16 @@
 package club.crabglory.www.data.helper;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
+import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.model.DataSource;
+import club.crabglory.www.common.utils.NetUtils;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Book_Table;
@@ -126,20 +128,49 @@ public class BookDataHelper {
         return list;
     }
 
-    public static void deleteBook(String bookId) {
+    public static boolean deleteBook(String bookId, DataSource.Callback<String> callback) {
+        if (NetUtils.isNetworkConnected(Application.Companion.getInstance())) {
+            deleteFromLocal(bookId);
+            if (!deleteFormNet(bookId))
+                callback.onDataNotAvailable(R.string.error_data_network_error);
+            else
+                return false;
+        } else {
+            callback.onDataNotAvailable(R.string.error_data_network_error);
+            return false;
+        }
+        return true;
+    }
 
-        // todo
+    private static boolean deleteFormNet(String bookId) {
+
+        Call<RspModel<String>> call = NetKit.remote().deleteBook(bookId);
+        try {
+            RspModel<String> body = call.execute().body();
+            if (body == null || !body.getResult().equals("ok")) {
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    private static void deleteFromLocal(String bookId) {
+        Book book = getFromLocalByID(bookId);
+        DbHelper.delete(Book.class, book);
     }
 
     private static class BookRspCallback implements Callback<RspModel<List<Book>>> {
         private DataSource.Callback<List<Book>> callback;
 
-        public BookRspCallback(DataSource.Callback<List<Book>> callback) {
+        BookRspCallback(DataSource.Callback<List<Book>> callback) {
             this.callback = callback;
         }
 
         @Override
-        public void onResponse(Call<RspModel<List<Book>>> call, Response<RspModel<List<Book>>> response) {
+        public void onResponse(@NonNull Call<RspModel<List<Book>>> call, Response<RspModel<List<Book>>> response) {
             RspModel<List<Book>> body = response.body();
             if (body != null && body.isSuccess()) {
                 List<Book> booksList = body.getResult();
@@ -156,7 +187,7 @@ public class BookDataHelper {
         }
 
         @Override
-        public void onFailure(Call<RspModel<List<Book>>> call, Throwable t) {
+        public void onFailure(Call<RspModel<List<Book>>> call, @NonNull Throwable t) {
             Log.e("BookDataHelper", "book getBooks");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);

@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
@@ -28,7 +29,7 @@ public class BookFragment extends BaseFragment {
     @BindView(R.id.mrl_refresh)
     MaterialRefreshLayout mrlRefresh;
     @BindView(R.id.sv_Search)
-    SearchView svSearch;
+    TextView svSearch;
     @BindView(R.id.ll_select)
     LinearLayout llSelect;
     private BookShowFragment randomFragment;
@@ -42,8 +43,6 @@ public class BookFragment extends BaseFragment {
     @Override
     protected void initWidgets(View root) {
         super.initWidgets(root);
-        svSearch.setQueryRefinementEnabled(false);
-        svSearch.setFocusable(false);
         filterTypeBook();   // 选择类型查看书籍
         spliceFragment();      // 选择类型查看书籍
 

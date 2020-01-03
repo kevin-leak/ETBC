@@ -43,6 +43,7 @@ public class BookShowFragment extends BasePresenterFragment<BookShowContract.Pre
         return this;
     }
 
+    // 根据类型来初始化toolbar的名字
     private void initToolBar(int type) {
         FragmentActivity activity = getActivity();
         if (activity instanceof ToolbarActivity)

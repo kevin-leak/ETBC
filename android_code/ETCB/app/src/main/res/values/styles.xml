@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Base" parent="Theme.AppCompat" >
+    <style name="Theme.Base" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/etcb</item>
         <item name="colorPrimaryDark">@color/etcb</item>
@@ -9,7 +9,9 @@
         <item name="android:screenOrientation">portrait</item>
 
         <item name="android:textColor">@color/black</item>
-        <item name="android:statusBarColor" tools:ignore="NewApi">@color/secondWindowBackgroundColor</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">
+            @color/secondWindowBackgroundColor
+        </item>
         <item name="actionMenuTextColor">@color/black</item>
         <!--设置没有toolbar-->
         <item name="windowActionBar">false</item>
@@ -41,7 +43,9 @@
     </style>
 
     <style name="AppTheme.DefaultActivity" parent="AppTheme">
-        <item name="android:statusBarColor" tools:ignore="NewApi">@color/secondWindowBackgroundColor</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">
+            @color/secondWindowBackgroundColor
+        </item>
         <item name="actionMenuTextColor">@color/black</item>
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
         <!--NavigationIcon的宽度-->
@@ -101,7 +105,7 @@
         <item name="android:textColor">@color/gray</item>
 
     </style>
-    
+
     <!--item do-->
     <style name="mine_do_card">
         <item name="android:layout_height">@dimen/len_50</item>
@@ -110,18 +114,21 @@
         <item name="cardElevation">@dimen/len_2</item>
         <item name="cardBackgroundColor">@color/secondWindowBackgroundColor</item>
     </style>
+
     <style name="mine_do_rl">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/secondWindowBackgroundColor</item>
         <item name="android:paddingLeft">@dimen/len_10</item>
     </style>
+
     <style name="mine_do_image">
         <item name="android:layout_height">@dimen/len_30</item>
         <item name="android:layout_width">@dimen/len_30</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
+
     <style name="mine_do_text">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -137,7 +144,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:elevation" tools:targetApi="lollipop">@dimen/len_1</item>
-        <item name="android:layout_gravity"> center_vertical|end</item>
+        <item name="android:layout_gravity">center_vertical|end</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_marginRight">@dimen/len_35</item>
         <item name="android:textSize">@dimen/fon_16</item>
@@ -173,14 +180,13 @@
         <!--右内边距-->
         <item name="android:paddingRight">2dp</item>
         <item name="android:titleTextColor" tools:targetApi="m">@color/blackLess</item>
-        <item name="titleTextColor" >@color/blackLess</item>
+        <item name="titleTextColor">@color/blackLess</item>
     </style>
 
     <style name="carCheckBox" parent="@android:style/Widget.Material.CompoundButton.CheckBox" tools:targetApi="lollipop">
         <item name="android:colorControlActivated">@color/colorAccent</item>
         <item name="android:colorControlNormal">@color/colorPrimary</item>
     </style>
-
 
 
     <!--    up bookModelView-->
@@ -199,6 +205,7 @@
         <item name="android:background">@drawable/shape_frame</item>
         <item name="android:textColorHint">@color/gray</item>
     </style>
+
     <style name="SpnStyle">
         <item name="colorControlNormal">#ffffff</item>
     </style>
@@ -210,12 +217,14 @@
         <item name="android:layout_height">@dimen/len_60</item>
         <item name="android:background">@color/secondWindowBackgroundColor</item>
     </style>
+
     <style name="account_image">
         <item name="android:layout_height">@dimen/len_30</item>
         <item name="android:layout_width">@dimen/len_30</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
+
     <style name="account_text">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -263,12 +272,14 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:paddingLeft">@dimen/len_10</item>
     </style>
+
     <style name="shop_image">
         <item name="android:layout_height">@dimen/len_30</item>
         <item name="android:layout_width">@dimen/len_30</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
+
     <style name="shop_text">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -279,4 +290,18 @@
         <item name="android:textSize">@dimen/fon_16</item>
         <item name="android:drawableRight">@drawable/more_gray</item>
     </style>
+
+
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/colorBlue</item>
+        <item name="colorSwitchThumbNormal">@color/grayer</item>
+        <item name="android:colorForeground">@color/grayer</item>
+    </style>
+
+    <style name="SwitchCompat.Text" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/len_9</item>
+    </style>
+
+
 </resources>

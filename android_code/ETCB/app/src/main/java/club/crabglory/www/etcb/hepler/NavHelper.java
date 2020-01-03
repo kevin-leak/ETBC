@@ -36,7 +36,7 @@ public class NavHelper<T> {
      * @param mFragmentManager 获取当前activity 的一个fragment manager
      */
     public NavHelper(Context context, int containerId, FragmentManager mFragmentManager,
-                     OnNavChangeListener listener) {
+                     OnNavChangeListener<T> listener) {
         this.containerId = containerId;
         this.mFragmentManager = mFragmentManager;
         this.listener = listener;

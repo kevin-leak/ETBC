@@ -160,7 +160,6 @@ public class AccountDataHelper {
 
         @Override
         public void onFailure(Call<RspModel<AccountRspModel>> call, Throwable t) {
-            // todo net
             Log.e("AccountDataHelper", "Account info ruin");
             call.cancel();
             callback.onDataNotAvailable(R.string.error_data_network_error);

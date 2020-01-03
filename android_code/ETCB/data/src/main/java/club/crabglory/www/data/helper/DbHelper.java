@@ -122,15 +122,18 @@ public class DbHelper {
         // 通知进行选中的goods
         instance.notifyDelete(Goods.class, goodsList);
         List<Book> books = new ArrayList<>();
+        List<Book> deleteBook = new ArrayList<>();
         for (Goods goods : goodsList) {
             Book book = goods.getBook();
             goods.setCreateAt(new Date());
             book.setSales(book.getSales() + goods.getCount());
             book.setCount(book.getCount() - goods.getCount());
+            if (book.getCount() <= 0)
+                deleteBook.add(book);
             books.add(book);
             goods.setState(true);
         }
-        // fixme 这里如果有后台的话应该由后台通知，所有的数据建议都由后台通知
+        Log.e("DbHelper", "deleteBook size is:"+deleteBook.size());
         DbHelper.save(Book.class, books.toArray(new Book[0]));
         DbHelper.save(Goods.class, goodsList);
     }
@@ -179,9 +182,9 @@ public class DbHelper {
      */
     public static <Model extends BaseModel> void delete(final Class<Model> tClass,
                                                         final Model... models) {
-        if (models == null || models.length == 0)
-            return ;
-
+        if (models == null)
+            return;
+        Log.e("DbHelper", "delete");
         // 当前数据库的一个管理者
         DatabaseDefinition definition = FlowManager.getDatabase(AppDatabase.class);
         // 提交一个事物

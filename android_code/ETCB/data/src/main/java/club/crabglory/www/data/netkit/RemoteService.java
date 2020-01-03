@@ -74,6 +74,9 @@ public interface RemoteService {
     @POST("goods/pay/")
     Call<RspModel<List<Goods>>> payGoods(@Body List<PayRspModel> rspModels );
 
+    @POST("goods/delete/")
+    Call<RspModel<String>> deleteGoods(@Body List<String> idList);
+
     @POST("book/upBook/")
     Call<RspModel<Book>> upBook(@Body Book book);
 
@@ -81,5 +84,8 @@ public interface RemoteService {
     Call<RspModel<List<Book>>> pullBook(@Body MaterialRspModel model);
 
     @GET("book/pullByID/{bookPullId}/")
-    Call<RspModel<Book>> pullBookByID(@Path("bookPullId") String bookPullId);
+    Call<RspModel<Book>> pullBookByID(@Path("bookPullId") String bookId);
+
+    @GET("book/delete/{bookDeleteId}/")
+    Call<RspModel<String>> deleteBook(@Path("bookPullId") String bookId);
 }

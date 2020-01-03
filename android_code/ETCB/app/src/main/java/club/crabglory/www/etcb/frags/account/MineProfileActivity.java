@@ -37,8 +37,6 @@ public class MineProfileActivity extends PresentToolActivity<ModifyProfileContra
     TextView tvName;
     @BindView(R.id.tv_sex)
     TextView tvSex;
-    @BindView(R.id.tv_address)
-    TextView tvAddress;
     private String mAvatarPath;
     public static ModifyProfilePresenter presenter;
 
@@ -55,7 +53,6 @@ public class MineProfileActivity extends PresentToolActivity<ModifyProfileContra
         rivAvatar.setup((Glide.with(MineProfileActivity.this)), user);
         tvName.setText(user.getName());
         tvSex.setText(user.getSex() == 0 ? "Male" : "Female");
-        tvAddress.setText(user.getAddress());
     }
 
     @Override

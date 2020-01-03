@@ -54,7 +54,6 @@ public abstract class BasePresenterActivity<Presenter extends BaseContract.Prese
     public void showDialog() {
         ProgressDialog dialog = mLoadingDialog;
         if (dialog == null) {
-            // todo 制定加载框的演示
             dialog = new ProgressDialog(this, R.style.Theme_AppCompat_Light_Dialog_Alert);
             // 不可触摸取消
             dialog.setCanceledOnTouchOutside(false);

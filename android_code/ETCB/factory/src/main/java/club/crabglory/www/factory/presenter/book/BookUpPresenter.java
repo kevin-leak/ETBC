@@ -57,8 +57,14 @@ public class BookUpPresenter extends BasePresenter<BookUpContract.View>
     }
 
     @Override
-    public void deleteBook(String bookId) {
-        BookDataHelper.deleteBook(bookId);
+    public void deleteBook(final String bookId) {
+        Factory.Companion.runOnAsync(new Runnable() {
+            @Override
+            public void run() {
+                BookDataHelper.deleteBook(bookId, BookUpPresenter.this);
+            }
+        });
+        getView().getActivity().finish();
     }
 
     @Override

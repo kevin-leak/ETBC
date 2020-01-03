@@ -102,7 +102,6 @@ public class GoodsShowFragment extends BasePresenterFragment<GoodsShowContract.P
     @Override
     protected void onFirstInit() {
         super.onFirstInit();
-        //todo load book
         presenter.start();
     }
 

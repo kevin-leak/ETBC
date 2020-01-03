@@ -24,7 +24,7 @@ import club.crabglory.www.etcb.main.MineFragment;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends BaseActivity implements
-        BottomNavigationView.OnNavigationItemSelectedListener, NavHelper.OnNavChangeListener {
+        BottomNavigationView.OnNavigationItemSelectedListener, NavHelper.OnNavChangeListener<Integer> {
 
     @BindView(R.id.navigation)
     BottomNavigationView mNavigation;
@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     private void bindFragment() {
-        mHelper = new NavHelper(this.getApplicationContext(), R.id.lay_container, getSupportFragmentManager(), this);
+        mHelper = new NavHelper<>(this.getApplicationContext(), R.id.lay_container, getSupportFragmentManager(), this);
         mHelper.add(R.id.action_book, new NavHelper.Tab<>(BookFragment.class, R.string.nav_book));
         mHelper.add(R.id.action_attic, new NavHelper.Tab<>(AtticFragment.class, R.string.nav_attic));
         mHelper.add(R.id.action_mine, new NavHelper.Tab<>(MineFragment.class, R.string.nav_mine));

@@ -46,8 +46,6 @@ public class AtticFragment extends BaseFragment {
         System.loadLibrary("native-lib");
     }
 
-    private ArrayList<Micro> microVideos;
-
     @Override
     protected int getContentLayoutId() {
         return R.layout.fragment_nav_micro;
@@ -195,7 +193,7 @@ public class AtticFragment extends BaseFragment {
         int[] imgs = {R.mipmap.img_video_1, R.mipmap.img_video_2, R.mipmap.img_video_3, R.mipmap.img_video_4, R.mipmap.img_video_5, R.mipmap.img_video_6, R.mipmap.img_video_7, R.mipmap.img_video_8};
         int[] videos = {R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_8};
 
-        microVideos = new ArrayList<>();
+        ArrayList<Micro> microVideos = new ArrayList<>();
         for (int i = 0; i < imgs.length; i++) {
             Micro microVideo = new Micro();
             microVideo.setImg(imgs[i]);

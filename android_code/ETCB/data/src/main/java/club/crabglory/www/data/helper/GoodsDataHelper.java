@@ -5,9 +5,13 @@ import android.util.Log;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.structure.database.transaction.QueryTransaction;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import club.crabglory.www.common.Application;
 import club.crabglory.www.common.basic.model.DataSource;
+import club.crabglory.www.common.utils.NetUtils;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.Goods_Table;
@@ -63,7 +67,7 @@ public class GoodsDataHelper {
     }
 
     public static void getFormLocal(boolean state, QueryTransaction
-                                            .QueryResultListCallback<Goods> callback) {
+            .QueryResultListCallback<Goods> callback) {
         SQLite.select().from(Goods.class)
                 .where(Goods_Table.customer_id.eq(Account.getUserId()))
                 .and(Goods_Table.state.eq(state))
@@ -71,6 +75,35 @@ public class GoodsDataHelper {
                 .async()
                 .queryListResultCallback(callback)
                 .execute();
+    }
+
+    public static boolean deleteGoods(List<Goods> listGoods, DataSource.Callback<List<Goods>> callback) {
+        if (NetUtils.isNetworkConnected(Application.Companion.getInstance())) {
+            DbHelper.delete(Goods.class, listGoods.toArray(new Goods[0]));
+            List<String> idList = new ArrayList<>();
+            if (deleteFromNet(idList)) {
+                callback.onDataNotAvailable(R.string.error_data_network_error);
+                return false;
+            }
+        } else {
+            callback.onDataNotAvailable(R.string.error_data_network_error);
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean deleteFromNet(List<String> idList) {
+        Call<RspModel<String>> call = NetKit.remote().deleteGoods(idList);
+        try {
+            RspModel<String> body = call.execute().body();
+            if (body == null || !body.getResult().equals("ok")) {
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     private static class GoodsRspCallback implements Callback<RspModel<List<Goods>>> {

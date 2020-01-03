@@ -87,4 +87,7 @@
     <string name="clear">Clear</string>
     <string name="change">Change</string>
     <string name="delete">Delete</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="english">English</string>
 </resources>

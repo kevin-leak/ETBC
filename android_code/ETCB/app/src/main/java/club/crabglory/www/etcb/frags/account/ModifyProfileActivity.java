@@ -17,7 +17,7 @@ import club.crabglory.www.data.model.persistence.Account;
 import club.crabglory.www.etcb.R;
 import club.crabglory.www.factory.presenter.account.ModifyProfilePresenter;
 
-// fixme ModifyProfileActivity：这里设计简陋，留待以后修改
+// fixme ModifyProfileActivity：地址的添加需要重新设定
 public class ModifyProfileActivity extends ToolbarActivity {
 
     public static final String KEY = "ModifyProfileActivity-KEY_Books";
