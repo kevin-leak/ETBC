@@ -53,11 +53,11 @@ public interface RemoteService {
     @POST("account/register/")
     Call<RspModel<AccountRspModel>> accountRegister(@Body RegisterRspModel model); // 此处，后端需要request里面的body接受数据
 
-    @GET("account/out/")
-    Call<RspModel<String>> logout(@Body String id); // 此处，后端需要request里面的body接受数据
+    @GET("account/out/{id}")
+    Call<RspModel<String>> logout(@Path("id") String id); // 此处，后端需要request里面的body接受数据
 
-    @GET("account/codeRsp/")
-    Call<RspModel> rspCode(@Body String phone);
+    @GET("account/codeRsp/{phone}")
+    Call<RspModel> rspCode(@Path("phone") String phone);
 
     @POST("account/modify/")
     Call<RspModel<AccountRspModel>> accountModify(@Body ModifyRspModel model);
@@ -88,4 +88,6 @@ public interface RemoteService {
 
     @GET("book/delete/{bookDeleteId}/")
     Call<RspModel<String>> deleteBook(@Path("bookPullId") String bookId);
+
+
 }

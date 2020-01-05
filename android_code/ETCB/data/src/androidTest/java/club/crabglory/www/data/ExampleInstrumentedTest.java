@@ -7,6 +7,9 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import club.crabglory.www.data.model.net.AccountRspModel;
+import club.crabglory.www.data.model.net.RspModel;
+
 import static org.junit.Assert.*;
 
 /**
@@ -22,5 +25,7 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
         assertEquals("club.crabglory.www.data", appContext.getPackageName());
+
+
     }
 }

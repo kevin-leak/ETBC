@@ -108,7 +108,7 @@ public class Goods extends BaseDdModel<Goods>
 
     public PayRspModel toPayRspModel() {
         PayRspModel rspModel = new PayRspModel();
-        rspModel.setBookId(this.getBook().getId());
+        rspModel.setId(this.getBook().getId());
         rspModel.setConsumer(this.getCustomer().getId());
         rspModel.setCount(this.getCount());
         rspModel.setType(PayRspModel.TYPE_GOODS);

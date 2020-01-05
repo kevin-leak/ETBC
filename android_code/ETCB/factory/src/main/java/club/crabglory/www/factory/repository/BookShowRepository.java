@@ -82,7 +82,7 @@ public class BookShowRepository extends BaseDbRepository<Book> implements BookDa
                 insertOrUpdate(data);
                 isChanged = true;
             }else if (data.getCount() <= 0){
-                dataList.remove(data);
+                dataList.remove(data);  // 如果卖空了要进行更新
                 isChanged = true;
             }
         }

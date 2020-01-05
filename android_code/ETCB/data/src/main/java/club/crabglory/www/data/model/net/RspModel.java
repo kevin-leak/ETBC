@@ -2,6 +2,8 @@ package club.crabglory.www.data.model.net;
 
 import java.util.Date;
 
+import club.crabglory.www.data.DataKit;
+
 /**
  * @author KevinLeak
  * 用在服务端回送数据时，统一所有回送数据都有的参数
@@ -12,13 +14,13 @@ public class RspModel<T> {
      * status : 1
      * message :
      * date :
-     *
+     * result:
      */
 
     private T result;
     private int status = 0;
-    private String message;
-    private Date date;
+    private String message = "";
+    private Date date = new Date();
 
 
     /**
@@ -73,15 +75,12 @@ public class RspModel<T> {
 
     @Override
     public String toString() {
-        return "RspModel{" +
-                "result=" + result.toString() +
-                ", status=" + status +
-                ", message='" + message + '\'' +
-                ", date=" + date +
-                '}';
+        return DataKit.Companion.getGson().toJson(this);
     }
 
     public void setResult(T result) {
         this.result = result;
     }
+
+
 }

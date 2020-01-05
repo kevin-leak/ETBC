@@ -10,6 +10,7 @@ import com.raizlabs.android.dbflow.annotation.Table;
 import java.util.Date;
 
 import club.crabglory.www.common.basic.model.Author;
+import club.crabglory.www.common.utils.DateTimeUtil;
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.data.model.BaseDdModel;
@@ -20,40 +21,40 @@ public class User extends BaseDdModel<User> implements DiffUiDataCallback.UiData
 
     // 主键
     @PrimaryKey
-    private String id;
+    private String id = "";
     @Column
-    private String name;
+    private String name = "";
     @Column
-    private String phone;
+    private String phone = "";
     @Column
-    private String avatar;
+    private String avatar = "";
     @Column
-    private String address;
+    private String address = "";
     @Column
     private int sex = 0;
 
     // 我对某人的备注信息，也应该写入到数据库中
     @Column
-    private String alias;
+    private String alias = "";
 
     // 用户关注人的数量
     @Column
-    private int follows;
+    private int follows = 0;
 
     // 用户粉丝的数量
     @Column
-    private int following;
+    private int following = 0;
 
     // 我与当前User的关系状态，是否已经关注了这个人
     @Column
-    private boolean isFollow;
+    private boolean isFollow = false;
 
     @Column
-    private float favorite;
+    private float favorite = 0;
 
     // 时间字段
     @Column
-    private Date modifyAt;
+    private Date modifyAt = new Date();
 
 
     public float getFavorite() {

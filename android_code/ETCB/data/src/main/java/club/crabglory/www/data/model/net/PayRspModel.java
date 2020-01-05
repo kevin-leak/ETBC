@@ -1,29 +1,23 @@
 package club.crabglory.www.data.model.net;
 
+import club.crabglory.www.data.DataKit;
+
 public class PayRspModel {
     public static final int TYPE_GOODS = 0;
 
-    private String bookId;
-    private String goodsId;
-    private int type;
+    private String id;
+    private int type;   // 用来扩展，以后不是书籍的情况
     private int count = 0;
     private String consumer;
 
-    public String getBookId() {
-        return bookId;
+    public String getId() {
+        return id;
     }
 
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getGoodsId() {
-        return goodsId;
-    }
-
-    public void setGoodsId(String goodsId) {
-        this.goodsId = goodsId;
-    }
 
     public int getType() {
         return type;
@@ -47,5 +41,10 @@ public class PayRspModel {
 
     public void setConsumer(String consumer) {
         this.consumer = consumer;
+    }
+
+    @Override
+    public String toString() {
+        return DataKit.Companion.getGson().toJson(this);
     }
 }

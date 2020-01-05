@@ -5,11 +5,11 @@ import club.crabglory.www.data.model.db.User;
 
 public class AccountRspModel {
     // 用户基本信息
-    private User user;
+    private User user = new User();
     // 当前登录的账号
-    private String account;
+    private String account = "";
     // 标示是否已经绑定到了设备PushId
-    private boolean isBind;
+    private boolean isBind = false;
 
     public User getUser() {
         return user;

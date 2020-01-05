@@ -1,5 +1,9 @@
 package club.crabglory.www.data.model.net;
 
+import android.support.annotation.NonNull;
+
+import club.crabglory.www.data.DataKit;
+
 // 只用于数据的拉取
 public class MaterialRspModel {
 
@@ -49,5 +53,11 @@ public class MaterialRspModel {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return DataKit.Companion.getGson().toJson(this);
     }
 }

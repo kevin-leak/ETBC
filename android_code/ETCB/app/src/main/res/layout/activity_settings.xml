@@ -53,8 +53,8 @@
             android:checked="true"
             android:longClickable="false"
             android:textColor="@color/white"
-            android:textOff="@string/off"
-            android:textOn="@string/on"
+            android:textOff="@string/on"
+            android:textOn="@string/off"
             android:theme="@style/SwitchStyle"
             app:switchTextAppearance="@style/SwitchCompat.Text"
             app:showText="true" />
