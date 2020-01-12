@@ -3,13 +3,13 @@ package club.crabglory.www.data.model.net;
 import club.crabglory.www.data.DataKit;
 
 public class LoginRspModel {
-    private String phone;
     private String code;
+    private String password;
     private boolean flag;
 
-    public LoginRspModel(String phone, String code, boolean flag) {
-        this.phone = phone;
+    public LoginRspModel(String code, String password, boolean flag) {
         this.code = code;
+        this.password = password;
         this.flag = flag;
     }
 
@@ -21,20 +21,20 @@ public class LoginRspModel {
         this.flag = flag;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCode(String phone) {
+        this.code = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String toString() {

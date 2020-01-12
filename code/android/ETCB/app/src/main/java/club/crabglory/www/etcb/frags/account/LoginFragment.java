@@ -47,8 +47,8 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     public void preLogin() {
         if (Account.isLogin()) return;
         String phoneString = etPhone.getText().toString();
-        String code = etWay.getText().toString();
-        presenter.login(phoneString, code, flag);
+        String password = etWay.getText().toString();
+        presenter.login(phoneString, password, flag);
     }
 
     @Override

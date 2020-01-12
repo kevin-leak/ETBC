@@ -2,11 +2,11 @@
 {
 	"buildFiles" : 
 	[
-		"E:/Users/KevinLeak/Documents/GitHub/ETBC/android_code/ETCB/app/CMakeLists.txt"
+		"E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/CMakeLists.txt"
 	],
 	"cleanCommands" : 
 	[
-		"C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
+		"C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
 	],
 	"cppFileExtensions" : [ "cpp" ],
 	"libraries" : 
@@ -15,18 +15,18 @@
 		{
 			"abi" : "armeabi-v7a",
 			"artifactName" : "native-lib",
-			"buildCommand" : "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target native-lib",
+			"buildCommand" : "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target native-lib",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
 					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
-					"src" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/android_code/ETCB/app/src/main/cpp/native-lib.cpp",
-					"workingDirectory" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/android_code/ETCB/app/.cxx/cmake/debug/armeabi-v7a"
+					"src" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/debug/armeabi-v7a"
 				}
 			],
-			"output" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/android_code/ETCB/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
+			"output" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
 			"toolchain" : "730291137"
 		}
 	},

@@ -65,7 +65,7 @@ POST请求参数
 {
 	"code": "lkkzbl123888",
 	"flag": false,
-	"phone": "18870742138"
+	"password": "18870742138"
 }
 ```
 

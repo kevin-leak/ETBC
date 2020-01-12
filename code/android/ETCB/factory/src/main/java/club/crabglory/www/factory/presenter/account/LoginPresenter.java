@@ -40,13 +40,13 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
     }
 
     @Override
-    public void login(final String phone, final String code, final boolean flag) {
+    public void login(final String code, final String password, final boolean flag) {
         mView.showDialog();
-        if (TextUtils.isEmpty(code)) {
+        if (TextUtils.isEmpty(password)) {
             onDataNotAvailable(R.string.error_null_data);
             return;
         }
-        LoginRspModel model = new LoginRspModel(phone, code, flag);
+        LoginRspModel model = new LoginRspModel(code, password, flag);
         AccountDataHelper.login(model, LoginPresenter.this);
     }
 

@@ -1,16 +1,16 @@
 {
   "buildFiles": [
-    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\CMakeLists.txt"
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\CMakeLists.txt"
   ],
   "cleanCommands": [
-    "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\.cxx\\cmake\\debug\\x86_64 --target clean"
+    "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\debug\\x86_64 --target clean"
   ],
   "libraries": {
     "native-lib-Debug-x86_64": {
       "artifactName": "native-lib",
-      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\.cxx\\cmake\\debug\\x86_64 --target native-lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\debug\\x86_64 --target native-lib",
       "abi": "x86_64",
-      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\android_code\\ETCB\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libnative-lib.so"
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libnative-lib.so"
     }
   }
 }
