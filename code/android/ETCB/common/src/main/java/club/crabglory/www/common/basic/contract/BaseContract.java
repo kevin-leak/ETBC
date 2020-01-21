@@ -3,6 +3,7 @@ package club.crabglory.www.common.basic.contract;
 import android.app.Activity;
 import android.support.annotation.StringRes;
 
+import club.crabglory.www.common.utils.NetUtils;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 
 
@@ -43,6 +44,7 @@ public interface BaseContract {
      * 这里实现一个最为简单的presenter, 构造方法也没有实现，等待着各种子类自行实现
      */
     interface Presenter {
+
         // 共用的开始触发
         void start();
 

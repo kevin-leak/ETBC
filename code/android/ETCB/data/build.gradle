@@ -21,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
@@ -38,6 +42,8 @@ dependencies {
     //noinspection GradleDependency
     api "com.github.Raizlabs.DBFlow:dbflow:${rootProject.ext.dbflowVersion}"
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+
+
     api project(':common')
 }
 repositories {

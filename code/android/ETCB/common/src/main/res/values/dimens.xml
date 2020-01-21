@@ -2,4 +2,117 @@
 <resources>
     <dimen name="len_2">2dp</dimen>
     <dimen name="len_92">92dp</dimen>
+    <dimen name="len_0">0dp</dimen>
+    <dimen name="len_1">1dp</dimen>
+    <dimen name="len_3">3dp</dimen>
+    <dimen name="len_4">4dp</dimen>
+    <dimen name="len_5">5dp</dimen>
+    <dimen name="len_6">6dp</dimen>
+    <dimen name="len_7">7dp</dimen>
+    <dimen name="len_8">8dp</dimen>
+    <dimen name="len_9">9dp</dimen>
+    <dimen name="len_10">10dp</dimen>
+    <dimen name="len_11">11dp</dimen>
+    <dimen name="len_12">12dp</dimen>
+    <dimen name="len_13">13dp</dimen>
+    <dimen name="len_14">14dp</dimen>
+    <dimen name="len_15">15dp</dimen>
+    <dimen name="len_30">30dp</dimen>
+    <dimen name="len_55">55dp</dimen>
+    <dimen name="len_35">35dp</dimen>
+    <dimen name="len_20">20dp</dimen>
+    <dimen name="len_80">80dp</dimen>
+    <dimen name="len_350dp">360dp</dimen>
+    <dimen name="len_70">70dp</dimen>
+    <dimen name="len_25">25dp</dimen>
+
+
+    <dimen name="searchBarSize">55dp</dimen>
+    <dimen name="len_150dp">150dp</dimen>
+    <dimen name="len_40">40dp</dimen>
+    <dimen name="len_50">50dp</dimen>
+    <dimen name="len_250">250dp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="fon_18">18sp</dimen>
+    <dimen name="len_150">150dp</dimen>
+    <dimen name="len_18">18dp</dimen>
+
+    <dimen name="fon_16">16sp</dimen>
+    <dimen name="fon_15">15dp</dimen>
+    <dimen name="fon_14">14sp</dimen>
+
+
+    <dimen name="len_0_5">0.5dp</dimen>
+    <dimen name="len_100">100dp</dimen>
+    <dimen name="len_60">60dp</dimen>
+    <dimen name="len_200">200dp</dimen>
+    <dimen name="len_190">190dp</dimen>
+    <dimen name="len_50dp">50dp</dimen>
+    <dimen name="len_60dp">60dp</dimen>
+    <dimen name="len_90">90dp</dimen>
+    <dimen name="len_95">95dp</dimen>
+    <dimen name="len_180">180dp</dimen>
+    <dimen name="len_22">22dp</dimen>
+    <dimen name="len_24">24dp</dimen>
+    <dimen name="len_185">185dp</dimen>
+    <dimen name="len_130">130dp</dimen>
+    <dimen name="len_120">120dp</dimen>
+    <dimen name="fon_12">12sp</dimen>
+    <dimen name="len_140">140dp</dimen>
+    <dimen name="len_65">65dp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="len_85">85dp</dimen>
+    <dimen name="font_18">18sp</dimen>
+    <dimen name="toolBarDefault">50dp</dimen>
+    <dimen name="actionBarSize">40dp</dimen>
+    <dimen name="statusBarSize">15dp</dimen>
+    <dimen name="len_70dp">70dp</dimen>
+    <dimen name="len_300">300dp</dimen>
+    <dimen name="len_200dp">200dp</dimen>
+    <dimen name="len_62">62dp</dimen>
+    <dimen name="font_24">24sp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="len_48">48dp</dimen>
+    <dimen name="len_16">16dp</dimen>
+    <dimen name="len_52">52dp</dimen>
+    <dimen name="actionBarSize2">70dp</dimen>
+    <dimen name="len_17">17dp</dimen>
+    <dimen name="font_14">14sp</dimen>
+    <dimen name="len_96">96dp</dimen>
+    <dimen name="len_170">170dp</dimen>
+    <dimen name="font_25">25dp</dimen>
+    <dimen name="len_160">160dp</dimen>
+    <dimen name="len_44">44dp</dimen>
+    <dimen name="len_68">68dp</dimen>
+    <dimen name="len_46">46dp</dimen>
+    <dimen name="len_56">46dp</dimen>
+    <dimen name="len_76">76dp</dimen>
+    <dimen name="len_86">86dp</dimen>
+    <dimen name="len_220">220dp</dimen>
+    <dimen name="len_440">440dp</dimen>
+    <dimen name="len_110">110</dimen>
+    <dimen name="len_500">500dp</dimen>
+    <dimen name="len_0_3">0.3dp</dimen>
+    <dimen name="len_135">135dp</dimen>
+    <dimen name="len_75">75dp</dimen>
+    <dimen name="len_0_1">0.1dp</dimen>
+    <dimen name="len_115">115dp</dimen>
+    <dimen name="len_125">125dp</dimen>
+    <dimen name="len_43">43dp</dimen>
+    <dimen name="len_28">28dp</dimen>
+    <dimen name="len_128">128dp</dimen>
+
+    <!--头像高度-->
+    <dimen name="portraitMinSize">@dimen/len_36</dimen>
+    <dimen name="portraitSize">@dimen/len_40</dimen>
+    <dimen name="portraitMaxSize">@dimen/len_64</dimen>
+    <dimen name="len_36">36dp</dimen>
+    <dimen name="len_64">64dp</dimen>
+    <dimen name="len_32">32dp</dimen>
+    <dimen name="len_72">72dp</dimen>
+
+    <dimen name="airPanelMinHeight">86dp</dimen>
+    <dimen name="airPanelMaxHeight">300dp</dimen>
+    <dimen name="len_42">42dp</dimen>
 </resources>

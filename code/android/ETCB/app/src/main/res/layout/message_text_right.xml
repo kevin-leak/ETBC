@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <club.crabglory.www.common.widget.AvatarView
+        android:id="@+id/av_avatar"
+        android:layout_width="@dimen/len_40"
+        android:layout_height="@dimen/len_40"
+        android:layout_margin="@dimen/len_10"
+        android:src="@mipmap/avatar"
+        app:riv_oval="true"
+        android:scaleType="centerCrop"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/av_avatar"
+        android:elevation="@dimen/len_4"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/len_80"
+        tools:ignore="RtlHardcoded,UnusedAttribute">
+
+        <ImageView
+            android:id="@+id/iv_reload"
+            android:layout_width="@dimen/len_25"
+            android:layout_height="@dimen/len_25"
+            app:srcCompat="@drawable/chat_reload"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/len_10"
+            android:visibility="gone"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/tv_chat_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginBottom="@dimen/len_5"
+            android:textColor="@color/white"
+            android:padding="@dimen/len_10"
+            android:background="@drawable/message_right_item"
+            android:text="sdafnlkjj;j;adfsafasdfsadjjjjjjjjjjjjj"
+            android:textSize="@dimen/font_20"
+            tools:ignore="HardcodedText,NotSibling,RtlHardcoded,UnusedAttribute" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

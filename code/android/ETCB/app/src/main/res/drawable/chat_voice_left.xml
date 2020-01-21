@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:oneshot="false"
+    tools:ignore="MissingDefaultResource">
+
+    <item
+        android:drawable="@mipmap/chat_voice_left_3"
+        android:duration="150" />
+
+    <item
+        android:drawable="@mipmap/chat_voice_left_1"
+        android:duration="150" />
+    <item
+        android:drawable="@mipmap/chat_voice_left_2"
+        android:duration="150" />
+
+    <item
+        android:drawable="@mipmap/chat_voice_left_2"
+        android:duration="150" />
+
+    <item
+        android:drawable="@mipmap/chat_voice_left_3"
+        android:duration="150" />
+
+</animation-list>

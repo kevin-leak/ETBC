@@ -10,13 +10,12 @@ import com.raizlabs.android.dbflow.annotation.Table;
 import java.util.Date;
 
 import club.crabglory.www.common.basic.model.Author;
-import club.crabglory.www.common.utils.DateTimeUtil;
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 
 @Table(database = AppDatabase.class)
-public class User extends BaseDdModel<User> implements DiffUiDataCallback.UiDataDiffer<User>
+public class User extends BaseDbModel<User> implements DiffUiDataCallback.UiDataDiffer<User>
     , Author {
 
     // 主键

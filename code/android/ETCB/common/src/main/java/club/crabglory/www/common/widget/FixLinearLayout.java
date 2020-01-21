@@ -8,7 +8,10 @@ import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-public class FixLinearLayout extends LinearLayout {
+import club.crabglory.www.common.widget.airpanel.AirPanelLinearLayout;
+
+
+public class FixLinearLayout extends AirPanelLinearLayout {
 
 
     public FixLinearLayout(Context context) {

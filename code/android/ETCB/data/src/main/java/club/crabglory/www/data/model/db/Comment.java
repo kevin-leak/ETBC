@@ -1,15 +1,14 @@
 package club.crabglory.www.data.model.db;
 
 import com.raizlabs.android.dbflow.annotation.Column;
-import com.raizlabs.android.dbflow.annotation.ForeignKey;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 
 // 三层多叉树
 @Table(database = AppDatabase.class)
-public class Comment extends BaseDdModel<Comment> {
+public class Comment extends BaseDbModel<Comment> {
     @PrimaryKey
     private String id;
     @Column

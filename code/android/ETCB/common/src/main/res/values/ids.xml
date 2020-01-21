@@ -4,4 +4,6 @@
     <item name="tag_recycler_holder" type="id"/>
     <!--Toolbar的默认id名-->
     <item name="toolbar" type="id" />
+    <!--聊天面板特指的id-->
+    <item name="airPanelSubLayout" type="id" />
 </resources>

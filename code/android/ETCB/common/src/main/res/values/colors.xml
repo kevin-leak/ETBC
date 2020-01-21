@@ -17,4 +17,38 @@
     <color name="black_alpha_195">#c3010c13</color>
     <color name="textPrimary">#4e5864</color>
     <color name="image_placeholder">#EBE9E9</color>
+
+    <color name="colorAccent">#D81B60</color>
+    <color name="windowBackgroundColor">#f1f1f1</color>
+    <color name="secondWindowBackgroundColor">#f9f9f9</color>
+    <color name="thirdWindowBackgroundColor">#80F9F9F9</color>
+    <color name="black">#000000</color>
+    <color name="gray">#706e6e</color>
+    <color name="whiteGray">#efcac5c5</color>
+    <color name="whiteGrayLess">#EFDFDEDE</color>
+    <color name="white">#ffffff</color>
+    <color name="textSecond">#8d9ca9</color>
+    <color name="hint">#d6d6d6</color>
+    <color name="textDark">#000000</color>
+    <color name="colorWhiteDark">#868686</color>
+    <color name="priceColor">#C46143</color>
+    <color name="grayer">#8D8B8B</color>
+    <color name="green">#4CAF50</color>
+    <color name="alpha">#00000000</color>
+    <color name="blackLess">#444343</color>
+
+    <color name="colorGray">#bfbcbc</color>
+    <color name="colorWhiteGray">#ede9e9</color>
+    <color name="colorGrayer">#dcdada</color>
+    <color name="colorBlue">#40857E</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGreen">#83ae46</color>
+
+    <color name="etcb">#E83231</color>
+    <color name="orange">#E94F1E</color>
+    <color name="etcbLight">#422B55</color>
+
+    <color name="switch_red">#D84B4B</color>
+    <color name="colorBluer">#77A89F</color>
+    <color name="yellow">#40857E</color>
 </resources>

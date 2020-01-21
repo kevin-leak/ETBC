@@ -10,19 +10,17 @@ import java.lang.reflect.Type;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.security.auth.login.LoginException;
-
 import club.crabglory.www.common.basic.model.DbDataSource;
 import club.crabglory.www.common.utils.CollectionUtil;
 import club.crabglory.www.data.helper.DbHelper;
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 
 /**
  * 1. 注册绑定DbHelper 里面的反馈通知
  * 2. 建立需要通知的数据类型的扫描器
  * 3. 数据缓存与过滤
  */
-public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implements DbDataSource<Data>,
+public abstract class BaseDbRepository<Data extends BaseDbModel<Data>> implements DbDataSource<Data>,
         DbHelper.DataChangeListener<Data>, QueryTransaction.QueryResultListCallback<Data>{
 
     final static String TAG = "BaseDbRepository";

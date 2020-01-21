@@ -23,6 +23,19 @@ open class Application : android.app.Application() {
             return File(dir, SystemClock.uptimeMillis().toString() + ".jpg").absoluteFile
         }
 
+        fun getFileTmpFile(isTmp: Boolean): File {
+            val dir = File(getCacheDirFile(), "audio")
+            dir.mkdirs()
+            val files: Array<File> = dir.listFiles()
+            if (files.isNotEmpty()) {
+                for (file in files) {
+                    file.delete()
+                }
+            }
+            val path = File(dir, if (isTmp) "tmp.mp3" else SystemClock.uptimeMillis().toString() + ".mp3")
+            return path.absoluteFile
+        }
+
         fun showToast(activity: Activity, msg: String?) {
             activity.runOnUiThread { Toast.makeText(instance, msg, Toast.LENGTH_LONG).show() }
         }

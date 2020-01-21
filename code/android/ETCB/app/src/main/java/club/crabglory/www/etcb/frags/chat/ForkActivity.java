@@ -3,6 +3,7 @@ package club.crabglory.www.etcb.frags.chat;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,14 +12,18 @@ import com.cjj.MaterialRefreshListener;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.model.db.Follower;
+import club.crabglory.www.data.model.view.FollowerModelView;
 
+/**
+ * 好友列表
+ */
 public class ForkActivity extends ToolbarActivity {
 
 
@@ -26,7 +31,7 @@ public class ForkActivity extends ToolbarActivity {
     RecyclerView rvContainer;
     @BindView(R.id.mrl_refresh)
     MaterialRefreshLayout mrlRefresh;
-    private RecyclerAdapter<Follower> forkAdapter;
+    private RecyclerAdapter<FollowerModelView> forkAdapter;
 
     @Override
     protected int getContentLayoutId() {
@@ -64,30 +69,31 @@ public class ForkActivity extends ToolbarActivity {
         });
 
         rvContainer.setLayoutManager(new LinearLayoutManager(this));
-        forkAdapter = new RecyclerAdapter<Follower>() {
+        forkAdapter = new RecyclerAdapter<FollowerModelView>() {
 
             @Override
-            protected int getItemViewType(int position, Follower follower) {
+            protected int getItemViewType(int position, FollowerModelView followerModelView) {
                 return R.layout.holder_forker;
             }
 
             @Override
-            protected ViewHolder<Follower> onCreateViewHolder(View root, int viewType) {
+            protected ViewHolder<FollowerModelView> onCreateViewHolder(View root, int viewType) {
                 return new FollowerHolder(root);
             }
         };
         rvContainer.setAdapter(forkAdapter);
 
-        forkAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<Follower>() {
+        forkAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<FollowerModelView>() {
             @Override
-            public void onItemClick(RecyclerAdapter.ViewHolder holder, Follower book) {
-                // todo 聊天
+            public void onItemClick(RecyclerAdapter.ViewHolder holder, FollowerModelView model) {
+                // fixme
+                ChatActivity.showUserChat(ForkActivity.this, model.getID());
             }
         });
 
     }
 
-    class FollowerHolder extends RecyclerAdapter.ViewHolder<Follower> {
+    class FollowerHolder extends RecyclerAdapter.ViewHolder<FollowerModelView> {
         @BindView(R.id.civ_avatar)
         RoundedImageView civAvatar;
         @BindView(R.id.txt_name)
@@ -102,11 +108,11 @@ public class ForkActivity extends ToolbarActivity {
         }
 
         @Override
-        protected void onBind(Follower follower) {
-            civAvatar.setImageResource(follower.getImage());
-            txtName.setText(follower.getName());
-            txtDesc.setText(follower.getDesc());
-            txtTime.setText(follower.getTime());
+        protected void onBind(FollowerModelView followerModelView) {
+            civAvatar.setImageResource(followerModelView.getImage());
+            txtName.setText(followerModelView.getName());
+            txtDesc.setText(followerModelView.getDesc());
+            txtTime.setText(followerModelView.getTime());
         }
 
         @OnClick(R.id.fl_chat_enter)
@@ -123,19 +129,21 @@ public class ForkActivity extends ToolbarActivity {
     }
 
     private void testData() {
-        ArrayList<Follower> followers = new ArrayList<>();
-        Follower follower = new Follower();
-        follower.setImage(R.mipmap.test_jane_eyre);
-        follower.setName("kevin");
-        follower.setDesc("hello i m kevin");
-        follower.setTime("2019-08-06");
-        followers.add(follower);
-        Follower follower1 = new Follower();
-        follower1.setImage(R.mipmap.avatar);
-        follower1.setName("leak");
-        follower1.setDesc("hello i m leak");
-        follower1.setTime("2019-08-08");
-        followers.add(follower1);
-        forkAdapter.add(followers);
+        ArrayList<FollowerModelView> followerModelViews = new ArrayList<>();
+        FollowerModelView followerModelView = new FollowerModelView();
+        followerModelView.setId(UUID.randomUUID().toString());
+        followerModelView.setImage(R.mipmap.test_jane_eyre);
+        followerModelView.setName("kevin");
+        followerModelView.setDesc("hello i m kevin");
+        followerModelView.setTime("2019-08-06");
+        followerModelViews.add(followerModelView);
+        FollowerModelView followerModelView1 = new FollowerModelView();
+        followerModelView1.setId(UUID.randomUUID().toString());
+        followerModelView1.setImage(R.mipmap.avatar);
+        followerModelView1.setName("leak");
+        followerModelView1.setDesc("hello i m leak");
+        followerModelView1.setTime("2019-08-08");
+        followerModelViews.add(followerModelView1);
+        forkAdapter.add(followerModelViews);
     }
 }

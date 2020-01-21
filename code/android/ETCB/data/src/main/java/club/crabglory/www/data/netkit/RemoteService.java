@@ -6,6 +6,7 @@ import club.crabglory.www.data.model.db.Book;
 import club.crabglory.www.data.model.db.Goods;
 import club.crabglory.www.data.model.db.Live;
 import club.crabglory.www.data.model.db.Micro;
+import club.crabglory.www.data.model.db.User;
 import club.crabglory.www.data.model.net.AccountRspModel;
 import club.crabglory.www.data.model.db.ETCBFile;
 import club.crabglory.www.data.model.net.MaterialRspModel;
@@ -44,11 +45,14 @@ public interface RemoteService {
     }
 
 
-    @POST("account/login/")
-    Call<RspModel<AccountRspModel>> accountLogin(@Body LoginRspModel model);
-
     @POST("file/")
     Call<RspModel<ETCBFile>> saveFile(@Body FileRspModel model);
+
+    @GET("friends/users/{userId}")
+    Call<RspModel<User>> getUser(@Path("userId")String userId);
+
+    @POST("account/login/")
+    Call<RspModel<AccountRspModel>> accountLogin(@Body LoginRspModel model);
 
     @POST("account/register/")
     Call<RspModel<AccountRspModel>> accountRegister(@Body RegisterRspModel model); // 此处，后端需要request里面的body接受数据

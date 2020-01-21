@@ -14,12 +14,14 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import club.crabglory.www.common.basic.view.ToolbarActivity;
 import club.crabglory.www.common.widget.recycler.RecyclerAdapter;
+import club.crabglory.www.data.model.view.MsgListViewModel;
 import club.crabglory.www.etcb.R;
-import club.crabglory.www.data.model.db.Message;
 
+/**
+ * 消息列表展示
+ */
 public class MessageActivity extends ToolbarActivity {
 
 
@@ -27,7 +29,7 @@ public class MessageActivity extends ToolbarActivity {
     RecyclerView rvContainer;
     @BindView(R.id.mrl_refresh)
     MaterialRefreshLayout mrlRefresh;
-    private RecyclerAdapter<Message> messageAdapter;
+    private RecyclerAdapter<MsgListViewModel> messageAdapter;
 
     @Override
     protected int getContentLayoutId() {
@@ -64,31 +66,31 @@ public class MessageActivity extends ToolbarActivity {
         });
 
         rvContainer.setLayoutManager(new LinearLayoutManager(this));
-        messageAdapter = new RecyclerAdapter<Message>() {
+        messageAdapter = new RecyclerAdapter<MsgListViewModel>() {
 
             @Override
-            protected int getItemViewType(int position, Message message) {
+            protected int getItemViewType(int position, MsgListViewModel message) {
                 return R.layout.holder_chat_list;
             }
 
             @Override
-            protected ViewHolder<Message> onCreateViewHolder(View root, int viewType) {
+            protected ViewHolder<MsgListViewModel> onCreateViewHolder(View root, int viewType) {
                 return new MessageHolder(root);
             }
         };
         rvContainer.setAdapter(messageAdapter);
 
-        messageAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<Message>() {
+        messageAdapter.setListener(new RecyclerAdapter.AdapterListenerImpl<MsgListViewModel>() {
             @Override
-            public void onItemClick(RecyclerAdapter.ViewHolder holder, Message message) {
-                // todo 聊天
+            public void onItemClick(RecyclerAdapter.ViewHolder holder, MsgListViewModel message) {
+                ChatActivity.showUserChat(MessageActivity.this, message.getChatId());
             }
         });
 
     }
 
 
-    class MessageHolder extends RecyclerAdapter.ViewHolder<Message> {
+    class MessageHolder extends RecyclerAdapter.ViewHolder<MsgListViewModel> {
         @BindView(R.id.civ_avatar)
         RoundedImageView civAvatar;
         @BindView(R.id.txt_name)
@@ -105,7 +107,7 @@ public class MessageActivity extends ToolbarActivity {
         }
 
         @Override
-        protected void onBind(Message message) {
+        protected void onBind(MsgListViewModel message) {
             civAvatar.setImageResource(message.getImage());
             txtName.setText(message.getName());
             txtContent.setText(message.getContent());
@@ -113,10 +115,6 @@ public class MessageActivity extends ToolbarActivity {
             btnChatCount.setText(String.format("%s", message.getMsgCount()));
         }
 
-        @OnClick(R.id.fl_chat_enter)
-        public void onClick() {
-            ChatActivity.show(MessageActivity.this, ChatActivity.class);
-        }
     }
 
     @Override
@@ -127,15 +125,15 @@ public class MessageActivity extends ToolbarActivity {
     }
 
     private void testData() {
-        ArrayList<Message> messages = new ArrayList<>();
-        Message message = new Message();
+        ArrayList<MsgListViewModel> messages = new ArrayList<>();
+        MsgListViewModel message = new MsgListViewModel();
         message.setImage(R.mipmap.test_jane_eyre);
         message.setName("kevin");
         message.setContent("come to play ball");
         message.setTime("2019-08-06");
         message.setMsgCount(2);
         messages.add(message);
-        Message message1 = new Message();
+        MsgListViewModel message1 = new MsgListViewModel();
         message1.setImage(R.mipmap.avatar);
         message1.setName("leak");
         message1.setContent("how do you do");

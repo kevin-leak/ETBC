@@ -120,6 +120,30 @@ public class AccountDataHelper {
                 .execute();
     }
 
+    public static User findFromLocal(String receiverId) {
+        return SQLite.select().from(User.class)
+                .where(User_Table.id.eq(receiverId))
+                .querySingle();
+    }
+
+    public static User getUser(String receiverId){
+        User fromLocal = findFromLocal(receiverId);
+        return  fromLocal == null ? findFromNet(receiverId):fromLocal;
+    }
+
+    private static User findFromNet(String receiverId) {
+        Call<RspModel<User>> task = NetKit.remote().getUser(receiverId);
+        try {
+            RspModel<User> body = task.execute().body();
+            assert body != null;
+            User user = body.getResult();
+            DbHelper.save(User.class, user);
+            return user;
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
     static class AccountRspCallback implements Callback<RspModel<AccountRspModel>> {
         private DataSource.Callback<User> callback;
 

@@ -1,5 +1,6 @@
 package club.crabglory.www.common.utils;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -49,6 +50,9 @@ public class MessageNotificationUtils extends ContextWrapper {
         }
     }
 
+    /**
+     * 设置精度条
+     */
     public void completeProgress(String title, String content) {
         notifyProgress(0, 0, title, content);
     }
@@ -60,6 +64,15 @@ public class MessageNotificationUtils extends ContextWrapper {
     public void notify(Intent intent) {
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
         notify(builder.setContentIntent(pendingIntent));
+    }
+
+    public void notify(PendingIntent intent) {
+        notify(builder.setContentIntent(intent));
+    }
+
+    public void notifyAndCancel(PendingIntent intent) {
+        builder.setAutoCancel(true);
+        notify(builder.setContentIntent(intent));
     }
 
     private void notify(NotificationCompat.Builder builder) {
@@ -117,4 +130,7 @@ public class MessageNotificationUtils extends ContextWrapper {
     public NotificationCompat.Builder getBuilder() {
         return builder;
     }
+
+
+
 }

@@ -1,11 +1,13 @@
 <resources>
+    <declare-styleable name="AirPanelLinearLayout">
+        <attr name="airPanelMinHeight" format="dimension" />
+        <attr name="airPanelMaxHeight" format="dimension" />
+    </declare-styleable>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
+    <declare-styleable name="WaveCurtain">
+        <attr name="wave_num" format="integer"/>
+        <attr name="wave_len" format="dimension"/>
+        <attr name="wave_color" format="color"/>
+        <attr name="duration_time" format="integer"/>
+    </declare-styleable>
 </resources>

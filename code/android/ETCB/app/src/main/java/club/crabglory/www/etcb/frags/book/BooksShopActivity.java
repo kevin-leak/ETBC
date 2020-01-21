@@ -58,7 +58,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
     protected boolean initArgs(Bundle bundle) {
         if (bundle != null) {
             goodsId = bundle.getString(BooksShopActivity.KEY);
-            return !TextUtils.isEmpty(goodsId) ;
+            return !TextUtils.isEmpty(goodsId);
         }
         return false;
     }
@@ -122,11 +122,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
                 break;
             case R.id.cv_message:
                 if (goods == null || goods.getUpper() == null) break;
-                String useID = goods.getUpper().getId();
-                bundle = new Bundle();
-                bundle.putString(ChatActivity.KEY_CHATER, useID);
-                ChatActivity.show(BooksShopActivity.this,
-                        ChatActivity.class, bundle, false);
+                ChatActivity.showUserChat(BooksShopActivity.this, goods.getUpper().getId());
                 break;
             case R.id.ib_add_car:
                 int sales = Integer.parseInt(etQuantity.getText().toString());
@@ -138,6 +134,7 @@ public class BooksShopActivity extends PresentToolActivity<BooksShopContract.Pre
                 break;
         }
     }
+
 
     @Override
     public void addCarSuccess() {

@@ -1,11 +1,12 @@
-package club.crabglory.www.data.model.db;
+package club.crabglory.www.data.model.view;
 
-public class Follower {
+public class FollowerModelView {
 
     private int image;
     private String name;
     private String desc;
     private String time;
+    private String id;
 
     public int getImage() {
         return image;
@@ -37,5 +38,13 @@ public class Follower {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getID() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

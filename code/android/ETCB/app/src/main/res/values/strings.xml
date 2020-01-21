@@ -90,4 +90,6 @@
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="english">English</string>
+    <string name="speaker">Speaker</string>
+    <string name="error_media">ERCB: media is error</string>
 </resources>

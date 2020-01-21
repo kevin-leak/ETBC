@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="book_search" />
-                            <entry key="sourceFile" value="D:\google_downlaod\太阳.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="chat_panel_video" />
+                            <entry key="sourceFile" value="D:\google_downlaod\视频 (1).svg" />
                           </map>
                         </option>
                       </PersistentState>

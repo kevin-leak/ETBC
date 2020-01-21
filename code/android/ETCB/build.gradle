@@ -52,4 +52,6 @@ ext{
     dbflowVersion = '4.0.0-beta7'
     retrofitVersion = '2.4.0'
 
+    airpanelVersion = "1.1.0"
+
 }

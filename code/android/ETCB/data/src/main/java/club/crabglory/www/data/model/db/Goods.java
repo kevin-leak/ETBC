@@ -10,13 +10,13 @@ import com.raizlabs.android.dbflow.annotation.Table;
 import java.util.Date;
 
 import club.crabglory.www.data.DataKit;
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 import club.crabglory.www.data.model.net.PayRspModel;
 
 // 指的是当前用户购买，或者放入购物车的book
 @Table(database = AppDatabase.class)
-public class Goods extends BaseDdModel<Goods>
+public class Goods extends BaseDbModel<Goods>
         implements DiffUiDataCallback.UiDataDiffer<Goods> {
 
     /**

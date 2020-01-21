@@ -2,7 +2,6 @@ package club.crabglory.www.data.model.db;
 
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 
 import com.raizlabs.android.dbflow.annotation.Column;
@@ -13,18 +12,17 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 import java.util.UUID;
 
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.R;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 import club.crabglory.www.data.model.net.MaterialRspModel;
 import club.crabglory.www.data.model.persistence.Account;
 
 @Table(database = AppDatabase.class)
-public class Book extends BaseDdModel<Book>
+public class Book extends BaseDbModel<Book>
         implements DiffUiDataCallback.UiDataDiffer<Book>, Serializable {
 
     // 主键

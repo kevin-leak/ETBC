@@ -1,7 +1,9 @@
 package club.crabglory.www.common.basic.presenter;
 
 
+import club.crabglory.www.common.R;
 import club.crabglory.www.common.basic.contract.BaseContract;
+import club.crabglory.www.common.utils.NetUtils;
 
 /**
  * @author KevinLeak
@@ -35,9 +37,18 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
     public void start() {
         // 为了不再显示loading
         T view = mView;
-        if (view != null) {
+        // fixme 关于加载框的显示，要慎重。
+        if (view != null && !(this instanceof BaseRecyclerPresenter)) {
             view.showDialog();
         }
+    }
+
+    public boolean requsetNet() {
+        if (!NetUtils.isNetworkConnected(mView.getActivity())){
+            mView.showError(R.string.error_data_network_error);
+            return true;
+        }
+        return false;
     }
 
     @Override

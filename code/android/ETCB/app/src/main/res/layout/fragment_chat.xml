@@ -1,0 +1,127 @@
+<club.crabglory.www.common.widget.FixLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <!--顶部布局的占位, 在class中设置抽象方法让子类实现，这样就实现了拼接-->
+            <ViewStub
+                android:id="@+id/view_stub_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/len_8"
+            android:paddingBottom="@dimen/len_8"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondWindowBackgroundColor"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:outlineProvider="bounds"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/btn_face"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:background="@color/secondWindowBackgroundColor"
+            android:enabled="true"
+            android:foreground="@drawable/chat_touch_fg"
+            android:padding="@dimen/len_8"
+            android:src="@drawable/chat_emoji"
+            android:tint="@color/textPrimary"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/btn_record"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:background="@color/secondWindowBackgroundColor"
+            android:contentDescription="@string/app_name"
+            android:enabled="true"
+            android:foreground="@drawable/chat_touch_fg"
+            android:padding="@dimen/len_8"
+            android:tint="@color/textPrimary"
+            app:srcCompat="@drawable/chat_record"
+            tools:ignore="VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/secondWindowBackgroundColor"
+            android:hint="@string/label_chat_edit_hint"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="1"
+            android:maxHeight="@dimen/len_68"
+            android:minHeight="@dimen/len_44"
+            android:padding="@dimen/len_4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecond"
+            android:textCursorDrawable="@drawable/chat_cursor" />
+
+        <ImageView
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:background="@color/secondWindowBackgroundColor"
+            android:contentDescription="@string/app_name"
+            android:enabled="true"
+            android:foreground="@drawable/chat_touch_fg"
+            android:padding="@dimen/len_8"
+            android:src="@drawable/chat_submit"
+            android:tint="@color/textPrimary" />
+
+    </LinearLayout>
+
+
+    <club.crabglory.www.common.widget.airpanel.AirPanelFrameLayout
+        android:id="@+id/airPanelSubLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/len_0_5"
+        android:background="@color/secondWindowBackgroundColor"
+        android:elevation="4dp"
+        android:visibility="gone"
+        tools:ignore="UnusedAttribute">
+
+        <fragment
+            android:id="@+id/airPanelLayout"
+            class="club.crabglory.www.etcb.frags.chat.PanelFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </club.crabglory.www.common.widget.airpanel.AirPanelFrameLayout>
+
+</club.crabglory.www.common.widget.FixLinearLayout>

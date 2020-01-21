@@ -19,6 +19,7 @@ public class DateTimeUtil {
 
     public static final SimpleDateFormat Detail_TIME_LINE = new SimpleDateFormat("yy:MM:dd:ss", Locale.ENGLISH);
 
+    public static final SimpleDateFormat Detail_TIME_JOSN = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
 
     /**
      * 获取一个简单的时间字符串

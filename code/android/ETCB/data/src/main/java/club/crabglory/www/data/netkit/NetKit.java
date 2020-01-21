@@ -1,12 +1,14 @@
 package club.crabglory.www.data.netkit;
 
 import android.support.annotation.StringRes;
+import android.support.v4.app.NotificationCompat;
 
 import java.util.concurrent.TimeUnit;
 
 import club.crabglory.www.common.basic.model.DataSource;
 import club.crabglory.www.data.DataKit;
 import club.crabglory.www.data.R;
+import club.crabglory.www.data.model.db.Message;
 import club.crabglory.www.data.model.net.RspModel;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <club.crabglory.www.common.widget.AvatarView
+        android:id="@+id/av_avatar"
+        android:layout_width="@dimen/len_40"
+        android:layout_height="@dimen/len_40"
+        android:layout_margin="@dimen/len_10"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/avatar"
+        app:riv_oval="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/av_avatar"
+        android:elevation="@dimen/len_4"
+        android:orientation="horizontal"
+        android:background="@drawable/message_left_item"
+        android:layout_marginTop="@dimen/len_15"
+        android:layout_marginLeft="@dimen/len_80"
+        tools:ignore="RtlHardcoded,UnusedAttribute">
+
+        <TextView
+            android:id="@+id/tv_voice_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/len_10"
+            android:text="4''"
+            android:layout_gravity="center_vertical|end"
+            android:gravity="center_vertical"/>
+
+        <club.crabglory.www.common.widget.record.VoiceImageView
+            android:id="@+id/viv_voice"
+            android:layout_width="@dimen/len_40"
+            android:layout_height="@dimen/len_40"
+            android:background="@drawable/message_left_item"
+            android:padding="@dimen/len_10"
+            android:src="@drawable/chat_voice_right"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_vertical|end">
+
+        </club.crabglory.www.common.widget.record.VoiceImageView>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

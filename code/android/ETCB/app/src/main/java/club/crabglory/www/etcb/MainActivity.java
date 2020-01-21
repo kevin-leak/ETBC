@@ -46,6 +46,7 @@ public class MainActivity extends BaseActivity implements
     @Override
     protected void initWindows() {
         super.initWindows();
+
         StatusBarUtils.setDarkColor(getWindow());
         EasyPermissions.requestPermissions(this, "录像权限申请", 0,
                 Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);

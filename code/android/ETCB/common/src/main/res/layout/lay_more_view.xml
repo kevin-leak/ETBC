@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/more_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/len_10"
+    android:paddingLeft="@dimen/len_10"
+    android:paddingStart="@dimen/len_10"
+    tools:ignore="RtlSymmetry">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/len_75"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/len_50"
+            android:layout_height="@dimen/len_50"
+            android:src="@drawable/chat_panel_pic"/>
+
+        <TextView
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片"
+            android:layout_marginTop="@dimen/len_5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/len_75"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/len_50"
+            android:layout_height="@dimen/len_50"
+            android:src="@drawable/chat_panel_phone"/>
+
+        <TextView
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话"
+            android:layout_marginTop="@dimen/len_5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/len_75"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/len_50"
+            android:layout_height="@dimen/len_50"
+            android:src="@drawable/chat_panel_file"/>
+
+        <TextView
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件"
+            android:layout_marginTop="@dimen/len_5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/len_75"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/len_50"
+            android:layout_height="@dimen/len_50"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chat_panel_video"/>
+
+        <TextView
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频"
+            android:layout_marginTop="@dimen/len_5"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

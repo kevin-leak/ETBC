@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <club.crabglory.www.common.widget.record.WaveCurtain
+        android:id="@+id/waveCurtain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:wave_num="4"
+        app:wave_len="250dp"
+        app:wave_color="#00ACC1"
+        app:duration_time="1000"/>
+
+    <club.crabglory.www.common.widget.record.WaveRecordButton
+        android:id="@+id/btn_record"
+        android:layout_width="@dimen/len_72"
+        android:layout_height="@dimen/len_72"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/len_20"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="center"
+        android:src="@drawable/audio_record"
+        android:tint="@color/white"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:fabCustomSize="@dimen/len_72"
+        app:maxImageSize="@dimen/len_60"
+        app:pressedTranslationZ="16dp"
+        app:rippleColor="#33728dff" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Cancel Send"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/len_5"
+        android:layout_gravity="bottom|center_horizontal"
+        tools:ignore="HardcodedText" />
+
+</FrameLayout>

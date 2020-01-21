@@ -4,6 +4,7 @@ import android.Manifest;
 import android.os.Handler;
 
 import club.crabglory.www.common.basic.view.BaseActivity;
+import club.crabglory.www.etcb.frags.chat.ChatActivity;
 import pub.devrel.easypermissions.EasyPermissions;
 
 
@@ -24,11 +25,13 @@ public class LaunchActivity extends BaseActivity {
     protected void initWidget() {
         super.initWidget();
         EasyPermissions.requestPermissions(this, "录像权限申请", 0 ,
-                Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.RECORD_AUDIO, Manifest.permission.WAKE_LOCK);
         /* todo animation
          * 1. 图标缓慢显示
          * 2. 抖动
          */
+
     }
 
     @Override

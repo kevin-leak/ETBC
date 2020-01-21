@@ -7,11 +7,11 @@ import com.raizlabs.android.dbflow.annotation.Table;
 
 import java.util.Date;
 
-import club.crabglory.www.data.model.BaseDdModel;
+import club.crabglory.www.data.model.BaseDbModel;
 import club.crabglory.www.data.model.db.utils.DiffUiDataCallback;
 
 @Table(database = AppDatabase.class)
-public class Live  extends BaseDdModel<Live>
+public class Live  extends BaseDbModel<Live>
         implements DiffUiDataCallback.UiDataDiffer<Live>{
     @PrimaryKey
     private String id;
