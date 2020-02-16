@@ -42,6 +42,18 @@
         <item name="android:windowBackground">@color/white</item>
     </style>
 
+    <style name="AppTheme.MicroUp" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:screenOrientation">portrait</item>
+        <!--设置没有toolbar-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="AppTheme.DefaultActivity" parent="AppTheme">
         <item name="android:statusBarColor" tools:ignore="NewApi">
             @color/secondWindowBackgroundColor

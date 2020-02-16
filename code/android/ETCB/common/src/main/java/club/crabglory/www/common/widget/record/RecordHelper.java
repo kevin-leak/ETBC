@@ -16,7 +16,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import club.crabglory.www.common.Application;
 
-public class RecordHelper {
+/**
+ * 处理录制的实际的过程，这里主要是配置MediaRecorder的参数
+ */
+class RecordHelper {
 
     private final static String TAG = "RecordHelper";
 

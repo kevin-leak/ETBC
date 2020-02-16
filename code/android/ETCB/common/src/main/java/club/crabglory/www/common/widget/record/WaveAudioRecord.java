@@ -17,6 +17,9 @@ import java.util.concurrent.CountDownLatch;
 import club.crabglory.www.common.R;
 
 
+/**
+ * 这个录制的View的汇总分发逻辑的view
+ */
 public class WaveAudioRecord extends FrameLayout implements RecordHelper.RecordHelperListener {
 
     private WaveRecordButton recordButton;

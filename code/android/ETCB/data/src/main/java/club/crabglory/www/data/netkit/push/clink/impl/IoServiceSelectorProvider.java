@@ -1,6 +1,9 @@
 package club.crabglory.www.data.netkit.push.clink.impl;
 
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import java.io.IOException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -22,6 +25,7 @@ public class IoServiceSelectorProvider implements IoProvider {
     private final IoStealingThread[] threads;
     private final StealingService stealingService;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public IoServiceSelectorProvider(int poolSize) throws IOException {
         IoStealingThread[] threads = new IoStealingThread[poolSize];
         for (int i = 0; i < poolSize; i++) {

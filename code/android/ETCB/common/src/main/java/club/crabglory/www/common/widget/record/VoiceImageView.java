@@ -15,6 +15,9 @@ import java.io.IOException;
 import club.crabglory.www.common.R;
 
 
+/**
+ * 播放的音频的一个结合类，主要是对MediaPlayer参数结合View的封装
+ */
 public class VoiceImageView extends AppCompatImageView implements MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener {
 
     private final String TAG = getClass().getName();

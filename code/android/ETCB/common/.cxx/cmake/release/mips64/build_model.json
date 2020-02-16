@@ -1,0 +1,81 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB",
+      "sdkFolder": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates",
+      "gradleModulePathName": ":common",
+      "moduleRootFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common",
+      "makeFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\.cxx",
+      "cxxFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx",
+      "ndkFolder": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c",
+      "ndkVersion": "15.2.4203891",
+      "ndkSupportedAbiList": [
+        "ARMEABI",
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI",
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-frtti -fexceptions"
+    ],
+    "variantName": "release",
+    "soFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\release\\lib",
+    "objFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI",
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "MIPS",
+      "MIPS64",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "MIPS64",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64",
+  "jsonFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64",
+  "objFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\release\\obj\\mips64",
+  "buildCommandFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\build_command.txt",
+  "buildOutputFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\build_output.txt",
+  "modelOutputFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\CMakeLists.txt",
+    "toolchainWrapperFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\build_generation_state.json",
+    "cacheKeyFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\compiler_cache_key.json",
+    "compilerCacheUseFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cxx\\release\\mips64\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\json_generation_record.json",
+  "compileCommandsJsonFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\mips64\\compile_commands.json"
+}

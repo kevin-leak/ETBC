@@ -21,21 +21,21 @@
 			[
 				
 				{
-					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -O2 -DNDEBUG  -fPIC    -c ",
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sysroot  -Dnative_lib_EXPORTS -isystem C:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem C:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\x86\\include -isystem C:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -isystem C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -O2 -DNDEBUG  -fPIC    -c ",
 					"src" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/src/main/cpp/native-lib.cpp",
 					"workingDirectory" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86"
 				}
 			],
 			"output" : "E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so",
-			"toolchain" : "730291137"
+			"toolchain" : "2371976325"
 		}
 	},
 	"toolchains" : 
 	{
-		"730291137" : 
+		"2371976325" : 
 		{
-			"cCompilerExecutable" : "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
-			"cppCompilerExecutable" : "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+			"cCompilerExecutable" : "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
 		}
 	}
 }

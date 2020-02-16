@@ -5,16 +5,29 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+                abiFilters 'armeabi-v7a'
+            }
+        }
+    }
 
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/main/jniLibs']
+        jni.srcDirs = []
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
     }
 
     buildTypes {
@@ -23,6 +36,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 
 }
 

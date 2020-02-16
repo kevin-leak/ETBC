@@ -1,98 +1,89 @@
-The target system is: Android - 1 - i686
+The target system is: Android - 21 - i686
 The host system is: Windows - 10.0.18362 - AMD64
 Determining if the C compiler works passed with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_83230"
-[1/2] Building C object CMakeFiles/cmTC_83230.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_83230
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_31004"
+[1/2] Building C object CMakeFiles/cmTC_31004.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_31004
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_06efb"
-[1/2] Building C object CMakeFiles/cmTC_06efb.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_06efb
-Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)
-Target: i686-none-linux-android16
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_51238"
+[1/2] Building C object CMakeFiles/cmTC_51238.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_51238
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: i686-none-linux-android
 Thread model: posix
-InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin
-Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x
-Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/x86_64-linux-android\4.9.x
-Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x
+InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\bin
+Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x
+Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_06efb "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\8.0.7\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16 -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_06efb.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtend_android.o"
+ "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_51238 "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\5.0.300080\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_51238.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtend_android.o"
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_06efb"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_06efb.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_06efb]
-  ignore line: [Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)]
-  ignore line: [Target: i686-none-linux-android16]
+  ignore line: [Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_51238"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_51238.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_51238]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: i686-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin]
-  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x]
-  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/x86_64-linux-android\4.9.x]
-  ignore line: [Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\bin]
+  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x]
+  ignore line: [Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_06efb "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\8.0.7\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16 -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_06efb.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtend_android.o"]
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\ld] ==> ignore
-    arg [--sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
+  link line: [ "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_51238 "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\5.0.300080\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_51238.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtend_android.o"]
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\ld] ==> ignore
+    arg [--sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [--hash-style=both] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_i386] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_06efb] ==> ignore
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\crtbegin_dynamic.o] ==> ignore
-    arg [-LC:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386] ==> dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+    arg [cmTC_51238] ==> ignore
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\crtbegin_dynamic.o] ==> ignore
+    arg [-LC:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386] ==> dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libatomic.a] ==> ignore
     arg [--build-id] ==> ignore
     arg [--warn-shared-textrel] ==> ignore
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_06efb.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_51238.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\crtend_android.o] ==> ignore
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\crtend_android.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc]
-  collapse library dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/i686-linux-android/lib]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  collapse library dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/i686-linux-android/lib]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
   implicit libs: [dl;c;dl]
-  implicit dirs: [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/8.0.7/lib/linux/i386;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/i686-linux-android/lib;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  implicit dirs: [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/5.0.300080/lib/linux/i386;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/i686-linux-android/lib;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
   implicit fwks: []
 
 
@@ -101,9 +92,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_4d086"
-[1/2] Building C object CMakeFiles/cmTC_4d086.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_4d086
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_134fe"
+[1/2] Building C object CMakeFiles/cmTC_134fe.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_134fe
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -115,9 +106,9 @@ Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.411145
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_38a18"
-[1/2] Building C object CMakeFiles/cmTC_38a18.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_38a18
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_1e1e7"
+[1/2] Building C object CMakeFiles/cmTC_1e1e7.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_1e1e7
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -129,9 +120,9 @@ Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.411145
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_5718f"
-[1/2] Building C object CMakeFiles/cmTC_5718f.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_5718f
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_a0a6b"
+[1/2] Building C object CMakeFiles/cmTC_a0a6b.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_a0a6b
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -141,100 +132,93 @@ Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.411145
 Determining if the CXX compiler works passed with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_4f818"
-[1/2] Building CXX object CMakeFiles/cmTC_4f818.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_4f818
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_25235"
+[1/2] Building CXX object CMakeFiles/cmTC_25235.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_25235
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_a9888"
-[1/2] Building CXX object CMakeFiles/cmTC_a9888.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_a9888
-Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)
-Target: i686-none-linux-android16
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_5e1d0"
+[1/2] Building CXX object CMakeFiles/cmTC_5e1d0.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_5e1d0
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: i686-none-linux-android
 Thread model: posix
-InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin
-Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x
-Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/x86_64-linux-android\4.9.x
-Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x
+InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\bin
+Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x
+Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_a9888 "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\8.0.7\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16 -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_a9888.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtend_android.o"
+ "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_5e1d0 "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\5.0.300080\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5e1d0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtend_android.o"
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_a9888"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_a9888.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_a9888]
-  ignore line: [Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)]
-  ignore line: [Target: i686-none-linux-android16]
+  ignore line: [Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_5e1d0"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_5e1d0.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_5e1d0]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: i686-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin]
-  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x]
-  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/x86_64-linux-android\4.9.x]
-  ignore line: [Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [InstalledDir: C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\bin]
+  ignore line: [Found candidate GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android\4.9.x]
+  ignore line: [Selected GCC installation: C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_a9888 "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\8.0.7\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16 -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_a9888.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\\crtend_android.o"]
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\ld] ==> ignore
-    arg [--sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
+  link line: [ "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_5e1d0 "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtbegin_dynamic.o" "-LC:\\Users\\KevinLeak\\AppData\\Local\\Android\\sdk\\android-ndk-r15c\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\5.0.300080\\lib\\linux\\i386" -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5e1d0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl "C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\\crtend_android.o"]
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\ld] ==> ignore
+    arg [--sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [--hash-style=both] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_i386] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a9888] ==> ignore
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\crtbegin_dynamic.o] ==> ignore
-    arg [-LC:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386] ==> dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
-    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+    arg [cmTC_5e1d0] ==> ignore
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\crtbegin_dynamic.o] ==> ignore
+    arg [-LC:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386] ==> dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
+    arg [-LC:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib] ==> dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libatomic.a] ==> ignore
     arg [--build-id] ==> ignore
     arg [--warn-shared-textrel] ==> ignore
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_a9888.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-Bstatic] ==> ignore
-    arg [-lc++] ==> lib [c++]
-    arg [-Bdynamic] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_5e1d0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16\crtend_android.o] ==> ignore
+    arg [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib\crtend_android.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc]
-  collapse library dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\8.0.7\lib\linux\i386] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/i686-linux-android/lib]
-  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
-  implicit libs: [c++;m;dl;c;dl]
-  implicit dirs: [C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/8.0.7/lib/linux/i386;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/16;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/i686-linux-android/lib;C:/Users/KevinLeak/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  remove lib [gcc]
+  remove lib [gcc]
+  collapse library dir [C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\5.0.300080\lib\linux\i386] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/i686-linux-android/lib]
+  collapse library dir [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib] ==> [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
+  implicit libs: [stdc++;m;dl;c;dl]
+  implicit dirs: [C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/llvm/prebuilt/windows-x86_64/lib64/clang/5.0.300080/lib/linux/i386;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/x86-4.9/prebuilt/windows-x86_64/i686-linux-android/lib;C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/platforms/android-21/arch-x86/usr/lib]
   implicit fwks: []
 
 
@@ -243,9 +227,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_c78f8"
-[1/2] Building CXX object CMakeFiles/cmTC_c78f8.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_c78f8
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_fc0e7"
+[1/2] Building CXX object CMakeFiles/cmTC_fc0e7.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_fc0e7
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -310,9 +294,9 @@ Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.411145
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_250bd"
-[1/2] Building CXX object CMakeFiles/cmTC_250bd.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_250bd
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_2c3d8"
+[1/2] Building CXX object CMakeFiles/cmTC_2c3d8.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_2c3d8
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -377,9 +361,9 @@ Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.411145
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_059a2"
-[1/2] Building CXX object CMakeFiles/cmTC_059a2.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_059a2
+Run Build Command:"C:\Users\KevinLeak\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe" "cmTC_79d5a"
+[1/2] Building CXX object CMakeFiles/cmTC_79d5a.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_79d5a
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

@@ -1,0 +1,6 @@
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/CMakeFiles/native-lib.dir
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/src/main/cpp/FaceAlignment/CMakeFiles/seeta_fa_lib.dir
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/src/main/cpp/FaceAlignment/CMakeFiles/edit_cache.dir
+E:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/.cxx/cmake/debug/x86_64/src/main/cpp/FaceAlignment/CMakeFiles/rebuild_cache.dir

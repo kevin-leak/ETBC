@@ -44,8 +44,7 @@ public class BookSearchFragment extends BasePresenterFragment<BookSearchContract
 
             @Override
             protected ViewHolder<Book> onCreateViewHolder(View root, int viewType) {
-                return
-                        new BookRandomHolder(root);
+                return new BookRandomHolder(root);
             }
         };
         rvBook.setAdapter(bookAdapter);

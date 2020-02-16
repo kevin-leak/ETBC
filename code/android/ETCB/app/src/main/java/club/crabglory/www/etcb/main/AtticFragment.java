@@ -41,10 +41,6 @@ public class AtticFragment extends BaseFragment {
     RecyclerView rvMicro;
     private RecyclerAdapter<Micro> videoAdapter;
 
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
-    }
 
     @Override
     protected int getContentLayoutId() {
@@ -131,13 +127,10 @@ public class AtticFragment extends BaseFragment {
             civ_avatar.setImageResource(microVideo.getImg());
             videoView.setVideoURI(Uri.parse("android.resource://" +
                     AtticFragment.this.getActivity().getPackageName() + "/" + microVideo.getVideo()));
-            videoView.setOnInfoListener(new MediaPlayer.OnInfoListener() {
-                @Override
-                public boolean onInfo(MediaPlayer mp, int what, int extra) {
-                    mp.setLooping(true);
-                    imgThumb.animate().alpha(0).setDuration(200).start();
-                    return false;
-                }
+            videoView.setOnInfoListener((mp, what, extra) -> {
+                mp.setLooping(true);
+                imgThumb.animate().alpha(0).setDuration(200).start();
+                return false;
             });
 
             rootView.setOnClickListener(new View.OnClickListener() {

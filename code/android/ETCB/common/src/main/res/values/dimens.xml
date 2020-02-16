@@ -115,4 +115,7 @@
     <dimen name="airPanelMinHeight">86dp</dimen>
     <dimen name="airPanelMaxHeight">300dp</dimen>
     <dimen name="len_42">42dp</dimen>
+
+    <dimen name="video_width">70dp</dimen>
+    <dimen name="tv_margin">90dp</dimen>
 </resources>

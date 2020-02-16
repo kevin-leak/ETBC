@@ -5,6 +5,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+/**
+ * 录制按钮，点击事件与RecordHelper相结合
+ */
 public class WaveRecordButton extends FloatingActionButton {
     public static final String TAG = "WaveRecordButton";
     private WaveCurtain curtain;

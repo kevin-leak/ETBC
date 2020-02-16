@@ -205,7 +205,7 @@ https://BASE_URL/book/pullByID/{bookPullId}/
     "price": 0.0,
     "type": 0,
     "count": 0,
-    "sales": 0,
+    "sales": 0, 
     "upper": {
         "id": "",
         "name": "",

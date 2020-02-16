@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#0A0A0A"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="60dp">
+
+        <club.crabglory.www.common.widget.micro.widget.MicroVideoSurface
+            android:id="@+id/mvu_record"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/finish"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/voice_symbol" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text=" 选择音乐"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout style="@style/micro_rl">
+
+                <ImageView
+                    android:id="@+id/btn_camera_switch"
+                    style="@style/micro_image"
+                    android:src="@drawable/camera_switch" />
+
+                <TextView
+                    style="@style/micro_txt"
+                    android:text="切换" />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/micro_rl">
+
+                <club.crabglory.www.common.widget.micro.widget.CheckImageView
+                    android:id="@+id/btn_camera_beauty"
+                    style="@style/micro_image"
+                    android:src="@drawable/select_camera_beauty" />
+
+                <TextView
+                    style="@style/micro_txt"
+                    android:text="美颜" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout style="@style/micro_rl">
+
+                <club.crabglory.www.common.widget.micro.widget.CheckImageView
+                    android:id="@+id/btn_camera_soul"
+                    style="@style/micro_image"
+                    android:src="@drawable/select_camera_ghost" />
+
+                <TextView
+                    style="@style/micro_txt"
+                    android:text="灵魂" />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/micro_rl">
+
+                <club.crabglory.www.common.widget.micro.widget.CheckImageView
+                    android:id="@+id/btn_camera_filter"
+                    style="@style/micro_image"
+                    android:padding="4dp"
+                    android:src="@drawable/select_camera_huang" />
+
+                <TextView
+                    style="@style/micro_txt"
+                    android:text="大眼" />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/micro_rl">
+
+                <ImageView
+                    android:id="@+id/btn_camera_speed"
+                    style="@style/micro_image"
+                    android:src="@drawable/camera_speed" />
+
+                <TextView
+                    style="@style/micro_txt"
+                    android:text="正常" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <club.crabglory.www.common.widget.micro.widget.CheckImageView
+            android:id="@+id/iv_magic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/micro_props"
+            app:layout_constraintBottom_toBottomOf="@+id/mCapture"
+            app:layout_constraintEnd_toStartOf="@+id/mCapture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mCapture" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="贴纸"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toStartOf="@+id/mCapture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_magic" />
+
+        <club.crabglory.www.common.widget.micro.widget.CircularProgressView
+            android:id="@+id/mCapture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bt_capture"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/preview"
+            app:layout_constraintBottom_toBottomOf="@+id/mCapture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mCapture"
+            app:layout_constraintTop_toTopOf="@+id/mCapture"
+            app:riv_corner_radius="5dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="上传"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mCapture"
+            app:layout_constraintTop_toBottomOf="@+id/iv_preview" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_container"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/bottom_border"/>
+
+    </FrameLayout>
+
+</FrameLayout>

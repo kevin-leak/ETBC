@@ -1,0 +1,23 @@
+{
+  "buildFiles": [
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\CMakeLists.txt",
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\src\\main\\cpp\\FaceAlignment\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\mips --target clean"
+  ],
+  "libraries": {
+    "native-lib-Debug-mips": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\mips --target native-lib",
+      "abi": "mips",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\debug\\obj\\mips\\libnative-lib.so"
+    },
+    "seeta_fa_lib-Debug-mips": {
+      "artifactName": "seeta_fa_lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\mips --target seeta_fa_lib",
+      "abi": "mips",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\mips\\src\\main\\cpp\\FaceAlignment\\libseeta_fa_lib.a"
+    }
+  }
+}

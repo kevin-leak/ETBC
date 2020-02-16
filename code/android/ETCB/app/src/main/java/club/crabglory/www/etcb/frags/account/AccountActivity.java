@@ -129,25 +129,22 @@ public class AccountActivity extends ToolbarActivity
 
     private void selectAvatar() {
         new GalleryFragment()
-                .setListener(new GalleryFragment.OnSelectedListener() {
-                    @Override
-                    public void onSelectedImage(String path) {
-                        UCrop.Options options = new UCrop.Options();
-                        // 设置图片处理的格式JPEG
-                        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
-                        // 设置压缩后的图片精度
-                        options.setCompressionQuality(96);
+                .setListener(path -> {
+                    UCrop.Options options = new UCrop.Options();
+                    // 设置图片处理的格式JPEG
+                    options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+                    // 设置压缩后的图片精度
+                    options.setCompressionQuality(96);
 
-                        // 得到头像的缓存地址
-                        File dPath = Application.Companion.getAvatarTmpFile();
+                    // 得到头像的缓存地址
+                    File dPath = Application.Companion.getAvatarTmpFile();
 
-                        // 发起剪切
-                        UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
-                                .withAspectRatio(1, 1) // 1比1比例
-                                .withMaxResultSize(520, 520) // 返回最大的尺寸
-                                .withOptions(options) // 相关参数
-                                .start(AccountActivity.this);
-                    }
+                    // 发起剪切
+                    UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
+                            .withAspectRatio(1, 1) // 1比1比例
+                            .withMaxResultSize(520, 520) // 返回最大的尺寸
+                            .withOptions(options) // 相关参数
+                            .start(AccountActivity.this);
                 }).show(getSupportFragmentManager(), GalleryFragment.class.getName());
     }
 

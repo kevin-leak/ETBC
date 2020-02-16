@@ -37,13 +37,11 @@ public class LaunchActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                /* todo
-                 * 初始化缓存资源
-                 */
-                MainActivity.show(LaunchActivity.this, MainActivity.class, null, true);
-            }
+        new Handler().postDelayed(() -> {
+            /* todo
+             * 初始化缓存资源
+             */
+            MainActivity.show(LaunchActivity.this, MainActivity.class, null, true);
         }, 2000);
     }
 

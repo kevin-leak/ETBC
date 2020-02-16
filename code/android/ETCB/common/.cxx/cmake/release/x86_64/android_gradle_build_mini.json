@@ -1,0 +1,23 @@
+{
+  "buildFiles": [
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\CMakeLists.txt",
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\src\\main\\cpp\\FaceAlignment\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\x86_64 --target clean"
+  ],
+  "libraries": {
+    "seeta_fa_lib-Release-x86_64": {
+      "artifactName": "seeta_fa_lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\x86_64 --target seeta_fa_lib",
+      "abi": "x86_64",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\x86_64\\src\\main\\cpp\\FaceAlignment\\libseeta_fa_lib.a"
+    },
+    "native-lib-Release-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\release\\x86_64 --target native-lib",
+      "abi": "x86_64",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libnative-lib.so"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "buildFiles": [
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\CMakeLists.txt",
+    "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\src\\main\\cpp\\FaceAlignment\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\armeabi --target clean"
+  ],
+  "libraries": {
+    "seeta_fa_lib-Debug-armeabi": {
+      "artifactName": "seeta_fa_lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\armeabi --target seeta_fa_lib",
+      "abi": "armeabi",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\armeabi\\src\\main\\cpp\\FaceAlignment\\libseeta_fa_lib.a"
+    },
+    "native-lib-Debug-armeabi": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\armeabi --target native-lib",
+      "abi": "armeabi",
+      "output": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\build\\intermediates\\cmake\\debug\\obj\\armeabi\\libnative-lib.so"
+    }
+  }
+}

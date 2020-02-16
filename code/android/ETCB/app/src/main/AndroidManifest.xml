@@ -58,6 +58,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="club.crabglory.www.common.widget.micro.VideoActivity"/>
         <activity
             android:name=".frags.chat.ChatActivity"
             android:theme="@style/AppTheme.BarDefaultTheme" />
@@ -75,7 +76,9 @@
         <activity
             android:name=".frags.chat.MessageActivity"
             android:theme="@style/AppTheme.DefaultActivity" />
-        <activity android:name=".frags.micro.MicroUpActivity" />
+        <activity android:name=".frags.micro.MicroUpActivity"
+            android:theme="@style/AppTheme.MicroUp"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".frags.goods.GoodsCarActivity"
             android:theme="@style/AppTheme.BarDefaultTheme" />

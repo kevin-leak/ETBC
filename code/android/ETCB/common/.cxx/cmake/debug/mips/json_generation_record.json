@@ -1,0 +1,14 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 15 min SDK version: mips"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON \u0027E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\common\\.cxx\\cmake\\debug\\mips\\android_gradle_build.json\u0027 was up-to-date"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed without problems"
+  }
+]

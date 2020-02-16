@@ -1,0 +1,22 @@
+[1/2] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/FaceTrack.cpp.o
+FAILED: C:\Users\KevinLeak\AppData\Local\Android\sdk\android-ndk-r15c\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe  --target=armv5te-none-linux-androideabi --gcc-toolchain=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sysroot  -Dnative_lib_EXPORTS -I../../../../src/main/cpp/include -I../../../../src/main/cpp/FaceAlignment/include -isystem C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include -isystem C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=15 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions  -LE:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/src/main/jniLibs/armeabi -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/FaceTrack.cpp.o -MF CMakeFiles\native-lib.dir\src\main\cpp\FaceTrack.cpp.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/FaceTrack.cpp.o -c E:\Users\KevinLeak\Documents\GitHub\ETBC\code\android\ETCB\common\src\main\cpp\FaceTrack.cpp
+clang++.exe: warning: argument unused during compilation: '-LE:/Users/KevinLeak/Documents/GitHub/ETBC/code/android/ETCB/common/src/main/jniLibs/armeabi' [-Wunused-command-line-argument]
+In file included from E:\Users\KevinLeak\Documents\GitHub\ETBC\code\android\ETCB\common\src\main\cpp\FaceTrack.cpp:5:
+In file included from E:\Users\KevinLeak\Documents\GitHub\ETBC\code\android\ETCB\common\src\main\cpp/FaceTrack.h:11:
+In file included from ../../../../src/main/cpp/FaceAlignment/include\face_alignment.h:36:
+In file included from ../../../../src/main/cpp/FaceAlignment/include/common.h:35:
+In file included from C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/include\cstdint:35:
+C:/Users/KevinLeak/AppData/Local/Android/sdk/android-ndk-r15c/sources/cxx-stl/gnu-libstdc++/4.9/include\bits/c++0x_warning.h:32:2: error: This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+#error This file requires compiler and library support for the \
+ ^
+In file included from E:\Users\KevinLeak\Documents\GitHub\ETBC\code\android\ETCB\common\src\main\cpp\FaceTrack.cpp:5:
+In file included from E:\Users\KevinLeak\Documents\GitHub\ETBC\code\android\ETCB\common\src\main\cpp/FaceTrack.h:11:
+In file included from ../../../../src/main/cpp/FaceAlignment/include\face_alignment.h:36:
+../../../../src/main/cpp/FaceAlignment/include/common.h:62:14: error: use of undeclared identifier 'nullptr'
+      data = nullptr;
+             ^
+../../../../src/main/cpp/FaceAlignment/include/common.h:70:14: error: use of undeclared identifier 'nullptr'
+      data = nullptr;
+             ^
+3 errors generated.
+ninja: build stopped: subcommand failed.

@@ -13,6 +13,10 @@ import android.view.animation.LinearInterpolator;
 
 import club.crabglory.www.common.R;
 
+/**
+ * 用来画制波浪View
+ *
+ */
 public class WaveCurtain extends View {
 
     private ValueAnimator mAnimator;

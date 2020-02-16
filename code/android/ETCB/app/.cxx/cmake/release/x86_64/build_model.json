@@ -13,17 +13,23 @@
       "buildSystem": "CMAKE",
       "compilerSettingsCacheFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\.cxx",
       "cxxFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx",
-      "ndkFolder": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\ndk-bundle",
-      "ndkVersion": "20.0.5594570",
+      "ndkFolder": "C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c",
+      "ndkVersion": "15.2.4203891",
       "ndkSupportedAbiList": [
+        "ARMEABI",
         "ARMEABI_V7A",
         "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
         "X86",
         "X86_64"
       ],
       "ndkDefaultAbiList": [
+        "ARMEABI",
         "ARMEABI_V7A",
         "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
         "X86",
         "X86_64"
       ],
@@ -41,15 +47,18 @@
     "gradleBuildOutputFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cxx\\release",
     "isDebuggableEnabled": false,
     "validAbiList": [
+      "ARMEABI",
       "ARMEABI_V7A",
       "ARM64_V8A",
+      "MIPS",
+      "MIPS64",
       "X86",
       "X86_64"
     ],
     "buildTargetSet": []
   },
   "abi": "X86_64",
-  "abiPlatformVersion": 16,
+  "abiPlatformVersion": 21,
   "cxxBuildFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\x86_64",
   "jsonFile": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\x86_64\\android_gradle_build.json",
   "gradleBuildOutputFolder": "E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cxx\\release\\x86_64",

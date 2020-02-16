@@ -41,17 +41,14 @@ public class GalleryFragment extends BottomSheetDialogFragment
             bottomSheet.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT; //可以写入自己想要的高度
         }
         final View view = getView();
-        view.post(new Runnable() {
-            @Override
-            public void run() {
-                assert view != null;
-                View parent = (View) view.getParent();
-                CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) (parent).getLayoutParams();
-                CoordinatorLayout.Behavior behavior = params.getBehavior();
-                BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) behavior;
-                bottomSheetBehavior.setPeekHeight(view.getMeasuredHeight());
-                parent.setBackgroundColor(Color.WHITE);
-            }
+        assert view != null;
+        view.post(() -> {
+            View parent = (View) view.getParent();
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) (parent).getLayoutParams();
+            CoordinatorLayout.Behavior behavior = params.getBehavior();
+            BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) behavior;
+            bottomSheetBehavior.setPeekHeight(view.getMeasuredHeight());
+            parent.setBackgroundColor(Color.WHITE);
         });
 
     }

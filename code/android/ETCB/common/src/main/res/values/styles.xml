@@ -10,4 +10,26 @@
         <attr name="wave_color" format="color"/>
         <attr name="duration_time" format="integer"/>
     </declare-styleable>
+
+    <style name="micro_rl" >
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="micro_image" >
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="micro_txt" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>

@@ -1,11 +1,43 @@
 [
   {
     "level": "INFO",
-    "message": "Start JSON generation. Platform version: 16 min SDK version: arm64-v8a"
+    "message": "Start JSON generation. Platform version: 21 min SDK version: arm64-v8a"
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\\android_gradle_build.json\u0027 was up-to-date"
+    "message": "rebuilding JSON E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\\android_gradle_build.json due to:"
+  },
+  {
+    "level": "INFO",
+    "message": "- force flag, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe\narguments : \n-HE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\n-BE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\n-DANDROID_ABI\u003darm64-v8a\n-DANDROID_PLATFORM\u003dandroid-21\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c\n-DCMAKE_CXX_FLAGS\u003d-frtti -fexceptions\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\ninja.exe\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "Executable : C:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe\narguments : \n-HE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\n-BE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\n-DANDROID_ABI\u003darm64-v8a\n-DANDROID_PLATFORM\u003dandroid-21\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c\n-DCMAKE_CXX_FLAGS\u003d-frtti -fexceptions\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\android-ndk-r15c\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\KevinLeak\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\ninja.exe\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\\build_output.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file E:\\Users\\KevinLeak\\Documents\\GitHub\\ETBC\\code\\android\\ETCB\\app\\.cxx\\cmake\\release\\arm64-v8a\\build_command.txt"
   },
   {
     "level": "INFO",
